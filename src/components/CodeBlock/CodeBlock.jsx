@@ -2,7 +2,8 @@ import { useState } from 'react'
 import { usePyodide } from '../../PyodideContext'
 import CodeMirror from '@uiw/react-codemirror'
 import { python } from '@codemirror/lang-python'
-import { vscodeLight } from '@uiw/codemirror-theme-vscode'
+import { duotoneLight } from '@uiw/codemirror-themes-all'
+import './CodeBlock.scss'
 
 export default function CodeBlock({ code: initialCode, imports = 'import numpy' }) {
   const { getPyodide } = usePyodide()
@@ -33,10 +34,10 @@ export default function CodeBlock({ code: initialCode, imports = 'import numpy' 
         value={code}
         extensions={[python()]}
         onChange={(value) => setCode(value)}
-        theme={vscodeLight}
+        theme={duotoneLight}
+        style={{ borderRadius: 8, overflow: "hidden", boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)", }}
       />
-      <div>
-        <span>python</span>
+      <div className='button'>
         <button onClick={runCode} disabled={loading}>
           {loading ? 'Running...' : '▶ Run'}
         </button>
