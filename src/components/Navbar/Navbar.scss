@@ -1,9 +1,11 @@
+@use '../../index.scss' as *;
+
 nav {
     height: 30px;
     padding: 20px;
-    background-color: #f5f5f5;
+    background-color: $global-secondary-color;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: #a3a3a3;
 }

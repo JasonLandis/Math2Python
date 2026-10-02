@@ -1,0 +1,15 @@
+@use '../../index.scss' as *;
+
+.back {
+    all: unset;
+    cursor: pointer;
+    position: absolute;
+    left: 20px;
+    top: 90px;
+    padding: 10px;
+    border-radius: 5px;
+
+    &:hover {
+        background-color: $global-secondary-color;
+    }
+}

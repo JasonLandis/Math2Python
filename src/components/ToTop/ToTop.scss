@@ -1,0 +1,18 @@
+@use '../../index.scss' as *;
+
+.top-link {
+    text-align: center;
+    margin: 60px 0;
+    font-size: 20px;
+
+    a {
+        all: unset;
+        cursor: pointer;
+        padding: 15px;
+        border-radius: 10px;
+
+        &:hover {
+            background-color: $global-secondary-color;
+        }
+    }
+}

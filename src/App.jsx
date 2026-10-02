@@ -1,7 +1,7 @@
 import { PyodideProvider } from './PyodideContext'
 import Navbar from './components/Navbar/Navbar'
 import Router from './Router' 
-import './App.css'
+import './App.scss'
 
 function App() {
   return (

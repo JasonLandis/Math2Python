@@ -1,9 +1,7 @@
-@use '../../index.scss' as *;
+@use '../index.scss' as *;
 
-.home-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+.subject-links {
+    width: 100%;
 
     a {
         all: unset;
@@ -18,6 +16,9 @@
         text-decoration: none;
         font-size: 16px;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
 
         &:hover {
             background-color: $global-button-hover-color;
@@ -25,6 +26,15 @@
 
         &:active {
             background-color: $global-button-active-color;
+        }
+
+        > :first-child {
+            font-size: 19px;
+        }
+
+        > :last-child {
+            font-size: 13px;
+            opacity: 0.8;
         }
     }
 }

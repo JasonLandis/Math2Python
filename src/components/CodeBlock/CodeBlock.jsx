@@ -2,10 +2,10 @@ import { useState } from 'react'
 import { usePyodide } from '../../PyodideContext'
 import CodeMirror from '@uiw/react-codemirror'
 import { python } from '@codemirror/lang-python'
-import { duotoneLight } from '@uiw/codemirror-themes-all'
+import { xcodeLight } from '@uiw/codemirror-themes-all'
 import './CodeBlock.scss'
 
-export default function CodeBlock({ code: initialCode, imports = 'import numpy' }) {
+export default function CodeBlock({ code: initialCode, editable: editable }) {
   const { getPyodide } = usePyodide()
   const [code, setCode] = useState(initialCode)
   const [output, setOutput] = useState('')
@@ -20,7 +20,7 @@ export default function CodeBlock({ code: initialCode, imports = 'import numpy' 
     py.setStdout({ batched: (msg) => { captured += msg + '\n' } })
 
     try {
-      await py.runPythonAsync(`${imports}\n${code}`)
+      await py.runPythonAsync(code)
       setOutput(captured)
     } catch (err) {
       setOutput(String(err))
@@ -34,15 +34,22 @@ export default function CodeBlock({ code: initialCode, imports = 'import numpy' 
         value={code}
         extensions={[python()]}
         onChange={(value) => setCode(value)}
-        theme={duotoneLight}
-        style={{ borderRadius: 8, overflow: "hidden", boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)", }}
+        theme={xcodeLight}
+        editable={editable}
+        style={{ borderRadius: 8, overflow: 'hidden', boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)', }}
       />
-      <div className='button'>
-        <button onClick={runCode} disabled={loading}>
-          {loading ? 'Running...' : '▶ Run'}
-        </button>
-      </div>
-      {output && <pre>{output}</pre>}
+      {editable && 
+        <div className='code-execute'>
+          <button onClick={runCode} disabled={loading}>
+            {loading ? 'Running...' : '▶ Run'}
+          </button>
+        </div>
+      }
+      {output && 
+        <div className='code-output'>
+          <pre>{output}</pre>
+        </div>
+      }
     </>
   )
 }

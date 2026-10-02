@@ -1,0 +1,24 @@
+$global-font-color: #494949;
+$global-primary-color: #ffffff;
+$global-secondary-color: #f5f5f5;
+$global-button-hover-color: #f1f1f1;
+$global-button-active-color: #eeeeee;
+
+body {
+    margin: 0;
+    font-family: 'Gelasio';
+    background-color: $global-primary-color;
+    color: $global-font-color;
+}
+
+.global-container {
+    margin-top: 30px;
+    width: 100%;
+    max-width: 800px;
+}
+
+.global-title {
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 20px;
+}
