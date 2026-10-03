@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { InlineMath } from 'react-katex';
+import { lessons } from '../../lessons/lessons';
 import 'katex/dist/katex.min.css';
 import './Home.scss';
 
@@ -10,8 +11,11 @@ export default function Home() {
         <InlineMath math="\textit{Subjects}" />
       </div>
       <div className='home-grid'>
-        <Link to={'LinearAlgebra'}>Linear Algebra</Link>
-        <Link to={'Calculus'}>Calculus</Link>
+        {Object.entries(lessons).map(([key, value]) => (
+          <Link key={key} to={key}>
+            <div>{ value.verbiage }</div>
+          </Link>
+        ))}
       </div>
     </div>
   )

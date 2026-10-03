@@ -1,9 +1,11 @@
-.lesson-source {
+.lesson-sources {
     text-align: center;
-    margin-top: -20px;
+    margin-top: -25px;
     margin-bottom: 40px;
     opacity: 0.8;
-    font-size: 15px;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
 
     a {
         color: unset;
