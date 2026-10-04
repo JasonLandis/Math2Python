@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { InlineMath } from 'react-katex';
 import Back from '../../components/Back/Back';
 import ToTop from '../../components/ToTop/ToTop';
@@ -19,6 +20,16 @@ export default function Lesson({ subject, lesson }) {
           <a href={source} target='_blank'>{source}</a>
         ))}
       </div>
+      {lessons[subject].lessons[lesson].prerequisites.length > 0 && 
+        <div className='lesson-prerequisites'>
+          <div>Prerequisites</div>
+          <div>
+            {(lessons[subject].lessons[lesson].prerequisites).map((prerequisite) => (
+              <Link to={`/${subject}/${prerequisite}`}>{lessons[subject].lessons[prerequisite].title}</Link>
+            ))}
+          </div>
+        </div>
+      }
       <div class='lesson-body'>
         <Component />
       </div>

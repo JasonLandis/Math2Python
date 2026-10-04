@@ -16,8 +16,8 @@ export default function LinearCombinations() {
         `} />
       </div>
       <div>
-        If you scale each of these basis vectors and then add them together,
-        you get a new vector that is a linear combination of those vectors.
+        If you scale each of these basis vectors by some scalar and then add the two resultant vectors together,
+        you get a new vector that is a linear combination of those basis vectors.
       </div>
       <div>
         <BlockMath math={String.raw`
@@ -46,8 +46,8 @@ print(linearCombination)`
         } editable={true} />
       </div>
       <div>
-        2 Vectors being linearly independent means that all linear LinearCombinations
-        of those vectors span the full space. The vectors above are linearly independent.
+        The set of all possible vectors that can be reached with linear combinations of a 
+        given pair of vectors is called the <strong>span</strong> of those two vectors.
       </div>
       <div>
         Below is an example of two vectors that are linearly dependent.
