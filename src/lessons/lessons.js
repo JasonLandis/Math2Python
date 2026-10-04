@@ -30,12 +30,16 @@ export const lessons = {
         sources: [
           "https://www.3blue1brown.com/lessons/vectors"
         ],
+        prerequisites: [],
         Component: Vectors
       },
       LinearCombinations: {
         title: "Linear combinations, span, and basis vectors",
         sources: [
           "https://www.3blue1brown.com/lessons/span"
+        ],
+        prerequisites: [
+          "Vectors"
         ],
         Component: LinearCombinations
       },
@@ -44,6 +48,7 @@ export const lessons = {
         sources: [
           "https://www.3blue1brown.com/lessons/linear-transformations"
         ],
+        prerequisites: [],
         Component: LinearTransformations
       },
       MatrixMultiplication: {
@@ -51,6 +56,7 @@ export const lessons = {
         sources: [
           "https://www.3blue1brown.com/lessons/matrix-multiplication"
         ],
+        prerequisites: [],
         Component: MatrixMultiplication
       },
       ThreeDimTransformations: {
@@ -58,6 +64,7 @@ export const lessons = {
         sources: [
           "https://www.3blue1brown.com/lessons/3d-transformations"
         ],
+        prerequisites: [],
         Component: ThreeDimTransformations
       },
       TheDeterminant: {
@@ -65,6 +72,7 @@ export const lessons = {
         sources: [
           "https://www.3blue1brown.com/lessons/determinant",
         ],
+        prerequisites: [],
         Component: TheDeterminant
       },
       InverseMatrices: {
@@ -72,6 +80,7 @@ export const lessons = {
         sources: [
           "https://www.3blue1brown.com/lessons/inverse-matrices"
         ],
+        prerequisites: [],
         Component: InverseMatrices
       },
       NonsquareMatrices: {
@@ -79,6 +88,7 @@ export const lessons = {
         sources: [
           "https://www.3blue1brown.com/lessons/nonsquare-matrices"
         ],
+        prerequisites: [],
         Component: NonsquareMatrices
       },
       DotProducts: {
@@ -86,6 +96,7 @@ export const lessons = {
         sources: [
           "https://www.3blue1brown.com/lessons/dot-products"
         ],
+        prerequisites: [],
         Component: DotProducts
       },
       CrossProducts: {
@@ -93,6 +104,7 @@ export const lessons = {
         sources: [
           "https://www.3blue1brown.com/lessons/cross-products"
         ],
+        prerequisites: [],
         Component: CrossProducts
       },
       CrossProductsExtended: {
@@ -100,6 +112,7 @@ export const lessons = {
         sources: [
           "https://www.3blue1brown.com/lessons/cross-products-extended"
         ],
+        prerequisites: [],
         Component: CrossProductsExtended
       },
       CramersRule: {
@@ -107,6 +120,7 @@ export const lessons = {
         sources: [
           "https://www.3blue1brown.com/lessons/cramers-rule"
         ],
+        prerequisites: [],
         Component: CramersRule
       },
       ChangeOfBasis: {
@@ -114,6 +128,7 @@ export const lessons = {
         sources: [
           "https://www.3blue1brown.com/lessons/change-of-basis"
         ],
+        prerequisites: [],
         Component: ChangeOfBasis
       },
       Eigenvectors: {
@@ -121,6 +136,7 @@ export const lessons = {
         sources: [
           "https://www.3blue1brown.com/lessons/eigenvalues"
         ],
+        prerequisites: [],
         Component: Eigenvectors
       },
       QuickEigenCompute: {
@@ -128,6 +144,7 @@ export const lessons = {
         sources: [
           "https://www.3blue1brown.com/lessons/quick-eigen"
         ],
+        prerequisites: [],
         Component: QuickEigenCompute
       },
       AbstractVectorSpaces: {
@@ -135,6 +152,7 @@ export const lessons = {
         sources: [
           "https://www.3blue1brown.com/lessons/abstract-vector-spaces"
         ],
+        prerequisites: [],
         Component: AbstractVectorSpaces
       }
     }
@@ -147,6 +165,7 @@ export const lessons = {
         sources: [
           "https://www.3blue1brown.com/lessons/essence-of-calculus"
         ],
+        prerequisites: [],
         Component: EssenceOfCalculus
       },
       ParadoxOfDerivative: {
@@ -154,6 +173,7 @@ export const lessons = {
         sources: [
           "https://www.3blue1brown.com/lessons/derivatives"
         ],
+        prerequisites: [],
         Component: ParadoxOfDerivative
       },
       PowerRule: {
@@ -162,6 +182,7 @@ export const lessons = {
           "https://www.3blue1brown.com/lessons/derivatives-power-rule",
           "https://www.3blue1brown.com/lessons/derivatives-trig-functions"
         ],
+        prerequisites: [],
         Component: PowerRule
       },
       ChainRule: {
@@ -169,6 +190,7 @@ export const lessons = {
         sources: [
           "https://www.3blue1brown.com/lessons/chain-rule-and-product-rule"
         ],
+        prerequisites: [],
         Component: ChainRule
       },
       EulersNumber: {
@@ -176,6 +198,7 @@ export const lessons = {
         sources: [
           "https://www.3blue1brown.com/lessons/eulers-number"
         ],
+        prerequisites: [],
         Component: EulersNumber
       },
     }
