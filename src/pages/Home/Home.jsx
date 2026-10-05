@@ -13,7 +13,7 @@ export default function Home() {
       <div className='home-grid'>
         {Object.entries(lessons).map(([key, value]) => (
           <Link key={key} to={key}>
-            <div>{ value.verbiage }</div>
+            <div>{ value.title }</div>
           </Link>
         ))}
       </div>

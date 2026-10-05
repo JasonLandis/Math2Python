@@ -11,7 +11,7 @@ export default function Subject({ subject }) {
     <div className='global-container'>
       <Back destination='/' text='Subjects' />
       <div className='global-title'>
-        <InlineMath math={String.raw`\textit{${lessons[subject].verbiage}}`} />
+        <InlineMath math={String.raw`\textit{${lessons[subject].title}}`} />
       </div>
       <div className='subject-links'>
         {Object.entries(lessons[subject]["lessons"]).map(([key, value]) => (

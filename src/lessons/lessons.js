@@ -23,7 +23,7 @@ import EulersNumber from "./Calculus/5EulersNumber"
 
 export const lessons = {
   LinearAlgebra: {
-    verbiage: "Linear Algebra",
+    title: "Linear Algebra",
     lessons: {
       Vectors: {
         title: "Vectors, what even are they?",
@@ -48,7 +48,10 @@ export const lessons = {
         sources: [
           "https://www.3blue1brown.com/lessons/linear-transformations"
         ],
-        prerequisites: [],
+        prerequisites: [
+          "Vectors",
+          "LinearCombinations"
+        ],
         Component: LinearTransformations
       },
       MatrixMultiplication: {
@@ -158,7 +161,7 @@ export const lessons = {
     }
   },
   Calculus: {
-    verbiage: "Calculus",
+    title: "Calculus",
     lessons: {
       EssenceOfCalculus: {
         title: "The Essence of Calculus",

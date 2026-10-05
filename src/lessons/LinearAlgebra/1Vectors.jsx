@@ -7,8 +7,8 @@ export default function Vectors() {
   return (
     <>
       <div>
-        Below is a 2-dimensional vector. You can think of it as having an x-coordinate of 1
-        and a y-coordinate of 2. It has one row and two columns.
+        Below is a 2-dimensional vector. You can think of it as having an x-coordinate of <strong>1</strong> and 
+        a y-coordinate of <strong>2</strong>.
       </div>
       <div>
         <BlockMath math={String.raw`
@@ -57,7 +57,7 @@ print(vector1 + vector2)`
         } editable={true} />
       </div>
       <div>
-        Vectors can also be scaled by some constant. We call this constant a scalar.
+        Vectors can also be scaled by some constant. We call this constant a <strong>scalar</strong>.
         When a vector is scaled, both the x and y coordinates of that vector are multiplied
         by that scalar.
       </div>
