@@ -1,5 +1,3 @@
-@use '../../vars.scss' as *;
-
 .home-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -14,17 +12,17 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: $global-secondary-color;
+        background-color: var(--global-secondary-color);
         text-decoration: none;
         font-size: 16px;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 
         &:hover {
-            background-color: $global-button-hover-color;
+            background-color: var(--global-button-hover-color);
         }
 
         &:active {
-            background-color: $global-button-active-color;
+            background-color: var(--global-button-active-color);
         }
     }
 }

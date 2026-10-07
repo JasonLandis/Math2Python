@@ -101,7 +101,7 @@ print(linear_combination)`
       </div>
       <div>
         <BlockMath math={String.raw`
-          \boldsymbol{\hat } = \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}
+          \boldsymbol{\hat i} = \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}
           \quad\quad
           \boldsymbol{\hat j} = \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}
           \quad\quad

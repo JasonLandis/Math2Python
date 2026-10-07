@@ -1,9 +1,17 @@
-@use '../../vars.scss' as *;
-
 nav {
     height: 30px;
     padding: 20px;
-    background-color: $global-secondary-color;
+    background-color: var(--global-secondary-color);
     display: flex;
     align-items: center;
+    gap: 40px;
+
+    a, button {
+        all: unset;
+        cursor: pointer;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
 }

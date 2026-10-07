@@ -1,12 +1,14 @@
 import { useState } from 'react'
-import { usePyodide } from '../../PyodideContext'
+import { usePyodide } from '../../contexts/PyodideContext'
 import CodeMirror from '@uiw/react-codemirror'
 import { python } from '@codemirror/lang-python'
-import { xcodeLight } from '@uiw/codemirror-themes-all'
+import { useThemeContext } from '../../contexts/ThemeContext'
+import { xcodeLight, xcodeDark } from '@uiw/codemirror-themes-all'
 import './CodeBlock.scss'
 
 export default function CodeBlock({ code: initialCode, editable: editable }) {
-  const { getPyodide } = usePyodide()
+  const { getPyodide } = usePyodide();
+  const { theme } = useThemeContext();
   const [code, setCode] = useState(initialCode)
   const [output, setOutput] = useState('')
   const [loading, setLoading] = useState(false)
@@ -34,7 +36,7 @@ export default function CodeBlock({ code: initialCode, editable: editable }) {
         value={code}
         extensions={[python()]}
         onChange={(value) => setCode(value)}
-        theme={xcodeLight}
+        theme={theme === "dark" ? xcodeDark : xcodeLight}
         editable={editable}
         style={{ borderRadius: 8, overflow: 'hidden', boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)', }}
       />

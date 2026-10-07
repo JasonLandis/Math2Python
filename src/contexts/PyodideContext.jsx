@@ -1,11 +1,11 @@
 import { createContext, useContext, useRef, useState } from 'react'
 import { loadPyodide } from 'pyodide'
 
-const PyodideContext = createContext(null)
+const PyodideContext = createContext()
 
 export function PyodideProvider({ children }) {
-  const pyodideRef = useRef(null)
-  const loadingPromiseRef = useRef(null)
+  const pyodideRef = useRef()
+  const loadingPromiseRef = useRef()
   const [ready, setReady] = useState(false)
 
   const getPyodide = async () => {

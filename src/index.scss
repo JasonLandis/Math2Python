@@ -1,10 +1,24 @@
-@use './vars.scss' as *;
+:root {
+  --global-font-color: #494949;
+  --global-primary-color: #ffffff;
+  --global-secondary-color: #f5f5f5;
+  --global-button-hover-color: #f1f1f1;
+  --global-button-active-color: #eeeeee;
+}
+
+[data-theme="dark"] {
+  --global-font-color: #dbd9d9;
+  --global-primary-color: #3d3d3d;
+  --global-secondary-color: #646464;
+  --global-button-hover-color: #7c7c7c;
+  --global-button-active-color: #8b8b8b;
+}
 
 body {
     margin: 0;
     font-family: 'Gelasio';
-    background-color: $global-primary-color;
-    color: $global-font-color;
+    background-color: var(--global-primary-color);
+    color: var(--global-font-color);
 }
 
 .global-container {
