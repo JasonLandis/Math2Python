@@ -15,8 +15,8 @@
 .lesson-prerequisites {
     padding: 20px;
     border-radius: 10px;
-    background-color: rgb(243, 255, 239);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    background-color: var(--global-prerequisites-color);
+    box-shadow: 0 4px 12px var(--global-box-shadow-color);
 
     > :first-child {
         text-align: center;

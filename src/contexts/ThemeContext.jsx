@@ -1,11 +1,26 @@
-import { createContext, useContext } from "react";
-import useTheme from "../hooks/useTheme";
+import { createContext, useContext, useEffect, useState } from 'react'
 
-const ThemeContext = createContext();
+const ThemeContext = createContext()
 
 export function ThemeProvider({ children }) {
-  const value = useTheme();
-  return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>;
+  const [theme, setTheme] = useState(
+    () => localStorage.getItem('theme') ?? 'light'
+  )
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme
+    localStorage.setItem('theme', theme)
+  }, [theme])
+
+  const toggleTheme = () => setTheme(t => (t === 'light' ? 'dark' : 'light'))
+
+  return (
+    <ThemeContext.Provider value={{ theme, setTheme, toggleTheme }}>
+      {children}
+    </ThemeContext.Provider>
+  )
 }
 
-export const useThemeContext = () => useContext(ThemeContext);
+export function useTheme() {
+  return useContext(ThemeContext)
+}

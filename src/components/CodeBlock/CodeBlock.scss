@@ -24,5 +24,11 @@
     padding: 5px 15px 5px 15px;
     margin-top: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 12px var(--global-box-shadow-color);
+}
+
+.code-mirror {
+    border-radius: 8px;
+    overflow: hidden; 
+    box-shadow: 0 4px 12px var(--global-box-shadow-color);
 }

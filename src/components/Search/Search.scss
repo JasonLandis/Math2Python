@@ -5,14 +5,20 @@
   input {
     padding: 7px;
     width: calc(100% - 14px);
-    border: 1px solid var(--global-font-color);
+    border: none;
     border-radius: 5px;
     font-family: 'Gelasio';
     font-size: 15px;
+    background-color: var(--global-primary-color);
+    color: var(--global-font-color);
 
     &:focus {
       outline: none;
-      border: 2px solid var(--global-font-color);
+    }
+
+    &::placeholder {
+      color: var(--global-font-color);
+      opacity: 0.6;
     }
   }
 
@@ -24,7 +30,7 @@
     margin: 0;
     padding: 0;
     background: var(--global-primary-color);
-    border: 1px solid #ccc;
+    border: 1px solid var(--global-font-color);
     z-index: 1000;
 
     a {

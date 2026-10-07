@@ -1,12 +1,12 @@
 import { InlineMath } from 'react-katex';
 import { Link } from 'react-router-dom';
-import useTheme from '../../hooks/useTheme';
+import { useTheme } from '../../contexts/ThemeContext';
 import Search from '../Search/Search';
 import 'katex/dist/katex.min.css';
 import './Navbar.scss'
 
 export default function Navbar() {
-  const { theme, toggle } = useTheme();
+  const { toggleTheme } = useTheme();
 
   return (
     <nav>
@@ -20,7 +20,7 @@ export default function Navbar() {
       <a href="https://github.com/JasonLandis/Math2Python" target='_blank'>
         <span style={{ fontSize: 16 }}><InlineMath math="\textit{Github}" /></span>
       </a>
-      <button style={{ fontSize: 16 }} onClick={toggle}><InlineMath math="\textit{Theme}" /></button>
+      <button style={{ fontSize: 16 }} onClick={toggleTheme}><InlineMath math="\textit{Theme}" /></button>
     </nav>
   )
 }
