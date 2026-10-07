@@ -3,7 +3,7 @@ import { usePyodide } from '../../hooks/usePyodide'
 import { useTheme } from '../../contexts/ThemeContext'
 import CodeMirror from '@uiw/react-codemirror'
 import { python } from '@codemirror/lang-python'
-import { vscodeDark, vscodeLight } from '@uiw/codemirror-themes-all'
+import { duotoneDark, gruvboxDark, gruvboxLight, xcodeLight } from '@uiw/codemirror-themes-all'
 import './CodeBlock.scss'
 
 export default function CodeBlock({ code: initialCode, editable }) {
@@ -28,7 +28,7 @@ export default function CodeBlock({ code: initialCode, editable }) {
         value={code}
         extensions={[python()]}
         onChange={(value) => setCode(value)}
-        theme={theme === 'dark' ? vscodeDark : vscodeLight}
+        theme={theme === 'dark' ? gruvboxDark : xcodeLight}
         editable={editable}
         className='code-mirror'
       />

@@ -6,7 +6,7 @@ import 'katex/dist/katex.min.css';
 import './Navbar.scss'
 
 export default function Navbar() {
-  const { toggleTheme } = useTheme();
+  const { theme, toggleTheme } = useTheme();
 
   return (
     <nav>
@@ -20,7 +20,7 @@ export default function Navbar() {
       <a href="https://github.com/JasonLandis/Math2Python" target='_blank'>
         <span style={{ fontSize: 16 }}><InlineMath math="\textit{Github}" /></span>
       </a>
-      <button style={{ fontSize: 16 }} onClick={toggleTheme}><InlineMath math="\textit{Theme}" /></button>
+      <button style={{ fontSize: 16 }} onClick={toggleTheme}><InlineMath math={String.raw`\textit{${theme === 'dark' ? 'Light' : 'Dark'}}`} /></button>
     </nav>
   )
 }
