@@ -1,4 +1,3 @@
-import { PyodideProvider } from './PyodideContext'
 import Navbar from './components/Navbar/Navbar'
 import Router from './Router' 
 import './App.scss'
@@ -7,11 +6,9 @@ function App() {
   return (
     <>
       <Navbar />
-      <PyodideProvider>
-        <div className='app-container'>
-          <Router />
-        </div>
-      </PyodideProvider>
+      <div className='app-container'>
+        <Router />
+      </div>
     </>
   )
 }

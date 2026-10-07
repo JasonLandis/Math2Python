@@ -1,31 +1,25 @@
 import { useState } from 'react'
-import { usePyodide } from '../../PyodideContext'
+import { usePyodide } from '../../hooks/usePyodide'
+import { useTheme } from '../../contexts/ThemeContext'
 import CodeMirror from '@uiw/react-codemirror'
 import { python } from '@codemirror/lang-python'
-import { xcodeLight } from '@uiw/codemirror-themes-all'
+import { vscodeDark, vscodeLight } from '@uiw/codemirror-themes-all'
 import './CodeBlock.scss'
 
-export default function CodeBlock({ code: initialCode, editable: editable }) {
-  const { getPyodide } = usePyodide()
+export default function CodeBlock({ code: initialCode, editable }) {
+  const { run } = usePyodide()
+  const { theme } = useTheme()
   const [code, setCode] = useState(initialCode)
   const [output, setOutput] = useState('')
   const [loading, setLoading] = useState(false)
 
   const runCode = async () => {
     setLoading(true)
-    setOutput('')
-
-    const py = await getPyodide()
-    let captured = ''
-    py.setStdout({ batched: (msg) => { captured += msg + '\n' } })
-
     try {
-      await py.runPythonAsync(code)
-      setOutput(captured)
-    } catch (err) {
-      setOutput(String(err))
+      setOutput(await run(code))
+    } finally {
+      setLoading(false)
     }
-    setLoading(false)
   }
 
   return (
@@ -34,9 +28,9 @@ export default function CodeBlock({ code: initialCode, editable: editable }) {
         value={code}
         extensions={[python()]}
         onChange={(value) => setCode(value)}
-        theme={xcodeLight}
+        theme={theme === 'dark' ? vscodeDark : vscodeLight}
         editable={editable}
-        style={{ borderRadius: 8, overflow: 'hidden', boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)', }}
+        className='code-mirror'
       />
       {editable && 
         <div className='code-execute'>

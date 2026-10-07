@@ -11,13 +11,16 @@ export default function Lesson({ subject, lesson }) {
 
   return (
     <div className='global-container'>
-      <Back destination={`/${subject}`} text={lessons[subject].verbiage} />
+      <title>{lessons[subject].lessons[lesson].title + ' | Math2Python'}</title>
+      <Back destination={`/${subject}`} text={lessons[subject].title} />
       <div className='global-title'>
         <InlineMath math={String.raw`\textit{${lessons[subject].lessons[lesson].title}}`} />
       </div>
       <div className='lesson-sources'>
         {(lessons[subject].lessons[lesson].sources).map((source) => (
-          <a href={source} target='_blank'>{source}</a>
+          <div key={source}>
+            <a href={source} target='_blank'>{source}</a>
+          </div>
         ))}
       </div>
       {lessons[subject].lessons[lesson].prerequisites.length > 0 && 
@@ -25,12 +28,14 @@ export default function Lesson({ subject, lesson }) {
           <div>Prerequisites</div>
           <div>
             {(lessons[subject].lessons[lesson].prerequisites).map((prerequisite) => (
-              <Link to={`/${subject}/${prerequisite}`}>{lessons[subject].lessons[prerequisite].title}</Link>
+              <div key={prerequisite}>
+                <Link to={`/${subject}/${prerequisite}`}>{lessons[subject].lessons[prerequisite].title}</Link>
+              </div>
             ))}
           </div>
         </div>
       }
-      <div class='lesson-body'>
+      <div className='lesson-body'>
         <Component />
       </div>
       <ToTop />
