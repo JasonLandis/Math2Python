@@ -16,7 +16,7 @@
     padding: 20px;
     border-radius: 10px;
     background-color: var(--global-prerequisites-color);
-    box-shadow: 0 4px 12px var(--global-box-shadow-color);
+    box-shadow: var(--global-box-shadow);
 
     > :first-child {
         text-align: center;

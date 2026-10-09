@@ -1,17 +1,32 @@
 nav {
     height: 30px;
-    padding: 20px;
+    padding: 20px 30px;
     background-color: var(--global-secondary-color);
     display: flex;
     align-items: center;
-    gap: 40px;
+    gap: 30px;
 
     a, button {
         all: unset;
         cursor: pointer;
 
         &:hover {
-            opacity: 0.7;
+            opacity: 0.8;
         }
     }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        img {
+            border-radius: 3px;
+            width: 30px;
+        }
+    }
+}
+
+svg {
+    width: 25px;
 }

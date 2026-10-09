@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { InlineMath } from 'react-katex';
+import { InlineMath, BlockMath } from 'react-katex';
 import { lessons } from '../../lessons/lessons';
 import 'katex/dist/katex.min.css';
 import './Home.scss';
@@ -13,7 +13,8 @@ export default function Home() {
       <div className='home-grid'>
         {Object.entries(lessons).map(([key, value]) => (
           <Link key={key} to={key}>
-            <div>{ value.title }</div>
+            <div>{value.title}</div>
+            <BlockMath math={value.representation} />
           </Link>
         ))}
       </div>
