@@ -24,6 +24,13 @@ import EulersNumber from "./Calculus/5EulersNumber"
 export const lessons = {
   LinearAlgebra: {
     title: "Linear Algebra",
+    representation: String.raw`
+      \begin{bmatrix} 
+        1 & 2 & 3 \\
+        3 & 4 & -2 \\
+        -1 & 0 & 4 \\
+      \end{bmatrix}
+    `,
     lessons: {
       Vectors: {
         title: "Vectors, what even are they?",
@@ -49,7 +56,6 @@ export const lessons = {
           "https://www.3blue1brown.com/lessons/linear-transformations"
         ],
         prerequisites: [
-          "Vectors",
           "LinearCombinations"
         ],
         Component: LinearTransformations
@@ -162,6 +168,7 @@ export const lessons = {
   },
   Calculus: {
     title: "Calculus",
+    representation: String.raw`\int_a^b f'(x)\,dx = f(b) - f(a)`,
     lessons: {
       EssenceOfCalculus: {
         title: "The Essence of Calculus",
