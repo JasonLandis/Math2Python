@@ -65,7 +65,9 @@ export const lessons = {
         sources: [
           "https://www.3blue1brown.com/lessons/matrix-multiplication"
         ],
-        prerequisites: [],
+        prerequisites: [
+          "LinearTransformations"
+        ],
         Component: MatrixMultiplication
       },
       ThreeDimTransformations: {
@@ -73,7 +75,9 @@ export const lessons = {
         sources: [
           "https://www.3blue1brown.com/lessons/3d-transformations"
         ],
-        prerequisites: [],
+        prerequisites: [
+          "MatrixMultiplication"
+        ],
         Component: ThreeDimTransformations
       },
       TheDeterminant: {
@@ -81,7 +85,9 @@ export const lessons = {
         sources: [
           "https://www.3blue1brown.com/lessons/determinant",
         ],
-        prerequisites: [],
+        prerequisites: [
+          "ThreeDimTransformations"
+        ],
         Component: TheDeterminant
       },
       InverseMatrices: {
@@ -89,7 +95,9 @@ export const lessons = {
         sources: [
           "https://www.3blue1brown.com/lessons/inverse-matrices"
         ],
-        prerequisites: [],
+        prerequisites: [
+          "TheDeterminant"
+        ],
         Component: InverseMatrices
       },
       NonsquareMatrices: {
