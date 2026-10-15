@@ -81,7 +81,7 @@ print(vector * scalar)`
         } editable={true} />
       </div>
       <div>
-        Both vector addition and vector multiplication rules above apply to vectors of 
+        Both vector addition and scalar multiplication rules above apply to vectors of 
         any dimension. Below is an example of the rules being applied to a 3-dimensional vector.
       </div>
       <div>

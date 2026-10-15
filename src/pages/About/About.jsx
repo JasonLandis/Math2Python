@@ -10,7 +10,16 @@ export default function About() {
       <div className='global-title'>
         <InlineMath math="\textit{About}" />
       </div>
-      <div>This is a website where I represent interesting Math subjects using Python. The sources where I get the information from are listed with each lesson.</div>
+      <div>
+        This is a website where I represent math subjects I find interesting using Python. The purpose is
+        to show how these math subjects can be applied in code. Each lesson lists its source, 
+        and I highly recommend reading those directly, since my lessons aren't comprehensive. I will, 
+        however, include key points and definitions along with the code snippets. Thanks for stopping by!
+      </div>
+      <br />
+      <div>
+        - Jason
+      </div>
     </div>
   )
 }
