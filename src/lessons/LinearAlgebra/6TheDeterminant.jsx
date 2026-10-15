@@ -40,6 +40,11 @@ print("")
 print('Determinant calculated using numpy:', np.linalg.det(matrix))`
         } editable={true} />
       </div>
+      <Note>
+        Numpy computes the determinant through a series of floating-point operations (LU decomposition), 
+        and because computers store decimals in binary with limited precision, tiny rounding errors accumulate and turn 
+        an exact 8 into 8.000000000000002. You will see many examples of this when using numpy.
+      </Note>
       <div>
         For any given 2x2 matrix, if either <strong>b</strong> or <strong>c</strong> is 0, one basis vector lies exactly on an axis.
         That fixes a clean base and height for the parallelogram, so its area (the determinant) is just that 
