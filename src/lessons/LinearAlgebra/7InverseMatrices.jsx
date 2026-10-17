@@ -12,8 +12,10 @@ export default function InverseMatrices() {
         the transformation matrix, <strong>v</strong> represents the transformed vector, and <strong>x</strong> represents 
         the original vector.
       </div>
-      <div style={{ textAlign: 'center' }}>
-        <InlineMath math="\boldsymbol{Ax = v}" />
+      <div>
+        <BlockMath math="\boldsymbol{Ax = v}" />
+      </div>
+      <div>
         <BlockMath math={String.raw`
           \boldsymbol{A} = \begin{bmatrix}
             1 & 0 & 0 \\
@@ -31,8 +33,10 @@ export default function InverseMatrices() {
         transformation <strong>A</strong> to <strong>v</strong> in reverse. To do this, we
         multiply <strong>v</strong> with the inverse of <strong>A</strong>.
       </div>
-      <div style={{ textAlign: 'center' }}>
-        <InlineMath math="\boldsymbol{A^{-1}v = x}" />
+      <div>
+        <BlockMath math="\boldsymbol{A^{-1}v = x}" />
+      </div>
+      <div>
         <BlockMath math={String.raw`
           \boldsymbol{A^{-1}} = \begin{bmatrix}
             1 & 0 & 0 \\
@@ -56,13 +60,11 @@ v = np.array([[4],
 inverseA = np.linalg.inv(A)
 
 print("Inverted matrix A:")
-print(inverseA)
-print("")
+print(inverseA, '\\n')
 
 x = inverseA @ v
 print("Vector x:")
-print(x)
-print("")
+print(x, '\\n')
 
 print("Verify vector v:")
 print(A @ x)`
@@ -74,7 +76,7 @@ print(A @ x)`
       </div>
       <div>
         <BlockMath math={String.raw`
-          I_n = \begin{pmatrix} 
+          \boldsymbol{I_n} = \begin{pmatrix} 
             1 & 0 & \cdots & 0 \\ 
             0 & 1 & \cdots & 0 \\ 
             \vdots & \vdots & \ddots & \vdots \\ 
@@ -92,6 +94,7 @@ A = np.array([[1, 0, 0],
 
 inverseA = np.linalg.inv(A)
 
+print("3D identity matrix:")
 print(A @ inverseA)`
         } editable={true} />
       </div>
@@ -108,16 +111,16 @@ A = np.array([[1, 0, 0],
               [0, 1, 0],
               [0, 0, 0]])
 
-print("The determinant of A:", np.linalg.det(A))
-print("")
+print("The determinant of A:", np.linalg.det(A), '\\n')
 
+print("Inverse of A is not possible:")
 print(np.linalg.inv(A))`
         } editable={true} />
       </div>
       <Note>
         Using numpy to represent the inverse of a matrix that has a determinant of 0 just reports nan for
         all entries of the matrix as seen in the code output above. At some point during the calcuation
-        to inverse the matrix, numpy is dividing by the determinant, which in the case above, is 0.
+        to invert the matrix, numpy is dividing by the determinant, which in the case above, is 0.
       </Note>
       <div>
         The <strong>column space</strong> of a matrix is the span of its columns. The column space
@@ -163,8 +166,7 @@ v = np.array([[1],
 x = np.linalg.pinv(A) @ v
 
 print("Approximation for x:")
-print(x)
-print("")
+print(x, '\\n')
 
 print("Reconstruction of v:")
 print(A @ x)`
@@ -227,12 +229,15 @@ x = np.array([[0],
               [0],
               [1]])
 
+print("Output vector:")
 print(A @ x)`
         } editable={true} />
       </div>
       <Note>
         In the example above, there are infinitely many vectors in the null space. More specifically,
-        any vector that follows the pattern <strong>[0, 0, z]</strong> is in the null space.
+        any vector that follows the pattern <strong>[0, 0, z]</strong> is in the null space. Try updating 
+        the z coordinate of vector <strong>x</strong> above and notice how the output vector continues 
+        to be the vector at the origin.
       </Note>
     </>
   )

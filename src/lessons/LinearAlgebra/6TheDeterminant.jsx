@@ -1,4 +1,4 @@
-import { BlockMath, InlineMath } from 'react-katex';
+import { BlockMath } from 'react-katex';
 import Note from '../../components/Note/Note';
 import CodeBlock from '../../components/CodeBlock/CodeBlock'
 import 'katex/dist/katex.min.css';
@@ -35,8 +35,6 @@ matrix = np.array([[3, 1],
 
 determinant = matrix[0][0] * matrix[1][1] - matrix[0][1] * matrix[1][0]
 print('Determinant calculated manually:', determinant)
-print("")
-
 print('Determinant calculated using numpy:', np.linalg.det(matrix))`
         } editable={true} />
       </div>
@@ -66,13 +64,11 @@ print("Example where b is 0 (it's just a * d):", determinant)`
         Below is an algebraic description of how the formula <strong>ad</strong> - <strong>bc</strong> can
         be derived for calculating the determinant of a 2x2 matrix.
        </div>
-      <div style={{textAlign: 'center'}}>
-        <div><InlineMath math="(a + b) * (c + d) - (a*c - b*d - 2*b*c)" /></div>
-        <div><InlineMath math="(ac + ad + bc + bd) - (a*c - b*d - 2*b*c)" /></div>
-        <div><InlineMath math="ac + ad + bc + bd - ac - bd - 2bc" /></div>
-        <div><InlineMath math="ad + bc - 2bc" /></div>
-        <div><InlineMath math="ad - bc" /></div>
-      </div>
+      <div><BlockMath math="(a + b) * (c + d) - (a*c - b*d - 2*b*c)" /></div>
+      <div><BlockMath math="(ac + ad + bc + bd) - (a*c - b*d - 2*b*c)" /></div>
+      <div><BlockMath math="ac + ad + bc + bd - ac - bd - 2bc" /></div>
+      <div><BlockMath math="ad + bc - 2bc" /></div>
+      <div><BlockMath math="ad - bc" /></div>
       <div>
         <CodeBlock code={
 `import numpy as np
@@ -88,8 +84,6 @@ determinant = (
 )
 
 print('Determinant calculated the long way manually:', determinant)
-print("")
-
 print('Determinant calculated using numpy:', np.linalg.det(matrix))`
         } editable={true} />
       </div>
@@ -110,7 +104,7 @@ print('Determinant calculated using numpy:', np.linalg.det(matrix))`
               \end{bmatrix}
             \right)
           \enspace = \enspace
-          \text{a} * \text{det}
+          \text{a} \cdot \text{det}
             \left(
               \begin{bmatrix}
                 e & f \\
@@ -118,7 +112,7 @@ print('Determinant calculated using numpy:', np.linalg.det(matrix))`
               \end{bmatrix}
             \right)
           \enspace - \enspace
-          \text{b} * \text{det}
+          \text{b} \cdot \text{det}
             \left(
               \begin{bmatrix}
                 d & f \\
@@ -126,7 +120,7 @@ print('Determinant calculated using numpy:', np.linalg.det(matrix))`
               \end{bmatrix}
             \right)
           \enspace + \enspace
-          \text{c} * \text{det}
+          \text{c} \cdot \text{det}
             \left(
               \begin{bmatrix}
                 d & e \\
@@ -157,8 +151,6 @@ second_calc = matrix[0][1] * np.linalg.det(second_sub_matrix)
 third_calc = matrix[0][2] * np.linalg.det(third_sub_matrix)
 
 print('Determinant calculated manually:', first_calc - second_calc + third_calc)
-print("")
-
 print('Determinant calculated using numpy:', np.linalg.det(matrix))`
         } editable={true} />
       </div>
@@ -187,7 +179,7 @@ print('Determinant calculated using numpy:', np.linalg.det(matrix))`
                 c & d
               \end{bmatrix}
             \right)
-          \enspace * \enspace
+          \enspace \cdot \enspace
           \text{det}
             \left(
               \begin{bmatrix}
@@ -208,15 +200,10 @@ m2 = np.array([[4, -1],
                [0, 3]])
 
 print('m1 @ m2:')
-print(m1 @ m2)
-print("")
+print(m1 @ m2, '\\n')
 
-print('det(m1 * m2):')
-print(np.linalg.det(m1 @ m2))
-print("")
-
-print('det(m1) * det(m2):')
-print(np.linalg.det(m1) * np.linalg.det(m2))`
+print('det(m1 * m2):', np.linalg.det(m1 @ m2))
+print('det(m1) * det(m2):', np.linalg.det(m1) * np.linalg.det(m2))`
         } editable={true} />
       </div>
     </>

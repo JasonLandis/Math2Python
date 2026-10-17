@@ -53,6 +53,7 @@ vector1 = np.array([[1],
 vector2 = np.array([[3], 
                     [-1]])
 
+print("Vector addition:")
 print(vector1 + vector2)`
         } editable={true} />
       </div>
@@ -77,6 +78,7 @@ vector = np.array([[1],
 
 scalar = 3
 
+print("Vector scalar multiplication:")
 print(vector * scalar)`
         } editable={true} />
       </div>
@@ -109,6 +111,7 @@ vector2 = np.array([[3],
 
 scalar2 = -2
 
+print("Result:")
 print(vector1 * scalar1 + vector2 * scalar2)`
         } editable={true} />
       </div>
