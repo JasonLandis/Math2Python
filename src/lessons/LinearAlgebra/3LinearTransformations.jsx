@@ -12,11 +12,11 @@ export default function LinearTransformations() {
       </div>
       <div>
         <BlockMath math={String.raw`
-          \boldsymbol{\hat i} = \begin{bmatrix} 1 \\ 0 \end{bmatrix}
+          \boldsymbol{i} = \begin{bmatrix} 1 \\ 0 \end{bmatrix}
           \quad\quad
-          \boldsymbol{\hat j} = \begin{bmatrix} 0 \\ 1 \end{bmatrix}
+          \boldsymbol{j} = \begin{bmatrix} 0 \\ 1 \end{bmatrix}
           \quad\quad\quad
-          \boldsymbol{\hat v} = \begin{bmatrix} 2 \\ 3 \end{bmatrix}
+          \boldsymbol{v} = \begin{bmatrix} 2 \\ 3 \end{bmatrix}
         `} />
       </div>
       <div>
@@ -25,9 +25,9 @@ export default function LinearTransformations() {
       </div>
       <div>
         <BlockMath math={String.raw`
-          \boldsymbol{\hat i} = \begin{bmatrix} 1 \\ 3 \end{bmatrix}
+          \boldsymbol{i} = \begin{bmatrix} 1 \\ 3 \end{bmatrix}
           \quad\quad
-          \boldsymbol{\hat j} = \begin{bmatrix} -2 \\ 2 \end{bmatrix}
+          \boldsymbol{j} = \begin{bmatrix} -2 \\ 2 \end{bmatrix}
         `} />
       </div>
       <div>
@@ -52,12 +52,10 @@ j_calc = v[1][0] * transformed_j
 transformed_vector = i_calc + j_calc
 
 print('Transformed basis vector i scaled by the x-coordinate of vector v:')
-print(i_calc)
-print('')
+print(i_calc, '\\n')
 
 print('Transformed basis vector j scaled by the y-coordinate of vector v:')
-print(j_calc)
-print('')
+print(j_calc, '\\n')
 
 print('Transformed original vector (sum of vectors above):')
 print(transformed_vector)`
@@ -70,7 +68,7 @@ print(transformed_vector)`
       </div>
       <div>
         <BlockMath math={String.raw`
-          \boldsymbol{\hat v} = \begin{bmatrix} 2 \\ 3 \end{bmatrix}
+          \boldsymbol{v} = \begin{bmatrix} 2 \\ 3 \end{bmatrix}
           \quad\quad
           \text{transformation matrix} =
           \begin{bmatrix}
@@ -104,6 +102,7 @@ v = np.array([[2],
 transformation_matrix = np.array([[1, -2], 
                                   [3, 2]])
 
+print("Landing spot of original vector v:")
 print(transformation_matrix @ v)`
         } editable={true} />
       </div>

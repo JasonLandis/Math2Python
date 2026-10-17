@@ -10,9 +10,9 @@ export default function LinearCombinations() {
       </div>
       <div>
         <BlockMath math={String.raw`
-          \boldsymbol{\hat i} = \begin{bmatrix} 1 \\ 0 \end{bmatrix}
+          \boldsymbol{i} = \begin{bmatrix} 1 \\ 0 \end{bmatrix}
           \quad\quad
-          \boldsymbol{\hat j} = \begin{bmatrix} 0 \\ 1 \end{bmatrix}
+          \boldsymbol{j} = \begin{bmatrix} 0 \\ 1 \end{bmatrix}
         `} />
       </div>
       <div>
@@ -42,6 +42,7 @@ scaled_i = 3 * i # Scalar of 3 applied to basis vector i
 scaled_j = 4 * j # Scalar of 4 applied to basis vector j
 
 linear_combination = scaled_i + scaled_j
+print("Linear combination:")
 print(linear_combination)`
         } editable={true} />
       </div>
@@ -61,9 +62,9 @@ print(linear_combination)`
       </div>
       <div>
         <BlockMath math={String.raw`
-          \boldsymbol{\hat i} = \begin{bmatrix} 1 \\ 2 \end{bmatrix}
+          \boldsymbol{i} = \begin{bmatrix} 1 \\ 2 \end{bmatrix}
           \quad\quad
-          \boldsymbol{\hat j} = \begin{bmatrix} 2 \\ 4 \end{bmatrix}
+          \boldsymbol{j} = \begin{bmatrix} 2 \\ 4 \end{bmatrix}
           \quad\quad\quad\quad
           2 \begin{bmatrix} 1 \\ 2 \end{bmatrix}
           \enspace = \enspace
@@ -91,6 +92,7 @@ scaled_i = -2 * i
 scaled_j = 5 * j
 
 linear_combination = scaled_i + scaled_j
+print("Linear combination:")
 print(linear_combination)`
         } editable={true} />
       </div>
@@ -101,11 +103,11 @@ print(linear_combination)`
       </div>
       <div>
         <BlockMath math={String.raw`
-          \boldsymbol{\hat i} = \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}
+          \boldsymbol{i} = \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}
           \quad\quad
-          \boldsymbol{\hat j} = \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}
+          \boldsymbol{j} = \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}
           \quad\quad
-          \boldsymbol{\hat k} = \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}
+          \boldsymbol{k} = \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}
         `} />
       </div>
       <div>
@@ -113,11 +115,11 @@ print(linear_combination)`
       </div>
       <div>
         <BlockMath math={String.raw`
-          \boldsymbol{\hat i} = \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}
+          \boldsymbol{i} = \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}
           \quad\quad
-          \boldsymbol{\hat j} = \begin{bmatrix} 2 \\ -1 \\ 4 \end{bmatrix}
+          \boldsymbol{j} = \begin{bmatrix} 2 \\ -1 \\ 4 \end{bmatrix}
           \quad\quad
-          \boldsymbol{\hat k} = \begin{bmatrix} 4 \\ 3 \\ 10 \end{bmatrix}
+          \boldsymbol{k} = \begin{bmatrix} 4 \\ 3 \\ 10 \end{bmatrix}
         `} />
       </div>
       <div>
@@ -149,6 +151,7 @@ k = np.array([[4],
               [3],
               [10]])
 
+print("Computing vector k as a linear combination of i and j:")
 print((2 * i) + j)`
         } editable={true} />
       </div>

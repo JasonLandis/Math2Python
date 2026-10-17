@@ -30,7 +30,7 @@ export default function MatrixMultiplication() {
       </div>
       <div>
         <BlockMath math={String.raw`
-          \boldsymbol{\hat v} = \begin{bmatrix} 1 \\ 3 \end{bmatrix}
+          \boldsymbol{v} = \begin{bmatrix} 1 \\ 3 \end{bmatrix}
         `} />
       </div>
       <div>
@@ -72,8 +72,7 @@ m2 = np.array([[4, -1],
 
 m1_vector = m1 @ v
 print('Vector v after the first transformation:')
-print(m1_vector)
-print("")
+print(m1_vector, '\\n')
 
 m2_vector = m2 @ m1_vector
 print('Vector v after the second transformation:')
@@ -122,8 +121,7 @@ m2 = np.array([[4, -1],
 
 comp_matrix = m2 @ m1
 print('Composition matrix:')
-print(comp_matrix)
-print("")
+print(comp_matrix, '\\n')
 
 final_vector = comp_matrix @ v
 print('Transformed vector v:')
@@ -150,8 +148,7 @@ m2 = np.array([[2, -4],
                [-1, 2]])
 
 print('m1 @ m2:')
-print(m1 @ m2)
-print("")
+print(m1 @ m2, '\\n')
 
 print('m2 @ m1:')
 print(m2 @ m1)`
@@ -176,8 +173,7 @@ C = np.array([[0, 3],
               [4, 2]])
 
 print('A(BC):')
-print(A @ (B @ C))
-print("")
+print(A @ (B @ C), '\\n')
 
 print('(AB)C:')
 print((A @ B) @ C)`

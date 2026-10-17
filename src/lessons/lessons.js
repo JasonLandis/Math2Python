@@ -105,7 +105,9 @@ export const lessons = {
         sources: [
           "https://www.3blue1brown.com/lessons/nonsquare-matrices"
         ],
-        prerequisites: [],
+        prerequisites: [
+          "InverseMatrices"
+        ],
         Component: NonsquareMatrices
       },
       DotProducts: {
@@ -113,7 +115,9 @@ export const lessons = {
         sources: [
           "https://www.3blue1brown.com/lessons/dot-products"
         ],
-        prerequisites: [],
+        prerequisites: [
+          "NonsquareMatrices"
+        ],
         Component: DotProducts
       },
       CrossProducts: {
@@ -121,7 +125,9 @@ export const lessons = {
         sources: [
           "https://www.3blue1brown.com/lessons/cross-products"
         ],
-        prerequisites: [],
+        prerequisites: [
+          "DotProducts"
+        ],
         Component: CrossProducts
       },
       CrossProductsExtended: {
@@ -129,7 +135,9 @@ export const lessons = {
         sources: [
           "https://www.3blue1brown.com/lessons/cross-products-extended"
         ],
-        prerequisites: [],
+        prerequisites: [
+          "CrossProducts"
+        ],
         Component: CrossProductsExtended
       },
       CramersRule: {
@@ -137,7 +145,9 @@ export const lessons = {
         sources: [
           "https://www.3blue1brown.com/lessons/cramers-rule"
         ],
-        prerequisites: [],
+        prerequisites: [
+          "CrossProductsExtended"
+        ],
         Component: CramersRule
       },
       ChangeOfBasis: {
@@ -145,7 +155,9 @@ export const lessons = {
         sources: [
           "https://www.3blue1brown.com/lessons/change-of-basis"
         ],
-        prerequisites: [],
+        prerequisites: [
+          "CramersRule"
+        ],
         Component: ChangeOfBasis
       },
       Eigenvectors: {
@@ -153,7 +165,9 @@ export const lessons = {
         sources: [
           "https://www.3blue1brown.com/lessons/eigenvalues"
         ],
-        prerequisites: [],
+        prerequisites: [
+          "ChangeOfBasis"
+        ],
         Component: Eigenvectors
       },
       QuickEigenCompute: {
@@ -161,7 +175,9 @@ export const lessons = {
         sources: [
           "https://www.3blue1brown.com/lessons/quick-eigen"
         ],
-        prerequisites: [],
+        prerequisites: [
+          "Eigenvectors"
+        ],
         Component: QuickEigenCompute
       },
       AbstractVectorSpaces: {
@@ -169,7 +185,9 @@ export const lessons = {
         sources: [
           "https://www.3blue1brown.com/lessons/abstract-vector-spaces"
         ],
-        prerequisites: [],
+        prerequisites: [
+          "QuickEigenCompute"
+        ],
         Component: AbstractVectorSpaces
       }
     }
