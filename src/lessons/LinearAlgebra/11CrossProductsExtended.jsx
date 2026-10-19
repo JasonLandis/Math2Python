@@ -92,54 +92,72 @@ print(np.cross(v, w))`
         } editable={true} />
       </div>
       <div>
-        You can plug in any 3D vector u into the first column of a matrix with the 2nd and 3rd columns of 
-        that matrix being vectors <strong>v</strong> and <strong>w</strong> respectively, and the 
-        determinant of that matrix will be equal to the dot product of <strong>u</strong> and <strong>p</strong> where
-        <strong>p</strong> is the cross product of vectors <strong>v</strong> and <strong>w</strong>. Another 
-        example of Duality.
+        For any 3D vectors <strong>u</strong>, <strong>v</strong>, and <strong>w</strong>, the 
+        determinant of the matrix with columns <strong>u</strong>, <strong>v</strong>, <strong>w</strong> equals 
+        the dot product of <strong>u</strong> with the cross product of <strong>v</strong> and <strong>w</strong>.
+        This is another example of duality. In the example below we are labeling the cross product 
+        of <strong>v</strong> and <strong>w</strong> as vector <strong>p</strong>.
+      </div>
+      <div>
+        <BlockMath math={String.raw`
+          \boldsymbol{u} = \begin{bmatrix} 1 \\ -2 \\ 3 \end{bmatrix}
+          \quad\quad
+          \boldsymbol{v} = \begin{bmatrix} -2 \\ 3 \\ 4 \end{bmatrix}
+          \quad\quad
+          \boldsymbol{w} = \begin{bmatrix} -1 \\ 2 \\ 1 \end{bmatrix}
+        `} />
+      </div>
+      <div>
+        <BlockMath math={String.raw`
+          \boldsymbol{v}\times\boldsymbol{w} 
+          \enspace = \enspace
+          \begin{bmatrix} -2 \\ 3 \\ 4 \end{bmatrix}
+          \times
+          \begin{bmatrix} -1 \\ 2 \\ 1 \end{bmatrix}
+          \enspace = \enspace
+          \begin{bmatrix} -5 \\ -2 \\ -1 \end{bmatrix}
+          \enspace = \enspace
+          \boldsymbol{p}
+        `} />
+      </div>
+      <div>
+        <BlockMath math={String.raw`
+          \text{det}\left(
+            \begin{bmatrix} 
+              1 & -2 & -1 \\ 
+              -2 & 3 & 2 \\
+              3 & 4 & 1 
+            \end{bmatrix}
+          \right)
+          \enspace = \enspace
+          \boldsymbol{u} \cdot\ \boldsymbol{p}
+          \enspace = \enspace
+          \begin{bmatrix} 1 \\ -2 \\ 3 \end{bmatrix}
+          \cdot
+          \begin{bmatrix} -5 \\ -2 \\ -1 \end{bmatrix}
+          \enspace = \enspace -4
+        `} />
       </div>
       <div>
         <CodeBlock code={
 `import numpy as np
 
-v = [4, -1, 3]
-w = [-2, 2, 1]
+v = [-2, 3, 4]
+w = [-1, 2, 1]
 
-u = np.array([2,
-              4,
-              -1])
+u = np.array([1,
+              -2,
+              3])
 
 matrix = np.array([u, v, w]).T
 
-print("Calculating the determinant of a matrix where the columns are u, v, and w respectively:")
-print(np.linalg.det(matrix))
-print("")
-
 p = np.linalg.cross(v, w)
+print("Cross product of v and w:")
+print(p, '\\n')
 
-print("Calculating the dot product of vectors u and p (p is the cross product of v and w):")
-print(np.dot(u, p))`
+print("Determinant of the matrix with columns u, v, w:", np.linalg.det(matrix))
+print("Dot product of vectors u and p:", np.dot(u, p))`
         } editable={true} />
-      </div>
-      <div>
-        The cross product of two vectors is another vector that has a magnitude equal 
-        to the area of those two vectors and a direction perpendicular to those two vectors 
-        that obeys the right-hand rule.
-      </div>
-      <div>
-        The dot product of two vectors is a scalar (number) equal to the magnitude of one vector
-        multiplied by the magnitude of the other vector's projection onto it.
-      </div>
-      <div>
-        The determinant of a 3x3 matrix is a scalar (number) equal to the volume of the parallelepiped
-        formed by its three column vectors with a sign that's positive if those vectors follow a 
-        right-handed orientation, and negative if left-handed.
-      </div>
-      <div>
-        Volume of a parallelepiped formed by u, v, w: 1. p = v x w (cross product -- a vector, 
-        perpendicular to v and w,with magnitude = area of the base parallelogram). 2. volume = u · p 
-        (dot product -- projects u onto p's direction, multiplied by p's magnitude = base x height). 
-        This whole calculation is equivalent to det([u, v, w]).
       </div>
     </>
   )
