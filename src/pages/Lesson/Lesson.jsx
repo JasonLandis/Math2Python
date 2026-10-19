@@ -11,7 +11,7 @@ export default function Lesson({ subject, lesson }) {
 
   return (
     <div className='global-container'>
-      <title>{lessons[subject].lessons[lesson].title + ' | Math2Python'}</title>
+      <title>{lessons[subject].lessons[lesson].title + ' | Math 2 Python'}</title>
       <Back destination={`/${subject}`} text={lessons[subject].title} />
       <div className='global-title'>
         <InlineMath math={String.raw`\textit{${lessons[subject].lessons[lesson].title}}`} />

@@ -11,107 +11,152 @@ export default function CramersRule() {
         by applying <strong>Cramer's rule</strong>.
       </div>
       <div>
-        To solve for the X coordinate of the original vector, you can substitue the transformed 
+        To solve for the x-coordinate of the original vector, you can substitue the transformed 
         vector into the first column of the transformation matrix, then solve for the determinant 
         of that matrix, and divide it by the determinant of the base transformation matrix. 
         This can be done repeatedly for all coordinates.
       </div>
       <div>
+        <BlockMath math={String.raw`
+          \boldsymbol{i} = \begin{bmatrix} 2 \\ 1 \end{bmatrix}
+          \quad\quad
+          \boldsymbol{j} = \begin{bmatrix} -1 \\ 3 \end{bmatrix}
+          \quad\quad
+          \boldsymbol{A} = 
+          \begin{bmatrix} 
+            2 & -1 \\ 
+            1 & 3 
+          \end{bmatrix}
+          \quad\quad
+          \boldsymbol{v} = \begin{bmatrix} -6 \\ 4 \end{bmatrix}
+        `} />
+      </div>
+      <div>
+        <BlockMath math={String.raw`
+          \boldsymbol{x} 
+          \enspace = \enspace
+          \frac{
+            \text{det}
+            \left(
+              \begin{bmatrix} 
+                -6 & -1 \\ 
+                4 & 3 
+              \end{bmatrix}
+            \right)
+          }{\text{det}
+            \left(
+              \begin{bmatrix} 
+                2 & -1 \\ 
+                1 & 3 
+              \end{bmatrix}
+            \right)
+          }
+          \enspace = \enspace
+          \frac{-14}{7}
+          \enspace = \enspace
+          -2
+        `} />
+      </div>
+      <div>
+        <BlockMath math={String.raw`
+          \boldsymbol{y} 
+          \enspace = \enspace
+          \frac{
+            \text{det}
+            \left(
+              \begin{bmatrix} 
+                2 & -6 \\ 
+                1 & 4 
+              \end{bmatrix}
+            \right)
+          }{\text{det}
+            \left(
+              \begin{bmatrix} 
+                2 & -1 \\ 
+                1 & 3 
+              \end{bmatrix}
+            \right)
+          }
+          \enspace = \enspace
+          \frac{14}{7}
+          \enspace = \enspace
+          2
+        `} />
+      </div>
+      <div>
+        <BlockMath math={String.raw`
+          \text{original vector} 
+          \enspace = \enspace
+          \begin{bmatrix} \boldsymbol{x} \\ \boldsymbol{y} \end{bmatrix} 
+          \enspace = \enspace 
+          \begin{bmatrix} -2 \\ 2 \end{bmatrix}
+        `} />
+      </div>
+      <div>
         <CodeBlock code={
 `import numpy as np
 
-i = np.array([1, 0])
+i = np.array([2, 
+              1]) 
 
-j = np.array([0, 1])
+j = np.array([-1, 
+              3])
 
 A = np.array([i, j]).T
-# [1, 0]
-# [0, 1]
 
-outV = np.array([-6, 4])
+v = np.array([-6, 4])
 
-detA = np.linalg.det(A)
+det_A = np.linalg.det(A)
+print("Determinant of A:", det_A, '\\n')
 
-print("Determinant of A:")
-print(detA)
-print("")
+x = np.linalg.det(np.array([v, j]).T) / det_A
+print("x-coordinate of original vector:", x)
 
-x = np.linalg.det(np.array([outV, j]).T) / detA
-# [-6, 0]
-# [4, 1]
+y = np.linalg.det(np.array([i, v]).T) / det_A
+print("y-coordinate of original vector:", y, '\\n')
 
-print("x coordinate of input v:")
-print(x)
-print("")
+original_vector = np.array([x, y])
+print("Original vector:")
+print(original_vector, '\\n')
 
-y = np.linalg.det(np.array([i, outV]).T) / detA
-# [1, -6]
-# [0, 4]
-
-print("y coordinate of input v:")
-print(y)
-print("")
-
-inV = np.array([x, y])
-
-print("Input vector v:")
-print(inV)
-print("")
-
-print("Verifying input vector is correct:")
-print(f"{A @ inV} == {outV}")`
+print("Verifying the original vector is correct:")
+print(f"{A @ original_vector} == {v}")`
         } editable={true} />
       </div>
       <div>
-        Below is an example of this in 3 dimensions.
+        Below is an example of Cramer's Rule being applied in 3 dimensions.
       </div>
       <div>
         <CodeBlock code={
 `import numpy as np
 
-i = np.array([1, 0, 0])
+i = np.array([1, 0, 3])
 j = np.array([0, 1, 0])
 k = np.array([0, 5, 6])
 
 A = np.array([i, j, k]).T
-# [1, 0, 0]
-# [0, 1, 5]
-# [0, 0, 6]
 
-outV = np.array([-1, 5, -4])
+v = np.array([-1, 5, -4])
 
-detA = np.linalg.det(A)
+det_A = np.linalg.det(A)
 
-print("Determinant of A:")
-print(detA)
-print("")
+print("Determinant of A:", det_A, '\\n')
 
-x = np.linalg.det(np.array([outV, j, k]).T) / detA
+x = np.linalg.det(np.array([v, j, k]).T) / det_A
+print("x-coordinate of original vector:", x)
 
-print("x coordinate of input v:")
-print(x)
-print("")
+y = np.linalg.det(np.array([i, v, k]).T) / det_A
+print("y-coordinate of original vector:", y)
 
-y = np.linalg.det(np.array([i, outV, k]).T) / detA
+z = np.linalg.det(np.array([i, j, v]).T) / det_A
+print("z-coordinate of original vector:", z, '\\n')
 
-print("y coordinate of input v:")
-print(y)
-print("")
+original_vector = np.array([x, y, z])
+print("Original vector:")
+print(original_vector, '\\n')
 
-z = np.linalg.det(np.array([i, j, outV]).T) / detA
-
-print("z coordinate of input v:")
-print(z)
-print("")
-
-inV = np.array([x, y, z])
-
-print("Input vector v:")
-print(inV)
-print("")
-
-print("Verifying input vector is correct:")
-print(f"{A @ inV} == {outV}")`
+print("Verifying the original vector is correct:")
+print(f"{A @ original_vector} == {v}")`
         } editable={true} />
       </div>
     </>

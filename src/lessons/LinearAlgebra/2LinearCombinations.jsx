@@ -16,7 +16,7 @@ export default function LinearCombinations() {
         `} />
       </div>
       <div>
-        If you scale each of these basis vectors by some scalar and then add the two resultant vectors together,
+        If you scale each of these basis vectors by some scalar and then add the two resulting vectors together,
         you get a new vector that is a <strong>linear combination</strong> of those basis vectors.
       </div>
       <div>
