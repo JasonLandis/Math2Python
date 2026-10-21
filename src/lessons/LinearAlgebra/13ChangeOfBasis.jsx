@@ -1,86 +1,181 @@
 import { BlockMath } from 'react-katex';
-import CodeBlock from '../../components/CodeBlock/CodeBlock'
+import CodeBlock from '../../components/CodeBlock/CodeBlock';
+import Note from '../../components/Note/Note';
 import 'katex/dist/katex.min.css';
 
 export default function ChangeOfBasis() {
   return (
     <>
       <div>
-        Let's say we have two systems each with different basis vectors.
+        Let's say we have two coordinate systems. System 1 uses the standard basis vectors, 
+        while System 2 uses a different set of basis vectors, described in System 1's coordinates. 
+        Stacking System 2's basis vectors as columns of a matrix gives 
+        the <strong>change of basis</strong> matrix. <strong>A</strong> represents this matrix 
+        below. Its purpose is to translate a vector's coordinates 
+        in System 2 into the same vector's coordinates in System 1.
       </div>
       <div>
-        This is the change of basis matrix. It represents the basis vectors in system 2 in system 1's coordinates.
-        It also represents a linear transformation that moves space starting at system 1's basis vectors to 
-        system 2's basis vectors. In other words, it translates coordinates given in system 2's language 
-        into system 1's language.
+        <BlockMath math={String.raw`
+          \boldsymbol{i_1} = \begin{bmatrix} 1 \\ 0 \end{bmatrix}
+          \quad
+          \boldsymbol{j_1} = \begin{bmatrix} 0 \\ 1 \end{bmatrix}
+          \quad\quad\quad
+          \boldsymbol{i_2} = \begin{bmatrix} 2 \\ 1 \end{bmatrix}
+          \quad
+          \boldsymbol{j_2} = \begin{bmatrix} -1 \\ 3 \end{bmatrix}
+        `} />
       </div>
       <div>
-        Think of both systems having basis vectors of [1, 0] and [0, 1] in their own languages. Therefore, 
-        when the change of basis matrix is applied to a vector in system 2 written in system 2's coordinates,
-        the transformation is still starting from system 2's standard basis vectors and is being converted
-        into system 1's description of those basis vectors from system 2. Therefore, the vector is being converted
-        from system 2's coordinates to system 1's coordinates.
+        <BlockMath math={String.raw`
+          \boldsymbol{A} = \begin{bmatrix} 
+            2 & -1 \\ 
+            1 & 3 
+          \end{bmatrix}
+        `} />
+      </div>
+      <Note>
+        Note that in System 2's own language, its basis vectors are simply the standard basis vectors. 
+        They only appear skewed above because they are written in System 1's language.
+      </Note>
+      <div>
+        Now let's say we have some vector written in System 2's language.
+      </div>
+      <div>
+        <BlockMath math={String.raw`
+          \boldsymbol{v_2} = \begin{bmatrix} -2 \\ 4 \end{bmatrix}
+        `} />
+      </div>
+      <div>
+        We can find this vector's coordinates in System 1's language by applying the change 
+        of basis matrix to it as a linear transformation.
+      </div>
+      <div>
+        <BlockMath math={String.raw`
+          \begin{bmatrix} 
+            2 & -1 \\ 
+            1 & 3 
+          \end{bmatrix}
+          \begin{bmatrix} -2 \\ 4 \end{bmatrix}
+          \enspace = \enspace
+          \begin{bmatrix} -8 \\ 10 \end{bmatrix}
+        `} />
       </div>
       <div>
         <CodeBlock code={
 `import numpy as np
 
-# These are the basis vectors in system 1 written in system 1's coordinates
-i1 = np.array([1, 0])
-j1 = np.array([0, 1])
-
-# These are the basis vectors in system 2 written in system 1's coordinates
 i2 = np.array([2, 1])
 j2 = np.array([-1, 3])
 
 A = np.array([i2, j2]).T
-# [2, -1]
-# [1, 3]
 
-# Some vector in system 1 written in system 1's coordinates
-v1 = np.array([2, 3])
-
-# Some vector in system 2 written in system 2's coordinates
 v2 = np.array([-2, 4])
 
-print("Some vector in system 2 written in system 2's coordinates:", v2)
-print("That same vector written in system 1's coordinates:", A @ v2)
-print("")
-
-# Inverting the change of basis matrix is essentially reversing the linear transformation.
-inv = np.linalg.inv(A)
-
-print("Some vector in system 1 written system 1's coordinates:", v1)
-print("That same vector written in the system 2's coordinates:", inv @ v1)`
+print("Vector v2 written in System 1's language:")
+print(A @ v2)`
         } editable={true} />
+      </div>
+      <div>
+        Now suppose we have a vector written in System 1's language. We can find its 
+        coordinates in System 2's language by applying the inverse of the change of basis matrix to it.
+        In the example below, we are reusing the result of the calculation above since
+        we know it's written in System 1's language.
+      </div>
+      <div>
+        <BlockMath math={String.raw`
+          \begin{bmatrix} 
+            2 & -1 \\ 
+            1 & 3 
+          \end{bmatrix}^{-1}
+          \begin{bmatrix} -8 \\ 10 \end{bmatrix}
+          \enspace = \enspace
+          \begin{bmatrix} -2 \\ 4 \end{bmatrix}
+        `} />
       </div>
       <div>
         <CodeBlock code={
 `import numpy as np
 
-# Some vector in system 2 written in system 2's coordinates
-v2 = np.array([-1, 3])
-
-# These are the basis vectors in system 2 written in system 1's coordinates
 i2 = np.array([2, 1])
 j2 = np.array([-1, 3])
 
-# Change of basis matrix
 A = np.array([i2, j2]).T
 
-# Transformation matrix in the coordinates of system 1
-T = np.array([[0, -1], 
-              [1, 0]])
+v1 = np.array([-8, 10])
 
-print("Finding out where a vector in system 2 lands in the coordinates of system 2 when we are only given a transformation matrix in the coordinates of system 1:")
-print("Starting vector in system 2 written in the coordinates of system 2:", v2)
-print("Landing vector in system 2 written in the coordinates of system 2:", np.linalg.inv(A) @ T @ A @ v2)
-
-# A @ v2 converts the vector to the coordinates of system 1
-# T @ (above) applies the linear transformation
-# A-1 (above) converts the vector back to the coordinates of system 2`
+print("Vector v1 written in System 2's language:")
+print(np.linalg.inv(A) @ v1)`
         } editable={true} />
       </div>
+      <Note>
+        Notice how we successfully converted a vector from System 2 to System 1, then
+        back to System 2 in the two code snippets above.
+      </Note>
+      <div>
+        Now suppose we have a vector written in System 2's language, and we want to know where 
+        it lands after a linear transformation. We only have that transformation's matrix written 
+        in System 1's language (here, a 90° rotation), along with the change of basis matrix. 
+        So we first convert the vector to System 1's language, apply the transformation, then 
+        convert the result back to System 2's language.
+      </div>
+      <div>
+        <BlockMath math={String.raw`
+          \boldsymbol{v_2} = \begin{bmatrix} 1 \\ 2 \end{bmatrix}
+          \quad\quad
+          \boldsymbol{A} =
+          \begin{bmatrix} 
+            2 & -1 \\ 
+            1 & 3 
+          \end{bmatrix}
+          \quad\quad
+          \boldsymbol{T_1} =
+          \begin{bmatrix} 
+            0 & -1 \\ 
+            1 & 0 
+          \end{bmatrix}
+        `} />
+      </div>
+      <div>
+        <BlockMath math={String.raw`
+          \begin{bmatrix} 
+            2 & -1 \\ 
+            1 & 3 
+          \end{bmatrix}^{-1}
+          \begin{bmatrix} 
+            0 & -1 \\ 
+            1 & 0 
+          \end{bmatrix}
+          \begin{bmatrix} 
+            2 & -1 \\ 
+            1 & 3 
+          \end{bmatrix}
+          \begin{bmatrix} 1 \\ 2 \end{bmatrix}
+          \enspace = \enspace
+          \begin{bmatrix} -3 \\ 1 \end{bmatrix}
+        `} />
+      </div>
+      <div>
+        <CodeBlock code={
+`import numpy as np
+
+v2 = np.array([1, 2])
+
+i2 = np.array([2, 1])
+j2 = np.array([-1, 3])
+
+A = np.array([i2, j2]).T
+
+T1 = np.array([[0, -1], 
+              [1, 0]])
+
+print("Vector v2 following the transformation, in System 2's language:")
+print(np.linalg.inv(A) @ T1 @ A @ v2)`
+        } editable={true} />
+      </div>
+      <Note>
+        You can think of the composition matrix <strong>A⁻¹T₁A</strong> as linear
+        transformation <strong>T₁</strong>, but expressed in System 2's language.
+      </Note>
     </>
   )
 }

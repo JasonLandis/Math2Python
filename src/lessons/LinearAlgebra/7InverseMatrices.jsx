@@ -40,8 +40,8 @@ export default function InverseMatrices() {
         <BlockMath math={String.raw`
           \boldsymbol{A^{-1}} = \begin{bmatrix}
             1 & 0 & 0 \\
-            1 & 1 & 0 \\
-            1 & 1 & 1
+            -1 & 1 & 0 \\
+            0 & -1 & 1
           \end{bmatrix}
         `} />
       </div>
