@@ -32,7 +32,7 @@ v2 = np.array([1,
               4])
 
 print("Manual dot product calculation:", v1[0] * v2[0] + v1[1] * v2[1] + v1[2] * v2[2])
-print("Calculating the dot product using numpy:", np.dot(v1, v2))`
+print("Calculating the dot product using NumPy:", np.dot(v1, v2))`
         } editable={true} />
       </div>
       <Note>
@@ -106,7 +106,7 @@ print("Magnitude of v:", v_mag)
 print("Magnitude of w:", w_mag)
 print("Magnitude of projected v (onto w):", proj_v_mag)
 print("Magnitude of projected w (onto v):", proj_w_mag)
-print("Dot product calculated using numpy:", dot)
+print("Dot product calculated using NumPy:", dot)
 print("Dot product calculated by projecting w onto v:", v_mag * proj_w_mag)
 print("Dot product calculated by projecting v onto w:", w_mag * proj_v_mag)`
         } editable={true} />

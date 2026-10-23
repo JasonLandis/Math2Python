@@ -51,7 +51,7 @@ print(cross, '\\n')
 
 print("Calculating the magnitude of the cross product:")
 print("Manually:", math.sqrt(cross[0]**2 + cross[1]**2 + cross[2]**2))
-print("Using numpy:", np.linalg.norm(cross))`
+print("Using NumPy:", np.linalg.norm(cross))`
         } editable={true} />
       </div>
       <Note>

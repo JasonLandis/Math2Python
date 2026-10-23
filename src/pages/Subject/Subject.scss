@@ -1,5 +1,7 @@
-.subject-links {
-    width: 100%;
+.subject-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 30px;
 
     a {
         all: unset;
@@ -13,10 +15,11 @@
         background-color: var(--global-secondary-color);
         text-decoration: none;
         font-size: 16px;
-        margin-bottom: 20px;
         display: flex;
         flex-direction: column;
         box-shadow: var(--global-box-shadow);
+        text-align: center;
+        height: 150px;
 
         &:hover {
             background-color: var(--global-button-hover-color);
@@ -24,6 +27,14 @@
 
         &:active {
             background-color: var(--global-button-active-color);
+        }
+
+        .subject-lesson-title {
+            padding-inline: 10px;
+        }
+
+        .katex {
+            font-size: 0.9em;
         }
     }
 }

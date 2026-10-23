@@ -25,7 +25,7 @@ vector = np.array([[1],
       </div>
       <div>
         <Note>
-          Using numpy to represent vectors in Python beats using standard lists because numpy can
+          Using NumPy to represent vectors in Python beats using standard lists because NumPy can
           efficiently handle calculations done on vectors.
         </Note>
       </div>
