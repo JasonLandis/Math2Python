@@ -1,9 +1,9 @@
 :root {
   --global-font-color: #494949;
   --global-primary-color: #ffffff;
-  --global-secondary-color: #f5f5f5;
-  --global-button-hover-color: #f1f1f1;
-  --global-button-active-color: #eeeeee;
+  --global-secondary-color: #f1f1f1;
+  --global-button-hover-color: #ececec;
+  --global-button-active-color: #e4e4e4;
   --global-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   --global-note-color: #eefaff;
   --global-prerequisites-color: #f3ffef;
@@ -30,7 +30,7 @@ body {
 .global-container {
     margin-top: 30px;
     width: 100%;
-    max-width: 800px;
+    max-width: 1000px;
 }
 
 .global-title {

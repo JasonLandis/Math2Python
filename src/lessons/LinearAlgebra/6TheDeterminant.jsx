@@ -35,13 +35,13 @@ matrix = np.array([[3, 1],
 
 determinant = matrix[0][0] * matrix[1][1] - matrix[0][1] * matrix[1][0]
 print('Determinant calculated manually:', determinant)
-print('Determinant calculated using numpy:', np.linalg.det(matrix))`
+print('Determinant calculated using NumPy:', np.linalg.det(matrix))`
         } editable={true} />
       </div>
       <Note>
-        Numpy computes the determinant through a series of floating-point operations (LU decomposition), 
+        NumPy computes the determinant through a series of floating-point operations (LU decomposition), 
         and because computers store decimals in binary with limited precision, tiny rounding errors accumulate and turn 
-        an exact 8 into 8.000000000000002. You will see many examples of this when using numpy.
+        an exact 8 into 8.000000000000002. You will see many examples of this when using NumPy.
       </Note>
       <div>
         For any given 2x2 matrix, if either <strong>b</strong> or <strong>c</strong> is 0, one basis vector lies exactly on an axis.
@@ -84,7 +84,7 @@ determinant = (
 )
 
 print('Determinant calculated the long way manually:', determinant)
-print('Determinant calculated using numpy:', np.linalg.det(matrix))`
+print('Determinant calculated using NumPy:', np.linalg.det(matrix))`
         } editable={true} />
       </div>
       <Note>
@@ -151,7 +151,7 @@ second_calc = matrix[0][1] * np.linalg.det(second_sub_matrix)
 third_calc = matrix[0][2] * np.linalg.det(third_sub_matrix)
 
 print('Determinant calculated manually:', first_calc - second_calc + third_calc)
-print('Determinant calculated using numpy:', np.linalg.det(matrix))`
+print('Determinant calculated using NumPy:', np.linalg.det(matrix))`
         } editable={true} />
       </div>
       <div>

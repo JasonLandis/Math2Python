@@ -118,9 +118,9 @@ print(np.linalg.inv(A))`
         } editable={true} />
       </div>
       <Note>
-        Using numpy to represent the inverse of a matrix that has a determinant of 0 just reports nan for
+        Using NumPy to represent the inverse of a matrix that has a determinant of 0 just reports nan for
         all entries of the matrix as seen in the code output above. At some point during the calcuation
-        to invert the matrix, numpy is dividing by the determinant, which in the case above, is 0.
+        to invert the matrix, NumPy is dividing by the determinant, which in the case above, is 0.
       </Note>
       <div>
         The <strong>column space</strong> of a matrix is the span of its columns. The column space

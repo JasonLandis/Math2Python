@@ -34,6 +34,9 @@ export const lessons = {
     lessons: {
       Vectors: {
         title: "Vectors, what even are they?",
+        representation: String.raw`
+          \begin{bmatrix} 1 \\ 2 \end{bmatrix}
+        `,
         sources: [
           "https://www.3blue1brown.com/lessons/vectors"
         ],
@@ -42,6 +45,11 @@ export const lessons = {
       },
       LinearCombinations: {
         title: "Linear combinations, span, and basis vectors",
+        representation: String.raw`
+          \boldsymbol{i} = \begin{bmatrix} 1 \\ 0 \end{bmatrix}
+          \quad\quad
+          \boldsymbol{j} = \begin{bmatrix} 0 \\ 1 \end{bmatrix}
+        `,
         sources: [
           "https://www.3blue1brown.com/lessons/span"
         ],
@@ -52,6 +60,13 @@ export const lessons = {
       },
       LinearTransformations: {
         title: "Linear transformations and matrices",
+        representation: String.raw`
+          \begin{bmatrix}
+            1 & -2 \\
+            3 & 2
+          \end{bmatrix}
+          \begin{bmatrix} 2 \\ 3 \end{bmatrix}
+        `,
         sources: [
           "https://www.3blue1brown.com/lessons/linear-transformations"
         ],
@@ -62,6 +77,16 @@ export const lessons = {
       },
       MatrixMultiplication: {
         title: "Matrix multiplication as composition",
+        representation: String.raw`
+          \begin{bmatrix}
+            4 & -1 \\
+            -3 & 2
+          \end{bmatrix}
+          \begin{bmatrix}
+            3 & -2 \\
+            4 & 1
+          \end{bmatrix}
+        `,
         sources: [
           "https://www.3blue1brown.com/lessons/matrix-multiplication"
         ],
@@ -72,6 +97,14 @@ export const lessons = {
       },
       ThreeDimTransformations: {
         title: "Three-dimensional linear transformations",
+        representation: String.raw`
+          \begin{bmatrix}
+            2 & 4 & 5 \\
+            -1 & 0 & 3 \\
+            -2 & 3 & 3
+          \end{bmatrix}
+          \begin{bmatrix} 2 \\ 1 \\ -3 \end{bmatrix}
+        `,
         sources: [
           "https://www.3blue1brown.com/lessons/3d-transformations"
         ],
@@ -82,6 +115,17 @@ export const lessons = {
       },
       TheDeterminant: {
         title: "The determinant",
+        representation: String.raw`
+          \text{det}
+          \left(
+          \begin{bmatrix}
+            a & b \\
+            c & d
+          \end{bmatrix}
+          \right)
+          \enspace = \enspace
+          \text{ad - bc}
+        `,
         sources: [
           "https://www.3blue1brown.com/lessons/determinant",
         ],
@@ -92,6 +136,9 @@ export const lessons = {
       },
       InverseMatrices: {
         title: "Inverse matrices, column space, and null space",
+        representation: String.raw`
+          \boldsymbol{A^{-1}v = x}
+        `,
         sources: [
           "https://www.3blue1brown.com/lessons/inverse-matrices"
         ],
@@ -102,6 +149,13 @@ export const lessons = {
       },
       NonsquareMatrices: {
         title: "Nonsquare matrices as transformations between dimensions",
+        representation: String.raw`
+          \begin{bmatrix}
+            1 & 2 \\
+            -2 & 3 \\
+            -1 & 1
+          \end{bmatrix}
+        `,
         sources: [
           "https://www.3blue1brown.com/lessons/nonsquare-matrices"
         ],
@@ -112,6 +166,11 @@ export const lessons = {
       },
       DotProducts: {
         title: "Dot products and duality",
+        representation: String.raw`
+          \begin{bmatrix} 2 \\ -2 \\ 3 \end{bmatrix} 
+          \cdot
+          \begin{bmatrix} 1 \\ 3 \\ 4 \end{bmatrix}
+        `,
         sources: [
           "https://www.3blue1brown.com/lessons/dot-products"
         ],
@@ -122,6 +181,9 @@ export const lessons = {
       },
       CrossProducts: {
         title: "Cross products",
+        representation: String.raw`
+          \begin{bmatrix} 1 \\ 2 \\ 5 \end{bmatrix} \times \begin{bmatrix} 3 \\ -1 \\ 5 \end{bmatrix}
+        `,
         sources: [
           "https://www.3blue1brown.com/lessons/cross-products"
         ],
@@ -132,6 +194,11 @@ export const lessons = {
       },
       CrossProductsExtended: {
         title: "Cross products in the light of linear transformations",
+        representation: String.raw`
+          \boldsymbol{v} \times \boldsymbol{w} 
+          \enspace = \enspace 
+          \boldsymbol{p}
+        `,
         sources: [
           "https://www.3blue1brown.com/lessons/cross-products-extended"
         ],
@@ -142,6 +209,24 @@ export const lessons = {
       },
       CramersRule: {
         title: "Cramer's rule, explained geometrically",
+        representation: String.raw`
+          \frac{
+            \text{det}
+            \left(
+              \begin{bmatrix} 
+                -6 & -1 \\ 
+                4 & 3 
+              \end{bmatrix}
+            \right)
+          }{\text{det}
+            \left(
+              \begin{bmatrix} 
+                2 & -1 \\ 
+                1 & 3 
+              \end{bmatrix}
+            \right)
+          }
+        `,
         sources: [
           "https://www.3blue1brown.com/lessons/cramers-rule"
         ],
@@ -152,6 +237,20 @@ export const lessons = {
       },
       ChangeOfBasis: {
         title: "Change of basis",
+        representation: String.raw`
+          \begin{bmatrix} 
+            2 & -1 \\ 
+            1 & 3 
+          \end{bmatrix}^{-1}
+          \begin{bmatrix} 
+            0 & -1 \\ 
+            1 & 0 
+          \end{bmatrix}
+          \begin{bmatrix} 
+            2 & -1 \\ 
+            1 & 3 
+          \end{bmatrix}
+        `,
         sources: [
           "https://www.3blue1brown.com/lessons/change-of-basis"
         ],
@@ -162,6 +261,19 @@ export const lessons = {
       },
       Eigenvectors: {
         title: "Eigenvectors and eigenvalues",
+        representation: String.raw`
+          \det\left(
+            \begin{bmatrix}
+              3 & 1 \\
+              0 & 2
+            \end{bmatrix}
+            - \lambda
+            \begin{bmatrix}
+              1 & 0 \\
+              0 & 1
+            \end{bmatrix}
+          \right) = 0
+        `,
         sources: [
           "https://www.3blue1brown.com/lessons/eigenvalues"
         ],
@@ -172,6 +284,11 @@ export const lessons = {
       },
       QuickEigenCompute: {
         title: "A quick trick for computing eigenvalues",
+        representation: String.raw`
+          \begin{bmatrix} 2 & 7 \\ 1 & 8 \end{bmatrix}
+          \quad\quad
+          \frac{2 + 8}{2} = 5
+        `,
         sources: [
           "https://www.3blue1brown.com/lessons/quick-eigen"
         ],
@@ -182,6 +299,15 @@ export const lessons = {
       },
       AbstractVectorSpaces: {
         title: "Abstract vector spaces",
+        representation: String.raw`
+          \begin{bmatrix} 
+            0 & 1 & 0 & 0 \\ 
+            0 & 0 & 2 & 0 \\ 
+            0 & 0 & 0 & 3 \\ 
+            0 & 0 & 0 & 0 
+          \end{bmatrix}
+          \begin{bmatrix} -1 \\ 4 \\ -3 \\ 2 \end{bmatrix}
+        `,
         sources: [
           "https://www.3blue1brown.com/lessons/abstract-vector-spaces"
         ],

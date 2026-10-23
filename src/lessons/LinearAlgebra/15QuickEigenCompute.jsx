@@ -50,7 +50,7 @@ print("Eigenvalues using the quick trick:")
 print("Eigenvalue 1:", eig1)
 print("Eigenvalue 2:", eig2, '\\n')
 
-print("Eigenvalues using numpy's built-in method:")
+print("Eigenvalues using NumPy's built-in method:")
 print(np.linalg.eigvals(A))`
         } editable={true} />
       </div>

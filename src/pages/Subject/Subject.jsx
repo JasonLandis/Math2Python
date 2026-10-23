@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { InlineMath } from 'react-katex';
+import { InlineMath, BlockMath } from 'react-katex';
 import Back from '../../components/Back/Back';
 import ToTop from '../../components/ToTop/ToTop';
 import { lessons } from '../../lessons/lessons';
@@ -13,10 +13,11 @@ export default function Subject({ subject }) {
       <div className='global-title'>
         <InlineMath math={String.raw`\textit{${lessons[subject].title}}`} />
       </div>
-      <div className='subject-links'>
+      <div className='subject-grid'>
         {Object.entries(lessons[subject]["lessons"]).map(([key, value]) => (
           <Link key={key} to={key}>
-            <div>{ value.title }</div>
+            <div className='subject-lesson-title'>{ value.title }</div>
+            <BlockMath math={value.representation} />
           </Link>
         ))}
       </div>
