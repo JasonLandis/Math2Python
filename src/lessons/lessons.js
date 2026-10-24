@@ -335,10 +335,15 @@ export const lessons = {
       },
       ParadoxOfDerivative: {
         title: "The paradox of the derivative",
+        representation: String.raw`
+          \boldsymbol{f'(x) = \lim_{dx \to 0} \frac{f(x + dx) - f(x)}{dx}}
+        `,
         sources: [
           "https://www.3blue1brown.com/lessons/derivatives"
         ],
-        prerequisites: [],
+        prerequisites: [
+          "EssenceOfCalculus"
+        ],
         Component: ParadoxOfDerivative
       },
       PowerRule: {

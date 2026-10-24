@@ -7,7 +7,7 @@ export default function EssenceOfCalculus() {
   return (
     <>
       <div>
-        Suppose we have a circle of radius <strong>3</strong> and want its area, but we don't 
+        Suppose we have a circle of radius <strong>3</strong> and we want to solve for its area, but we don't 
         know the formula <strong>πr²</strong>. Instead, we can use the circumference formula, <strong>2πr</strong>. 
         We can split the circle into rings, then unroll each ring into an approximate rectangle 
         of width <strong>dr</strong> and length equal to the ring's circumference. Each rectangle's area 
@@ -57,7 +57,7 @@ print("Area computed using πr²:", math.pi * r ** 2)`
       </div>
       <div>
         <BlockMath math={String.raw`
-          \boldsymbol{A(x) = \int_0^x t^2 \cdot dt}
+          \boldsymbol{A(x) = \int_0^x t^2 \, dt}
         `} />
       </div>
       <div>
@@ -74,7 +74,7 @@ print("Area computed using πr²:", math.pi * r ** 2)`
       </div>
       <div>
         <BlockMath math={String.raw`
-          \boldsymbol{dA \approx x^2 \cdot dx}
+          \boldsymbol{dA \approx x^2 \, dx}
           \enspace \rightarrow \enspace 
           \boldsymbol{\frac{dA}{dx} \approx x^2}
         `} />
@@ -109,7 +109,7 @@ print("Area computed using πr²:", math.pi * r ** 2)`
 fromX = 0
 toX = 5
 
-numRectangles = 10
+numRectangles = 100
 
 dx = (toX - fromX) / numRectangles # Width of each rectangle
 
