@@ -324,6 +324,9 @@ export const lessons = {
     lessons: {
       EssenceOfCalculus: {
         title: "The Essence of Calculus",
+        representation: String.raw`
+          \boldsymbol{\frac{dA}{dx} \approx f(x)}
+        `,
         sources: [
           "https://www.3blue1brown.com/lessons/essence-of-calculus"
         ],
