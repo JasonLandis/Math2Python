@@ -4,9 +4,10 @@
     all: unset;
     cursor: pointer;
     display: inline-block;
-    margin: -12px 0 8px -12px;
+    margin: -12px 0 12px -12px;
     padding: 12px;
     border-radius: 5px;
+    font-size: 15px;
 
     @include hover {
         background-color: var(--global-secondary-color);
