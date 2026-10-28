@@ -1,3 +1,4 @@
+import { Fragment } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home/Home';
 import { lessons } from './lessons/lessons';
@@ -11,12 +12,12 @@ export default function Router() {
       <Route path="/" element={<Home />} />
       <Route path="/About" element={<About />} />
       {Object.entries(lessons).map(([subject]) => (
-        <>
+        <Fragment key={subject}>
           <Route path={subject} element={<Subject subject={subject} />} />
           {Object.entries(lessons[subject].lessons).map(([lesson]) => (
-            <Route path={`${subject}/${lesson}`} element={<Lesson subject={subject} lesson={lesson} />} />
+            <Route key={lesson} path={`${subject}/${lesson}`} element={<Lesson subject={subject} lesson={lesson} />} />
           ))}
-        </>
+        </Fragment>
       ))}
     </Routes>
   );

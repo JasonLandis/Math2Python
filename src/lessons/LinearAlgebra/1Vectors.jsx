@@ -7,7 +7,7 @@ export default function Vectors() {
   return (
     <>
       <div>
-        Below is a 2-dimensional vector. You can think of it as having an x-coordinate of <strong>1</strong> and 
+        Below is a 2D vector. You can think of it as having an x-coordinate of <strong>1</strong> and
         a y-coordinate of <strong>2</strong>.
       </div>
       <div>
@@ -19,8 +19,8 @@ export default function Vectors() {
         <CodeBlock code={
 `import numpy as np
 
-vector = np.array([[1], 
-                   [2]])`
+v = np.array([[1],
+              [2]])`
         } editable={false} />
       </div>
       <div>
@@ -47,14 +47,14 @@ vector = np.array([[1],
         <CodeBlock code={
 `import numpy as np
 
-vector1 = np.array([[1], 
-                    [2]])
+v = np.array([[1],
+              [2]])
 
-vector2 = np.array([[3], 
-                    [-1]])
+w = np.array([[3],
+              [-1]])
 
 print("Vector addition:")
-print(vector1 + vector2)`
+print(v + w)`
         } editable={true} />
       </div>
       <div>
@@ -73,24 +73,24 @@ print(vector1 + vector2)`
         <CodeBlock code={
 `import numpy as np
 
-vector = np.array([[1], 
-                   [2]])
+v = np.array([[1],
+              [2]])
 
 scalar = 3
 
 print("Vector scalar multiplication:")
-print(vector * scalar)`
+print(scalar * v)`
         } editable={true} />
       </div>
       <div>
-        Both vector addition and scalar multiplication rules above apply to vectors of 
-        any dimension. Below is an example of the rules being applied to a 3-dimensional vector.
+        Both vector addition and scalar multiplication rules above apply to vectors of
+        any dimension. Below is an example of the rules being applied to a 3D vector.
       </div>
       <div>
         <BlockMath math={String.raw`
           3 \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}
           \enspace + \enspace
-          -2 \begin{bmatrix} 3 \\ -3 \\ 4 \end{bmatrix}
+          (-2) \begin{bmatrix} 3 \\ -3 \\ 4 \end{bmatrix}
           \enspace = \enspace
           \begin{bmatrix} -3 \\ 12 \\ 1 \end{bmatrix}
         `} />
@@ -99,20 +99,20 @@ print(vector * scalar)`
         <CodeBlock code={
 `import numpy as np
 
-vector1 = np.array([[1], 
-                    [2], 
-                    [3]])
+v = np.array([[1],
+              [2],
+              [3]])
 
 scalar1 = 3
 
-vector2 = np.array([[3], 
-                    [-3], 
-                    [4]])
+w = np.array([[3],
+              [-3],
+              [4]])
 
 scalar2 = -2
 
 print("Result:")
-print(vector1 * scalar1 + vector2 * scalar2)`
+print(scalar1 * v + scalar2 * w)`
         } editable={true} />
       </div>
     </>

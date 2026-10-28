@@ -7,44 +7,72 @@ export default function QuickEigenCompute() {
   return (
     <>
       <div>
-        For a 2x2 matrix, the two eigenvalues have a neat relationship. They add up to the sum of the 
-        matrix's diagonal entries, and they multiply to give its determinant. Knowing the sum tells 
-        you their average, so you can picture the two eigenvalues as sitting equally far above and 
-        below that average. All that's left is figuring out how far, and the product gives you that. The 
-        farther apart the two values are from the average, the smaller their product becomes, so you 
-        can work backward from the known product to find the exact distance. Add that distance to the 
-        average for one eigenvalue and subtract it for the other.
+        For a 2x2 matrix, the two eigenvalues have a neat relationship. They add up to the sum of the
+        matrix's diagonal entries, which is called the <strong>trace</strong>, and they multiply to give
+        its determinant.
+      </div>
+      <div>
+        To see why, look at the formula from the eigenvectors lesson. For a general 2x2
+        matrix, <strong>det(A - λI) = 0</strong> expands to the equation below. In an equation like this,
+        the middle coefficient is the sum of the two solutions and the last term is their product.
+      </div>
+      <div>
+        <BlockMath math={String.raw`
+          \boldsymbol{A} = \begin{bmatrix} a & b \\ c & d \end{bmatrix}
+          \quad\quad
+          \lambda^2 - (a + d)\lambda + (ad - bc) = 0
+        `}/>
+      </div>
+      <div>
+        Let <strong>m</strong> be the mean of the two eigenvalues (half the trace) and <strong>p</strong> be
+        their product (the determinant). The two eigenvalues sit the same distance <strong>k</strong> above
+        and below the mean, so they are <strong>m + k</strong> and <strong>m - k</strong>. Multiplying them
+        together lets us solve for <strong>k</strong>.
+      </div>
+      <div>
+        <BlockMath math={String.raw`
+          (m + k)(m - k) = m^2 - k^2 = p
+          \quad\quad\Longrightarrow\quad\quad
+          k = \sqrt{m^2 - p}
+        `}/>
+      </div>
+      <div>
+        This gives the general formula for both eigenvalues.
+      </div>
+      <div>
+        <BlockMath math={String.raw`
+          \lambda = m \pm \sqrt{m^2 - p}
+        `}/>
       </div>
       <div>
         <BlockMath math={String.raw`
           \boldsymbol{A} = \begin{bmatrix} 2 & 7 \\ 1 & 8 \end{bmatrix}
           \quad\quad
-          \text{average} = \frac{2 + 8}{2} = 5
+          m = \frac{2 + 8}{2} = 5
           \quad\quad
-          \text{det}(\boldsymbol{A}) = (2)(8) - (7)(1) = 9
+          p = \text{det}(\boldsymbol{A}) = (2)(8) - (7)(1) = 9
         `}/>
       </div>
       <div>
         <BlockMath math={String.raw`
-          \boldsymbol{\lambda_1} = 5 + \sqrt{5^2 - 9} = 5 + \sqrt{16} = 9
+          \lambda_1 = 5 + \sqrt{5^2 - 9} = 5 + \sqrt{16} = 9
           \quad\quad
-          \boldsymbol{\lambda_2} = 5 - \sqrt{5^2 - 9} = 5 - \sqrt{16} = 1
+          \lambda_2 = 5 - \sqrt{5^2 - 9} = 5 - \sqrt{16} = 1
         `}/>
       </div>
       <div>
         <CodeBlock code={
 `import numpy as np
-import math
 
 A = np.array([[2, 7],
               [1, 8]])
 
-average = (A[0][0] + A[1][1]) / 2
+mean = (A[0, 0] + A[1, 1]) / 2
 
-det_A = np.linalg.det(A)
+det_A = A[0, 0] * A[1, 1] - A[0, 1] * A[1, 0]
 
-eig1 = average + math.sqrt(average ** 2 - det_A)
-eig2 = average - math.sqrt(average ** 2 - det_A)
+eig1 = mean + np.emath.sqrt(mean ** 2 - det_A)
+eig2 = mean - np.emath.sqrt(mean ** 2 - det_A)
 
 print("Eigenvalues using the quick trick:")
 print("Eigenvalue 1:", eig1)
@@ -54,10 +82,66 @@ print("Eigenvalues using NumPy's built-in method:")
 print(np.linalg.eigvals(A))`
         } editable={true} />
       </div>
-      <Note>
-        This quick trick is specific to 2x2 matrices because it relies on there being 
-        exactly two eigenvalues whose sum and product you know.
-      </Note>
+      <div>
+        Below is the matrix from the eigenvectors lesson. The trick gives the same eigenvalues, 3 and 2,
+        much faster than solving <strong>det(A - λI) = 0</strong> by hand.
+      </div>
+      <div>
+        <BlockMath math={String.raw`
+          \boldsymbol{A} = \begin{bmatrix} 3 & 1 \\ 0 & 2 \end{bmatrix}
+          \quad\quad
+          m = \frac{3 + 2}{2} = 2.5
+          \quad\quad
+          p = (3)(2) - (1)(0) = 6
+        `}/>
+      </div>
+      <div>
+        <BlockMath math={String.raw`
+          \lambda = 2.5 \pm \sqrt{2.5^2 - 6} = 2.5 \pm \sqrt{0.25} = 2.5 \pm 0.5
+          \quad\quad\Longrightarrow\quad\quad
+          \lambda_1 = 3
+          \quad
+          \lambda_2 = 2
+        `}/>
+      </div>
+      <div>
+        If <strong>m² - p</strong> is negative, the eigenvalues are complex. For example, the 90° rotation
+        below has <strong>m</strong> = 0 and <strong>p</strong> = 1, so the trick gives the square root of -1.
+        This matches the eigenvectors lesson, where rotations had no real eigenvectors.
+      </div>
+      <div>
+        <CodeBlock code={
+`import numpy as np
+
+A = np.array([[0, -1],
+              [1, 0]])
+
+mean = (A[0, 0] + A[1, 1]) / 2
+
+det_A = A[0, 0] * A[1, 1] - A[0, 1] * A[1, 0]
+
+eig1 = mean + np.emath.sqrt(mean ** 2 - det_A)
+eig2 = mean - np.emath.sqrt(mean ** 2 - det_A)
+
+print("Eigenvalues using the quick trick:")
+print("Eigenvalue 1:", eig1)
+print("Eigenvalue 2:", eig2)`
+        } editable={true} />
+      </div>
+      <div>
+        <Note>
+          <strong>np.emath.sqrt</strong> returns a complex number when given a negative input, while the
+          regular <strong>math.sqrt</strong> would raise an error. Python writes the imaginary unit
+          as <strong>j</strong>, so the output above is <strong>±i</strong>.
+        </Note>
+      </div>
+      <div>
+        <Note>
+          For larger matrices, the eigenvalues still add up to the trace and multiply to the determinant.
+          The trick only works for 2x2 matrices because two facts are only enough to find two unknown
+          eigenvalues. A 3x3 matrix has three.
+        </Note>
+      </div>
     </>
   )
 }

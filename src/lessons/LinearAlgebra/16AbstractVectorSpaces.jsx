@@ -6,38 +6,86 @@ export default function AbstractVectorSpaces() {
   return (
     <>
       <div>
-        A matrix transformation is linear because it satisfies two properties: 
-        additivity, where transforming a sum of vectors gives the same result as summing 
-        the transformed vectors, and homogeneity, where scaling a vector before or after 
-        transforming it gives the same result. These hold for any matrix, which is why 
-        matrices can represent linear maps. The order of adding, scaling, 
-        and transforming doesn't matter.
+        So far, vectors have been arrows or lists of numbers. But in linear algebra, anything that can be
+        added together and scaled, following the usual rules, counts as a vector. A collection of such
+        objects is called a <strong>vector space</strong>. Functions and polynomials are vectors in
+        this sense, and every idea from the previous lessons (basis, span, linear transformations,
+        eigenvectors) applies to them too.
+      </div>
+      <div>
+        For example, a polynomial like <strong>1 + 2x</strong> can be stored as the list of its coefficients.
+        Adding or scaling polynomials gives the same result as adding or scaling their coefficient vectors.
       </div>
       <div>
         <BlockMath math={String.raw`
-          \boldsymbol{v_1} = \begin{bmatrix} 2 \\ 3 \\ -1 \end{bmatrix}
+          (1 + 2x) + (3 - x + x^2) = 4 + x + x^2
           \quad\quad
-          \boldsymbol{v_2} = \begin{bmatrix} -1 \\ 2 \\ 3 \end{bmatrix}
+          \begin{bmatrix} 1 \\ 2 \\ 0 \end{bmatrix}
+          +
+          \begin{bmatrix} 3 \\ -1 \\ 1 \end{bmatrix}
+          =
+          \begin{bmatrix} 4 \\ 1 \\ 1 \end{bmatrix}
+        `}/>
+      </div>
+      <div>
+        <CodeBlock code={
+`import numpy as np
+
+f = np.polynomial.Polynomial([1, 2, 0])
+g = np.polynomial.Polynomial([3, -1, 1])
+
+f_coefficients = np.array([1, 2, 0])
+g_coefficients = np.array([3, -1, 1])
+
+print("Adding the polynomials:", (f + g).coef)
+print("Adding the coefficient vectors:", f_coefficients + g_coefficients, '\\n')
+
+print("Scaling the polynomial by 3:", (3 * f).coef)
+print("Scaling the coefficient vector by 3:", 3 * f_coefficients)`
+        } editable={true} />
+      </div>
+      <div>
+        A transformation is called <strong>linear</strong> when it satisfies two properties:
+        additivity, where transforming a sum of vectors gives the same result as summing
+        the transformed vectors, and homogeneity, where scaling a vector before or after
+        transforming it gives the same result. In other words, the order of adding, scaling,
+        and transforming doesn't matter. These two rules are the formal version of "grid lines stay
+        parallel and evenly spaced" from the linear transformations lesson.
+      </div>
+      <div>
+        Matrix transformations always satisfy both properties. And because of these properties, a
+        linear transformation only needs to know where the basis vectors go, so any linear
+        transformation can be written as a matrix.
+      </div>
+      <div>
+        <BlockMath math={String.raw`
+          \boldsymbol{v} = \begin{bmatrix} 2 \\ 3 \\ -1 \end{bmatrix}
           \quad\quad
-          \boldsymbol{A} = \begin{bmatrix} 
-            2 & 3 & 1 \\ 
-            4 & -2 & -2 \\ 
-            1 & -1 & 3 
+          \boldsymbol{w} = \begin{bmatrix} -1 \\ 2 \\ 3 \end{bmatrix}
+          \quad\quad
+          \boldsymbol{A} = \begin{bmatrix}
+            2 & 3 & 1 \\
+            4 & -2 & -2 \\
+            1 & -1 & 3
           \end{bmatrix}
           \quad\quad
-          \boldsymbol{c} = 3
+          c = 3
         `}/>
       </div>
       <div>
         <BlockMath math={String.raw`
-          \textbf{Additivity:\enspace} \boldsymbol{A(v_1 + v_2) \enspace = \enspace Av_1 + Av_2}
+          \textbf{Additivity:\enspace} \boldsymbol{A}(\boldsymbol{v} + \boldsymbol{w})
+          \enspace = \enspace
+          \boldsymbol{Av} + \boldsymbol{Aw}
           \enspace = \enspace
           \begin{bmatrix} 19 \\ -10 \\ 2 \end{bmatrix}
         `}/>
       </div>
       <div>
         <BlockMath math={String.raw`
-          \textbf{Homogeneity:\enspace} \boldsymbol{A(cv_1) \enspace = \enspace c(Av_1)}
+          \textbf{Homogeneity:\enspace} \boldsymbol{A}(c\boldsymbol{v})
+          \enspace = \enspace
+          c(\boldsymbol{Av})
           \enspace = \enspace
           \begin{bmatrix} 36 \\ 12 \\ -12 \end{bmatrix}
         `}/>
@@ -46,13 +94,13 @@ export default function AbstractVectorSpaces() {
         <CodeBlock code={
 `import numpy as np
 
-v1 = np.array([[2],
+v = np.array([[2],
               [3],
               [-1]])
 
-v2 = np.array([[-1],
-               [2],
-               [3]])
+w = np.array([[-1],
+              [2],
+              [3]])
 
 A = np.array([[2, 3, 1],
               [4, -2, -2],
@@ -61,41 +109,53 @@ A = np.array([[2, 3, 1],
 c = 3
 
 print("Adding, then applying the transformation:")
-print(A @ (v1 + v2), '\\n')
+print(A @ (v + w), '\\n')
 
 print("Applying the transformation, then adding:")
-print((A @ v1) + (A @ v2), '\\n')
+print((A @ v) + (A @ w), '\\n')
 
 print("Scaling, then applying the transformation:")
-print(A @ (v1 * c), '\\n')
+print(A @ (c * v), '\\n')
 
 print("Applying the transformation, then scaling:")
-print(c * (A @ v1))`
+print(c * (A @ v))`
         } editable={true} />
       </div>
       <div>
-        Differentiation is linear, so it can be written as a matrix. Here, a polynomial is stored as 
-        a coefficient vector in the basis <strong>{`{1, x, x², x³}`}</strong>, so <strong>v</strong> represents <strong>-1 + 4x - 3x² + 2x³</strong>. 
-        Each column of <strong>A</strong> encodes what the derivative does to one basis 
-        element <strong>(1 → 0, x → 1, x² → 2x, x³ → 3x²)</strong>, which is just the power 
-        rule: multiply each coefficient by its power and shift it down one slot. 
-        Moving <strong>v</strong> through the linear transformation <strong>A</strong> gives a new coefficient vector 
+        Differentiation is linear because of two familiar derivative rules. The derivative of a sum is
+        the sum of the derivatives (additivity), and the derivative of a scaled function is the scaled
+        derivative (homogeneity).
+      </div>
+      <div>
+        <BlockMath math={String.raw`
+          (f + g)' = f' + g'
+          \quad\quad\quad
+          (cf)' = c f'
+        `}/>
+      </div>
+      <div>
+        Since differentiation is linear, it can be written as a matrix. Here, a polynomial is stored as
+        a coefficient vector in the basis <strong>{`{1, x, x², x³}`}</strong>, so <strong>p</strong> represents <strong>-1 + 4x - 3x² + 2x³</strong>.
+        Each column of <strong>A</strong> encodes what the derivative does to one basis
+        element <strong>(1 → 0, x → 1, x² → 2x, x³ → 3x²)</strong>, which is just the power
+        rule: multiply each coefficient by its power and shift it down one slot.
+        Moving <strong>p</strong> through the linear transformation <strong>A</strong> gives a new coefficient vector
         representing a polynomial that is the derivative of the original polynomial.
       </div>
       <div>
         <BlockMath math={String.raw`
-          \boldsymbol{-1 + 4x - 3x² + 2x³}
-          \quad \boldsymbol{\rightarrow} \quad
+          -1 + 4x - 3x^2 + 2x^3
+          \quad \rightarrow \quad
           \begin{bmatrix} -1 \\ 4 \\ -3 \\ 2 \end{bmatrix}
         `} />
       </div>
       <div>
         <BlockMath math={String.raw`
-          \begin{bmatrix} 
-            0 & 1 & 0 & 0 \\ 
-            0 & 0 & 2 & 0 \\ 
-            0 & 0 & 0 & 3 \\ 
-            0 & 0 & 0 & 0 
+          \begin{bmatrix}
+            0 & 1 & 0 & 0 \\
+            0 & 0 & 2 & 0 \\
+            0 & 0 & 0 & 3 \\
+            0 & 0 & 0 & 0
           \end{bmatrix}
           \begin{bmatrix} -1 \\ 4 \\ -3 \\ 2 \end{bmatrix}
           \enspace = \enspace
@@ -105,8 +165,8 @@ print(c * (A @ v1))`
       <div>
         <BlockMath math={String.raw`
           \begin{bmatrix} 4 \\ -6 \\ 6 \\ 0 \end{bmatrix}
-          \quad \boldsymbol{\rightarrow} \quad
-          \boldsymbol{4 - 6x + 6x²}
+          \quad \rightarrow \quad
+          4 - 6x + 6x^2
         `} />
       </div>
       <div>
@@ -118,14 +178,28 @@ A = np.array([[0, 1, 0, 0],
               [0, 0, 0, 3],
               [0, 0, 0, 0]])
 
-v = np.array([[-1],
+p = np.array([[-1],
               [4],
               [-3],
               [2]])
 
-print("The derivative:")
-print(A @ v)`
+print("The derivative using the matrix:")
+print(A @ p, '\\n')
+
+print("The derivative using NumPy's polynomial tools:")
+print(np.polynomial.Polynomial([-1, 4, -3, 2]).deriv().coef)`
         } editable={true} />
+      </div>
+      <div>
+        The derivative matrix also connects back to earlier lessons. Its last row is all zeros, so its
+        determinant is 0 and it cannot be inverted. Differentiating loses the constant term, which is
+        why integration needs a "+ C" to account for it.
+      </div>
+      <div>
+        Its only eigenvalue is 0, and its eigenvectors are the constant polynomials, since the
+        derivative of a constant is 0 times that constant. Outside of polynomials, the
+        function <strong>eˣ</strong> is an <strong>eigenfunction</strong> of the derivative with an eigenvalue
+        of 1, because its derivative is itself.
       </div>
     </>
   )

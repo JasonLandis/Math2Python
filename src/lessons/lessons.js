@@ -25,10 +25,10 @@ export const lessons = {
   LinearAlgebra: {
     title: "Linear Algebra",
     representation: String.raw`
-      \begin{bmatrix} 
+      \begin{bmatrix}
         1 & 2 & 3 \\
         3 & 4 & -2 \\
-        -1 & 0 & 4 \\
+        -1 & 0 & 4
       \end{bmatrix}
     `,
     lessons: {
@@ -46,9 +46,7 @@ export const lessons = {
       LinearCombinations: {
         title: "Linear combinations, span, and basis vectors",
         representation: String.raw`
-          \boldsymbol{i} = \begin{bmatrix} 1 \\ 0 \end{bmatrix}
-          \quad\quad
-          \boldsymbol{j} = \begin{bmatrix} 0 \\ 1 \end{bmatrix}
+          3\boldsymbol{i} + 4\boldsymbol{j} = \begin{bmatrix} 3 \\ 4 \end{bmatrix}
         `,
         sources: [
           "https://www.3blue1brown.com/lessons/span"
@@ -124,7 +122,7 @@ export const lessons = {
           \end{bmatrix}
           \right)
           \enspace = \enspace
-          \text{ad - bc}
+          ad - bc
         `,
         sources: [
           "https://www.3blue1brown.com/lessons/determinant",
@@ -167,7 +165,7 @@ export const lessons = {
       DotProducts: {
         title: "Dot products and duality",
         representation: String.raw`
-          \begin{bmatrix} 2 \\ -2 \\ 3 \end{bmatrix} 
+          \begin{bmatrix} 2 \\ -2 \\ 3 \end{bmatrix}
           \cdot
           \begin{bmatrix} 1 \\ 3 \\ 4 \end{bmatrix}
         `,
@@ -195,9 +193,13 @@ export const lessons = {
       CrossProductsExtended: {
         title: "Cross products in the light of linear transformations",
         representation: String.raw`
-          \boldsymbol{v} \times \boldsymbol{w} 
-          \enspace = \enspace 
-          \boldsymbol{p}
+          \text{det}\left(
+            \begin{bmatrix}
+              \boldsymbol{u} & \boldsymbol{v} & \boldsymbol{w}
+            \end{bmatrix}
+          \right)
+          \enspace = \enspace
+          (\boldsymbol{v} \times \boldsymbol{w}) \cdot \boldsymbol{u}
         `,
         sources: [
           "https://www.3blue1brown.com/lessons/cross-products-extended"
@@ -210,19 +212,21 @@ export const lessons = {
       CramersRule: {
         title: "Cramer's rule, explained geometrically",
         representation: String.raw`
+          x
+          \enspace = \enspace
           \frac{
             \text{det}
             \left(
-              \begin{bmatrix} 
-                -6 & -1 \\ 
-                4 & 3 
+              \begin{bmatrix}
+                -6 & -1 \\
+                4 & 3
               \end{bmatrix}
             \right)
           }{\text{det}
             \left(
-              \begin{bmatrix} 
-                2 & -1 \\ 
-                1 & 3 
+              \begin{bmatrix}
+                2 & -1 \\
+                1 & 3
               \end{bmatrix}
             \right)
           }
@@ -238,17 +242,17 @@ export const lessons = {
       ChangeOfBasis: {
         title: "Change of basis",
         representation: String.raw`
-          \begin{bmatrix} 
-            2 & -1 \\ 
-            1 & 3 
+          \begin{bmatrix}
+            2 & -1 \\
+            1 & 3
           \end{bmatrix}^{-1}
-          \begin{bmatrix} 
-            0 & -1 \\ 
-            1 & 0 
+          \begin{bmatrix}
+            0 & -1 \\
+            1 & 0
           \end{bmatrix}
-          \begin{bmatrix} 
-            2 & -1 \\ 
-            1 & 3 
+          \begin{bmatrix}
+            2 & -1 \\
+            1 & 3
           \end{bmatrix}
         `,
         sources: [
@@ -262,17 +266,7 @@ export const lessons = {
       Eigenvectors: {
         title: "Eigenvectors and eigenvalues",
         representation: String.raw`
-          \det\left(
-            \begin{bmatrix}
-              3 & 1 \\
-              0 & 2
-            \end{bmatrix}
-            - \lambda
-            \begin{bmatrix}
-              1 & 0 \\
-              0 & 1
-            \end{bmatrix}
-          \right) = 0
+          \boldsymbol{Av} = \lambda\boldsymbol{v}
         `,
         sources: [
           "https://www.3blue1brown.com/lessons/eigenvalues"
@@ -285,9 +279,7 @@ export const lessons = {
       QuickEigenCompute: {
         title: "A quick trick for computing eigenvalues",
         representation: String.raw`
-          \begin{bmatrix} 2 & 7 \\ 1 & 8 \end{bmatrix}
-          \quad\quad
-          \frac{2 + 8}{2} = 5
+          \lambda = m \pm \sqrt{m^2 - p}
         `,
         sources: [
           "https://www.3blue1brown.com/lessons/quick-eigen"
@@ -300,11 +292,11 @@ export const lessons = {
       AbstractVectorSpaces: {
         title: "Abstract vector spaces",
         representation: String.raw`
-          \begin{bmatrix} 
-            0 & 1 & 0 & 0 \\ 
-            0 & 0 & 2 & 0 \\ 
-            0 & 0 & 0 & 3 \\ 
-            0 & 0 & 0 & 0 
+          \begin{bmatrix}
+            0 & 1 & 0 & 0 \\
+            0 & 0 & 2 & 0 \\
+            0 & 0 & 0 & 3 \\
+            0 & 0 & 0 & 0
           \end{bmatrix}
           \begin{bmatrix} -1 \\ 4 \\ -3 \\ 2 \end{bmatrix}
         `,
