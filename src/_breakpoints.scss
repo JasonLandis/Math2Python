@@ -12,3 +12,12 @@ $mobile: 640px;
         @content;
     }
 }
+
+// Hover styles only on devices that can hover, so they don't stick after a tap
+@mixin hover {
+    @media (hover: hover) {
+        &:hover {
+            @content;
+        }
+    }
+}

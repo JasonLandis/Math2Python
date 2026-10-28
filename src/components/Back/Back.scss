@@ -1,12 +1,14 @@
+@use '../../breakpoints' as *;
+
 .back {
     all: unset;
     cursor: pointer;
     display: inline-block;
-    margin: -10px 0 10px -10px;
-    padding: 10px;
+    margin: -12px 0 8px -12px;
+    padding: 12px;
     border-radius: 5px;
 
-    &:hover {
+    @include hover {
         background-color: var(--global-secondary-color);
     }
 }

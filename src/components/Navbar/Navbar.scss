@@ -12,7 +12,7 @@ nav {
         all: unset;
         cursor: pointer;
 
-        &:hover {
+        @include hover {
             opacity: 0.8;
         }
     }

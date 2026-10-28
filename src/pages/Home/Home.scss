@@ -31,7 +31,7 @@
         font-size: 20px;
         box-shadow: var(--global-box-shadow);
 
-        &:hover {
+        @include hover {
             background-color: var(--global-button-hover-color);
         }
 

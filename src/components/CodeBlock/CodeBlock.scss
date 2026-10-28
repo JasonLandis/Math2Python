@@ -7,11 +7,11 @@
     button {
         all: unset;
         cursor: pointer;
-        padding: 10px;
+        padding: 12px 20px;
         border-radius: 10px;
         background-color: var(--global-secondary-color);
 
-        &:hover {
+        @include hover {
             background-color: var(--global-button-hover-color);
         }
 

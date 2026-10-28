@@ -46,7 +46,11 @@
       text-decoration: none;
       padding: 8px 12px;
 
-      &:hover { 
+      @include mobile {
+        padding: 12px;
+      }
+
+      @include hover { 
         background: var(--global-secondary-color); 
       }
     }
