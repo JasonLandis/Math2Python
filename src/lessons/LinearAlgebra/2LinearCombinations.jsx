@@ -16,8 +16,9 @@ export default function LinearCombinations() {
         `} />
       </div>
       <div>
-        If you scale each of these basis vectors by some scalar and then add the two resulting vectors together,
-        you get a new vector that is a <strong>linear combination</strong> of those basis vectors.
+        If you scale some vectors by scalars and then add the resulting vectors together, you get a new
+        vector that is a <strong>linear combination</strong> of those vectors. Below is a linear combination
+        of the two basis vectors above.
       </div>
       <div>
         <BlockMath math={String.raw`
@@ -32,10 +33,10 @@ export default function LinearCombinations() {
         <CodeBlock code={
 `import numpy as np
 
-i = np.array([[1], 
+i = np.array([[1],
               [0]])
 
-j = np.array([[0], 
+j = np.array([[0],
               [1]])
 
 scaled_i = 3 * i # Scalar of 3 applied to basis vector i
@@ -47,24 +48,24 @@ print(linear_combination)`
         } editable={true} />
       </div>
       <div>
-        The set of all possible vectors that can be reached with linear combinations of a 
-        given pair of vectors is called the <strong>span</strong> of those two vectors.
+        The set of all possible vectors that can be reached with linear combinations of a
+        given set of vectors is called the <strong>span</strong> of those vectors.
       </div>
       <div>
         The two basis vectors above can be described as <strong>linearly independent</strong> because
-        the span of those two 2-dimensional vectors is all vectors in 2-dimensional space. Also, one
-        of the vectors cannot be described as some linear combination of the other.
+        neither vector can be written as a linear combination of the other. As a result, the span of
+        those two 2D vectors is all vectors in 2D space.
       </div>
       <div>
-        The two vectors below can be described as <strong>linearly dependent</strong> because 
-        the span of these two 2-dimensional vectors is just a single 1-dimensional line. Also, 
-        vector <strong>j</strong> can be written as some linear combination of vector <strong>i</strong>.
+        The two vectors below can be described as <strong>linearly dependent</strong> because
+        vector <strong>w</strong> can be written as a linear combination of vector <strong>v</strong>.
+        As a result, the span of these two 2D vectors is just a single 1D line.
       </div>
       <div>
         <BlockMath math={String.raw`
-          \boldsymbol{i} = \begin{bmatrix} 1 \\ 2 \end{bmatrix}
+          \boldsymbol{v} = \begin{bmatrix} 1 \\ 2 \end{bmatrix}
           \quad\quad
-          \boldsymbol{j} = \begin{bmatrix} 2 \\ 4 \end{bmatrix}
+          \boldsymbol{w} = \begin{bmatrix} 2 \\ 4 \end{bmatrix}
           \quad\quad\quad\quad
           2 \begin{bmatrix} 1 \\ 2 \end{bmatrix}
           \enspace = \enspace
@@ -82,24 +83,24 @@ print(linear_combination)`
         <CodeBlock code={
 `import numpy as np
 
-i = np.array([[1], 
+v = np.array([[1],
               [2]])
 
-j = np.array([[2], 
+w = np.array([[2],
               [4]])
 
-scaled_i = -2 * i
-scaled_j = 5 * j
+scaled_v = -2 * v
+scaled_w = 5 * w
 
-linear_combination = scaled_i + scaled_j
+linear_combination = scaled_v + scaled_w
 print("Linear combination:")
 print(linear_combination)`
         } editable={true} />
       </div>
       <div>
-        In three dimensions, we can take the following as our basis vectors.
-        These vectors are linearly independent since any one of these vectors
-        cannot be represented as a linear combination of the others.
+        In 3D, we can take the following as our basis vectors.
+        These vectors are linearly independent since none of these vectors
+        can be represented as a linear combination of the others.
       </div>
       <div>
         <BlockMath math={String.raw`
@@ -115,16 +116,16 @@ print(linear_combination)`
       </div>
       <div>
         <BlockMath math={String.raw`
-          \boldsymbol{i} = \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}
+          \boldsymbol{u} = \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}
           \quad\quad
-          \boldsymbol{j} = \begin{bmatrix} 2 \\ -1 \\ 4 \end{bmatrix}
+          \boldsymbol{v} = \begin{bmatrix} 2 \\ -1 \\ 4 \end{bmatrix}
           \quad\quad
-          \boldsymbol{k} = \begin{bmatrix} 4 \\ 3 \\ 10 \end{bmatrix}
+          \boldsymbol{w} = \begin{bmatrix} 4 \\ 3 \\ 10 \end{bmatrix}
         `} />
       </div>
       <div>
-        These vectors are linearly dependent because vector <strong>k</strong> can be written
-        as a linear combination of vector <strong>i</strong> and <strong>j</strong>.
+        These vectors are linearly dependent because vector <strong>w</strong> can be written
+        as a linear combination of vectors <strong>u</strong> and <strong>v</strong>.
       </div>
       <div>
         <BlockMath math={String.raw`
@@ -139,20 +140,16 @@ print(linear_combination)`
         <CodeBlock code={
 `import numpy as np
 
-i = np.array([[1], 
+u = np.array([[1],
               [2],
               [3]])
 
-j = np.array([[2], 
+v = np.array([[2],
               [-1],
               [4]])
 
-k = np.array([[4], 
-              [3],
-              [10]])
-
-print("Computing vector k as a linear combination of i and j:")
-print((2 * i) + j)`
+print("Computing vector w as a linear combination of u and v:")
+print((2 * u) + v)`
         } editable={true} />
       </div>
     </>

@@ -7,8 +7,25 @@ export default function CrossProducts() {
   return (
     <>
       <div>
-        The <strong>cross product</strong> of two 3D vectors is a new vector perpendicular to both, whose magnitude 
-        equals the area of the parallelogram spanned by those two vectors.
+        The <strong>cross product</strong> of two 3D vectors is a new vector perpendicular to both, whose magnitude
+        equals the area of the parallelogram spanned by those two vectors. It is calculated with the
+        formula below.
+      </div>
+      <div>
+        <BlockMath math={String.raw`
+          \boldsymbol{v} \times \boldsymbol{w}
+          \enspace = \enspace
+          \begin{bmatrix} v_1 \\ v_2 \\ v_3 \end{bmatrix} \times \begin{bmatrix} w_1 \\ w_2 \\ w_3 \end{bmatrix}
+          \enspace = \enspace
+          \begin{bmatrix}
+            v_2 w_3 - v_3 w_2 \\
+            v_3 w_1 - v_1 w_3 \\
+            v_1 w_2 - v_2 w_1
+          \end{bmatrix}
+        `} />
+      </div>
+      <div>
+        Below is an example using two specific vectors.
       </div>
       <div>
         <BlockMath math={String.raw`
@@ -19,7 +36,7 @@ export default function CrossProducts() {
       </div>
       <div>
         <BlockMath math={String.raw`
-          \boldsymbol{v} \times \mathbf{w} 
+          \boldsymbol{v} \times \boldsymbol{w}
           \enspace = \enspace
           \begin{bmatrix} 1 \\ 2 \\ 5 \end{bmatrix} \times \begin{bmatrix} 3 \\ -1 \\ 5 \end{bmatrix}
           \enspace = \enspace
@@ -35,84 +52,173 @@ export default function CrossProducts() {
       <div>
         <CodeBlock code={
 `import numpy as np
-import math
 
-v = np.array([1, 
-              2, 
-              5])
+v = np.array([1, 2, 5])
 
-w = np.array([3, 
-              -1, 
-              5])
+w = np.array([3, -1, 5])
 
-cross = np.linalg.cross(v, w)
+cross = np.cross(v, w)
 print("Cross product:")
 print(cross, '\\n')
 
 print("Calculating the magnitude of the cross product:")
-print("Manually:", math.sqrt(cross[0]**2 + cross[1]**2 + cross[2]**2))
-print("Using NumPy:", np.linalg.norm(cross))`
+print("Manually:", np.sqrt(cross[0]**2 + cross[1]**2 + cross[2]**2))
+print("Using NumPy:", np.linalg.norm(cross), '\\n')
+
+# A dot product of 0 means the vectors are perpendicular
+print("Dot product of the cross product with v:", np.dot(cross, v))
+print("Dot product of the cross product with w:", np.dot(cross, w))`
         } editable={true} />
       </div>
-      <Note>
-        The cross product above isn't displayed as a column vector because it's a 1D array, but 
-        you can still read it as a vector with x, y, and z coordinates.
-      </Note>
+      <div>
+        <Note>
+          Like in the dot products lesson, the vectors here are flat 1D arrays, so the cross product
+          is displayed as a row. You can still read it as a vector with x, y, and z coordinates.
+        </Note>
+      </div>
       <div>
         <CodeBlock code={
 `import numpy as np
 
-v = np.array([1, 
-              2, 
-              5])
+v = np.array([1, 2, 5])
 
-w = np.array([3, 
-              -1, 
-              5])
+w = np.array([3, -1, 5])
 
-cross = np.array([v[1] * w[2] - w[1] * v[2],
-                  v[2] * w[0] - w[2] * v[0],
-                  v[0] * w[1] - w[0] * v[1]])
+cross = np.array([v[1] * w[2] - v[2] * w[1],
+                  v[2] * w[0] - v[0] * w[2],
+                  v[0] * w[1] - v[1] * w[0]])
 
 print("Calculating the cross product manually:")
 print(cross)`
         } editable={true} />
       </div>
       <div>
-        The dot product of a vector with itself always equals its magnitude squared. 
-        Intuitively, projecting a vector onto itself just gives back the same vector.
+        Unlike the dot product, the order of the cross product matters. Swapping the vectors gives a
+        vector of the same length pointing in the opposite direction.
+      </div>
+      <div>
+        <BlockMath math={String.raw`
+          \boldsymbol{w} \times \boldsymbol{v}
+          \enspace = \enspace
+          -(\boldsymbol{v} \times \boldsymbol{w})
+        `} />
+      </div>
+      <div>
+        There are always two directions perpendicular to both vectors, and the <strong>right-hand
+        rule</strong> tells you which one the cross product points in. Point the fingers of your right
+        hand along <strong>v</strong> and curl them toward <strong>w</strong>. Your thumb points in the
+        direction of <strong>v</strong> × <strong>w</strong>.
       </div>
       <div>
         <CodeBlock code={
 `import numpy as np
 
-v = np.array([-3, 
-              2, 
-              -4])
+v = np.array([1, 2, 5])
+
+w = np.array([3, -1, 5])
+
+print("v x w:", np.cross(v, w))
+print("w x v:", np.cross(w, v))`
+        } editable={true} />
+      </div>
+      <div>
+        In 2D, the cross product is a single number instead of a vector. It equals the determinant of the
+        matrix whose columns are <strong>v</strong> and <strong>w</strong>, which is the signed area of
+        the parallelogram they span. Just like in 3D, swapping the order flips the sign.
+      </div>
+      <div>
+        <BlockMath math={String.raw`
+          \begin{bmatrix} 3 \\ 1 \end{bmatrix} \times \begin{bmatrix} 2 \\ 4 \end{bmatrix}
+          \enspace = \enspace
+          \text{det}
+          \left(
+          \begin{bmatrix}
+            3 & 2 \\
+            1 & 4
+          \end{bmatrix}
+          \right)
+          \enspace = \enspace
+          (3)(4) - (2)(1)
+          \enspace = \enspace
+          10
+        `} />
+      </div>
+      <div>
+        <CodeBlock code={
+`import numpy as np
+
+v = np.array([3, 1])
+
+w = np.array([2, 4])
+
+print("v x w:", v[0] * w[1] - v[1] * w[0])
+print("w x v:", w[0] * v[1] - w[1] * v[0])
+print("Determinant of the matrix with columns v and w:", np.linalg.det(np.column_stack((v, w))))`
+        } editable={true} />
+      </div>
+      <div>
+        We can also calculate the area of the parallelogram using only dot products. To do that, we
+        need one more fact: the dot product of a vector with itself always equals its magnitude squared.
+        Intuitively, projecting a vector onto itself just gives back the same vector, so the dot product
+        is its length times its own length.
+      </div>
+      <div>
+        <BlockMath math={String.raw`
+          \boldsymbol{v} \cdot \boldsymbol{v}
+          \enspace = \enspace
+          \lVert \boldsymbol{v} \rVert^2
+        `} />
+      </div>
+      <div>
+        <CodeBlock code={
+`import numpy as np
+
+v = np.array([-3, 2, -4])
 
 print("Dot product:", np.dot(v, v))
 print("Magnitude of vector v squared:", np.linalg.norm(v)**2)`
         } editable={true} />
       </div>
       <div>
-        The area of the parallelogram spanned by two vectors is equal to the magnitude of 
-        the cross product of those vectors.
+        The area of the parallelogram is the length of one side times the height, which
+        is <strong>‖v‖‖w‖</strong> sin θ. Using the identity sin²θ = 1 - cos²θ and the formula from the
+        dot products lesson, we can rewrite the area using only dot products.
+      </div>
+      <div>
+        <BlockMath math={String.raw`
+          \text{area}^2
+          \enspace = \enspace
+          \lVert \boldsymbol{v} \rVert^2 \lVert \boldsymbol{w} \rVert^2 \sin^2\theta
+          \enspace = \enspace
+          \lVert \boldsymbol{v} \rVert^2 \lVert \boldsymbol{w} \rVert^2 (1 - \cos^2\theta)
+        `} />
+      </div>
+      <div>
+        <BlockMath math={String.raw`
+          \text{area}^2
+          \enspace = \enspace
+          \lVert \boldsymbol{v} \rVert^2 \lVert \boldsymbol{w} \rVert^2
+          - (\lVert \boldsymbol{v} \rVert \lVert \boldsymbol{w} \rVert \cos\theta)^2
+          \enspace = \enspace
+          (\boldsymbol{v} \cdot \boldsymbol{v})(\boldsymbol{w} \cdot \boldsymbol{w})
+          - (\boldsymbol{v} \cdot \boldsymbol{w})^2
+        `} />
+      </div>
+      <div>
+        The code below calculates the area this way and checks that it matches the magnitude of the
+        cross product.
       </div>
       <div>
         <CodeBlock code={
 `import numpy as np
 
-v = np.array([-1, 
-              -2, 
-              -3])
+v = np.array([-1, -2, -3])
 
-w = np.array([1, 
-              4, 
-              2])
+w = np.array([1, 4, 2])
 
 area = np.sqrt(np.dot(v, v) * np.dot(w, w) - np.dot(v, w)**2)
 print("Area of the parallelogram:", area)
-print("Magnitude of the cross product:", np.linalg.norm(np.linalg.cross(v, w)))`
+print("Magnitude of the cross product:", np.linalg.norm(np.cross(v, w)))`
         } editable={true} />
       </div>
     </>

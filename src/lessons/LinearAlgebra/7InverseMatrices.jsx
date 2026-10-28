@@ -1,4 +1,4 @@
-import { BlockMath, InlineMath } from 'react-katex';
+import { BlockMath } from 'react-katex';
 import CodeBlock from '../../components/CodeBlock/CodeBlock'
 import Note from '../../components/Note/Note';
 import 'katex/dist/katex.min.css';
@@ -8,8 +8,8 @@ export default function InverseMatrices() {
     <>
       <div>
         Let's say we know the placement of some vector after a linear transformation took place and
-        we want to find out where that vector was before the linear transformation. Below, <strong>A</strong> represents 
-        the transformation matrix, <strong>v</strong> represents the transformed vector, and <strong>x</strong> represents 
+        we want to find out where that vector was before the linear transformation. Below, <strong>A</strong> represents
+        the transformation matrix, <strong>v</strong> represents the transformed vector, and <strong>x</strong> represents
         the original vector.
       </div>
       <div>
@@ -29,12 +29,21 @@ export default function InverseMatrices() {
         `} />
       </div>
       <div>
-        We can solve for <strong>x</strong> by applying the linear 
+        We can solve for <strong>x</strong> by applying the linear
         transformation <strong>A</strong> to <strong>v</strong> in reverse. To do this, we
-        multiply <strong>v</strong> with the inverse of <strong>A</strong>.
+        multiply both sides of the equation by the inverse of <strong>A</strong>,
+        written as <strong>A<sup>-1</sup></strong>. Since <strong>A<sup>-1</sup>A</strong> equals the
+        identity matrix <strong>I</strong> (explained below), which leaves any vector unchanged,
+        we are left with <strong>x</strong> on its own.
       </div>
       <div>
-        <BlockMath math="\boldsymbol{A^{-1}v = x}" />
+        <BlockMath math="\boldsymbol{A^{-1}Ax = A^{-1}v}" />
+      </div>
+      <div>
+        <BlockMath math="\boldsymbol{Ix = A^{-1}v}" />
+      </div>
+      <div>
+        <BlockMath math="\boldsymbol{x = A^{-1}v}" />
       </div>
       <div>
         <BlockMath math={String.raw`
@@ -46,42 +55,17 @@ export default function InverseMatrices() {
         `} />
       </div>
       <div>
-        <CodeBlock code={
-`import numpy as np
-
-A = np.array([[1, 0, 0],
-              [1, 1, 0],
-              [1, 1, 1]])
-
-v = np.array([[4], 
-              [2], 
-              [-1]])
-
-inverseA = np.linalg.inv(A)
-
-print("Inverted matrix A:")
-print(inverseA, '\\n')
-
-x = inverseA @ v
-print("Vector x:")
-print(x, '\\n')
-
-print("Verify vector v:")
-print(A @ x)`
-        } editable={true} />
-      </div>
-      <div>
-        Multiplying a matrix with its own inversion will give you the <strong>identity matrix</strong>. The
-        identity matrix is an n x n square matrix with 1s on the main diagonal and 0s everywhere else.
-      </div>
-      <div>
         <BlockMath math={String.raw`
-          \boldsymbol{I_n} = \begin{pmatrix} 
-            1 & 0 & \cdots & 0 \\ 
-            0 & 1 & \cdots & 0 \\ 
-            \vdots & \vdots & \ddots & \vdots \\ 
-            0 & 0 & \cdots & 1 
-          \end{pmatrix}
+          \boldsymbol{x}
+          \enspace = \enspace
+          \begin{bmatrix}
+            1 & 0 & 0 \\
+            -1 & 1 & 0 \\
+            0 & -1 & 1
+          \end{bmatrix}
+          \begin{bmatrix} 4 \\ 2 \\ -1 \end{bmatrix}
+          \enspace = \enspace
+          \begin{bmatrix} 4 \\ -2 \\ -3 \end{bmatrix}
         `} />
       </div>
       <div>
@@ -92,10 +76,52 @@ A = np.array([[1, 0, 0],
               [1, 1, 0],
               [1, 1, 1]])
 
-inverseA = np.linalg.inv(A)
+v = np.array([[4],
+              [2],
+              [-1]])
+
+A_inv = np.linalg.inv(A)
+
+print("Inverted matrix A:")
+print(A_inv, '\\n')
+
+x = A_inv @ v
+print("Vector x:")
+print(x, '\\n')
+
+print("Verify vector v:")
+print(A @ x)`
+        } editable={true} />
+      </div>
+      <div>
+        Multiplying a matrix with its inverse will give you the <strong>identity matrix</strong>. The
+        identity matrix is an n x n square matrix with 1s on the main diagonal and 0s everywhere else.
+        As a transformation, the identity matrix leaves every vector exactly where it is, since its
+        columns show that the basis vectors stay in place. This is why multiplying by <strong>A<sup>-1</sup></strong> undoes <strong>A</strong>.
+        The order does not matter here: both <strong>A<sup>-1</sup>A</strong> and <strong>AA<sup>-1</sup></strong> equal <strong>I</strong>.
+      </div>
+      <div>
+        <BlockMath math={String.raw`
+          \boldsymbol{I_n} = \begin{bmatrix}
+            1 & 0 & \cdots & 0 \\
+            0 & 1 & \cdots & 0 \\
+            \vdots & \vdots & \ddots & \vdots \\
+            0 & 0 & \cdots & 1
+          \end{bmatrix}
+        `} />
+      </div>
+      <div>
+        <CodeBlock code={
+`import numpy as np
+
+A = np.array([[1, 0, 0],
+              [1, 1, 0],
+              [1, 1, 1]])
+
+A_inv = np.linalg.inv(A)
 
 print("3D identity matrix:")
-print(A @ inverseA)`
+print(A @ A_inv)`
         } editable={true} />
       </div>
       <div>
@@ -117,27 +143,29 @@ print("Inverse of A is not possible:")
 print(np.linalg.inv(A))`
         } editable={true} />
       </div>
-      <Note>
-        Using NumPy to represent the inverse of a matrix that has a determinant of 0 just reports nan for
-        all entries of the matrix as seen in the code output above. At some point during the calcuation
-        to invert the matrix, NumPy is dividing by the determinant, which in the case above, is 0.
-      </Note>
+      <div>
+        <Note>
+          In standard Python, NumPy raises a <strong>LinAlgError</strong> when you try to invert a matrix
+          with a determinant of 0. In the browser version of Python used on this site, that error can't be
+          raised, so NumPy returns a matrix filled with nan (not a number) instead.
+        </Note>
+      </div>
       <div>
         The <strong>column space</strong> of a matrix is the span of its columns. The column space
-        of the matrix below is 2 dimensions because the set of all linear combinations that can be 
-        produced by the columns of the matrix as vectors is all of 2-dimensional space.
+        of the matrix below is 2D because the set of all linear combinations that can be
+        produced by the columns of the matrix as vectors is all of 2D space.
       </div>
       <div>
         <BlockMath math={String.raw`
-          \begin{bmatrix} 
-            1 & 3 \\ 
-            -2 & 1 
+          \begin{bmatrix}
+            1 & 3 \\
+            -2 & 1
           \end{bmatrix}
         `} />
       </div>
       <div>
-        Now, going back to the equation above, <strong>Ax = v</strong>, what would happen if we 
-        attempt to solve for <strong>x</strong> when <strong>v</strong> is not in the column 
+        Now, going back to the equation above, <strong>Ax = v</strong>, what would happen if we
+        attempt to solve for <strong>x</strong> when <strong>v</strong> is not in the column
         space of <strong>A</strong>? There is no solution for <strong>x</strong> because there does not exist a
         vector that, when moved through the linear transformation <strong>A</strong>, lands on vector <strong>v</strong>.
       </div>
@@ -152,6 +180,12 @@ print(np.linalg.inv(A))`
           \quad\quad
           \boldsymbol{x} = \boldsymbol{?}
         `} />
+      </div>
+      <div>
+        The columns of this matrix, [1, 2] and [2, 4], are the same linearly dependent vectors from
+        the linear combinations lesson. Both have a y-coordinate that is twice the x-coordinate, so
+        the column space of <strong>A</strong> is just the line y = 2x. The vector <strong>v</strong> = [1, 0] is
+        not on that line, so it is not in the column space.
       </div>
       <div>
         <CodeBlock code={
@@ -172,16 +206,18 @@ print("Reconstruction of v:")
 print(A @ x)`
         } editable={true} />
       </div>
-      <Note>
-        Unlike <strong>np.linalg.inv()</strong>, which fails if the determinant of a given matrix is 
-        0, <strong>np.linalg.pinv()</strong> always returns a best-fit solution for <strong>x</strong>.
-        We can then reconstruct <strong>v</strong> by computing <strong>Ax</strong> and compare it to the 
-        original. If both vectors match, <strong>v</strong> lies in the column space of A. Try updating 
-        vector <strong>v</strong> above to be some vector that is in the column space of A.
-      </Note>
       <div>
-        The <strong>rank</strong> of a matrix is the number of linearly independent columns it 
-        has (which always equals the number of linearly independent rows). It is also the dimension of 
+        <Note>
+          Unlike <strong>np.linalg.inv()</strong>, which fails if the determinant of a given matrix is
+          0, <strong>np.linalg.pinv()</strong> always returns a best-fit solution for <strong>x</strong>.
+          We can then reconstruct <strong>v</strong> by computing <strong>Ax</strong> and compare it to the
+          original. If both vectors match, <strong>v</strong> lies in the column space of <strong>A</strong>. Try updating
+          vector <strong>v</strong> above to be some vector that is in the column space of <strong>A</strong>.
+        </Note>
+      </div>
+      <div>
+        The <strong>rank</strong> of a matrix is the number of linearly independent columns it
+        has (which always equals the number of linearly independent rows). It is also the dimension of
         the column space.
       </div>
       <div>
@@ -204,18 +240,25 @@ C = np.array([[1, 0, 0],
               [0, 0, 0],
               [0, 0, 0]])
 
-print("Rank of matrix C:", np.linalg.matrix_rank(C))`
+print("Rank of matrix C:", np.linalg.matrix_rank(C))
+
+D = np.array([[1, 2],
+              [2, 4]])
+
+print("Rank of matrix D (the column space example above):", np.linalg.matrix_rank(D))`
         } editable={true} />
       </div>
       <div>
-        A matrix is <strong>full rank</strong> when its rank is as large as possible. In other words, 
-        it has no redundant columns or rows. For a square matrix, this means it's invertible 
+        A matrix is <strong>full rank</strong> when its rank is as large as possible. In other words,
+        it has no redundant columns or rows. For a square matrix, this means it's invertible
         and <strong>Ax = v</strong> has exactly one solution for every <strong>v</strong>.
       </div>
       <div>
-        The <strong>null space</strong> of a matrix is the set of all vectors <strong>x</strong> for 
+        The <strong>null space</strong> of a matrix is the set of all vectors <strong>x</strong> for
         which <strong>Ax = 0</strong>. When a transformation squishes space down into a lower dimension,
-        there are infinitely many vectors that get squished down to the origin.
+        there are infinitely many vectors that get squished down to the origin. For a full rank matrix,
+        the only vector that lands on the origin is the zero vector itself, so the null space contains
+        only the zero vector.
       </div>
       <div>
         <CodeBlock code={
@@ -233,12 +276,14 @@ print("Output vector:")
 print(A @ x)`
         } editable={true} />
       </div>
-      <Note>
-        In the example above, there are infinitely many vectors in the null space. More specifically,
-        any vector that follows the pattern <strong>[0, 0, z]</strong> is in the null space. Try updating 
-        the z coordinate of vector <strong>x</strong> above and notice how the output vector continues 
-        to be the vector at the origin.
-      </Note>
+      <div>
+        <Note>
+          In the example above, there are infinitely many vectors in the null space. More specifically,
+          any vector that follows the pattern <strong>[0, 0, z]</strong> is in the null space. Try updating
+          the z coordinate of vector <strong>x</strong> above and notice how the output vector continues
+          to be the zero vector.
+        </Note>
+      </div>
     </>
   )
 }
