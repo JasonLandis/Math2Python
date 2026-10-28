@@ -14,7 +14,7 @@ export default function Eigenvectors() {
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{Av} = \lambda\boldsymbol{v}
+          Av = \lambda v
         `} />
       </div>
       <div>
@@ -23,9 +23,8 @@ export default function Eigenvectors() {
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{Av} - \lambda\boldsymbol{Iv} = \boldsymbol{0}
-          \quad\quad\Longrightarrow\quad\quad
-          (\boldsymbol{A} - \lambda\boldsymbol{I})\boldsymbol{v} = \boldsymbol{0}
+          Av - \lambda Iv = 0 \Rightarrow
+          (A - \lambda I)v = 0
         `} />
       </div>
       <div>
@@ -35,13 +34,13 @@ export default function Eigenvectors() {
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{A} =
+          A =
           \begin{bmatrix}
             3 & 1 \\
             0 & 2
           \end{bmatrix}
-          \quad\quad
-          \boldsymbol{I} =
+          \qquad
+          I =
           \begin{bmatrix}
             1 & 0 \\
             0 & 1
@@ -50,7 +49,7 @@ export default function Eigenvectors() {
       </div>
       <div>
         <Equation math={String.raw`
-          \text{det}\left(\boldsymbol{A}-\lambda\boldsymbol{I}\right) = 0
+          \text{det}\left(A - \lambda I\right) = 0
         `} />
       </div>
       <div>
@@ -59,13 +58,13 @@ export default function Eigenvectors() {
             \begin{bmatrix}
               3 & 1 \\
               0 & 2
-            \end{bmatrix}
-            - \lambda
-            \begin{bmatrix}
+            \end{bmatrix} -
+            \lambda \begin{bmatrix}
               1 & 0 \\
               0 & 1
             \end{bmatrix}
-          \right) = 0
+          \right) =
+          0
         `} />
       </div>
       <div>
@@ -75,7 +74,8 @@ export default function Eigenvectors() {
               3 - \lambda & 1 \\
               0 & 2 - \lambda
             \end{bmatrix}
-          \right) = 0
+          \right) =
+          0
         `} />
       </div>
       <div>
@@ -90,7 +90,7 @@ export default function Eigenvectors() {
       </div>
       <div>
         <Equation math={String.raw`
-          \lambda = 3 \quad \text{or} \quad \lambda = 2
+          \lambda = 3 \text{ or } \lambda = 2
         `} />
       </div>
       <div>
@@ -99,34 +99,24 @@ export default function Eigenvectors() {
       </div>
       <div>
         <Equation math={String.raw`
-          \lambda = 3:
-          \quad
-          \begin{bmatrix}
+          \lambda = 3: \begin{bmatrix}
             0 & 1 \\
             0 & -1
           \end{bmatrix}
-          \begin{bmatrix} x \\ y \end{bmatrix}
-          = \boldsymbol{0}
-          \quad\Longrightarrow\quad
-          y = 0
-          \quad\Longrightarrow\quad
-          \boldsymbol{v} = \begin{bmatrix} 1 \\ 0 \end{bmatrix}
+          \begin{bmatrix} x \\ y \end{bmatrix} = 0 \Rightarrow
+          y = 0 \Rightarrow
+          v = \begin{bmatrix} 1 \\ 0 \end{bmatrix}
         `} />
       </div>
       <div>
         <Equation math={String.raw`
-          \lambda = 2:
-          \quad
-          \begin{bmatrix}
+          \lambda = 2: \begin{bmatrix}
             1 & 1 \\
             0 & 0
           \end{bmatrix}
-          \begin{bmatrix} x \\ y \end{bmatrix}
-          = \boldsymbol{0}
-          \quad\Longrightarrow\quad
-          x = -y
-          \quad\Longrightarrow\quad
-          \boldsymbol{v} = \begin{bmatrix} -1 \\ 1 \end{bmatrix}
+          \begin{bmatrix} x \\ y \end{bmatrix} = 0 \Rightarrow
+          x = -y \Rightarrow
+          v = \begin{bmatrix} -1 \\ 1 \end{bmatrix}
         `} />
       </div>
       <div>
@@ -217,7 +207,7 @@ print(eigen.eigenvalues)`
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{A} =
+          A =
           \begin{bmatrix}
             -1 & 0 \\
             0 & 2
@@ -226,16 +216,12 @@ print(eigen.eigenvalues)`
       </div>
       <div>
         <Equation math={String.raw`
-          \lambda_1 \enspace = \enspace -1
-          \enspace \rightarrow \enspace
-          \begin{bmatrix} 1 \\ 0 \end{bmatrix}
+          \lambda_1 = -1 \rightarrow \begin{bmatrix} 1 \\ 0 \end{bmatrix}
         `} />
       </div>
       <div>
         <Equation math={String.raw`
-          \lambda_2 \enspace = \enspace 2
-          \enspace \rightarrow \enspace
-          \begin{bmatrix} 0 \\ 1 \end{bmatrix}
+          \lambda_2 = 2 \rightarrow \begin{bmatrix} 0 \\ 1 \end{bmatrix}
         `} />
       </div>
       <div>
@@ -269,22 +255,19 @@ print(eigen.eigenvalues)`
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{A} =
+          A =
           \begin{bmatrix}
             3 & 1 \\
             0 & 2
           \end{bmatrix}
-          \quad\quad
-          \text{eigenvectors of }\boldsymbol{A}
-          \enspace \rightarrow \enspace
-          \begin{bmatrix} 1 \\ 0 \end{bmatrix}
-          \enspace \text{and} \enspace
-          \begin{bmatrix} -1 \\ 1 \end{bmatrix}
+          \qquad
+          \text{eigenvectors of }A \rightarrow
+          \begin{bmatrix} 1 \\ 0 \end{bmatrix} \text{ and } \begin{bmatrix} -1 \\ 1 \end{bmatrix}
         `} />
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{B} =
+          B =
           \begin{bmatrix}
             1 & -1 \\
             0 & 1
@@ -293,7 +276,7 @@ print(eigen.eigenvalues)`
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{B^{-1}AB} =
+          B^{-1}AB =
           \begin{bmatrix}
             3 & 0 \\
             0 & 2
@@ -303,7 +286,7 @@ print(eigen.eigenvalues)`
       <div>
         <Equation math={String.raw`
           \lambda_1 = 3
-          \quad\quad
+          \qquad
           \lambda_2 = 2
         `} />
       </div>
@@ -334,12 +317,9 @@ print(np.diag(diagonal_matrix))`
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{A^n}
-          \enspace = \enspace
-          \boldsymbol{BD^nB^{-1}}
-          \quad\quad
-          \boldsymbol{D^n}
-          \enspace = \enspace
+          A^n = BD^nB^{-1}
+          \qquad
+          D^n =
           \begin{bmatrix}
             3^n & 0 \\
             0 & 2^n

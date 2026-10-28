@@ -18,8 +18,12 @@ export default function QuickEigenCompute() {
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{A} = \begin{bmatrix} a & b \\ c & d \end{bmatrix}
-          \quad\quad
+          A =
+          \begin{bmatrix}
+            a & b \\
+            c & d
+          \end{bmatrix}
+          \qquad
           \lambda^2 - (a + d)\lambda + (ad - bc) = 0
         `}/>
       </div>
@@ -31,9 +35,7 @@ export default function QuickEigenCompute() {
       </div>
       <div>
         <Equation math={String.raw`
-          (m + k)(m - k) = m^2 - k^2 = p
-          \quad\quad\Longrightarrow\quad\quad
-          k = \sqrt{m^2 - p}
+          (m + k)(m - k) = m^2 - k^2 = p \Rightarrow k = \sqrt{m^2 - p}
         `}/>
       </div>
       <div>
@@ -46,17 +48,21 @@ export default function QuickEigenCompute() {
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{A} = \begin{bmatrix} 2 & 7 \\ 1 & 8 \end{bmatrix}
-          \quad\quad
+          A =
+          \begin{bmatrix}
+            2 & 7 \\
+            1 & 8
+          \end{bmatrix}
+          \qquad
           m = \frac{2 + 8}{2} = 5
-          \quad\quad
-          p = \text{det}(\boldsymbol{A}) = (2)(8) - (7)(1) = 9
+          \qquad
+          p = \text{det}(A) = (2)(8) - (7)(1) = 9
         `}/>
       </div>
       <div>
         <Equation math={String.raw`
           \lambda_1 = 5 + \sqrt{5^2 - 9} = 5 + \sqrt{16} = 9
-          \quad\quad
+          \qquad
           \lambda_2 = 5 - \sqrt{5^2 - 9} = 5 - \sqrt{16} = 1
         `}/>
       </div>
@@ -88,19 +94,22 @@ print(np.linalg.eigvals(A))`
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{A} = \begin{bmatrix} 3 & 1 \\ 0 & 2 \end{bmatrix}
-          \quad\quad
+          A =
+          \begin{bmatrix}
+            3 & 1 \\
+            0 & 2
+          \end{bmatrix}
+          \qquad
           m = \frac{3 + 2}{2} = 2.5
-          \quad\quad
+          \qquad
           p = (3)(2) - (1)(0) = 6
         `}/>
       </div>
       <div>
         <Equation math={String.raw`
-          \lambda = 2.5 \pm \sqrt{2.5^2 - 6} = 2.5 \pm \sqrt{0.25} = 2.5 \pm 0.5
-          \quad\quad\Longrightarrow\quad\quad
+          \lambda = 2.5 \pm \sqrt{2.5^2 - 6} = 2.5 \pm \sqrt{0.25} = 2.5 \pm 0.5 \Rightarrow
           \lambda_1 = 3
-          \quad
+          \qquad
           \lambda_2 = 2
         `}/>
       </div>

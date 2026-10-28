@@ -16,18 +16,19 @@ export default function ChangeOfBasis() {
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{i_1} = \begin{bmatrix} 1 \\ 0 \end{bmatrix}
-          \quad
-          \boldsymbol{j_1} = \begin{bmatrix} 0 \\ 1 \end{bmatrix}
-          \quad\quad\quad
-          \boldsymbol{i_2} = \begin{bmatrix} 2 \\ 1 \end{bmatrix}
-          \quad
-          \boldsymbol{j_2} = \begin{bmatrix} -1 \\ 3 \end{bmatrix}
+          i_1 = \begin{bmatrix} 1 \\ 0 \end{bmatrix}
+          \qquad
+          j_1 = \begin{bmatrix} 0 \\ 1 \end{bmatrix}
+          \qquad
+          i_2 = \begin{bmatrix} 2 \\ 1 \end{bmatrix}
+          \qquad
+          j_2 = \begin{bmatrix} -1 \\ 3 \end{bmatrix}
         `} />
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{B} = \begin{bmatrix}
+          B =
+          \begin{bmatrix}
             2 & -1 \\
             1 & 3
           \end{bmatrix}
@@ -46,7 +47,7 @@ export default function ChangeOfBasis() {
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{v_2} = \begin{bmatrix} -2 \\ 4 \end{bmatrix}
+          v_2 = \begin{bmatrix} -2 \\ 4 \end{bmatrix}
         `} />
       </div>
       <div>
@@ -57,12 +58,9 @@ export default function ChangeOfBasis() {
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{v_1}
-          \enspace = \enspace
-          -2 \begin{bmatrix} 2 \\ 1 \end{bmatrix}
-          \enspace + \enspace
-          4 \begin{bmatrix} -1 \\ 3 \end{bmatrix}
-          \enspace = \enspace
+          v_1 =
+          -2 \begin{bmatrix} 2 \\ 1 \end{bmatrix} +
+          4 \begin{bmatrix} -1 \\ 3 \end{bmatrix} =
           \begin{bmatrix} -8 \\ 10 \end{bmatrix}
         `} />
       </div>
@@ -76,8 +74,7 @@ export default function ChangeOfBasis() {
             2 & -1 \\
             1 & 3
           \end{bmatrix}
-          \begin{bmatrix} -2 \\ 4 \end{bmatrix}
-          \enspace = \enspace
+          \begin{bmatrix} -2 \\ 4 \end{bmatrix} =
           \begin{bmatrix} -8 \\ 10 \end{bmatrix}
         `} />
       </div>
@@ -104,10 +101,8 @@ print(B @ v2)`
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{B^{-1}}
-          \enspace = \enspace
-          \frac{1}{7}
-          \begin{bmatrix}
+          B^{-1} =
+          \frac{1}{7} \begin{bmatrix}
             3 & 1 \\
             -1 & 2
           \end{bmatrix}
@@ -118,9 +113,8 @@ print(B @ v2)`
           \begin{bmatrix}
             2 & -1 \\
             1 & 3
-          \end{bmatrix}^{-1}
-          \begin{bmatrix} -8 \\ 10 \end{bmatrix}
-          \enspace = \enspace
+          \end{bmatrix}
+          ^{-1} \begin{bmatrix} -8 \\ 10 \end{bmatrix} =
           \begin{bmatrix} -2 \\ 4 \end{bmatrix}
         `} />
       </div>
@@ -154,15 +148,15 @@ print(np.linalg.inv(B) @ v1)`
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{v_2} = \begin{bmatrix} 1 \\ 2 \end{bmatrix}
-          \quad\quad
-          \boldsymbol{B} =
+          v_2 = \begin{bmatrix} 1 \\ 2 \end{bmatrix}
+          \qquad
+          B =
           \begin{bmatrix}
             2 & -1 \\
             1 & 3
           \end{bmatrix}
-          \quad\quad
-          \boldsymbol{T_1} =
+          \qquad
+          T_1 =
           \begin{bmatrix}
             0 & -1 \\
             1 & 0
@@ -179,8 +173,8 @@ print(np.linalg.inv(B) @ v1)`
           \begin{bmatrix}
             2 & -1 \\
             1 & 3
-          \end{bmatrix}^{-1}
-          \begin{bmatrix}
+          \end{bmatrix}
+          ^{-1} \begin{bmatrix}
             0 & -1 \\
             1 & 0
           \end{bmatrix}
@@ -188,8 +182,7 @@ print(np.linalg.inv(B) @ v1)`
             2 & -1 \\
             1 & 3
           \end{bmatrix}
-          \begin{bmatrix} 1 \\ 2 \end{bmatrix}
-          \enspace = \enspace
+          \begin{bmatrix} 1 \\ 2 \end{bmatrix} =
           \begin{bmatrix} -3 \\ 1 \end{bmatrix}
         `} />
       </div>
@@ -200,12 +193,8 @@ print(np.linalg.inv(B) @ v1)`
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{T_2}
-          \enspace = \enspace
-          \boldsymbol{B^{-1}T_1B}
-          \enspace = \enspace
-          \frac{1}{7}
-          \begin{bmatrix}
+          T_2 = B^{-1}T_1B =
+          \frac{1}{7} \begin{bmatrix}
             -1 & -10 \\
             5 & 1
           \end{bmatrix}

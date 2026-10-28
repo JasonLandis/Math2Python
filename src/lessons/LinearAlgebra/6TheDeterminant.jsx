@@ -16,14 +16,12 @@ export default function TheDeterminant() {
       </div>
       <div>
         <Equation math={String.raw`
-          \text{det}
-          \left(
-          \begin{bmatrix}
-            a & b \\
-            c & d
-          \end{bmatrix}
-          \right)
-          \enspace = \enspace
+          \text{det}\left(
+            \begin{bmatrix}
+              a & b \\
+              c & d
+            \end{bmatrix}
+          \right) =
           ad - bc
         `} />
       </div>
@@ -56,36 +54,32 @@ print("Determinant calculated using NumPy:", np.linalg.det(M))`
       </div>
       <div>
         <Equation math={String.raw`
-          c = 0:
-          \quad
+          c = 0: 
           \begin{bmatrix}
             a & b \\
             0 & d
           \end{bmatrix}
-          \quad\quad
-          \boldsymbol{i'} = \begin{bmatrix} a \\ 0 \end{bmatrix}
-          \quad
-          \boldsymbol{j'} = \begin{bmatrix} b \\ d \end{bmatrix}
-          \quad\quad
-          \text{area} = \underbrace{a}_{\text{base}} \cdot \underbrace{d}_{\text{height}}
-          = ad - b \cdot 0
+          \qquad
+          i' = \begin{bmatrix} a \\ 0 \end{bmatrix}
+          \qquad
+          j' = \begin{bmatrix} b \\ d \end{bmatrix}
+          \qquad
+          \text{area} = \underbrace{a}_{\text{base}} \cdot \underbrace{d}_{\text{height}} = ad - b \cdot 0
         `} />
       </div>
       <div>
         <Equation math={String.raw`
-          b = 0:
-          \quad
+          b = 0: 
           \begin{bmatrix}
             a & 0 \\
             c & d
           \end{bmatrix}
-          \quad\quad
-          \boldsymbol{i'} = \begin{bmatrix} a \\ c \end{bmatrix}
-          \quad
-          \boldsymbol{j'} = \begin{bmatrix} 0 \\ d \end{bmatrix}
-          \quad\quad
-          \text{area} = \underbrace{d}_{\text{base}} \cdot \underbrace{a}_{\text{width}}
-          = ad - 0 \cdot c
+          \qquad
+          i' = \begin{bmatrix} a \\ c \end{bmatrix}
+          \qquad
+          j' = \begin{bmatrix} 0 \\ d \end{bmatrix}
+          \qquad
+          \text{area} = \underbrace{d}_{\text{base}} \cdot \underbrace{a}_{\text{width}} = ad - 0 \cdot c
         `} />
       </div>
       <div>
@@ -107,11 +101,31 @@ print("Example where b is 0 (it's just a * d):", determinant)`
         triangles (<strong>ac</strong> and <strong>bd</strong>) and the two corner rectangles (2<strong>bc</strong>) leaves
         the area of the parallelogram.
       </div>
-      <div><Equation math="(a + b) \cdot (c + d) - (ac + bd + 2bc)" /></div>
-      <div><Equation math="(ac + ad + bc + bd) - (ac + bd + 2bc)" /></div>
-      <div><Equation math="ac + ad + bc + bd - ac - bd - 2bc" /></div>
-      <div><Equation math="ad + bc - 2bc" /></div>
-      <div><Equation math="ad - bc" /></div>
+      <div>
+        <Equation math={String.raw`
+          (a + b) \cdot (c + d) - (ac + bd + 2bc)
+        `} />
+      </div>
+      <div>
+        <Equation math={String.raw`
+          (ac + ad + bc + bd) - (ac + bd + 2bc)
+        `} />
+      </div>
+      <div>
+        <Equation math={String.raw`
+          ac + ad + bc + bd - ac - bd - 2bc
+        `} />
+      </div>
+      <div>
+        <Equation math={String.raw`
+          ad + bc - 2bc
+        `} />
+      </div>
+      <div>
+        <Equation math={String.raw`
+          ad - bc
+        `} />
+      </div>
       <div>
         <CodeBlock code={
 `import numpy as np
@@ -159,38 +173,34 @@ print("Determinant calculated using NumPy:", np.linalg.det(M))`
       </div>
       <div>
         <Equation math={String.raw`
-          \text{det}
-            \left(
-              \begin{bmatrix}
-                a & b & c \\
-                d & e & f \\
-                g & h & i
-              \end{bmatrix}
-            \right)
-          \enspace = \enspace
-          a \cdot \text{det}
-            \left(
-              \begin{bmatrix}
-                e & f \\
-                h & i
-              \end{bmatrix}
-            \right)
-          \enspace - \enspace
-          b \cdot \text{det}
-            \left(
-              \begin{bmatrix}
-                d & f \\
-                g & i
-              \end{bmatrix}
-            \right)
-          \enspace + \enspace
-          c \cdot \text{det}
-            \left(
-              \begin{bmatrix}
-                d & e \\
-                g & h
-              \end{bmatrix}
-            \right)
+          \text{det}\left(
+            \begin{bmatrix}
+              a & b & c \\
+              d & e & f \\
+              g & h & i
+            \end{bmatrix}
+          \right) =
+          a \cdot
+          \text{det}\left(
+            \begin{bmatrix}
+              e & f \\
+              h & i
+            \end{bmatrix}
+          \right) -
+          b \cdot
+          \text{det}\left(
+            \begin{bmatrix}
+              d & f \\
+              g & i
+            \end{bmatrix}
+          \right) +
+          c \cdot
+          \text{det}\left(
+            \begin{bmatrix}
+              d & e \\
+              g & h
+            \end{bmatrix}
+          \right)
         `} />
       </div>
       <div>
@@ -243,33 +253,28 @@ print("Determinant calculated using NumPy:", np.linalg.det(M))`
       </div>
       <div>
         <Equation math={String.raw`
-          \text{det}
-            \left(
-              \begin{bmatrix}
-                a & b \\
-                c & d
-              \end{bmatrix}
-              \begin{bmatrix}
-                e & f \\
-                g & h
-              \end{bmatrix}
-            \right)
-          \enspace = \enspace
-          \text{det}
-            \left(
-              \begin{bmatrix}
-                a & b \\
-                c & d
-              \end{bmatrix}
-            \right)
-          \enspace \cdot \enspace
-          \text{det}
-            \left(
-              \begin{bmatrix}
-                e & f \\
-                g & h
-              \end{bmatrix}
-            \right)
+          \text{det}\left(
+            \begin{bmatrix}
+              a & b \\
+              c & d
+            \end{bmatrix}
+            \begin{bmatrix}
+              e & f \\
+              g & h
+            \end{bmatrix}
+          \right) =
+          \text{det}\left(
+            \begin{bmatrix}
+              a & b \\
+              c & d
+            \end{bmatrix}
+          \right) \cdot
+          \text{det}\left(
+            \begin{bmatrix}
+              e & f \\
+              g & h
+            \end{bmatrix}
+          \right)
         `} />
       </div>
       <div>

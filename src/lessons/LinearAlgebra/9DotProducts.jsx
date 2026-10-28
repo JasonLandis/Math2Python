@@ -13,10 +13,9 @@ export default function DotProducts() {
       </div>
       <div>
         <Equation math={String.raw`
-          \begin{bmatrix} 2 \\ -2 \\ 3 \end{bmatrix}
-          \cdot
-          \begin{bmatrix} 1 \\ 3 \\ 4 \end{bmatrix}
-          = 2 \cdot 1 + (-2) \cdot 3 + 3 \cdot 4 = 8
+          \begin{bmatrix} 2 \\ -2 \\ 3 \end{bmatrix} \cdot
+          \begin{bmatrix} 1 \\ 3 \\ 4 \end{bmatrix} =
+          2 \cdot 1 + (-2) \cdot 3 + 3 \cdot 4 = 8
         `} />
       </div>
       <div>
@@ -86,9 +85,7 @@ print("Dot product:", np.dot(v, w))`
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{v} \cdot \boldsymbol{w}
-          \enspace = \enspace
-          \lVert \boldsymbol{v} \rVert \, \lVert \boldsymbol{w} \rVert \cos\theta
+          v \cdot w = \lVert v \rVert \, \lVert w \rVert \cos\theta
         `} />
       </div>
       <div>
@@ -97,9 +94,7 @@ print("Dot product:", np.dot(v, w))`
       </div>
       <div>
         <Equation math={String.raw`
-          \lVert \boldsymbol{v} \rVert
-          \enspace = \enspace
-          \sqrt{(v_1)^2 + (v_2)^2}
+          \lVert v \rVert = \sqrt{(v_1)^2 + (v_2)^2}
         `} />
       </div>
       <div>
@@ -107,19 +102,19 @@ print("Dot product:", np.dot(v, w))`
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{v} = \begin{bmatrix} 3 \\ 0 \end{bmatrix}
-          \quad\quad
-          \boldsymbol{w} = \begin{bmatrix} 2 \\ 2 \end{bmatrix}
-          \quad\quad
+          v = \begin{bmatrix} 3 \\ 0 \end{bmatrix}
+          \qquad
+          w = \begin{bmatrix} 2 \\ 2 \end{bmatrix}
+          \qquad
           \theta = 45^\circ
         `} />
       </div>
       <div>
         <Equation math={String.raw`
-          \lVert \boldsymbol{v} \rVert = \sqrt{3^2 + 0^2} = 3
-          \quad\quad
-          \lVert \boldsymbol{w} \rVert = \sqrt{2^2 + 2^2} = 2\sqrt{2}
-          \quad\quad
+          \lVert v \rVert = \sqrt{3^2 + 0^2} = 3
+          \qquad
+          \lVert w \rVert = \sqrt{2^2 + 2^2} = 2\sqrt{2}
+          \qquad
           \cos(45^\circ) = \frac{\sqrt{2}}{2}
         `} />
       </div>
@@ -128,20 +123,13 @@ print("Dot product:", np.dot(v, w))`
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{v} \cdot \boldsymbol{w}
-          \enspace = \enspace
-          (3)(2) + (0)(2)
-          \enspace = \enspace
-          6
+          v \cdot w = (3)(2) + (0)(2) = 6
         `} />
       </div>
       <div>
         <Equation math={String.raw`
-          \lVert \boldsymbol{v} \rVert \, \lVert \boldsymbol{w} \rVert \cos\theta
-          \enspace = \enspace
-          3 \cdot 2\sqrt{2} \cdot \frac{\sqrt{2}}{2}
-          \enspace = \enspace
-          6
+          \lVert v \rVert \, \lVert w \rVert \cos\theta =
+          3 \cdot 2\sqrt{2} \cdot \frac{\sqrt{2}}{2} = 6
         `} />
       </div>
       <div>
@@ -207,45 +195,34 @@ print("Dot product calculated by projecting v onto w:", w_mag * proj_v_mag)`
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{A} = \begin{bmatrix} 3 & -2 \end{bmatrix}
-          \quad\quad
-          \boldsymbol{w} = \begin{bmatrix} 3 \\ -2 \end{bmatrix}
-          \quad\quad
-          \boldsymbol{v} = \begin{bmatrix} 1 \\ 4 \end{bmatrix}
+          A = \begin{bmatrix} 3 & -2 \end{bmatrix}
+          \qquad
+          w = \begin{bmatrix} 3 \\ -2 \end{bmatrix}
+          \qquad
+          v = \begin{bmatrix} 1 \\ 4 \end{bmatrix}
         `} />
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{i} \rightarrow 3
-          \quad\quad
-          \boldsymbol{j} \rightarrow -2
-          \quad\quad\quad
-          \boldsymbol{v} = 1\boldsymbol{i} + 4\boldsymbol{j}
-          \enspace \rightarrow \enspace
-          1(3) + 4(-2)
+          i \rightarrow 3
+          \qquad
+          j \rightarrow -2
+          \qquad
+          v = 1i + 4j \rightarrow 1(3) + 4(-2)
         `} />
       </div>
       <div>
         <Equation math={String.raw`
-          \textbf{Matrix multiplication:\enspace} \allowbreak
-          \begin{bmatrix} 3 & -2 \end{bmatrix}
-          \begin{bmatrix} 1 \\ 4 \end{bmatrix}
-          \enspace = \enspace
-          (3)(1) + (-2)(4)
-          \enspace = \enspace
-          -5
+          \textbf{Matrix multiplication: } \allowbreak
+          \begin{bmatrix} 3 & -2 \end{bmatrix} \begin{bmatrix} 1 \\ 4 \end{bmatrix} =
+          (3)(1) + (-2)(4) = -5
         `} />
       </div>
       <div>
         <Equation math={String.raw`
-          \textbf{Dot product:\enspace} \allowbreak
-          \begin{bmatrix} 3 \\ -2 \end{bmatrix}
-          \cdot
-          \begin{bmatrix} 1 \\ 4 \end{bmatrix}
-          \enspace = \enspace
-          (3)(1) + (-2)(4)
-          \enspace = \enspace
-          -5
+          \textbf{Dot product: } \allowbreak \begin{bmatrix} 3 \\ -2 \end{bmatrix} \cdot
+          \begin{bmatrix} 1 \\ 4 \end{bmatrix} =
+          (3)(1) + (-2)(4) = -5
         `} />
       </div>
       <div>

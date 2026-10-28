@@ -12,11 +12,12 @@ export default function CrossProductsExtended() {
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{v} = \begin{bmatrix} 4 \\ -1 \\ 3 \end{bmatrix}
-          \quad\quad
-          \boldsymbol{w} = \begin{bmatrix} -2 \\ 2 \\ 1 \end{bmatrix}
-          \quad\quad
-          \boldsymbol{A} = \begin{bmatrix}
+          v = \begin{bmatrix} 4 \\ -1 \\ 3 \end{bmatrix}
+          \qquad
+          w = \begin{bmatrix} -2 \\ 2 \\ 1 \end{bmatrix}
+          \qquad
+          A =
+          \begin{bmatrix}
             4 & -2 \\
             -1 & 2 \\
             3 & 1
@@ -25,35 +26,28 @@ export default function CrossProductsExtended() {
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{p}
-          \enspace = \enspace
+          p =
           \begin{bmatrix}
             \text{det}\left(
               \begin{bmatrix}
                 -1 & 2 \\
                 3 & 1
               \end{bmatrix}
-            \right) \\[2ex]
+            \right) \\ [2ex]
             \text{det}\left(
               \begin{bmatrix}
                 3 & 1 \\
                 4 & -2
               \end{bmatrix}
-            \right) \\[2ex]
+            \right) \\ [2ex]
             \text{det}\left(
               \begin{bmatrix}
                 4 & -2 \\
                 -1 & 2
               \end{bmatrix}
             \right)
-          \end{bmatrix}
-          \enspace = \enspace
-          \begin{bmatrix}
-            (-1)(1) - (2)(3) \\
-            (3)(-2) - (1)(4) \\
-            (4)(2) - (-2)(-1)
-          \end{bmatrix}
-          \enspace = \enspace
+          \end{bmatrix} =
+          \begin{bmatrix} (-1)(1) - (2)(3) \\ (3)(-2) - (1)(4) \\ (4)(2) - (-2)(-1) \end{bmatrix} =
           \begin{bmatrix} -7 \\ -10 \\ 6 \end{bmatrix}
         `} />
       </div>
@@ -65,8 +59,7 @@ export default function CrossProductsExtended() {
       </div>
       <div>
         <Equation math={String.raw`
-          v_2 w_3 - v_3 w_2
-          \enspace = \enspace
+          v_2 w_3 - v_3 w_2 =
           \text{det}\left(
             \begin{bmatrix}
               v_2 & w_2 \\
@@ -77,11 +70,7 @@ export default function CrossProductsExtended() {
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{v} \times \boldsymbol{w}
-          \enspace = \enspace
-          \boldsymbol{p}
-          \enspace = \enspace
-          \begin{bmatrix} -7 \\ -10 \\ 6 \end{bmatrix}
+          v \times w = p = \begin{bmatrix} -7 \\ -10 \\ 6 \end{bmatrix}
         `} />
       </div>
       <div>
@@ -120,19 +109,16 @@ print(np.cross(v, w))`
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{v} \times \boldsymbol{w}
-          \enspace = \enspace
+          v \times w =
           \text{det}\left(
             \begin{bmatrix}
-              \boldsymbol{i} & v_1 & w_1 \\
-              \boldsymbol{j} & v_2 & w_2 \\
-              \boldsymbol{k} & v_3 & w_3
+              i & v_1 & w_1 \\
+              j & v_2 & w_2 \\
+              k & v_3 & w_3
             \end{bmatrix}
-          \right)
-          \enspace = \enspace
-          \boldsymbol{i}(v_2 w_3 - v_3 w_2)
-          - \boldsymbol{j}(v_1 w_3 - v_3 w_1)
-          + \boldsymbol{k}(v_1 w_2 - v_2 w_1)
+          \right) =
+          i(v_2 w_3 - v_3 w_2) - j(v_1 w_3 - v_3 w_1) +
+          k(v_1 w_2 - v_2 w_1)
         `} />
       </div>
       <div>
@@ -149,15 +135,9 @@ print(np.cross(v, w))`
       </div>
       <div>
         <Equation math={String.raw`
-          f(\boldsymbol{u})
-          \enspace = \enspace
-          \text{det}\left(
-            \begin{bmatrix}
-              \boldsymbol{u} & \boldsymbol{v} & \boldsymbol{w}
-            \end{bmatrix}
-          \right)
-          \enspace = \enspace
-          \boldsymbol{p} \cdot \boldsymbol{u}
+          f(u) =
+          \text{det}\left(\begin{bmatrix} u & v & w \end{bmatrix}\right) =
+          p \cdot u
         `} />
       </div>
       <div>
@@ -174,24 +154,20 @@ print(np.cross(v, w))`
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{u} = \begin{bmatrix} 1 \\ -2 \\ 3 \end{bmatrix}
-          \quad\quad
-          \boldsymbol{v} = \begin{bmatrix} -2 \\ 3 \\ 4 \end{bmatrix}
-          \quad\quad
-          \boldsymbol{w} = \begin{bmatrix} -1 \\ 2 \\ 1 \end{bmatrix}
+          u = \begin{bmatrix} 1 \\ -2 \\ 3 \end{bmatrix}
+          \qquad
+          v = \begin{bmatrix} -2 \\ 3 \\ 4 \end{bmatrix}
+          \qquad
+          w = \begin{bmatrix} -1 \\ 2 \\ 1 \end{bmatrix}
         `} />
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{v}\times\boldsymbol{w}
-          \enspace = \enspace
-          \begin{bmatrix} -2 \\ 3 \\ 4 \end{bmatrix}
-          \times
-          \begin{bmatrix} -1 \\ 2 \\ 1 \end{bmatrix}
-          \enspace = \enspace
-          \begin{bmatrix} -5 \\ -2 \\ -1 \end{bmatrix}
-          \enspace = \enspace
-          \boldsymbol{p}
+          v \times w =
+          \begin{bmatrix} -2 \\ 3 \\ 4 \end{bmatrix} \times
+          \begin{bmatrix} -1 \\ 2 \\ 1 \end{bmatrix} =
+          \begin{bmatrix} -5 \\ -2 \\ -1 \end{bmatrix} =
+          p
         `} />
       </div>
       <div>
@@ -202,14 +178,11 @@ print(np.cross(v, w))`
               -2 & 3 & 2 \\
               3 & 4 & 1
             \end{bmatrix}
-          \right)
-          \enspace = \enspace
-          \boldsymbol{u} \cdot \boldsymbol{p}
-          \enspace = \enspace
-          \begin{bmatrix} 1 \\ -2 \\ 3 \end{bmatrix}
-          \cdot
-          \begin{bmatrix} -5 \\ -2 \\ -1 \end{bmatrix}
-          \enspace = \enspace -4
+          \right) =
+          u \cdot p =
+          \begin{bmatrix} 1 \\ -2 \\ 3 \end{bmatrix} \cdot
+          \begin{bmatrix} -5 \\ -2 \\ -1 \end{bmatrix} =
+          -4
         `} />
       </div>
       <div>

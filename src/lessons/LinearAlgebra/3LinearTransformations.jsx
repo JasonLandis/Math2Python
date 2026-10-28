@@ -12,11 +12,11 @@ export default function LinearTransformations() {
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{i} = \begin{bmatrix} 1 \\ 0 \end{bmatrix}
-          \quad\quad
-          \boldsymbol{j} = \begin{bmatrix} 0 \\ 1 \end{bmatrix}
-          \quad\quad\quad
-          \boldsymbol{v} = \begin{bmatrix} 2 \\ 3 \end{bmatrix}
+          i = \begin{bmatrix} 1 \\ 0 \end{bmatrix}
+          \qquad
+          j = \begin{bmatrix} 0 \\ 1 \end{bmatrix}
+          \qquad
+          v = \begin{bmatrix} 2 \\ 3 \end{bmatrix}
         `} />
       </div>
       <div>
@@ -31,9 +31,9 @@ export default function LinearTransformations() {
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{i'} = \begin{bmatrix} 1 \\ 3 \end{bmatrix}
-          \quad\quad
-          \boldsymbol{j'} = \begin{bmatrix} -2 \\ 2 \end{bmatrix}
+          i' = \begin{bmatrix} 1 \\ 3 \end{bmatrix}
+          \qquad
+          j' = \begin{bmatrix} -2 \\ 2 \end{bmatrix}
         `} />
       </div>
       <div>
@@ -44,14 +44,11 @@ export default function LinearTransformations() {
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{v} = 2\boldsymbol{i} + 3\boldsymbol{j}
-          \quad\quad\quad
-          \boldsymbol{v'}
-          \enspace = \enspace
-          2 \begin{bmatrix} 1 \\ 3 \end{bmatrix}
-          \enspace + \enspace
-          3 \begin{bmatrix} -2 \\ 2 \end{bmatrix}
-          \enspace = \enspace
+          v = 2i + 3j
+          \qquad
+          v' =
+          2 \begin{bmatrix} 1 \\ 3 \end{bmatrix} +
+          3 \begin{bmatrix} -2 \\ 2 \end{bmatrix} =
           \begin{bmatrix} -4 \\ 12 \end{bmatrix}
         `} />
       </div>
@@ -88,9 +85,9 @@ print(transformed_vector)`
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{v} = \begin{bmatrix} 2 \\ 3 \end{bmatrix}
-          \quad\quad
-          \boldsymbol{M} =
+          v = \begin{bmatrix} 2 \\ 3 \end{bmatrix}
+          \qquad
+          M =
           \begin{bmatrix}
             1 & -2 \\
             3 & 2
@@ -108,10 +105,8 @@ print(transformed_vector)`
             a & b \\
             c & d
           \end{bmatrix}
-          \begin{bmatrix} x \\ y \end{bmatrix}
-          \enspace = \enspace
-          x \begin{bmatrix} a \\ c \end{bmatrix}
-          \enspace + \enspace
+          \begin{bmatrix} x \\ y \end{bmatrix} =
+          x \begin{bmatrix} a \\ c \end{bmatrix} +
           y \begin{bmatrix} b \\ d \end{bmatrix}
         `} />
       </div>
@@ -125,8 +120,7 @@ print(transformed_vector)`
             1 & -2 \\
             3 & 2
           \end{bmatrix}
-          \begin{bmatrix} 2 \\ 3 \end{bmatrix}
-          \enspace = \enspace
+          \begin{bmatrix} 2 \\ 3 \end{bmatrix} =
           \begin{bmatrix} -4 \\ 12 \end{bmatrix}
         `} />
       </div>

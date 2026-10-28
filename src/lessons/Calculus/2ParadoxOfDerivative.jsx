@@ -11,7 +11,7 @@ export default function ParadoxOfDerivative() {
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{f'(x) = \lim_{dx \to 0} \frac{f(x + dx) - f(x)}{dx}}
+          f'(x) = \lim_{dx \to 0} \frac{f(x + dx) - f(x)}{dx}
         `} />
       </div>
       <div>
@@ -19,7 +19,7 @@ export default function ParadoxOfDerivative() {
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{f'(3) \approx \frac{f(3 + 0.001) - f(3)}{0.001}}
+          f'(3) \approx \frac{f(3 + 0.001) - f(3)}{0.001}
         `} />
       </div>
       <div>
@@ -28,10 +28,7 @@ export default function ParadoxOfDerivative() {
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{f'(3) 
-          \approx 
-          \frac{3.001^2 - 3^2}{0.001}}
-          \approx 6
+          f'(3) \approx \frac{3.001^2 - 3^2}{0.001} \approx 6
         `} />
       </div>
       <div>
@@ -39,12 +36,12 @@ export default function ParadoxOfDerivative() {
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{f'(x) = 2x}
+          f'(x) = 2x
         `} />
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{2(3) = 6}
+          2(3) = 6
         `} />
       </div>
       <div>
@@ -67,32 +64,32 @@ print("Expected (2x):", 2 * x)`
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{\frac{df}{dx}(x) = \frac{f(x + dx) - f(x)}{dx}}
+          \frac{df}{dx}(x) = \frac{f(x + dx) - f(x)}{dx}
         `} />
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{\frac{\big(2(x + dx)^3 + 5\big) - \big(2x^3 + 5\big)}{dx}}
+          \frac{\big(2(x + dx)^3 + 5\big) - \big(2x^3 + 5\big)}{dx}
         `} />
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{\frac{\big(2(x^3 + 3x^2\,dx + 3x\,dx^2 + dx^3) + 5\big) - \big(2x^3 + 5\big)}{dx}}
+          \frac{\big(2(x^3 + 3x^2\,dx + 3x\,dx^2 + dx^3) + 5\big) - \big(2x^3 + 5\big)}{dx}
         `} />
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{\frac{\big(2x^3 + 6x^2\,dx + 6x\,dx^2 + 2dx^3 + 5\big) - \big(2x^3 + 5\big)}{dx}}
+          \frac{\big(2x^3 + 6x^2\,dx + 6x\,dx^2 + 2dx^3 + 5\big) - \big(2x^3 + 5\big)}{dx}
         `} />
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{\frac{6x^2\,dx + 6x\,dx^2 + 2dx^3}{dx}}
+          \frac{6x^2\,dx + 6x\,dx^2 + 2dx^3}{dx}
         `} />
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{6x^2 + 6x\,dx + 2dx^2}
+          6x^2 + 6x\,dx + 2dx^2
         `} />
       </div>
       <div>
@@ -102,7 +99,7 @@ print("Expected (2x):", 2 * x)`
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{\frac{df}{dx}(x) = 6x^2}
+          \frac{df}{dx}(x) = 6x^2
         `} />
       </div>
       <div>

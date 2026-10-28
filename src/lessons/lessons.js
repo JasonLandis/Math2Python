@@ -48,7 +48,7 @@ export const lessons = {
       LinearCombinations: {
         title: "Linear combinations, span, and basis vectors",
         representation: String.raw`
-          3\boldsymbol{i} + 4\boldsymbol{j} = \begin{bmatrix} 3 \\ 4 \end{bmatrix}
+          3i + 4j = \begin{bmatrix} 3 \\ 4 \end{bmatrix}
         `,
         sources: [
           "https://www.3blue1brown.com/lessons/span"
@@ -116,14 +116,12 @@ export const lessons = {
       TheDeterminant: {
         title: "The determinant",
         representation: String.raw`
-          \text{det}
-          \left(
-          \begin{bmatrix}
-            a & b \\
-            c & d
-          \end{bmatrix}
-          \right)
-          \enspace = \enspace
+          \text{det}\left(
+            \begin{bmatrix}
+              a & b \\
+              c & d
+            \end{bmatrix}
+          \right) =
           ad - bc
         `,
         sources: [
@@ -137,7 +135,7 @@ export const lessons = {
       InverseMatrices: {
         title: "Inverse matrices, column space, and null space",
         representation: String.raw`
-          \boldsymbol{A^{-1}v = x}
+          A^{-1}v = x
         `,
         sources: [
           "https://www.3blue1brown.com/lessons/inverse-matrices"
@@ -167,8 +165,7 @@ export const lessons = {
       DotProducts: {
         title: "Dot products and duality",
         representation: String.raw`
-          \begin{bmatrix} 2 \\ -2 \\ 3 \end{bmatrix}
-          \cdot
+          \begin{bmatrix} 2 \\ -2 \\ 3 \end{bmatrix} \cdot
           \begin{bmatrix} 1 \\ 3 \\ 4 \end{bmatrix}
         `,
         sources: [
@@ -182,7 +179,8 @@ export const lessons = {
       CrossProducts: {
         title: "Cross products",
         representation: String.raw`
-          \begin{bmatrix} 1 \\ 2 \\ 5 \end{bmatrix} \times \begin{bmatrix} 3 \\ -1 \\ 5 \end{bmatrix}
+          \begin{bmatrix} 1 \\ 2 \\ 5 \end{bmatrix} \times
+          \begin{bmatrix} 3 \\ -1 \\ 5 \end{bmatrix}
         `,
         sources: [
           "https://www.3blue1brown.com/lessons/cross-products"
@@ -195,13 +193,8 @@ export const lessons = {
       CrossProductsExtended: {
         title: "Cross products in the light of linear transformations",
         representation: String.raw`
-          \text{det}\left(
-            \begin{bmatrix}
-              \boldsymbol{u} & \boldsymbol{v} & \boldsymbol{w}
-            \end{bmatrix}
-          \right)
-          \enspace = \enspace
-          (\boldsymbol{v} \times \boldsymbol{w}) \cdot \boldsymbol{u}
+          \text{det}\left(\begin{bmatrix} u & v & w \end{bmatrix}\right) =
+          (v \times w) \cdot u
         `,
         sources: [
           "https://www.3blue1brown.com/lessons/cross-products-extended"
@@ -214,18 +207,16 @@ export const lessons = {
       CramersRule: {
         title: "Cramer's rule, explained geometrically",
         representation: String.raw`
-          x
-          \enspace = \enspace
+          x =
           \frac{
-            \text{det}
-            \left(
+            \text{det}\left(
               \begin{bmatrix}
                 -6 & -1 \\
                 4 & 3
               \end{bmatrix}
             \right)
-          }{\text{det}
-            \left(
+          }{
+            \text{det}\left(
               \begin{bmatrix}
                 2 & -1 \\
                 1 & 3
@@ -247,8 +238,8 @@ export const lessons = {
           \begin{bmatrix}
             2 & -1 \\
             1 & 3
-          \end{bmatrix}^{-1}
-          \begin{bmatrix}
+          \end{bmatrix}
+          ^{-1} \begin{bmatrix}
             0 & -1 \\
             1 & 0
           \end{bmatrix}
@@ -268,7 +259,7 @@ export const lessons = {
       Eigenvectors: {
         title: "Eigenvectors and eigenvalues",
         representation: String.raw`
-          \boldsymbol{Av} = \lambda\boldsymbol{v}
+          Av = \lambda v
         `,
         sources: [
           "https://www.3blue1brown.com/lessons/eigenvalues"
@@ -314,12 +305,14 @@ export const lessons = {
   },
   Calculus: {
     title: "Calculus",
-    representation: String.raw`\int_a^b f'(x)\,dx = f(b) - f(a)`,
+    representation: String.raw`
+      \int_a^b f'(x)\,dx = f(b) - f(a)
+    `,
     lessons: {
       EssenceOfCalculus: {
         title: "The Essence of Calculus",
         representation: String.raw`
-          \boldsymbol{\frac{dA}{dx} \approx f(x)}
+          \frac{dA}{dx} \approx f(x)
         `,
         sources: [
           "https://www.3blue1brown.com/lessons/essence-of-calculus"
@@ -330,7 +323,7 @@ export const lessons = {
       ParadoxOfDerivative: {
         title: "The paradox of the derivative",
         representation: String.raw`
-          \boldsymbol{f'(x) = \lim_{dx \to 0} \frac{f(x + dx) - f(x)}{dx}}
+          f'(x) = \lim_{dx \to 0} \frac{f(x + dx) - f(x)}{dx}
         `,
         sources: [
           "https://www.3blue1brown.com/lessons/derivatives"

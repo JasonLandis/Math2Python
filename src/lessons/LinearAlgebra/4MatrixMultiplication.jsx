@@ -16,7 +16,7 @@ export default function MatrixMultiplication() {
             3 & -2 \\
             4 & 1
           \end{bmatrix}
-          \quad\quad\quad\quad
+          \qquad
           M_2 =
           \begin{bmatrix}
             4 & -1 \\
@@ -30,7 +30,7 @@ export default function MatrixMultiplication() {
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{v} = \begin{bmatrix} 1 \\ 3 \end{bmatrix}
+          v = \begin{bmatrix} 1 \\ 3 \end{bmatrix}
         `} />
       </div>
       <div>
@@ -44,16 +44,13 @@ export default function MatrixMultiplication() {
             3 & -2 \\
             4 & 1
           \end{bmatrix}
-          \begin{bmatrix} 1 \\ 3 \end{bmatrix}
-          \enspace = \enspace
-          \begin{bmatrix} -3 \\ 7 \end{bmatrix}
-          \enspace\rightarrow\enspace
+          \begin{bmatrix} 1 \\ 3 \end{bmatrix} =
+          \begin{bmatrix} -3 \\ 7 \end{bmatrix} \rightarrow
           \begin{bmatrix}
             4 & -1 \\
             -3 & 2
           \end{bmatrix}
-          \begin{bmatrix} -3 \\ 7 \end{bmatrix}
-          \enspace = \enspace
+          \begin{bmatrix} -3 \\ 7 \end{bmatrix} =
           \begin{bmatrix} -19 \\ 23 \end{bmatrix}
         `} />
       </div>
@@ -92,8 +89,7 @@ print(m2_vector)`
           \begin{bmatrix}
             3 & -2 \\
             4 & 1
-          \end{bmatrix}
-          \enspace = \enspace
+          \end{bmatrix} =
           \begin{bmatrix}
             8 & -9 \\
             -1 & 8
@@ -117,9 +113,9 @@ print(m2_vector)`
       </div>
       <div>
         <Equation math={String.raw`
-          M_2 \boldsymbol{i'} = \boldsymbol{i''}
-          \quad\quad\quad\quad
-          M_2 \boldsymbol{j'} = \boldsymbol{j''}
+          M_2 i' = i''
+          \qquad
+          M_2 j' = j''
         `} />
       </div>
       <div>
@@ -128,25 +124,21 @@ print(m2_vector)`
             4 & -1 \\
             -3 & 2
           \end{bmatrix}
-          \begin{bmatrix} 3 \\ 4 \end{bmatrix}
-          \enspace = \enspace
+          \begin{bmatrix} 3 \\ 4 \end{bmatrix} =
           \begin{bmatrix} 8 \\ -1 \end{bmatrix}
-          \quad\quad\quad\quad
+          \qquad
           \begin{bmatrix}
             4 & -1 \\
             -3 & 2
           \end{bmatrix}
-          \begin{bmatrix} -2 \\ 1 \end{bmatrix}
-          \enspace = \enspace
+          \begin{bmatrix} -2 \\ 1 \end{bmatrix} =
           \begin{bmatrix} -9 \\ 8 \end{bmatrix}
         `} />
       </div>
       <div>
         <Equation math={String.raw`
-          M_2 M_1
-          \enspace = \enspace
-          \begin{bmatrix} \boldsymbol{i''} & \boldsymbol{j''} \end{bmatrix}
-          \enspace = \enspace
+          M_2 M_1 =
+          \begin{bmatrix} i'' & j'' \end{bmatrix} =
           \begin{bmatrix}
             8 & -9 \\
             -1 & 8

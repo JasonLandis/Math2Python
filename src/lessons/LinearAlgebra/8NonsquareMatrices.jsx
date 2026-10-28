@@ -85,14 +85,14 @@ print("Rank:", np.linalg.matrix_rank(B))`
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{A} =
+          A =
           \begin{bmatrix}
             1 & 2 \\
             -2 & 3 \\
             -1 & 1
           \end{bmatrix}
-          \quad\quad
-          \boldsymbol{B} =
+          \qquad
+          B =
           \begin{bmatrix}
             1 & 2 & 4 \\
             2 & -3 & -1
@@ -109,8 +109,7 @@ print("Rank:", np.linalg.matrix_rank(B))`
           \begin{bmatrix}
             1 & 2 & 4 \\
             2 & -3 & -1
-          \end{bmatrix}
-          \enspace = \enspace
+          \end{bmatrix} =
           \begin{bmatrix}
             5 & -4 & 2 \\
             4 & -13 & -11 \\
@@ -147,7 +146,7 @@ print(A @ B)`
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{AB} =
+          AB =
           \begin{bmatrix}
             5 & -4 & 2 \\
             4 & -13 & -11 \\

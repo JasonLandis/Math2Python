@@ -36,10 +36,8 @@ v = np.array([[1],
       </div>
       <div>
         <Equation math={String.raw`
-          \begin{bmatrix} 1 \\ 2 \end{bmatrix}
-          \enspace + \enspace
-          \begin{bmatrix} 3 \\ -1 \end{bmatrix}
-          \enspace = \enspace
+          \begin{bmatrix} 1 \\ 2 \end{bmatrix} +
+          \begin{bmatrix} 3 \\ -1 \end{bmatrix} =
           \begin{bmatrix} 4 \\ 1 \end{bmatrix}
         `} />
       </div>
@@ -64,8 +62,7 @@ print(v + w)`
       </div>
       <div>
         <Equation math={String.raw`
-          3 \begin{bmatrix} 1 \\ 2 \end{bmatrix}
-          \enspace = \enspace
+          3 \begin{bmatrix} 1 \\ 2 \end{bmatrix} =
           \begin{bmatrix} 3 \\ 6 \end{bmatrix}
         `} />
       </div>
@@ -88,10 +85,8 @@ print(scalar * v)`
       </div>
       <div>
         <Equation math={String.raw`
-          3 \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}
-          \enspace + \enspace
-          (-2) \begin{bmatrix} 3 \\ -3 \\ 4 \end{bmatrix}
-          \enspace = \enspace
+          3 \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix} +
+          (-2) \begin{bmatrix} 3 \\ -3 \\ 4 \end{bmatrix} =
           \begin{bmatrix} -3 \\ 12 \\ 1 \end{bmatrix}
         `} />
       </div>

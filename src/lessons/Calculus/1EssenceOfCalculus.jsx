@@ -52,12 +52,12 @@ print("Area computed using πr²:", math.pi * r ** 2)`
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{f(x) = x^2}
+          f(x) = x^2
         `} />
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{A(x) = \int_0^x t^2 \, dt}
+          A(x) = \int_0^x t^2 \, dt
         `} />
       </div>
       <div>
@@ -69,14 +69,12 @@ print("Area computed using πr²:", math.pi * r ** 2)`
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{dA = A(x + dx) - A(x)}
+          dA = A(x + dx) - A(x)
         `} />
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{dA \approx x^2 \, dx}
-          \enspace \rightarrow \enspace 
-          \boldsymbol{\frac{dA}{dx} \approx x^2}
+          dA \approx x^2 \, dx \rightarrow \frac{dA}{dx} \approx x^2
         `} />
       </div>
       <div>
@@ -85,7 +83,7 @@ print("Area computed using πr²:", math.pi * r ** 2)`
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{A'(x) = \lim_{dx \to 0} \frac{A(x + dx) - A(x)}{dx} = x^2}
+          A'(x) = \lim_{dx \to 0} \frac{A(x + dx) - A(x)}{dx} = x^2
         `} />
       </div>
       <div>
@@ -94,7 +92,7 @@ print("Area computed using πr²:", math.pi * r ** 2)`
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{\frac{A(3.001) - A(3)}{0.001} \approx 3^2 = 9}
+          \frac{A(3.001) - A(3)}{0.001} \approx 3^2 = 9
         `} />
       </div>
       <div>

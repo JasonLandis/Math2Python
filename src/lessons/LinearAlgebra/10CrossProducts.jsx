@@ -13,15 +13,10 @@ export default function CrossProducts() {
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{v} \times \boldsymbol{w}
-          \enspace = \enspace
-          \begin{bmatrix} v_1 \\ v_2 \\ v_3 \end{bmatrix} \times \begin{bmatrix} w_1 \\ w_2 \\ w_3 \end{bmatrix}
-          \enspace = \enspace
-          \begin{bmatrix}
-            v_2 w_3 - v_3 w_2 \\
-            v_3 w_1 - v_1 w_3 \\
-            v_1 w_2 - v_2 w_1
-          \end{bmatrix}
+          v \times w =
+          \begin{bmatrix} v_1 \\ v_2 \\ v_3 \end{bmatrix} \times
+          \begin{bmatrix} w_1 \\ w_2 \\ w_3 \end{bmatrix} =
+          \begin{bmatrix} v_2 w_3 - v_3 w_2 \\ v_3 w_1 - v_1 w_3 \\ v_1 w_2 - v_2 w_1 \end{bmatrix}
         `} />
       </div>
       <div>
@@ -29,23 +24,17 @@ export default function CrossProducts() {
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{v} = \begin{bmatrix} 1 \\ 2 \\ 5 \end{bmatrix}
-          \quad\quad
-          \boldsymbol{w} = \begin{bmatrix} 3 \\ -1 \\ 5 \end{bmatrix}
+          v = \begin{bmatrix} 1 \\ 2 \\ 5 \end{bmatrix}
+          \qquad
+          w = \begin{bmatrix} 3 \\ -1 \\ 5 \end{bmatrix}
         `} />
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{v} \times \boldsymbol{w}
-          \enspace = \enspace
-          \begin{bmatrix} 1 \\ 2 \\ 5 \end{bmatrix} \times \begin{bmatrix} 3 \\ -1 \\ 5 \end{bmatrix}
-          \enspace = \enspace
-          \begin{bmatrix}
-            (2)(5) - (5)(-1) \\
-            (5)(3) - (1)(5) \\
-            (1)(-1) - (2)(3)
-          \end{bmatrix}
-          \enspace = \enspace
+          v \times w =
+          \begin{bmatrix} 1 \\ 2 \\ 5 \end{bmatrix} \times
+          \begin{bmatrix} 3 \\ -1 \\ 5 \end{bmatrix} =
+          \begin{bmatrix} (2)(5) - (5)(-1) \\ (5)(3) - (1)(5) \\ (1)(-1) - (2)(3) \end{bmatrix} =
           \begin{bmatrix} 15 \\ 10 \\ -7 \end{bmatrix}
         `} />
       </div>
@@ -98,9 +87,7 @@ print(cross)`
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{w} \times \boldsymbol{v}
-          \enspace = \enspace
-          -(\boldsymbol{v} \times \boldsymbol{w})
+          w \times v = -(v \times w)
         `} />
       </div>
       <div>
@@ -128,19 +115,15 @@ print("w x v:", np.cross(w, v))`
       </div>
       <div>
         <Equation math={String.raw`
-          \begin{bmatrix} 3 \\ 1 \end{bmatrix} \times \begin{bmatrix} 2 \\ 4 \end{bmatrix}
-          \enspace = \enspace
-          \text{det}
-          \left(
-          \begin{bmatrix}
-            3 & 2 \\
-            1 & 4
-          \end{bmatrix}
-          \right)
-          \enspace = \enspace
-          (3)(4) - (2)(1)
-          \enspace = \enspace
-          10
+          \begin{bmatrix} 3 \\ 1 \end{bmatrix} \times
+          \begin{bmatrix} 2 \\ 4 \end{bmatrix} =
+          \text{det}\left(
+            \begin{bmatrix}
+              3 & 2 \\
+              1 & 4
+            \end{bmatrix}
+          \right) =
+          (3)(4) - (2)(1) = 10
         `} />
       </div>
       <div>
@@ -164,9 +147,7 @@ print("Determinant of the matrix with columns v and w:", np.linalg.det(np.column
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{v} \cdot \boldsymbol{v}
-          \enspace = \enspace
-          \lVert \boldsymbol{v} \rVert^2
+          v \cdot v = \lVert v \rVert^2
         `} />
       </div>
       <div>
@@ -186,22 +167,16 @@ print("Magnitude of vector v squared:", np.linalg.norm(v)**2)`
       </div>
       <div>
         <Equation math={String.raw`
-          \text{area}^2
-          \enspace = \enspace
-          \lVert \boldsymbol{v} \rVert^2 \lVert \boldsymbol{w} \rVert^2 \sin^2\theta
-          \enspace = \enspace
-          \lVert \boldsymbol{v} \rVert^2 \lVert \boldsymbol{w} \rVert^2 (1 - \cos^2\theta)
+          \text{area}^2 = \lVert v \rVert^2 \lVert w \rVert^2 \sin^2\theta =
+          \lVert v \rVert^2 \lVert w \rVert^2 (1 - \cos^2\theta)
         `} />
       </div>
       <div>
         <Equation math={String.raw`
-          \text{area}^2
-          \enspace = \enspace
-          \lVert \boldsymbol{v} \rVert^2 \lVert \boldsymbol{w} \rVert^2
-          - (\lVert \boldsymbol{v} \rVert \lVert \boldsymbol{w} \rVert \cos\theta)^2
-          \enspace = \enspace
-          (\boldsymbol{v} \cdot \boldsymbol{v})(\boldsymbol{w} \cdot \boldsymbol{w})
-          - (\boldsymbol{v} \cdot \boldsymbol{w})^2
+          \text{area}^2 = \lVert v \rVert^2 \lVert w \rVert^2 -
+          (\lVert v \rVert \lVert w \rVert \cos\theta)^2 =
+          (v \cdot v)(w \cdot w) -
+          (v \cdot w)^2
         `} />
       </div>
       <div>

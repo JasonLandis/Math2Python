@@ -13,19 +13,22 @@ export default function InverseMatrices() {
         the original vector.
       </div>
       <div>
-        <Equation math="\boldsymbol{Ax = v}" />
+        <Equation math={String.raw`
+          A x = v
+        `} />
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{A} = \begin{bmatrix}
+          A =
+          \begin{bmatrix}
             1 & 0 & 0 \\
             1 & 1 & 0 \\
             1 & 1 & 1
           \end{bmatrix}
-          \quad\quad
-          \boldsymbol{v} = \begin{bmatrix} 4 \\ 2 \\ -1 \end{bmatrix}
-          \quad\quad
-          \boldsymbol{x} = \boldsymbol{?}
+          \qquad
+          v = \begin{bmatrix} 4 \\ 2 \\ -1 \end{bmatrix}
+          \qquad
+          x = ?
         `} />
       </div>
       <div>
@@ -37,17 +40,24 @@ export default function InverseMatrices() {
         we are left with <strong>x</strong> on its own.
       </div>
       <div>
-        <Equation math="\boldsymbol{A^{-1}Ax = A^{-1}v}" />
-      </div>
-      <div>
-        <Equation math="\boldsymbol{Ix = A^{-1}v}" />
-      </div>
-      <div>
-        <Equation math="\boldsymbol{x = A^{-1}v}" />
+        <Equation math={String.raw`
+          A^{-1} A x = A^{-1} v
+        `} />
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{A^{-1}} = \begin{bmatrix}
+          I x = A^{-1} v
+        `} />
+      </div>
+      <div>
+        <Equation math={String.raw`
+          x = A^{-1} v
+        `} />
+      </div>
+      <div>
+        <Equation math={String.raw`
+          A^{-1} =
+          \begin{bmatrix}
             1 & 0 & 0 \\
             -1 & 1 & 0 \\
             0 & -1 & 1
@@ -56,15 +66,13 @@ export default function InverseMatrices() {
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{x}
-          \enspace = \enspace
+          x =
           \begin{bmatrix}
             1 & 0 & 0 \\
             -1 & 1 & 0 \\
             0 & -1 & 1
           \end{bmatrix}
-          \begin{bmatrix} 4 \\ 2 \\ -1 \end{bmatrix}
-          \enspace = \enspace
+          \begin{bmatrix} 4 \\ 2 \\ -1 \end{bmatrix} =
           \begin{bmatrix} 4 \\ -2 \\ -3 \end{bmatrix}
         `} />
       </div>
@@ -102,7 +110,8 @@ print(A @ x)`
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{I_n} = \begin{bmatrix}
+          I_n =
+          \begin{bmatrix}
             1 & 0 & \cdots & 0 \\
             0 & 1 & \cdots & 0 \\
             \vdots & \vdots & \ddots & \vdots \\
@@ -171,14 +180,15 @@ print(np.linalg.inv(A))`
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{A} = \begin{bmatrix}
+          A =
+          \begin{bmatrix}
             1 & 2 \\
             2 & 4
           \end{bmatrix}
-          \quad\quad
-          \boldsymbol{v} = \begin{bmatrix} 1 \\ 0 \end{bmatrix}
-          \quad\quad
-          \boldsymbol{x} = \boldsymbol{?}
+          \qquad
+          v = \begin{bmatrix} 1 \\ 0 \end{bmatrix}
+          \qquad
+          x = ?
         `} />
       </div>
       <div>

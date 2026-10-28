@@ -2,10 +2,16 @@ import { InlineMath } from 'react-katex';
 import 'katex/dist/katex.min.css';
 import './Equation.scss'
 
-// Splits on top-level runs of two or more \quad so each expression can wrap onto its own line
-function splitOnQuads(math) {
+// Rules for writing math passed to <Equation>:
+// 1. Separate distinct ideas on the same line with \qquad so they can wrap on small screens.
+// 2. Avoid adding manual spacing like \quad or \enspace; KaTeX spaces things well on its own.
+// 3. Prefer basic arrows like \rightarrow over long ones like \Longrightarrow.
+// 4. Write the math in the source so it's easy to read.
+
+// Splits on top-level \qquad so each expression can wrap onto its own line
+function splitOnQquads(math) {
   const parts = [];
-  const tokens = /\\begin\{[^}]*\}|\\end\{[^}]*\}|(?<!\\)[{}]|\\quad(?:\s*\\quad)+/g;
+  const tokens = /\\begin\{[^}]*\}|\\end\{[^}]*\}|(?<!\\)[{}]|\\qquad/g;
   let depth = 0;
   let start = 0;
   let match;
@@ -28,7 +34,7 @@ function splitOnQuads(math) {
 export default function Equation({ math }) {
   return (
     <div className='equation'>
-      {splitOnQuads(math).map((part, i) => (
+      {splitOnQquads(math).map((part, i) => (
         <InlineMath key={i} math={String.raw`\displaystyle ${part}`} />
       ))}
     </div>

@@ -15,11 +15,11 @@ export default function ThreeDimTransformations() {
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{i} = \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}
-          \quad\quad
-          \boldsymbol{j} = \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}
-          \quad\quad
-          \boldsymbol{k} = \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}
+          i = \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}
+          \qquad
+          j = \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}
+          \qquad
+          k = \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}
         `} />
       </div>
       <div>
@@ -34,8 +34,7 @@ export default function ThreeDimTransformations() {
             -1 & 0 & 3 \\
             -2 & 3 & 3
           \end{bmatrix}
-          \begin{bmatrix} 2 \\ 1 \\ -3 \end{bmatrix}
-          \enspace = \enspace
+          \begin{bmatrix} 2 \\ 1 \\ -3 \end{bmatrix} =
           \begin{bmatrix} -7 \\ -11 \\ -10 \end{bmatrix}
         `} />
       </div>
@@ -45,12 +44,9 @@ export default function ThreeDimTransformations() {
       </div>
       <div>
         <Equation math={String.raw`
-          2 \begin{bmatrix} 2 \\ -1 \\ -2 \end{bmatrix}
-          \enspace + \enspace
-          1 \begin{bmatrix} 4 \\ 0 \\ 3 \end{bmatrix}
-          \enspace + \enspace
-          (-3) \begin{bmatrix} 5 \\ 3 \\ 3 \end{bmatrix}
-          \enspace = \enspace
+          2 \begin{bmatrix} 2 \\ -1 \\ -2 \end{bmatrix} +
+          1 \begin{bmatrix} 4 \\ 0 \\ 3 \end{bmatrix} +
+          (-3) \begin{bmatrix} 5 \\ 3 \\ 3 \end{bmatrix} =
           \begin{bmatrix} -7 \\ -11 \\ -10 \end{bmatrix}
         `} />
       </div>

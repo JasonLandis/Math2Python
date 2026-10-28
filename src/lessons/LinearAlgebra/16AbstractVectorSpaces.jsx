@@ -19,11 +19,9 @@ export default function AbstractVectorSpaces() {
       <div>
         <Equation math={String.raw`
           (1 + 2x) + (3 - x + x^2) = 4 + x + x^2
-          \quad\quad
-          \begin{bmatrix} 1 \\ 2 \\ 0 \end{bmatrix}
-          +
-          \begin{bmatrix} 3 \\ -1 \\ 1 \end{bmatrix}
-          =
+          \qquad
+          \begin{bmatrix} 1 \\ 2 \\ 0 \end{bmatrix} +
+          \begin{bmatrix} 3 \\ -1 \\ 1 \end{bmatrix} =
           \begin{bmatrix} 4 \\ 1 \\ 1 \end{bmatrix}
         `}/>
       </div>
@@ -59,34 +57,31 @@ print("Scaling the coefficient vector by 3:", 3 * f_coefficients)`
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{v} = \begin{bmatrix} 2 \\ 3 \\ -1 \end{bmatrix}
-          \quad\quad
-          \boldsymbol{w} = \begin{bmatrix} -1 \\ 2 \\ 3 \end{bmatrix}
-          \quad\quad
-          \boldsymbol{A} = \begin{bmatrix}
+          v = \begin{bmatrix} 2 \\ 3 \\ -1 \end{bmatrix}
+          \qquad
+          w = \begin{bmatrix} -1 \\ 2 \\ 3 \end{bmatrix}
+          \qquad
+          A =
+          \begin{bmatrix}
             2 & 3 & 1 \\
             4 & -2 & -2 \\
             1 & -1 & 3
           \end{bmatrix}
-          \quad\quad
+          \qquad
           c = 3
         `}/>
       </div>
       <div>
         <Equation math={String.raw`
-          \textbf{Additivity:\enspace} \allowbreak \boldsymbol{A}(\boldsymbol{v} + \boldsymbol{w})
-          \enspace = \enspace
-          \boldsymbol{Av} + \boldsymbol{Aw}
-          \enspace = \enspace
+          \textbf{Additivity: } \allowbreak
+          A(v + w) = Av + Aw =
           \begin{bmatrix} 19 \\ -10 \\ 2 \end{bmatrix}
         `}/>
       </div>
       <div>
         <Equation math={String.raw`
-          \textbf{Homogeneity:\enspace} \allowbreak \boldsymbol{A}(c\boldsymbol{v})
-          \enspace = \enspace
-          c(\boldsymbol{Av})
-          \enspace = \enspace
+          \textbf{Homogeneity: } \allowbreak
+          A(cv) = c(Av) =
           \begin{bmatrix} 36 \\ 12 \\ -12 \end{bmatrix}
         `}/>
       </div>
@@ -129,7 +124,7 @@ print(c * (A @ v))`
       <div>
         <Equation math={String.raw`
           (f + g)' = f' + g'
-          \quad\quad\quad
+          \qquad
           (cf)' = c f'
         `}/>
       </div>
@@ -144,9 +139,7 @@ print(c * (A @ v))`
       </div>
       <div>
         <Equation math={String.raw`
-          -1 + 4x - 3x^2 + 2x^3
-          \quad \rightarrow \quad
-          \begin{bmatrix} -1 \\ 4 \\ -3 \\ 2 \end{bmatrix}
+          -1 + 4x - 3x^2 + 2x^3 \rightarrow \begin{bmatrix} -1 \\ 4 \\ -3 \\ 2 \end{bmatrix}
         `} />
       </div>
       <div>
@@ -157,16 +150,13 @@ print(c * (A @ v))`
             0 & 0 & 0 & 3 \\
             0 & 0 & 0 & 0
           \end{bmatrix}
-          \begin{bmatrix} -1 \\ 4 \\ -3 \\ 2 \end{bmatrix}
-          \enspace = \enspace
+          \begin{bmatrix} -1 \\ 4 \\ -3 \\ 2 \end{bmatrix} =
           \begin{bmatrix} 4 \\ -6 \\ 6 \\ 0 \end{bmatrix}
         `} />
       </div>
       <div>
         <Equation math={String.raw`
-          \begin{bmatrix} 4 \\ -6 \\ 6 \\ 0 \end{bmatrix}
-          \quad \rightarrow \quad
-          4 - 6x + 6x^2
+          \begin{bmatrix} 4 \\ -6 \\ 6 \\ 0 \end{bmatrix} \rightarrow 4 - 6x + 6x^2
         `} />
       </div>
       <div>

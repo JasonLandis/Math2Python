@@ -22,77 +22,65 @@ export default function CramersRule() {
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{i'} = \begin{bmatrix} 2 \\ 1 \end{bmatrix}
-          \quad\quad
-          \boldsymbol{j'} = \begin{bmatrix} -1 \\ 3 \end{bmatrix}
-          \quad\quad
-          \boldsymbol{A} =
+          i' = \begin{bmatrix} 2 \\ 1 \end{bmatrix}
+          \qquad
+          j' = \begin{bmatrix} -1 \\ 3 \end{bmatrix}
+          \qquad
+          A =
           \begin{bmatrix}
             2 & -1 \\
             1 & 3
           \end{bmatrix}
-          \quad\quad
-          \boldsymbol{v} = \begin{bmatrix} -6 \\ 4 \end{bmatrix}
+          \qquad
+          v = \begin{bmatrix} -6 \\ 4 \end{bmatrix}
         `} />
       </div>
       <div>
         <Equation math={String.raw`
-          x
-          \enspace = \enspace
+          x =
           \frac{
-            \text{det}
-            \left(
+            \text{det}\left(
               \begin{bmatrix}
                 -6 & -1 \\
                 4 & 3
               \end{bmatrix}
             \right)
-          }{\text{det}
-            \left(
+          }{
+            \text{det}\left(
               \begin{bmatrix}
                 2 & -1 \\
                 1 & 3
               \end{bmatrix}
             \right)
-          }
-          \enspace = \enspace
-          \frac{-14}{7}
-          \enspace = \enspace
-          -2
+          } =
+          \frac{-14}{7} = -2
         `} />
       </div>
       <div>
         <Equation math={String.raw`
-          y
-          \enspace = \enspace
+          y =
           \frac{
-            \text{det}
-            \left(
+            \text{det}\left(
               \begin{bmatrix}
                 2 & -6 \\
                 1 & 4
               \end{bmatrix}
             \right)
-          }{\text{det}
-            \left(
+          }{
+            \text{det}\left(
               \begin{bmatrix}
                 2 & -1 \\
                 1 & 3
               \end{bmatrix}
             \right)
-          }
-          \enspace = \enspace
-          \frac{14}{7}
-          \enspace = \enspace
-          2
+          } =
+          \frac{14}{7} = 2
         `} />
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{x}
-          \enspace = \enspace
-          \begin{bmatrix} x \\ y \end{bmatrix}
-          \enspace = \enspace
+          x =
+          \begin{bmatrix} x \\ y \end{bmatrix} =
           \begin{bmatrix} -2 \\ 2 \end{bmatrix}
         `} />
       </div>
@@ -103,14 +91,12 @@ export default function CramersRule() {
       </div>
       <div>
         <Equation math={String.raw`
-          \text{det}
-          \left(
+          \text{det}\left(
             \begin{bmatrix}
               1 & x \\
               0 & y
             \end{bmatrix}
-          \right)
-          \enspace = \enspace
+          \right) =
           y
         `} />
       </div>
@@ -124,25 +110,13 @@ export default function CramersRule() {
       </div>
       <div>
         <Equation math={String.raw`
-          \text{det}(\boldsymbol{A}) \cdot y
-          \enspace = \enspace
-          \text{det}
-          \left(
-            \begin{bmatrix}
-              \boldsymbol{i'} & \boldsymbol{v}
-            \end{bmatrix}
-          \right)
-          \quad\quad\Longrightarrow\quad\quad
-          y
-          \enspace = \enspace
-          \frac{
-            \text{det}
-            \left(
-              \begin{bmatrix}
-                \boldsymbol{i'} & \boldsymbol{v}
-              \end{bmatrix}
-            \right)
-          }{\text{det}(\boldsymbol{A})}
+          \text{det}(A) \cdot y =
+          \text{det}\left(\begin{bmatrix} i' & v \end{bmatrix}\right) \Rightarrow
+          y = \frac{
+            \text{det}\left(\begin{bmatrix} i' & v \end{bmatrix}\right)
+          }{
+            \text{det}(A)
+          }
         `} />
       </div>
       <div>
@@ -182,27 +156,27 @@ print("Verifying the original vector is correct:", np.allclose(A @ original_vect
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{A} =
+          A =
           \begin{bmatrix}
             1 & 0 & 0 \\
             0 & 1 & 5 \\
             3 & 0 & 6
           \end{bmatrix}
-          \quad\quad
-          \boldsymbol{v} = \begin{bmatrix} -1 \\ 7 \\ 3 \end{bmatrix}
-          \quad\quad
-          \text{det}(\boldsymbol{A}) = 6
+          \qquad
+          v = \begin{bmatrix} -1 \\ 7 \\ 3 \end{bmatrix}
+          \qquad
+          \text{det}(A) = 6
         `} />
       </div>
       <div>
         <Equation math={String.raw`
           x = \frac{-6}{6} = -1
-          \quad\quad
+          \qquad
           y = \frac{12}{6} = 2
-          \quad\quad
+          \qquad
           z = \frac{6}{6} = 1
-          \quad\quad\quad
-          \boldsymbol{x} = \begin{bmatrix} -1 \\ 2 \\ 1 \end{bmatrix}
+          \qquad
+          x = \begin{bmatrix} -1 \\ 2 \\ 1 \end{bmatrix}
         `} />
       </div>
       <div>
