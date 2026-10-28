@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { Link } from 'react-router-dom';
 import Back from '../../components/Back/Back';
 import ToTop from '../../components/ToTop/ToTop';
@@ -35,7 +36,9 @@ export default function Lesson({ subject, lesson }) {
         </div>
       }
       <div className='lesson-body'>
-        <Component />
+        <Suspense fallback={<div className='lesson-loading'>Loading lesson...</div>}>
+          <Component />
+        </Suspense>
       </div>
       <ToTop />
     </div>
