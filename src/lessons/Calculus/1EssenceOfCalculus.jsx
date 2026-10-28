@@ -1,4 +1,4 @@
-import { BlockMath } from 'react-katex';
+import Equation from '../../components/Equation/Equation';
 import CodeBlock from '../../components/CodeBlock/CodeBlock'
 import Note from '../../components/Note/Note';
 import 'katex/dist/katex.min.css';
@@ -51,12 +51,12 @@ print("Area computed using πr²:", math.pi * r ** 2)`
         integral of <strong>x²</strong>.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \boldsymbol{f(x) = x^2}
         `} />
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \boldsymbol{A(x) = \int_0^x t^2 \, dt}
         `} />
       </div>
@@ -68,12 +68,12 @@ print("Area computed using πr²:", math.pi * r ** 2)`
         starting value of <strong>x</strong>).
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \boldsymbol{dA = A(x + dx) - A(x)}
         `} />
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \boldsymbol{dA \approx x^2 \, dx}
           \enspace \rightarrow \enspace 
           \boldsymbol{\frac{dA}{dx} \approx x^2}
@@ -84,7 +84,7 @@ print("Area computed using πr²:", math.pi * r ** 2)`
         what this ratio approaches as <strong>dx</strong> goes to zero.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \boldsymbol{A'(x) = \lim_{dx \to 0} \frac{A(x + dx) - A(x)}{dx} = x^2}
         `} />
       </div>
@@ -93,7 +93,7 @@ print("Area computed using πr²:", math.pi * r ** 2)`
         is <strong>0.001</strong>
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \boldsymbol{\frac{A(3.001) - A(3)}{0.001} \approx 3^2 = 9}
         `} />
       </div>

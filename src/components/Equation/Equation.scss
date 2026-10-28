@@ -1,0 +1,26 @@
+@use '../../breakpoints' as *;
+
+.equation {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: center;
+    justify-content: safe center;
+    gap: 0.75em 2.4em;
+    margin: 1em 0;
+    padding: 4px 0;
+    text-align: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    // Space between lines when an expression wraps
+    .katex .base {
+        margin-block: 0.3em;
+    }
+
+    @include mobile {
+        .katex {
+            font-size: 1.1em;
+        }
+    }
+}

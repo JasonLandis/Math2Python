@@ -1,4 +1,4 @@
-import { BlockMath } from 'react-katex';
+import Equation from '../../components/Equation/Equation';
 import CodeBlock from '../../components/CodeBlock/CodeBlock';
 import Note from '../../components/Note/Note';
 import 'katex/dist/katex.min.css';
@@ -15,7 +15,7 @@ export default function ChangeOfBasis() {
         in System 2 into the same vector's coordinates in System 1.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \boldsymbol{i_1} = \begin{bmatrix} 1 \\ 0 \end{bmatrix}
           \quad
           \boldsymbol{j_1} = \begin{bmatrix} 0 \\ 1 \end{bmatrix}
@@ -26,7 +26,7 @@ export default function ChangeOfBasis() {
         `} />
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \boldsymbol{B} = \begin{bmatrix}
             2 & -1 \\
             1 & 3
@@ -45,7 +45,7 @@ export default function ChangeOfBasis() {
         the same arrow, just described in two different ways.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \boldsymbol{v_2} = \begin{bmatrix} -2 \\ 4 \end{bmatrix}
         `} />
       </div>
@@ -56,7 +56,7 @@ export default function ChangeOfBasis() {
         transformations lesson.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \boldsymbol{v_1}
           \enspace = \enspace
           -2 \begin{bmatrix} 2 \\ 1 \end{bmatrix}
@@ -71,7 +71,7 @@ export default function ChangeOfBasis() {
         transformation.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \begin{bmatrix}
             2 & -1 \\
             1 & 3
@@ -103,7 +103,7 @@ print(B @ v2)`
         we know it's written in System 1's language.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \boldsymbol{B^{-1}}
           \enspace = \enspace
           \frac{1}{7}
@@ -114,7 +114,7 @@ print(B @ v2)`
         `} />
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \begin{bmatrix}
             2 & -1 \\
             1 & 3
@@ -153,7 +153,7 @@ print(np.linalg.inv(B) @ v1)`
         convert the result back to System 2's language.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \boldsymbol{v_2} = \begin{bmatrix} 1 \\ 2 \end{bmatrix}
           \quad\quad
           \boldsymbol{B} =
@@ -175,7 +175,7 @@ print(np.linalg.inv(B) @ v1)`
         it, and <strong>B<sup>-1</sup></strong> translates the result back to System 2's language.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \begin{bmatrix}
             2 & -1 \\
             1 & 3
@@ -199,7 +199,7 @@ print(np.linalg.inv(B) @ v1)`
         Once it's calculated, it can be applied directly to any vector written in System 2's language.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \boldsymbol{T_2}
           \enspace = \enspace
           \boldsymbol{B^{-1}T_1B}

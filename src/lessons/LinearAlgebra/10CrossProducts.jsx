@@ -1,4 +1,4 @@
-import { BlockMath } from 'react-katex';
+import Equation from '../../components/Equation/Equation';
 import CodeBlock from '../../components/CodeBlock/CodeBlock'
 import Note from '../../components/Note/Note';
 import 'katex/dist/katex.min.css';
@@ -12,7 +12,7 @@ export default function CrossProducts() {
         formula below.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \boldsymbol{v} \times \boldsymbol{w}
           \enspace = \enspace
           \begin{bmatrix} v_1 \\ v_2 \\ v_3 \end{bmatrix} \times \begin{bmatrix} w_1 \\ w_2 \\ w_3 \end{bmatrix}
@@ -28,14 +28,14 @@ export default function CrossProducts() {
         Below is an example using two specific vectors.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \boldsymbol{v} = \begin{bmatrix} 1 \\ 2 \\ 5 \end{bmatrix}
           \quad\quad
           \boldsymbol{w} = \begin{bmatrix} 3 \\ -1 \\ 5 \end{bmatrix}
         `} />
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \boldsymbol{v} \times \boldsymbol{w}
           \enspace = \enspace
           \begin{bmatrix} 1 \\ 2 \\ 5 \end{bmatrix} \times \begin{bmatrix} 3 \\ -1 \\ 5 \end{bmatrix}
@@ -97,7 +97,7 @@ print(cross)`
         vector of the same length pointing in the opposite direction.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \boldsymbol{w} \times \boldsymbol{v}
           \enspace = \enspace
           -(\boldsymbol{v} \times \boldsymbol{w})
@@ -127,7 +127,7 @@ print("w x v:", np.cross(w, v))`
         the parallelogram they span. Just like in 3D, swapping the order flips the sign.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \begin{bmatrix} 3 \\ 1 \end{bmatrix} \times \begin{bmatrix} 2 \\ 4 \end{bmatrix}
           \enspace = \enspace
           \text{det}
@@ -163,7 +163,7 @@ print("Determinant of the matrix with columns v and w:", np.linalg.det(np.column
         is its length times its own length.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \boldsymbol{v} \cdot \boldsymbol{v}
           \enspace = \enspace
           \lVert \boldsymbol{v} \rVert^2
@@ -185,7 +185,7 @@ print("Magnitude of vector v squared:", np.linalg.norm(v)**2)`
         dot products lesson, we can rewrite the area using only dot products.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \text{area}^2
           \enspace = \enspace
           \lVert \boldsymbol{v} \rVert^2 \lVert \boldsymbol{w} \rVert^2 \sin^2\theta
@@ -194,7 +194,7 @@ print("Magnitude of vector v squared:", np.linalg.norm(v)**2)`
         `} />
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \text{area}^2
           \enspace = \enspace
           \lVert \boldsymbol{v} \rVert^2 \lVert \boldsymbol{w} \rVert^2

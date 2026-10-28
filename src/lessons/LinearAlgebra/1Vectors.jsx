@@ -1,4 +1,4 @@
-import { BlockMath } from 'react-katex';
+import Equation from '../../components/Equation/Equation';
 import CodeBlock from '../../components/CodeBlock/CodeBlock'
 import Note from '../../components/Note/Note';
 import 'katex/dist/katex.min.css';
@@ -11,7 +11,7 @@ export default function Vectors() {
         a y-coordinate of <strong>2</strong>.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \begin{bmatrix} 1 \\ 2 \end{bmatrix}
         `} />
       </div>
@@ -35,7 +35,7 @@ v = np.array([[1],
         vectors being added together.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \begin{bmatrix} 1 \\ 2 \end{bmatrix}
           \enspace + \enspace
           \begin{bmatrix} 3 \\ -1 \end{bmatrix}
@@ -63,7 +63,7 @@ print(v + w)`
         by that scalar.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           3 \begin{bmatrix} 1 \\ 2 \end{bmatrix}
           \enspace = \enspace
           \begin{bmatrix} 3 \\ 6 \end{bmatrix}
@@ -87,7 +87,7 @@ print(scalar * v)`
         any dimension. Below is an example of the rules being applied to a 3D vector.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           3 \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}
           \enspace + \enspace
           (-2) \begin{bmatrix} 3 \\ -3 \\ 4 \end{bmatrix}

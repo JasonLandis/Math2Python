@@ -1,4 +1,4 @@
-import { BlockMath } from 'react-katex';
+import Equation from '../../components/Equation/Equation';
 import CodeBlock from '../../components/CodeBlock/CodeBlock'
 import Note from '../../components/Note/Note';
 import 'katex/dist/katex.min.css';
@@ -14,7 +14,7 @@ export default function ThreeDimTransformations() {
         In 3D, there is a third basis vector <strong>k</strong> alongside <strong>i</strong> and <strong>j</strong>.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \boldsymbol{i} = \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}
           \quad\quad
           \boldsymbol{j} = \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}
@@ -28,7 +28,7 @@ export default function ThreeDimTransformations() {
         after the transformation. The following is an example of a 3x3 matrix transforming a vector.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \begin{bmatrix}
             2 & 4 & 5 \\
             -1 & 0 & 3 \\
@@ -44,7 +44,7 @@ export default function ThreeDimTransformations() {
         matching coordinate of the vector and adding the results together.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           2 \begin{bmatrix} 2 \\ -1 \\ -2 \end{bmatrix}
           \enspace + \enspace
           1 \begin{bmatrix} 4 \\ 0 \\ 3 \end{bmatrix}

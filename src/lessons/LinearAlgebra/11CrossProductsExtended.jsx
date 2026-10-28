@@ -1,4 +1,4 @@
-import { BlockMath } from 'react-katex';
+import Equation from '../../components/Equation/Equation';
 import CodeBlock from '../../components/CodeBlock/CodeBlock'
 import 'katex/dist/katex.min.css';
 
@@ -11,7 +11,7 @@ export default function CrossProductsExtended() {
         removing one row at a time, and each determinant gives one coordinate (x, y, or z) of the cross product.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \boldsymbol{v} = \begin{bmatrix} 4 \\ -1 \\ 3 \end{bmatrix}
           \quad\quad
           \boldsymbol{w} = \begin{bmatrix} -2 \\ 2 \\ 1 \end{bmatrix}
@@ -24,7 +24,7 @@ export default function CrossProductsExtended() {
         `} />
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \boldsymbol{p}
           \enspace = \enspace
           \begin{bmatrix}
@@ -64,7 +64,7 @@ export default function CrossProductsExtended() {
         from the previous lesson. For example, the x-coordinate is shown below.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           v_2 w_3 - v_3 w_2
           \enspace = \enspace
           \text{det}\left(
@@ -76,7 +76,7 @@ export default function CrossProductsExtended() {
         `} />
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \boldsymbol{v} \times \boldsymbol{w}
           \enspace = \enspace
           \boldsymbol{p}
@@ -119,7 +119,7 @@ print(np.cross(v, w))`
         but expanding it the usual way gives exactly the same calculation as above.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \boldsymbol{v} \times \boldsymbol{w}
           \enspace = \enspace
           \text{det}\left(
@@ -148,7 +148,7 @@ print(np.cross(v, w))`
         the same as taking the dot product with some fixed vector <strong>p</strong>.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           f(\boldsymbol{u})
           \enspace = \enspace
           \text{det}\left(
@@ -173,7 +173,7 @@ print(np.cross(v, w))`
         of <strong>v</strong> and <strong>w</strong> as vector <strong>p</strong>.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \boldsymbol{u} = \begin{bmatrix} 1 \\ -2 \\ 3 \end{bmatrix}
           \quad\quad
           \boldsymbol{v} = \begin{bmatrix} -2 \\ 3 \\ 4 \end{bmatrix}
@@ -182,7 +182,7 @@ print(np.cross(v, w))`
         `} />
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \boldsymbol{v}\times\boldsymbol{w}
           \enspace = \enspace
           \begin{bmatrix} -2 \\ 3 \\ 4 \end{bmatrix}
@@ -195,7 +195,7 @@ print(np.cross(v, w))`
         `} />
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \text{det}\left(
             \begin{bmatrix}
               1 & -2 & -1 \\

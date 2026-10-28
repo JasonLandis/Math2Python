@@ -1,4 +1,4 @@
-import { BlockMath } from 'react-katex';
+import Equation from '../../components/Equation/Equation';
 import CodeBlock from '../../components/CodeBlock/CodeBlock'
 import Note from '../../components/Note/Note';
 import 'katex/dist/katex.min.css';
@@ -11,7 +11,7 @@ export default function LinearTransformations() {
         other vector <strong>v</strong> in this coordinate system.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \boldsymbol{i} = \begin{bmatrix} 1 \\ 0 \end{bmatrix}
           \quad\quad
           \boldsymbol{j} = \begin{bmatrix} 0 \\ 1 \end{bmatrix}
@@ -30,7 +30,7 @@ export default function LinearTransformations() {
         vectors <strong>i</strong> and <strong>j</strong> to the new vectors <strong>i'</strong> and <strong>j'</strong> below.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \boldsymbol{i'} = \begin{bmatrix} 1 \\ 3 \end{bmatrix}
           \quad\quad
           \boldsymbol{j'} = \begin{bmatrix} -2 \\ 2 \end{bmatrix}
@@ -43,7 +43,7 @@ export default function LinearTransformations() {
         3 times <strong>j'</strong>.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \boldsymbol{v} = 2\boldsymbol{i} + 3\boldsymbol{j}
           \quad\quad\quad
           \boldsymbol{v'}
@@ -87,7 +87,7 @@ print(transformed_vector)`
         matrix contains <strong>i'</strong> and the second column of this matrix contains <strong>j'</strong>.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \boldsymbol{v} = \begin{bmatrix} 2 \\ 3 \end{bmatrix}
           \quad\quad
           \boldsymbol{M} =
@@ -103,7 +103,7 @@ print(transformed_vector)`
         code above.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \begin{bmatrix}
             a & b \\
             c & d
@@ -120,7 +120,7 @@ print(transformed_vector)`
         determine where <strong>v</strong> lands following the linear transformation.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \begin{bmatrix}
             1 & -2 \\
             3 & 2

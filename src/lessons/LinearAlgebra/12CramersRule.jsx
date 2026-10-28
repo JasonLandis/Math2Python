@@ -1,4 +1,4 @@
-import { BlockMath } from 'react-katex';
+import Equation from '../../components/Equation/Equation';
 import CodeBlock from '../../components/CodeBlock/CodeBlock'
 import Note from '../../components/Note/Note';
 import 'katex/dist/katex.min.css';
@@ -21,7 +21,7 @@ export default function CramersRule() {
         For the y-coordinate, replace the second column instead. This can be done for every coordinate.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \boldsymbol{i'} = \begin{bmatrix} 2 \\ 1 \end{bmatrix}
           \quad\quad
           \boldsymbol{j'} = \begin{bmatrix} -1 \\ 3 \end{bmatrix}
@@ -36,7 +36,7 @@ export default function CramersRule() {
         `} />
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           x
           \enspace = \enspace
           \frac{
@@ -62,7 +62,7 @@ export default function CramersRule() {
         `} />
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           y
           \enspace = \enspace
           \frac{
@@ -88,7 +88,7 @@ export default function CramersRule() {
         `} />
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \boldsymbol{x}
           \enspace = \enspace
           \begin{bmatrix} x \\ y \end{bmatrix}
@@ -102,7 +102,7 @@ export default function CramersRule() {
         signed area is exactly y.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \text{det}
           \left(
             \begin{bmatrix}
@@ -123,7 +123,7 @@ export default function CramersRule() {
         det(<strong>A</strong>) gives Cramer's rule.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \text{det}(\boldsymbol{A}) \cdot y
           \enspace = \enspace
           \text{det}
@@ -181,7 +181,7 @@ print("Verifying the original vector is correct:", np.allclose(A @ original_vect
         Below is an example of Cramer's rule being applied in 3D.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \boldsymbol{A} =
           \begin{bmatrix}
             1 & 0 & 0 \\
@@ -195,7 +195,7 @@ print("Verifying the original vector is correct:", np.allclose(A @ original_vect
         `} />
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           x = \frac{-6}{6} = -1
           \quad\quad
           y = \frac{12}{6} = 2

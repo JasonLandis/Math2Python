@@ -1,4 +1,4 @@
-import { BlockMath } from 'react-katex';
+import Equation from '../../components/Equation/Equation';
 import CodeBlock from '../../components/CodeBlock/CodeBlock'
 import Note from '../../components/Note/Note';
 import 'katex/dist/katex.min.css';
@@ -11,7 +11,7 @@ export default function NonsquareMatrices() {
         vectors, each having an x, y, and z coordinate.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \begin{bmatrix}
             1 & 2 \\
             -2 & 3 \\
@@ -49,7 +49,7 @@ print("Rank:", np.linalg.matrix_rank(A))`
         vector [10, 9, -7] lands on the origin.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \begin{bmatrix}
             1 & 2 & 4 \\
             2 & -3 & -1
@@ -84,7 +84,7 @@ print("Rank:", np.linalg.matrix_rank(B))`
         output dimension of 3 and <strong>B</strong> has an input dimension of 3.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \boldsymbol{A} =
           \begin{bmatrix}
             1 & 2 \\
@@ -100,7 +100,7 @@ print("Rank:", np.linalg.matrix_rank(B))`
         `} />
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \begin{bmatrix}
             1 & 2 \\
             -2 & 3 \\
@@ -146,7 +146,7 @@ print(A @ B)`
         matrices <strong>A</strong> and <strong>B</strong>.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \boldsymbol{AB} =
           \begin{bmatrix}
             5 & -4 & 2 \\
