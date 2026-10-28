@@ -14,6 +14,14 @@
       } catch (e) {
         document.documentElement.dataset.theme = 'light'
       }
+
+      // iOS zooms in when focusing text below 16px. maximum-scale stops that, and iOS still allows
+      // pinch zoom. Not applied elsewhere because Android would block pinch zoom.
+      const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+        (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)
+      if (isIOS) {
+        document.querySelector('meta[name="viewport"]').content += ', maximum-scale=1'
+      }
     </script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JWYG5KPKVE"></script>
     <script>
