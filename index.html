@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/logo.png" />
+    <link rel="icon" type="image/png" href="/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,6 +13,14 @@
         document.documentElement.dataset.theme = localStorage.getItem('theme') ?? 'light'
       } catch (e) {
         document.documentElement.dataset.theme = 'light'
+      }
+
+      // iOS zooms in when focusing text below 16px. maximum-scale stops that, and iOS still allows
+      // pinch zoom. Not applied elsewhere because Android would block pinch zoom.
+      const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+        (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)
+      if (isIOS) {
+        document.querySelector('meta[name="viewport"]').content += ', maximum-scale=1'
       }
     </script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JWYG5KPKVE"></script>

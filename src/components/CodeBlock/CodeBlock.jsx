@@ -35,7 +35,7 @@ export default function CodeBlock({ code: initialCode, editable }) {
       {editable && 
         <div className='code-execute'>
           <button onClick={runCode} disabled={loading}>
-            {loading ? 'Running...' : '▶ Run'}
+            {loading ? 'Running...' : '▶︎ Run'}
           </button>
         </div>
       }

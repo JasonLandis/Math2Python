@@ -38,11 +38,4 @@
     border-radius: 8px;
     overflow: hidden;
     box-shadow: var(--global-box-shadow);
-
-    // iOS Safari zooms in on focused text below 16px
-    @include mobile {
-        .cm-editor {
-            font-size: 16px;
-        }
-    }
 }
