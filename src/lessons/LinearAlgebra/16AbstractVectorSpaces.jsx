@@ -13,7 +13,7 @@ export default function AbstractVectorSpaces() {
         eigenvectors) applies to them too.
       </div>
       <div>
-        For example, a polynomial like <strong>1 + 2x</strong> can be stored as the list of its coefficients.
+        For example, a polynomial like 1 + 2x can be stored as the list of its coefficients.
         Adding or scaling polynomials gives the same result as adding or scaling their coefficient vectors.
       </div>
       <div>
@@ -130,11 +130,11 @@ print(c * (A @ v))`
       </div>
       <div>
         Since differentiation is linear, it can be written as a matrix. Here, a polynomial is stored as
-        a coefficient vector in the basis <strong>{`{1, x, x², x³}`}</strong>, so <strong>p</strong> represents <strong>-1 + 4x - 3x² + 2x³</strong>.
-        Each column of <strong>A</strong> encodes what the derivative does to one basis
-        element <strong>(1 → 0, x → 1, x² → 2x, x³ → 3x²)</strong>, which is just the power
+        a coefficient vector in the basis {`{1, x, x², x³}`}, so p represents -1 + 4x - 3x² + 2x³.
+        Each column of A encodes what the derivative does to one basis
+        element (1 → 0, x → 1, x² → 2x, x³ → 3x²), which is just the power
         rule: multiply each coefficient by its power and shift it down one slot.
-        Moving <strong>p</strong> through the linear transformation <strong>A</strong> gives a new coefficient vector
+        Moving p through the linear transformation A gives a new coefficient vector
         representing a polynomial that is the derivative of the original polynomial.
       </div>
       <div>
@@ -188,7 +188,7 @@ print(np.polynomial.Polynomial([-1, 4, -3, 2]).deriv().coef)`
       <div>
         Its only eigenvalue is 0, and its eigenvectors are the constant polynomials, since the
         derivative of a constant is 0 times that constant. Outside of polynomials, the
-        function <strong>eˣ</strong> is an <strong>eigenfunction</strong> of the derivative with an eigenvalue
+        function eˣ is an <strong>eigenfunction</strong> of the derivative with an eigenvalue
         of 1, because its derivative is itself.
       </div>
     </>

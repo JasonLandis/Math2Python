@@ -45,12 +45,12 @@ print("Determinant calculated using NumPy:", np.linalg.det(M))`
         </Note>
       </div>
       <div>
-        For any given 2x2 matrix, if either <strong>b</strong> or <strong>c</strong> is 0, one of the transformed
-        basis vectors lies exactly on an axis. If <strong>c</strong> is 0, <strong>i'</strong> lies on the x-axis
-        with length <strong>a</strong>, and the height of the parallelogram is the y-coordinate of <strong>j'</strong>,
-        which is <strong>d</strong>. If <strong>b</strong> is 0, <strong>j'</strong> lies on the y-axis with
-        length <strong>d</strong>, and the width of the parallelogram is the x-coordinate of <strong>i'</strong>,
-        which is <strong>a</strong>. Either way, the area (the determinant) is <strong>a</strong> · <strong>d</strong>.
+        For any given 2x2 matrix, if either b or c is 0, one of the transformed
+        basis vectors lies exactly on an axis. If c is 0, i' lies on the x-axis
+        with length a, and the height of the parallelogram is the y-coordinate of j',
+        which is d. If b is 0, j' lies on the y-axis with
+        length d, and the width of the parallelogram is the x-coordinate of i',
+        which is a. Either way, the area (the determinant) is a · d.
       </div>
       <div>
         <Equation math={String.raw`
@@ -95,10 +95,10 @@ print("Example where b is 0 (it's just a * d):", determinant)`
         } editable={true} />
       </div>
       <div>
-        Below is an algebraic description of how the formula <strong>ad</strong> - <strong>bc</strong> can
-        be derived for calculating the determinant of a 2x2 matrix. Here, (<strong>a</strong> + <strong>b</strong>)(<strong>c</strong> + <strong>d</strong>) is
+        Below is an algebraic description of how the formula ad - bc can
+        be derived for calculating the determinant of a 2x2 matrix. Here, (a + b)(c + d) is
         the area of the rectangle surrounding the parallelogram. Subtracting the two pairs of corner
-        triangles (<strong>ac</strong> and <strong>bd</strong>) and the two corner rectangles (2<strong>bc</strong>) leaves
+        triangles (ac and bd) and the two corner rectangles (2bc) leaves
         the area of the parallelogram.
       </div>
       <div>
@@ -247,9 +247,9 @@ print("Determinant calculated using NumPy:", np.linalg.det(M))`
       </div>
       <div>
         The determinant of the composition matrix of two matrices is the same as the product
-        of the determinants of those two matrices. This is because applying <strong>M<sub>1</sub></strong> scales
-        areas by det(<strong>M<sub>1</sub></strong>), then applying <strong>M<sub>2</sub></strong> scales them again
-        by det(<strong>M<sub>2</sub></strong>), so the total scaling is the product of the two.
+        of the determinants of those two matrices. This is because applying M<sub>1</sub> scales
+        areas by det(M<sub>1</sub>), then applying M<sub>2</sub> scales them again
+        by det(M<sub>2</sub>), so the total scaling is the product of the two.
       </div>
       <div>
         <Equation math={String.raw`

@@ -9,15 +9,15 @@ export default function CramersRule() {
       <div>
         If you are given a transformed vector and a linear transformation, you can find
         the original vector (where the transformed vector was before the transformation)
-        by applying <strong>Cramer's rule</strong>. This solves the same equation <strong>Ax = v</strong> from
+        by applying <strong>Cramer's rule</strong>. This solves the same equation Ax = v from
         the inverse matrices lesson, just in a different way. Since Cramer's rule divides by the
-        determinant of <strong>A</strong>, it only works when that determinant is not 0. When the
+        determinant of A, it only works when that determinant is not 0. When the
         determinant is 0, there is no unique original vector.
       </div>
       <div>
         To solve for the x-coordinate of the original vector, you can substitute the transformed
         vector into the first column of the transformation matrix, then calculate the determinant
-        of that matrix, and divide it by the determinant of the original matrix <strong>A</strong>.
+        of that matrix, and divide it by the determinant of the original matrix A.
         For the y-coordinate, replace the second column instead. This can be done for every coordinate.
       </div>
       <div>
@@ -85,8 +85,8 @@ export default function CramersRule() {
         `} />
       </div>
       <div>
-        To see why this works, take the original vector <strong>x</strong> = [x, y]. The parallelogram
-        formed by <strong>i</strong> and <strong>x</strong> has a base of 1 and a height of y, so its
+        To see why this works, take the original vector x = [x, y]. The parallelogram
+        formed by i and x has a base of 1 and a height of y, so its
         signed area is exactly y.
       </div>
       <div>
@@ -101,12 +101,12 @@ export default function CramersRule() {
         `} />
       </div>
       <div>
-        The transformation scales every area by det(<strong>A</strong>), so after the transformation
-        that parallelogram has an area of det(<strong>A</strong>) times y. After the transformation,
-        the parallelogram is formed by <strong>i'</strong> (the first column of <strong>A</strong>)
-        and <strong>v</strong> (the known output), so its area is also the determinant of the matrix
-        with columns <strong>i'</strong> and <strong>v</strong>. Setting these equal and dividing by
-        det(<strong>A</strong>) gives Cramer's rule.
+        The transformation scales every area by det(A), so after the transformation
+        that parallelogram has an area of det(A) times y. After the transformation,
+        the parallelogram is formed by i' (the first column of A)
+        and v (the known output), so its area is also the determinant of the matrix
+        with columns i' and v. Setting these equal and dividing by
+        det(A) gives Cramer's rule.
       </div>
       <div>
         <Equation math={String.raw`
@@ -120,9 +120,9 @@ export default function CramersRule() {
         `} />
       </div>
       <div>
-        The x-coordinate works the same way. The parallelogram formed by <strong>x</strong> and <strong>j</strong> has
-        a signed area of x, and after the transformation it is formed by <strong>v</strong> and <strong>j'</strong>.
-        That is why <strong>v</strong> replaces the first column for x and the second column for y.
+        The x-coordinate works the same way. The parallelogram formed by x and j has
+        a signed area of x, and after the transformation it is formed by v and j'.
+        That is why v replaces the first column for x and the second column for y.
       </div>
       <div>
         <CodeBlock code={
@@ -216,7 +216,7 @@ print("Using np.linalg.solve:", np.linalg.solve(A, v))`
       <div>
         <Note>
           Cramer's rule is mostly useful for understanding how linear systems work. In practice, you
-          would use <strong>np.linalg.solve(A, v)</strong>, which is faster and handles floating-point
+          would use np.linalg.solve(A, v), which is faster and handles floating-point
           rounding better.
         </Note>
       </div>

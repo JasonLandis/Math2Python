@@ -7,8 +7,8 @@ export default function Vectors() {
   return (
     <>
       <div>
-        Below is a 2D vector. You can think of it as having an x-coordinate of <strong>1</strong> and
-        a y-coordinate of <strong>2</strong>.
+        Below is a 2D vector. You can think of it as having an x-coordinate of 1 and
+        a y-coordinate of 2.
       </div>
       <div>
         <Equation math={String.raw`

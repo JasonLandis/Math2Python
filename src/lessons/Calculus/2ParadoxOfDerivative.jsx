@@ -7,7 +7,7 @@ export default function ParadoxOfDerivative() {
   return (
     <>
       <div>
-        Below is the formula for the derivative of some function <strong>f(x)</strong>.
+        Below is the formula for the derivative of some function f(x).
       </div>
       <div>
         <Equation math={String.raw`
@@ -15,7 +15,7 @@ export default function ParadoxOfDerivative() {
         `} />
       </div>
       <div>
-        Let's say we plug in <strong>x = 3</strong> and <strong>dx = 0.001</strong> into this function.
+        Let's say we plug in x = 3 and dx = 0.001 into this function.
       </div>
       <div>
         <Equation math={String.raw`
@@ -23,8 +23,8 @@ export default function ParadoxOfDerivative() {
         `} />
       </div>
       <div>
-        Now let's say <strong>f(x) = x²</strong>. What we are calculating below is essentially the slope of the 
-        graph between points <strong>x = 3</strong> and <strong>x = 3.001</strong>.
+        Now let's say f(x) = x². What we are calculating below is essentially the slope of the 
+        graph between points x = 3 and x = 3.001.
       </div>
       <div>
         <Equation math={String.raw`
@@ -32,7 +32,7 @@ export default function ParadoxOfDerivative() {
         `} />
       </div>
       <div>
-        We can verify if our approximation is correct by inputing our value of <strong>x</strong> into <strong>f'(x)</strong>.
+        We can verify if our approximation is correct by inputing our value of x into f'(x).
       </div>
       <div>
         <Equation math={String.raw`
@@ -59,7 +59,7 @@ print("Expected (2x):", 2 * x)`
         } editable={true} />
       </div>
       <div>
-        Now let's say we wanted to calculate the derivative of the function <strong>f(x) = 2x³ + 5</strong>.
+        Now let's say we wanted to calculate the derivative of the function f(x) = 2x³ + 5.
         Below is how we can compute this algebraically.
       </div>
       <div>
@@ -93,9 +93,9 @@ print("Expected (2x):", 2 * x)`
         `} />
       </div>
       <div>
-        At this point, we can ignore the terms <strong>6xdx</strong> and <strong>2dx²</strong> because these 
-        terms will approach zero as <strong>dx</strong> approaches zero. Therefore, the derivative 
-        of <strong>2x³ + 5</strong> is <strong>6x²</strong>.
+        At this point, we can ignore the terms 6xdx and 2dx² because these 
+        terms will approach zero as dx approaches zero. Therefore, the derivative 
+        of 2x³ + 5 is 6x².
       </div>
       <div>
         <Equation math={String.raw`

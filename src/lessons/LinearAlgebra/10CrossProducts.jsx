@@ -93,8 +93,8 @@ print(cross)`
       <div>
         There are always two directions perpendicular to both vectors, and the <strong>right-hand
         rule</strong> tells you which one the cross product points in. Point the fingers of your right
-        hand along <strong>v</strong> and curl them toward <strong>w</strong>. Your thumb points in the
-        direction of <strong>v</strong> × <strong>w</strong>.
+        hand along v and curl them toward w. Your thumb points in the
+        direction of v × w.
       </div>
       <div>
         <CodeBlock code={
@@ -110,7 +110,7 @@ print("w x v:", np.cross(w, v))`
       </div>
       <div>
         In 2D, the cross product is a single number instead of a vector. It equals the determinant of the
-        matrix whose columns are <strong>v</strong> and <strong>w</strong>, which is the signed area of
+        matrix whose columns are v and w, which is the signed area of
         the parallelogram they span. Just like in 3D, swapping the order flips the sign.
       </div>
       <div>
@@ -162,7 +162,7 @@ print("Magnitude of vector v squared:", np.linalg.norm(v)**2)`
       </div>
       <div>
         The area of the parallelogram is the length of one side times the height, which
-        is <strong>‖v‖‖w‖</strong> sin θ. Using the identity sin²θ = 1 - cos²θ and the formula from the
+        is ‖v‖‖w‖ sin θ. Using the identity sin²θ = 1 - cos²θ and the formula from the
         dot products lesson, we can rewrite the area using only dot products.
       </div>
       <div>

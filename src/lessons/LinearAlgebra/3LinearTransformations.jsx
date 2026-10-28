@@ -7,8 +7,8 @@ export default function LinearTransformations() {
   return (
     <>
       <div>
-        Let's say we have the following basis vectors <strong>i</strong> and <strong>j</strong>, and some
-        other vector <strong>v</strong> in this coordinate system.
+        Let's say we have the following basis vectors i and j, and some
+        other vector v in this coordinate system.
       </div>
       <div>
         <Equation math={String.raw`
@@ -27,7 +27,7 @@ export default function LinearTransformations() {
       </div>
       <div>
         Now let's say this system goes through a linear transformation that brings the basis
-        vectors <strong>i</strong> and <strong>j</strong> to the new vectors <strong>i'</strong> and <strong>j'</strong> below.
+        vectors i and j to the new vectors i' and j' below.
       </div>
       <div>
         <Equation math={String.raw`
@@ -37,10 +37,10 @@ export default function LinearTransformations() {
         `} />
       </div>
       <div>
-        We can deduce where the linear transformation brings vector <strong>v</strong> because
-        we know where both of the basis vectors landed. Since <strong>v</strong> is 2 times <strong>i</strong> plus
-        3 times <strong>j</strong>, the transformed vector <strong>v'</strong> is 2 times <strong>i'</strong> plus
-        3 times <strong>j'</strong>.
+        We can deduce where the linear transformation brings vector v because
+        we know where both of the basis vectors landed. Since v is 2 times i plus
+        3 times j, the transformed vector v' is 2 times i' plus
+        3 times j'.
       </div>
       <div>
         <Equation math={String.raw`
@@ -80,8 +80,8 @@ print(transformed_vector)`
         } editable={true} />
       </div>
       <div>
-        The transformed basis vectors can also be represented as a matrix <strong>M</strong>. The first column of this
-        matrix contains <strong>i'</strong> and the second column of this matrix contains <strong>j'</strong>.
+        The transformed basis vectors can also be represented as a matrix M. The first column of this
+        matrix contains i' and the second column of this matrix contains j'.
       </div>
       <div>
         <Equation math={String.raw`
@@ -111,8 +111,8 @@ print(transformed_vector)`
         `} />
       </div>
       <div>
-        Now, you can multiply the transformation matrix by the original vector <strong>v</strong> to
-        determine where <strong>v</strong> lands following the linear transformation.
+        Now, you can multiply the transformation matrix by the original vector v to
+        determine where v lands following the linear transformation.
       </div>
       <div>
         <Equation math={String.raw`
@@ -140,10 +140,10 @@ print(M @ v)`
       </div>
       <div>
         <Note>
-          In NumPy, the <strong>@</strong> operator performs matrix multiplication, while
-          the <strong>*</strong> operator multiplies matching entries element by element.
-          Using <strong>*</strong> here would not raise an error, but it would give the wrong result.
-          Also, notice how both code snippets give the same transformed vector <strong>v'</strong>.
+          In NumPy, the @ operator performs matrix multiplication, while
+          the * operator multiplies matching entries element by element.
+          Using * here would not raise an error, but it would give the wrong result.
+          Also, notice how both code snippets give the same transformed vector v'.
         </Note>
       </div>
     </>

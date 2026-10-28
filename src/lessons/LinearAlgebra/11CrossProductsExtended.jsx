@@ -103,7 +103,7 @@ print(np.cross(v, w))`
       </div>
       <div>
         In textbooks, you will often see the cross product written as the determinant of a 3x3 matrix
-        with the basis vectors <strong>i</strong>, <strong>j</strong>, and <strong>k</strong> in the first
+        with the basis vectors i, j, and k in the first
         column. This isn't a real determinant since the first column contains vectors instead of numbers,
         but expanding it the usual way gives exactly the same calculation as above.
       </div>
@@ -122,16 +122,16 @@ print(np.cross(v, w))`
         `} />
       </div>
       <div>
-        For any 3D vectors <strong>u</strong>, <strong>v</strong>, and <strong>w</strong>, the
-        determinant of the matrix with columns <strong>u</strong>, <strong>v</strong>, <strong>w</strong> equals
-        the dot product of <strong>u</strong> with the cross product of <strong>v</strong> and <strong>w</strong>.
+        For any 3D vectors u, v, and w, the
+        determinant of the matrix with columns u, v, w equals
+        the dot product of u with the cross product of v and w.
         This is another example of duality.
       </div>
       <div>
-        To see why, fix <strong>v</strong> and <strong>w</strong> and let <strong>u</strong> vary. The
-        function below takes a 3D vector <strong>u</strong> and returns a single number, and it is linear.
+        To see why, fix v and w and let u vary. The
+        function below takes a 3D vector u and returns a single number, and it is linear.
         From the dot products lesson, any linear transformation from 3D space down to a single number is
-        the same as taking the dot product with some fixed vector <strong>p</strong>.
+        the same as taking the dot product with some fixed vector p.
       </div>
       <div>
         <Equation math={String.raw`
@@ -142,15 +142,15 @@ print(np.cross(v, w))`
       </div>
       <div>
         Geometrically, this determinant is the volume of the slanted box (called a parallelepiped)
-        formed by the three vectors. That volume is the area of the base formed by <strong>v</strong> and <strong>w</strong>,
-        times the height of <strong>u</strong> above that base. The only vector whose dot product
-        with <strong>u</strong> gives "base area times height" is the one that is perpendicular
-        to <strong>v</strong> and <strong>w</strong> and has a length equal to the base area. That is
-        exactly <strong>v</strong> × <strong>w</strong>.
+        formed by the three vectors. That volume is the area of the base formed by v and w,
+        times the height of u above that base. The only vector whose dot product
+        with u gives "base area times height" is the one that is perpendicular
+        to v and w and has a length equal to the base area. That is
+        exactly v × w.
       </div>
       <div>
         Now let's take a new set of vectors. In the example below, we are labeling the cross product
-        of <strong>v</strong> and <strong>w</strong> as vector <strong>p</strong>.
+        of v and w as vector p.
       </div>
       <div>
         <Equation math={String.raw`

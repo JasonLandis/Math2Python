@@ -25,7 +25,7 @@ export default function MatrixMultiplication() {
         `} />
       </div>
       <div>
-        Let's say we want to find out where the following vector <strong>v</strong> lands
+        Let's say we want to find out where the following vector v lands
         following both of these transformations.
       </div>
       <div>
@@ -35,7 +35,7 @@ export default function MatrixMultiplication() {
       </div>
       <div>
         We can compute this by applying one transformation after the other. We find out the transformed
-        vector <strong>v</strong> following the first transformation, then apply the second transformation
+        vector v following the first transformation, then apply the second transformation
         to that transformed vector.
       </div>
       <div>
@@ -99,16 +99,16 @@ print(m2_vector)`
       <div>
         <Note>
           When represented mathematically and programmatically, think of the transformations
-          as being applied from right to left. Notice how the matrix <strong>M<sub>1</sub></strong> above
-          is to the right of matrix <strong>M<sub>2</sub></strong>. Transformation matrix <strong>M<sub>1</sub></strong> is
+          as being applied from right to left. Notice how the matrix M<sub>1</sub> above
+          is to the right of matrix M<sub>2</sub>. Transformation matrix M<sub>1</sub> is
           being applied first here.
         </Note>
       </div>
       <div>
-        To compute the composition matrix, remember that the columns of <strong>M<sub>1</sub></strong> are <strong>i'</strong> and <strong>j'</strong>, 
-        where the basis vectors <strong>i</strong> and <strong>j</strong> land after the first transformation.
-        Applying <strong>M<sub>2</sub></strong> to each of those columns tells us where <strong>i</strong> and <strong>j</strong> land
-        after both transformations, which we'll call <strong>i''</strong> and <strong>j''</strong>. Those results
+        To compute the composition matrix, remember that the columns of M<sub>1</sub> are i' and j', 
+        where the basis vectors i and j land after the first transformation.
+        Applying M<sub>2</sub> to each of those columns tells us where i and j land
+        after both transformations, which we'll call i'' and j''. Those results
         become the columns of the composition matrix.
       </div>
       <div>
@@ -175,8 +175,8 @@ print(final_vector)`
       <div>
         The order in which transformations are applied matters. As you can see below,
         we get two different composition matrices depending on the order in which the
-        transformations are applied. Remember that <strong>P @ Q</strong> applies <strong>Q</strong> first,
-        while <strong>Q @ P</strong> applies <strong>P</strong> first.
+        transformations are applied. Remember that P @ Q applies Q first,
+        while Q @ P applies P first.
       </div>
       <div>
         <CodeBlock code={

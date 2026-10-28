@@ -8,8 +8,8 @@ export default function InverseMatrices() {
     <>
       <div>
         Let's say we know the placement of some vector after a linear transformation took place and
-        we want to find out where that vector was before the linear transformation. Below, <strong>A</strong> represents
-        the transformation matrix, <strong>v</strong> represents the transformed vector, and <strong>x</strong> represents
+        we want to find out where that vector was before the linear transformation. Below, A represents
+        the transformation matrix, v represents the transformed vector, and x represents
         the original vector.
       </div>
       <div>
@@ -32,12 +32,12 @@ export default function InverseMatrices() {
         `} />
       </div>
       <div>
-        We can solve for <strong>x</strong> by applying the linear
-        transformation <strong>A</strong> to <strong>v</strong> in reverse. To do this, we
-        multiply both sides of the equation by the inverse of <strong>A</strong>,
-        written as <strong>A<sup>-1</sup></strong>. Since <strong>A<sup>-1</sup>A</strong> equals the
-        identity matrix <strong>I</strong> (explained below), which leaves any vector unchanged,
-        we are left with <strong>x</strong> on its own.
+        We can solve for x by applying the linear
+        transformation A to v in reverse. To do this, we
+        multiply both sides of the equation by the inverse of A,
+        written as A<sup>-1</sup>. Since A<sup>-1</sup>A equals the
+        identity matrix I (explained below), which leaves any vector unchanged,
+        we are left with x on its own.
       </div>
       <div>
         <Equation math={String.raw`
@@ -105,8 +105,8 @@ print(A @ x)`
         Multiplying a matrix with its inverse will give you the <strong>identity matrix</strong>. The
         identity matrix is an n x n square matrix with 1s on the main diagonal and 0s everywhere else.
         As a transformation, the identity matrix leaves every vector exactly where it is, since its
-        columns show that the basis vectors stay in place. This is why multiplying by <strong>A<sup>-1</sup></strong> undoes <strong>A</strong>.
-        The order does not matter here: both <strong>A<sup>-1</sup>A</strong> and <strong>AA<sup>-1</sup></strong> equal <strong>I</strong>.
+        columns show that the basis vectors stay in place. This is why multiplying by A<sup>-1</sup> undoes A.
+        The order does not matter here: both A<sup>-1</sup>A and AA<sup>-1</sup> equal I.
       </div>
       <div>
         <Equation math={String.raw`
@@ -154,7 +154,7 @@ print(np.linalg.inv(A))`
       </div>
       <div>
         <Note>
-          In standard Python, NumPy raises a <strong>LinAlgError</strong> when you try to invert a matrix
+          In standard Python, NumPy raises a LinAlgError when you try to invert a matrix
           with a determinant of 0. In the browser version of Python used on this site, that error can't be
           raised, so NumPy returns a matrix filled with nan (not a number) instead.
         </Note>
@@ -173,10 +173,10 @@ print(np.linalg.inv(A))`
         `} />
       </div>
       <div>
-        Now, going back to the equation above, <strong>Ax = v</strong>, what would happen if we
-        attempt to solve for <strong>x</strong> when <strong>v</strong> is not in the column
-        space of <strong>A</strong>? There is no solution for <strong>x</strong> because there does not exist a
-        vector that, when moved through the linear transformation <strong>A</strong>, lands on vector <strong>v</strong>.
+        Now, going back to the equation above, Ax = v, what would happen if we
+        attempt to solve for x when v is not in the column
+        space of A? There is no solution for x because there does not exist a
+        vector that, when moved through the linear transformation A, lands on vector v.
       </div>
       <div>
         <Equation math={String.raw`
@@ -194,7 +194,7 @@ print(np.linalg.inv(A))`
       <div>
         The columns of this matrix, [1, 2] and [2, 4], are the same linearly dependent vectors from
         the linear combinations lesson. Both have a y-coordinate that is twice the x-coordinate, so
-        the column space of <strong>A</strong> is just the line y = 2x. The vector <strong>v</strong> = [1, 0] is
+        the column space of A is just the line y = 2x. The vector v = [1, 0] is
         not on that line, so it is not in the column space.
       </div>
       <div>
@@ -218,11 +218,11 @@ print(A @ x)`
       </div>
       <div>
         <Note>
-          Unlike <strong>np.linalg.inv()</strong>, which fails if the determinant of a given matrix is
-          0, <strong>np.linalg.pinv()</strong> always returns a best-fit solution for <strong>x</strong>.
-          We can then reconstruct <strong>v</strong> by computing <strong>Ax</strong> and compare it to the
-          original. If both vectors match, <strong>v</strong> lies in the column space of <strong>A</strong>. Try updating
-          vector <strong>v</strong> above to be some vector that is in the column space of <strong>A</strong>.
+          Unlike np.linalg.inv(), which fails if the determinant of a given matrix is
+          0, np.linalg.pinv() always returns a best-fit solution for x.
+          We can then reconstruct v by computing Ax and compare it to the
+          original. If both vectors match, v lies in the column space of A. Try updating
+          vector v above to be some vector that is in the column space of A.
         </Note>
       </div>
       <div>
@@ -261,11 +261,11 @@ print("Rank of matrix D (the column space example above):", np.linalg.matrix_ran
       <div>
         A matrix is <strong>full rank</strong> when its rank is as large as possible. In other words,
         it has no redundant columns or rows. For a square matrix, this means it's invertible
-        and <strong>Ax = v</strong> has exactly one solution for every <strong>v</strong>.
+        and Ax = v has exactly one solution for every v.
       </div>
       <div>
-        The <strong>null space</strong> of a matrix is the set of all vectors <strong>x</strong> for
-        which <strong>Ax = 0</strong>. When a transformation squishes space down into a lower dimension,
+        The <strong>null space</strong> of a matrix is the set of all vectors x for
+        which Ax = 0. When a transformation squishes space down into a lower dimension,
         there are infinitely many vectors that get squished down to the origin. For a full rank matrix,
         the only vector that lands on the origin is the zero vector itself, so the null space contains
         only the zero vector.
@@ -289,8 +289,8 @@ print(A @ x)`
       <div>
         <Note>
           In the example above, there are infinitely many vectors in the null space. More specifically,
-          any vector that follows the pattern <strong>[0, 0, z]</strong> is in the null space. Try updating
-          the z coordinate of vector <strong>x</strong> above and notice how the output vector continues
+          any vector that follows the pattern [0, 0, z] is in the null space. Try updating
+          the z coordinate of vector x above and notice how the output vector continues
           to be the zero vector.
         </Note>
       </div>

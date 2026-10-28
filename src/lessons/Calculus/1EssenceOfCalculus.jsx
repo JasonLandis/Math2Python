@@ -7,11 +7,11 @@ export default function EssenceOfCalculus() {
   return (
     <>
       <div>
-        Suppose we have a circle of radius <strong>3</strong> and we want to solve for its area, but we don't 
-        know the formula <strong>πr²</strong>. Instead, we can use the circumference formula, <strong>2πr</strong>. 
+        Suppose we have a circle of radius 3 and we want to solve for its area, but we don't 
+        know the formula πr². Instead, we can use the circumference formula, 2πr. 
         We can split the circle into rings, then unroll each ring into an approximate rectangle 
-        of width <strong>dr</strong> and length equal to the ring's circumference. Each rectangle's area 
-        is then <strong>2πr · dr</strong>.
+        of width dr and length equal to the ring's circumference. Each rectangle's area 
+        is then 2πr · dr.
       </div>
       <div>
         <CodeBlock code={
@@ -44,11 +44,11 @@ print("Area computed using πr²:", math.pi * r ** 2)`
         what that does to the approximation.
       </Note>
       <div>
-        Now let's find the area under the graph of <strong>f(x) = x²</strong>, a parabola. Fix the 
-        starting point at <strong>x = 0</strong> and let the ending point <strong>x</strong> vary freely. 
-        We can then define a function <strong>A(x)</strong> that returns the area under the curve 
-        from <strong>0</strong> to <strong>x</strong>. This function <strong>A(x)</strong> is called the 
-        integral of <strong>x²</strong>.
+        Now let's find the area under the graph of f(x) = x², a parabola. Fix the 
+        starting point at x = 0 and let the ending point x vary freely. 
+        We can then define a function A(x) that returns the area under the curve 
+        from 0 to x. This function A(x) is called the 
+        integral of x².
       </div>
       <div>
         <Equation math={String.raw`
@@ -61,11 +61,11 @@ print("Area computed using πr²:", math.pi * r ** 2)`
         `} />
       </div>
       <div>
-        We can pick some value of <strong>x</strong> under the curve, then pick a slightly larger value. 
-        The difference between them can be described as <strong>dx</strong>, and the corresponding change 
-        in area is <strong>dA = A(x + dx) - A(x)</strong>. This sliver of area is well approximated by a 
-        rectangle with width <strong>dx</strong> and height <strong>f(x) = x²</strong> (the height at the 
-        starting value of <strong>x</strong>).
+        We can pick some value of x under the curve, then pick a slightly larger value. 
+        The difference between them can be described as dx, and the corresponding change 
+        in area is dA = A(x + dx) - A(x). This sliver of area is well approximated by a 
+        rectangle with width dx and height f(x) = x² (the height at the 
+        starting value of x).
       </div>
       <div>
         <Equation math={String.raw`
@@ -78,8 +78,8 @@ print("Area computed using πr²:", math.pi * r ** 2)`
         `} />
       </div>
       <div>
-        The approximation gets more accurate as <strong>dx</strong> shrinks. The derivative of <strong>A</strong> is 
-        what this ratio approaches as <strong>dx</strong> goes to zero.
+        The approximation gets more accurate as dx shrinks. The derivative of A is 
+        what this ratio approaches as dx goes to zero.
       </div>
       <div>
         <Equation math={String.raw`
@@ -87,8 +87,8 @@ print("Area computed using πr²:", math.pi * r ** 2)`
         `} />
       </div>
       <div>
-        As an example, take the area between <strong>x = 3</strong> and <strong>x = 3.001</strong>. <strong>dx</strong> here
-        is <strong>0.001</strong>
+        As an example, take the area between x = 3 and x = 3.001. dx here
+        is 0.001
       </div>
       <div>
         <Equation math={String.raw`
@@ -97,8 +97,8 @@ print("Area computed using πr²:", math.pi * r ** 2)`
       </div>
       <div>
         This illustrates the fundamental theorem of calculus, which is the derivative of the area 
-        function <strong>A(x)</strong> gives back the original function, <strong>A'(x) = x²</strong>. From 
-        this, <strong>A(x)</strong> itself can be recovered by finding a function whose derivative is <strong>x²</strong>.
+        function A(x) gives back the original function, A'(x) = x². From 
+        this, A(x) itself can be recovered by finding a function whose derivative is x².
       </div>
       <div>
         <CodeBlock code={

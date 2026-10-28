@@ -33,9 +33,9 @@ print("Calculating the dot product using NumPy:", np.dot(v, w))`
       <div>
         <Note>
           Previous lessons used column vectors with shape 3x1. Here the vectors are flat 1D arrays,
-          since <strong>np.dot</strong> works directly on those. With column vectors, <strong>v @ w</strong> would
+          since np.dot works directly on those. With column vectors, v @ w would
           fail because a 3x1 matrix can't multiply another 3x1 matrix. Instead, you'd
-          write <strong>v.T @ w</strong>, turning <strong>v</strong> on its side into a 1x3 matrix. That idea
+          write v.T @ w, turning v on its side into a 1x3 matrix. That idea
           comes back at the end of this lesson.
         </Note>
       </div>
@@ -73,7 +73,7 @@ print("Dot product:", np.dot(v, w))`
       </div>
       <div>
         <Note>
-          Try switching around <strong>v</strong> and <strong>w</strong> in the code above.
+          Try switching around v and w in the code above.
           Notice how the result is the same. The order does not matter, which means the dot
           product is <strong>commutative</strong>.
         </Note>
@@ -89,7 +89,7 @@ print("Dot product:", np.dot(v, w))`
         `} />
       </div>
       <div>
-        The double bars <strong>‖v‖</strong> mean the <strong>magnitude</strong> (length) of a vector. It is
+        The double bars ‖v‖ mean the <strong>magnitude</strong> (length) of a vector. It is
         calculated with the Pythagorean theorem: square each coordinate, add them up, and take the square root.
       </div>
       <div>
@@ -182,14 +182,14 @@ print("Dot product calculated by projecting v onto w:", w_mag * proj_v_mag)`
         } editable={true} />
       </div>
       <div>
-        Any linear transformation <strong>A</strong> that maps vectors down to a single number (1D) is
-        equivalent to taking the dot product with some fixed vector <strong>w</strong>. That
-        vector <strong>w</strong> is the single row of the 1x2 matrix, turned on its side into a vector.
+        Any linear transformation A that maps vectors down to a single number (1D) is
+        equivalent to taking the dot product with some fixed vector w. That
+        vector w is the single row of the 1x2 matrix, turned on its side into a vector.
         This relationship is known as <strong>duality</strong>.
       </div>
       <div>
         To see why, remember that the columns of a transformation matrix show where the basis vectors
-        land. The 1x2 matrix [3, -2] sends <strong>i</strong> to 3 and <strong>j</strong> to -2 on the
+        land. The 1x2 matrix [3, -2] sends i to 3 and j to -2 on the
         number line. Applying it to a vector multiplies each coordinate by where its basis vector lands
         and adds the results, which is exactly the dot product with [3, -2].
       </div>

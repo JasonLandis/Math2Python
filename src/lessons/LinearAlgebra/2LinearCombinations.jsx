@@ -56,7 +56,7 @@ print(linear_combination)`
       </div>
       <div>
         The two vectors below can be described as <strong>linearly dependent</strong> because
-        vector <strong>w</strong> can be written as a linear combination of vector <strong>v</strong>.
+        vector w can be written as a linear combination of vector v.
         As a result, the span of these two 2D vectors is just a single 1D line.
       </div>
       <div>
@@ -121,8 +121,8 @@ print(linear_combination)`
         `} />
       </div>
       <div>
-        These vectors are linearly dependent because vector <strong>w</strong> can be written
-        as a linear combination of vectors <strong>u</strong> and <strong>v</strong>.
+        These vectors are linearly dependent because vector w can be written
+        as a linear combination of vectors u and v.
       </div>
       <div>
         <Equation math={String.raw`

@@ -9,8 +9,8 @@ export default function Eigenvectors() {
       <div>
         An <strong>eigenvector</strong> of a linear transformation is a nonzero vector that stays on its own
         line (its span) during the transformation. It only gets stretched, squished, or flipped. The factor
-        it gets scaled by is its <strong>eigenvalue</strong>, written as λ. Below, <strong>A</strong> represents
-        the linear transformation and <strong>v</strong> represents an eigenvector.
+        it gets scaled by is its <strong>eigenvalue</strong>, written as λ. Below, A represents
+        the linear transformation and v represents an eigenvector.
       </div>
       <div>
         <Equation math={String.raw`
@@ -18,8 +18,8 @@ export default function Eigenvectors() {
         `} />
       </div>
       <div>
-        To solve for the eigenvalues, we can rewrite λ<strong>v</strong> as λ<strong>Iv</strong>,
-        where <strong>I</strong> is the identity matrix, and move everything to one side.
+        To solve for the eigenvalues, we can rewrite λv as λIv,
+        where I is the identity matrix, and move everything to one side.
       </div>
       <div>
         <Equation math={String.raw`
@@ -28,7 +28,7 @@ export default function Eigenvectors() {
         `} />
       </div>
       <div>
-        We need a nonzero vector <strong>v</strong> that the matrix <strong>A</strong> - λ<strong>I</strong> sends
+        We need a nonzero vector v that the matrix A - λI sends
         to the origin. From the inverse matrices lesson, that only happens when the matrix squishes space
         into a lower dimension, which means its determinant must be 0. This gives us the formula below.
       </div>
@@ -95,7 +95,7 @@ export default function Eigenvectors() {
       </div>
       <div>
         To find the eigenvector for each eigenvalue, plug the eigenvalue back
-        into <strong>(A - λI)v = 0</strong> and solve for <strong>v</strong>.
+        into (A - λI)v = 0 and solve for v.
       </div>
       <div>
         <Equation math={String.raw`
@@ -137,14 +137,14 @@ print(eigen.eigenvalues)`
       </div>
       <div>
         <Note>
-          In the output above, the eigenvectors are the columns <strong>[1, 0]</strong> and <strong>[-0.7071, 0.7071]</strong>,
-          with corresponding eigenvalues <strong>3</strong> and <strong>2</strong>, respectively. Any scaled copy of an
-          eigenvector is also an eigenvector, so <strong>[-0.7071, 0.7071]</strong> points along the same line
-          as <strong>[-1, 1]</strong>. NumPy always picks the version with a length of 1.
+          In the output above, the eigenvectors are the columns [1, 0] and [-0.7071, 0.7071],
+          with corresponding eigenvalues 3 and 2, respectively. Any scaled copy of an
+          eigenvector is also an eigenvector, so [-0.7071, 0.7071] points along the same line
+          as [-1, 1]. NumPy always picks the version with a length of 1.
         </Note>
       </div>
       <div>
-        By the defining property of eigenvectors, applying a linear transformation <strong>A</strong> to an
+        By the defining property of eigenvectors, applying a linear transformation A to an
         eigenvector gives the same result as multiplying that eigenvector by its eigenvalue.
       </div>
       <div>
@@ -168,7 +168,7 @@ for n in range(len(eigen.eigenvalues)):
       </div>
       <div>
         Below is an example of solving for the eigenvalues and eigenvectors in 3D.
-        The transformation matrix <strong>A</strong> represents a 90° counterclockwise rotation about
+        The transformation matrix A represents a 90° counterclockwise rotation about
         the z-axis. Intuitively, a rotation should have an eigenvector being its axis of rotation, which
         stays fixed as everything else turns about the origin. Since the axis isn't stretched at all,
         its eigenvalue is 1.
@@ -193,10 +193,10 @@ print(eigen.eigenvalues)`
       <div>
         <Note>
           The output above may look confusing because NumPy returns all eigenvectors and their eigenvalues,
-          including complex ones. Python writes the imaginary unit as <strong>j</strong>, so you can tell an
-          eigenvalue or eigenvector is complex if it has a nonzero <strong>j</strong> component. In this example,
-          only one eigenvalue/eigenvector pair is real (<strong>λ = 1</strong> with
-          eigenvector <strong>[0, 0, 1]</strong>), so this transformation has only one real eigenvector and eigenvalue.
+          including complex ones. Python writes the imaginary unit as j, so you can tell an
+          eigenvalue or eigenvector is complex if it has a nonzero j component. In this example,
+          only one eigenvalue/eigenvector pair is real (λ = 1 with
+          eigenvector [0, 0, 1]), so this transformation has only one real eigenvector and eigenvalue.
         </Note>
       </div>
       <div>
@@ -241,12 +241,12 @@ print(eigen.eigenvalues)`
         } editable={true} />
       </div>
       <div>
-        If you know the eigenvectors of some matrix <strong>A</strong>, you can use them as the basis vectors
+        If you know the eigenvectors of some matrix A, you can use them as the basis vectors
         of a new coordinate system. This set of basis vectors is called the <strong>eigenbasis</strong>. The
-        change of basis matrix <strong>B</strong> has those eigenvectors as its columns.
-        Just like in the change of basis lesson, <strong>B⁻¹AB</strong> is the transformation <strong>A</strong> written
+        change of basis matrix B has those eigenvectors as its columns.
+        Just like in the change of basis lesson, B⁻¹AB is the transformation A written
         in the eigenbasis's language. In that language, each basis vector is an eigenvector that only gets
-        scaled, so <strong>B⁻¹AB</strong> is a diagonal matrix, and the eigenvalues can be read directly off the diagonal.
+        scaled, so B⁻¹AB is a diagonal matrix, and the eigenvalues can be read directly off the diagonal.
       </div>
       <div>
         Not every matrix has an eigenbasis. You need enough eigenvectors to span the whole space. For example,
@@ -311,9 +311,9 @@ print(np.diag(diagonal_matrix))`
       </div>
       <div>
         One reason diagonal matrices are so useful is that they make repeated transformations easy to
-        calculate. Applying <strong>A</strong> many times in a row (<strong>A<sup>n</sup></strong>) is hard to
-        calculate directly. But if <strong>D</strong> = <strong>B⁻¹AB</strong>, then <strong>A<sup>n</sup></strong> = <strong>BD<sup>n</sup>B⁻¹</strong>,
-        and <strong>D<sup>n</sup></strong> is just each diagonal entry raised to the n.
+        calculate. Applying A many times in a row (A<sup>n</sup>) is hard to
+        calculate directly. But if D = B⁻¹AB, then A<sup>n</sup> = BD<sup>n</sup>B⁻¹,
+        and D<sup>n</sup> is just each diagonal entry raised to the n.
       </div>
       <div>
         <Equation math={String.raw`

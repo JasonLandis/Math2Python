@@ -13,7 +13,7 @@ export default function QuickEigenCompute() {
       </div>
       <div>
         To see why, look at the formula from the eigenvectors lesson. For a general 2x2
-        matrix, <strong>det(A - λI) = 0</strong> expands to the equation below. In an equation like this,
+        matrix, det(A - λI) = 0 expands to the equation below. In an equation like this,
         the middle coefficient is the sum of the two solutions and the last term is their product.
       </div>
       <div>
@@ -28,10 +28,10 @@ export default function QuickEigenCompute() {
         `}/>
       </div>
       <div>
-        Let <strong>m</strong> be the mean of the two eigenvalues (half the trace) and <strong>p</strong> be
-        their product (the determinant). The two eigenvalues sit the same distance <strong>k</strong> above
-        and below the mean, so they are <strong>m + k</strong> and <strong>m - k</strong>. Multiplying them
-        together lets us solve for <strong>k</strong>.
+        Let m be the mean of the two eigenvalues (half the trace) and p be
+        their product (the determinant). The two eigenvalues sit the same distance k above
+        and below the mean, so they are m + k and m - k. Multiplying them
+        together lets us solve for k.
       </div>
       <div>
         <Equation math={String.raw`
@@ -90,7 +90,7 @@ print(np.linalg.eigvals(A))`
       </div>
       <div>
         Below is the matrix from the eigenvectors lesson. The trick gives the same eigenvalues, 3 and 2,
-        much faster than solving <strong>det(A - λI) = 0</strong> by hand.
+        much faster than solving det(A - λI) = 0 by hand.
       </div>
       <div>
         <Equation math={String.raw`
@@ -114,8 +114,8 @@ print(np.linalg.eigvals(A))`
         `}/>
       </div>
       <div>
-        If <strong>m² - p</strong> is negative, the eigenvalues are complex. For example, the 90° rotation
-        below has <strong>m</strong> = 0 and <strong>p</strong> = 1, so the trick gives the square root of -1.
+        If m² - p is negative, the eigenvalues are complex. For example, the 90° rotation
+        below has m = 0 and p = 1, so the trick gives the square root of -1.
         This matches the eigenvectors lesson, where rotations had no real eigenvectors.
       </div>
       <div>
@@ -139,9 +139,9 @@ print("Eigenvalue 2:", eig2)`
       </div>
       <div>
         <Note>
-          <strong>np.emath.sqrt</strong> returns a complex number when given a negative input, while the
-          regular <strong>math.sqrt</strong> would raise an error. Python writes the imaginary unit
-          as <strong>j</strong>, so the output above is <strong>±i</strong>.
+          np.emath.sqrt returns a complex number when given a negative input, while the
+          regular math.sqrt would raise an error. Python writes the imaginary unit
+          as j, so the output above is ±i.
         </Note>
       </div>
       <div>

@@ -11,7 +11,7 @@ export default function ThreeDimTransformations() {
         All of the rules described in the previous lessons apply in any number of dimensions.
       </div>
       <div>
-        In 3D, there is a third basis vector <strong>k</strong> alongside <strong>i</strong> and <strong>j</strong>.
+        In 3D, there is a third basis vector k alongside i and j.
       </div>
       <div>
         <Equation math={String.raw`
@@ -24,7 +24,7 @@ export default function ThreeDimTransformations() {
       </div>
       <div>
         A 3D linear transformation is described by a 3x3 matrix. The first, second, and third
-        columns of the matrix are <strong>i'</strong>, <strong>j'</strong>, and <strong>k'</strong>, where <strong>i</strong>, <strong>j</strong>, and <strong>k</strong> land
+        columns of the matrix are i', j', and k', where i, j, and k land
         after the transformation. The following is an example of a 3x3 matrix transforming a vector.
       </div>
       <div>
@@ -75,9 +75,9 @@ print(M @ v)`
       </div>
       <div>
         <Note>
-          <strong>M[:, [0]]</strong> selects a column of the matrix. The <strong>:</strong> selects
-          every row, and <strong>[0]</strong> selects the first column. Putting the column index inside a
-          list keeps the result as a 3x1 column vector. Writing <strong>M[:, 0]</strong> instead would
+          M[:, [0]] selects a column of the matrix. The : selects
+          every row, and [0] selects the first column. Putting the column index inside a
+          list keeps the result as a 3x1 column vector. Writing M[:, 0] instead would
           return a flat 1D array, which prints as a row.
         </Note>
       </div>

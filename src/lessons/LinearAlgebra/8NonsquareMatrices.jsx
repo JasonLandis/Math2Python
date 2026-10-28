@@ -72,16 +72,16 @@ print("Rank:", np.linalg.matrix_rank(B))`
       </div>
       <div>
         <Note>
-          The maximum possible rank of a matrix is <strong>min(m, n)</strong> where m is the number of
+          The maximum possible rank of a matrix is min(m, n) where m is the number of
           rows and n is the number of columns of the matrix.
         </Note>
       </div>
       <div>
-        When computing <strong>AB</strong>, which applies <strong>B</strong> first, the output
-        dimension of <strong>B</strong> must match the input dimension of <strong>A</strong>.
-        Below, <strong>A</strong> has an input dimension of 2 and <strong>B</strong> has an output
-        dimension of 2. The size of the resulting matrix will be 3x3, since <strong>A</strong> has an
-        output dimension of 3 and <strong>B</strong> has an input dimension of 3.
+        When computing AB, which applies B first, the output
+        dimension of B must match the input dimension of A.
+        Below, A has an input dimension of 2 and B has an output
+        dimension of 2. The size of the resulting matrix will be 3x3, since A has an
+        output dimension of 3 and B has an input dimension of 3.
       </div>
       <div>
         <Equation math={String.raw`
@@ -134,15 +134,15 @@ print(A @ B)`
       </div>
       <div>
         <Note>
-          Try changing the print statement in the code snippet above to <strong>B @ A</strong> and
-          notice how the shape of the composition matrix changes to be 2x2. Unlike <strong>AB</strong>,
-          the matrix <strong>BA</strong> is full rank (rank 2). Going from 2D to 3D and back to 2D does not
+          Try changing the print statement in the code snippet above to B @ A and
+          notice how the shape of the composition matrix changes to be 2x2. Unlike AB,
+          the matrix BA is full rank (rank 2). Going from 2D to 3D and back to 2D does not
           lose a dimension, but going from 3D to 2D and back to 3D does. This is explained below.
         </Note>
       </div>
       <div>
-        Now we have a new 3x3 matrix <strong>AB</strong> that represents the composition of
-        matrices <strong>A</strong> and <strong>B</strong>.
+        Now we have a new 3x3 matrix AB that represents the composition of
+        matrices A and B.
       </div>
       <div>
         <Equation math={String.raw`
@@ -156,11 +156,11 @@ print(A @ B)`
       </div>
       <div>
         You might assume the matrix above has rank 3 because it has 3 rows and 3 columns.
-        However, it represents the composition of <strong>A</strong> and <strong>B</strong>.
-        Matrix <strong>B</strong> squishes space from 3D down to 2D, then matrix <strong>A</strong> maps
-        space back up from 2D to 3D. The dimension lost in linear transformation <strong>B</strong> can
+        However, it represents the composition of A and B.
+        Matrix B squishes space from 3D down to 2D, then matrix A maps
+        space back up from 2D to 3D. The dimension lost in linear transformation B can
         never be recovered, so the rank is at most 2 and the columns must be linearly dependent.
-        This also means the determinant of <strong>AB</strong> is 0, so <strong>AB</strong> cannot be inverted.
+        This also means the determinant of AB is 0, so AB cannot be inverted.
       </div>
       <div>
         <CodeBlock code={
