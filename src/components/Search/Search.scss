@@ -1,3 +1,5 @@
+@use '../../breakpoints' as *;
+
 .search {
   position: relative;
   width: 100%;
@@ -14,6 +16,11 @@
 
     &:focus {
       outline: none;
+    }
+
+    // iOS Safari zooms in on focused inputs below 16px
+    @include mobile {
+      font-size: 16px;
     }
 
     &::placeholder {

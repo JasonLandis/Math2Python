@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { InlineMath } from 'react-katex';
 import Back from '../../components/Back/Back';
 import ToTop from '../../components/ToTop/ToTop';
 import { lessons } from '../../lessons/lessons';
@@ -14,7 +13,7 @@ export default function Lesson({ subject, lesson }) {
       <title>{lessons[subject].lessons[lesson].title + ' | Math 2 Python'}</title>
       <Back destination={`/${subject}`} text={lessons[subject].title} />
       <div className='global-title'>
-        <InlineMath math={String.raw`\textit{${lessons[subject].lessons[lesson].title}}`} />
+        {lessons[subject].lessons[lesson].title}
       </div>
       <div className='lesson-sources'>
         {(lessons[subject].lessons[lesson].sources).map((source) => (

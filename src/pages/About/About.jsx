@@ -1,4 +1,3 @@
-import { InlineMath } from 'react-katex';
 import Back from '../../components/Back/Back';
 import 'katex/dist/katex.min.css';
 import './About.scss';
@@ -8,7 +7,7 @@ export default function About() {
     <div className='global-container'>
       <Back destination='/' text='Subjects' />
       <div className='global-title'>
-        <InlineMath math="\textit{About}" />
+        About
       </div>
       <div>
         This is a website where I represent math subjects I find interesting using Python. The purpose is

@@ -9,6 +9,7 @@
 
     a {
         color: unset;
+        overflow-wrap: anywhere;
     }
 }
 
@@ -40,5 +41,11 @@
 .lesson-body {
     > * {
         margin: 40px 0;
+    }
+
+    .katex-display {
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding: 4px 0;
     }
 }
