@@ -11,7 +11,7 @@ export default function Navbar() {
   return (
     <nav>
       <Link to="/" className='logo'>
-        <img src="logo.png" alt="" />
+        <img src="/logo.png" alt="" />
         <span className='logo-title'><InlineMath math="\textit{Math 2 Python}" /></span>
       </Link>
       <Search />
