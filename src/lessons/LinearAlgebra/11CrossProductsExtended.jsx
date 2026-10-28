@@ -33,13 +33,13 @@ export default function CrossProductsExtended() {
                 -1 & 2 \\
                 3 & 1
               \end{bmatrix}
-            \right) \\ [2ex]
+            \right) \\[2ex]
             \text{det}\left(
               \begin{bmatrix}
                 3 & 1 \\
                 4 & -2
               \end{bmatrix}
-            \right) \\ [2ex]
+            \right) \\[2ex]
             \text{det}\left(
               \begin{bmatrix}
                 4 & -2 \\
