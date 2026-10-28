@@ -1,3 +1,5 @@
+@use '../../styles/responsive' as *;
+
 .search {
   position: relative;
   width: 100%;
@@ -14,6 +16,11 @@
 
     &:focus {
       outline: none;
+    }
+
+    // iOS Safari zooms in on focused inputs below 16px
+    @include mobile {
+      font-size: 16px;
     }
 
     &::placeholder {
@@ -39,7 +46,11 @@
       text-decoration: none;
       padding: 8px 12px;
 
-      &:hover { 
+      @include mobile {
+        padding: 12px;
+      }
+
+      @include hover { 
         background: var(--global-secondary-color); 
       }
     }

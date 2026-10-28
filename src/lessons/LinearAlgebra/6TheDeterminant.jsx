@@ -1,4 +1,4 @@
-import { BlockMath } from 'react-katex';
+import Equation from '../../components/Equation/Equation';
 import CodeBlock from '../../components/CodeBlock/CodeBlock'
 import Note from '../../components/Note/Note';
 import 'katex/dist/katex.min.css';
@@ -15,7 +15,7 @@ export default function TheDeterminant() {
         The formula for calculating the determinant of a 2x2 matrix is as follows.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \text{det}
           \left(
           \begin{bmatrix}
@@ -55,7 +55,7 @@ print("Determinant calculated using NumPy:", np.linalg.det(M))`
         which is <strong>a</strong>. Either way, the area (the determinant) is <strong>a</strong> · <strong>d</strong>.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           c = 0:
           \quad
           \begin{bmatrix}
@@ -72,7 +72,7 @@ print("Determinant calculated using NumPy:", np.linalg.det(M))`
         `} />
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           b = 0:
           \quad
           \begin{bmatrix}
@@ -107,11 +107,11 @@ print("Example where b is 0 (it's just a * d):", determinant)`
         triangles (<strong>ac</strong> and <strong>bd</strong>) and the two corner rectangles (2<strong>bc</strong>) leaves
         the area of the parallelogram.
       </div>
-      <div><BlockMath math="(a + b) \cdot (c + d) - (ac + bd + 2bc)" /></div>
-      <div><BlockMath math="(ac + ad + bc + bd) - (ac + bd + 2bc)" /></div>
-      <div><BlockMath math="ac + ad + bc + bd - ac - bd - 2bc" /></div>
-      <div><BlockMath math="ad + bc - 2bc" /></div>
-      <div><BlockMath math="ad - bc" /></div>
+      <div><Equation math="(a + b) \cdot (c + d) - (ac + bd + 2bc)" /></div>
+      <div><Equation math="(ac + ad + bc + bd) - (ac + bd + 2bc)" /></div>
+      <div><Equation math="ac + ad + bc + bd - ac - bd - 2bc" /></div>
+      <div><Equation math="ad + bc - 2bc" /></div>
+      <div><Equation math="ad - bc" /></div>
       <div>
         <CodeBlock code={
 `import numpy as np
@@ -158,7 +158,7 @@ print("Determinant calculated using NumPy:", np.linalg.det(M))`
         scales volumes. Below is how you would calculate the determinant of a 3x3 matrix.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \text{det}
             \left(
               \begin{bmatrix}
@@ -242,7 +242,7 @@ print("Determinant calculated using NumPy:", np.linalg.det(M))`
         by det(<strong>M<sub>2</sub></strong>), so the total scaling is the product of the two.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \text{det}
             \left(
               \begin{bmatrix}

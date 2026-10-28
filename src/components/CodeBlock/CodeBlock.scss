@@ -1,3 +1,5 @@
+@use '../../styles/responsive' as *;
+
 .code-execute {
     margin-top: 20px;
     text-align: center;
@@ -5,11 +7,11 @@
     button {
         all: unset;
         cursor: pointer;
-        padding: 10px;
+        padding: 12px 20px;
         border-radius: 10px;
         background-color: var(--global-secondary-color);
 
-        &:hover {
+        @include hover {
             background-color: var(--global-button-hover-color);
         }
 
@@ -25,10 +27,22 @@
     margin-top: 20px;
     border-radius: 10px;
     box-shadow: var(--global-box-shadow);
+
+    pre {
+        overflow-x: auto;
+    }
 }
 
 .code-mirror {
+    max-width: 100%;
     border-radius: 8px;
-    overflow: hidden; 
+    overflow: hidden;
     box-shadow: var(--global-box-shadow);
+
+    // iOS Safari zooms in on focused text below 16px
+    @include mobile {
+        .cm-editor {
+            font-size: 16px;
+        }
+    }
 }

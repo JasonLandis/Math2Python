@@ -1,4 +1,4 @@
-import { BlockMath } from 'react-katex';
+import Equation from '../../components/Equation/Equation';
 import CodeBlock from '../../components/CodeBlock/CodeBlock'
 import Note from '../../components/Note/Note';
 import 'katex/dist/katex.min.css';
@@ -13,7 +13,7 @@ export default function Eigenvectors() {
         the linear transformation and <strong>v</strong> represents an eigenvector.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \boldsymbol{Av} = \lambda\boldsymbol{v}
         `} />
       </div>
@@ -22,7 +22,7 @@ export default function Eigenvectors() {
         where <strong>I</strong> is the identity matrix, and move everything to one side.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \boldsymbol{Av} - \lambda\boldsymbol{Iv} = \boldsymbol{0}
           \quad\quad\Longrightarrow\quad\quad
           (\boldsymbol{A} - \lambda\boldsymbol{I})\boldsymbol{v} = \boldsymbol{0}
@@ -34,7 +34,7 @@ export default function Eigenvectors() {
         into a lower dimension, which means its determinant must be 0. This gives us the formula below.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \boldsymbol{A} =
           \begin{bmatrix}
             3 & 1 \\
@@ -49,12 +49,12 @@ export default function Eigenvectors() {
         `} />
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \text{det}\left(\boldsymbol{A}-\lambda\boldsymbol{I}\right) = 0
         `} />
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \text{det}\left(
             \begin{bmatrix}
               3 & 1 \\
@@ -69,7 +69,7 @@ export default function Eigenvectors() {
         `} />
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \text{det}\left(
             \begin{bmatrix}
               3 - \lambda & 1 \\
@@ -79,17 +79,17 @@ export default function Eigenvectors() {
         `} />
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           (3 - \lambda)(2 - \lambda) - (1)(0) = 0
         `} />
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           (3 - \lambda)(2 - \lambda) = 0
         `} />
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \lambda = 3 \quad \text{or} \quad \lambda = 2
         `} />
       </div>
@@ -98,7 +98,7 @@ export default function Eigenvectors() {
         into <strong>(A - λI)v = 0</strong> and solve for <strong>v</strong>.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \lambda = 3:
           \quad
           \begin{bmatrix}
@@ -114,7 +114,7 @@ export default function Eigenvectors() {
         `} />
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \lambda = 2:
           \quad
           \begin{bmatrix}
@@ -216,7 +216,7 @@ print(eigen.eigenvalues)`
         being a transformation that scales each basis vector by its own diagonal entry.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \boldsymbol{A} =
           \begin{bmatrix}
             -1 & 0 \\
@@ -225,14 +225,14 @@ print(eigen.eigenvalues)`
         `} />
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \lambda_1 \enspace = \enspace -1
           \enspace \rightarrow \enspace
           \begin{bmatrix} 1 \\ 0 \end{bmatrix}
         `} />
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \lambda_2 \enspace = \enspace 2
           \enspace \rightarrow \enspace
           \begin{bmatrix} 0 \\ 1 \end{bmatrix}
@@ -268,7 +268,7 @@ print(eigen.eigenvalues)`
         a single line of eigenvectors.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \boldsymbol{A} =
           \begin{bmatrix}
             3 & 1 \\
@@ -283,7 +283,7 @@ print(eigen.eigenvalues)`
         `} />
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \boldsymbol{B} =
           \begin{bmatrix}
             1 & -1 \\
@@ -292,7 +292,7 @@ print(eigen.eigenvalues)`
         `} />
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \boldsymbol{B^{-1}AB} =
           \begin{bmatrix}
             3 & 0 \\
@@ -301,7 +301,7 @@ print(eigen.eigenvalues)`
         `} />
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \lambda_1 = 3
           \quad\quad
           \lambda_2 = 2
@@ -333,7 +333,7 @@ print(np.diag(diagonal_matrix))`
         and <strong>D<sup>n</sup></strong> is just each diagonal entry raised to the n.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \boldsymbol{A^n}
           \enspace = \enspace
           \boldsymbol{BD^nB^{-1}}

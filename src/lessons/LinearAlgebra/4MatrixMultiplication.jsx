@@ -1,4 +1,4 @@
-import { BlockMath } from 'react-katex';
+import Equation from '../../components/Equation/Equation';
 import CodeBlock from '../../components/CodeBlock/CodeBlock'
 import Note from '../../components/Note/Note';
 import 'katex/dist/katex.min.css';
@@ -10,7 +10,7 @@ export default function MatrixMultiplication() {
         Let's say we have two linear transformation matrices.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           M_1 =
           \begin{bmatrix}
             3 & -2 \\
@@ -29,7 +29,7 @@ export default function MatrixMultiplication() {
         following both of these transformations.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \boldsymbol{v} = \begin{bmatrix} 1 \\ 3 \end{bmatrix}
         `} />
       </div>
@@ -39,7 +39,7 @@ export default function MatrixMultiplication() {
         to that transformed vector.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \begin{bmatrix}
             3 & -2 \\
             4 & 1
@@ -84,7 +84,7 @@ print(m2_vector)`
         describes both linear transformations.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \begin{bmatrix}
             4 & -1 \\
             -3 & 2
@@ -116,14 +116,14 @@ print(m2_vector)`
         become the columns of the composition matrix.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           M_2 \boldsymbol{i'} = \boldsymbol{i''}
           \quad\quad\quad\quad
           M_2 \boldsymbol{j'} = \boldsymbol{j''}
         `} />
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \begin{bmatrix}
             4 & -1 \\
             -3 & 2
@@ -142,7 +142,7 @@ print(m2_vector)`
         `} />
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           M_2 M_1
           \enspace = \enspace
           \begin{bmatrix} \boldsymbol{i''} & \boldsymbol{j''} \end{bmatrix}

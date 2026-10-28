@@ -1,4 +1,4 @@
-import { BlockMath } from 'react-katex';
+import Equation from '../../components/Equation/Equation';
 import CodeBlock from '../../components/CodeBlock/CodeBlock'
 import 'katex/dist/katex.min.css';
 
@@ -17,7 +17,7 @@ export default function AbstractVectorSpaces() {
         Adding or scaling polynomials gives the same result as adding or scaling their coefficient vectors.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           (1 + 2x) + (3 - x + x^2) = 4 + x + x^2
           \quad\quad
           \begin{bmatrix} 1 \\ 2 \\ 0 \end{bmatrix}
@@ -58,7 +58,7 @@ print("Scaling the coefficient vector by 3:", 3 * f_coefficients)`
         transformation can be written as a matrix.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \boldsymbol{v} = \begin{bmatrix} 2 \\ 3 \\ -1 \end{bmatrix}
           \quad\quad
           \boldsymbol{w} = \begin{bmatrix} -1 \\ 2 \\ 3 \end{bmatrix}
@@ -73,8 +73,8 @@ print("Scaling the coefficient vector by 3:", 3 * f_coefficients)`
         `}/>
       </div>
       <div>
-        <BlockMath math={String.raw`
-          \textbf{Additivity:\enspace} \boldsymbol{A}(\boldsymbol{v} + \boldsymbol{w})
+        <Equation math={String.raw`
+          \textbf{Additivity:\enspace} \allowbreak \boldsymbol{A}(\boldsymbol{v} + \boldsymbol{w})
           \enspace = \enspace
           \boldsymbol{Av} + \boldsymbol{Aw}
           \enspace = \enspace
@@ -82,8 +82,8 @@ print("Scaling the coefficient vector by 3:", 3 * f_coefficients)`
         `}/>
       </div>
       <div>
-        <BlockMath math={String.raw`
-          \textbf{Homogeneity:\enspace} \boldsymbol{A}(c\boldsymbol{v})
+        <Equation math={String.raw`
+          \textbf{Homogeneity:\enspace} \allowbreak \boldsymbol{A}(c\boldsymbol{v})
           \enspace = \enspace
           c(\boldsymbol{Av})
           \enspace = \enspace
@@ -127,7 +127,7 @@ print(c * (A @ v))`
         derivative (homogeneity).
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           (f + g)' = f' + g'
           \quad\quad\quad
           (cf)' = c f'
@@ -143,14 +143,14 @@ print(c * (A @ v))`
         representing a polynomial that is the derivative of the original polynomial.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           -1 + 4x - 3x^2 + 2x^3
           \quad \rightarrow \quad
           \begin{bmatrix} -1 \\ 4 \\ -3 \\ 2 \end{bmatrix}
         `} />
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \begin{bmatrix}
             0 & 1 & 0 & 0 \\
             0 & 0 & 2 & 0 \\
@@ -163,7 +163,7 @@ print(c * (A @ v))`
         `} />
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \begin{bmatrix} 4 \\ -6 \\ 6 \\ 0 \end{bmatrix}
           \quad \rightarrow \quad
           4 - 6x + 6x^2

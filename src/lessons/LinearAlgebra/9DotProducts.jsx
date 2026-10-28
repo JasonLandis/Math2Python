@@ -1,4 +1,4 @@
-import { BlockMath } from 'react-katex';
+import Equation from '../../components/Equation/Equation';
 import CodeBlock from '../../components/CodeBlock/CodeBlock'
 import Note from '../../components/Note/Note';
 import 'katex/dist/katex.min.css';
@@ -12,7 +12,7 @@ export default function DotProducts() {
         on two vectors of the same dimension.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \begin{bmatrix} 2 \\ -2 \\ 3 \end{bmatrix}
           \cdot
           \begin{bmatrix} 1 \\ 3 \\ 4 \end{bmatrix}
@@ -85,7 +85,7 @@ print("Dot product:", np.dot(v, w))`
         the angle is greater than 90°.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \boldsymbol{v} \cdot \boldsymbol{w}
           \enspace = \enspace
           \lVert \boldsymbol{v} \rVert \, \lVert \boldsymbol{w} \rVert \cos\theta
@@ -96,7 +96,7 @@ print("Dot product:", np.dot(v, w))`
         calculated with the Pythagorean theorem: square each coordinate, add them up, and take the square root.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \lVert \boldsymbol{v} \rVert
           \enspace = \enspace
           \sqrt{(v_1)^2 + (v_2)^2}
@@ -106,7 +106,7 @@ print("Dot product:", np.dot(v, w))`
         For example, take the two vectors below. The angle between them is 45°.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \boldsymbol{v} = \begin{bmatrix} 3 \\ 0 \end{bmatrix}
           \quad\quad
           \boldsymbol{w} = \begin{bmatrix} 2 \\ 2 \end{bmatrix}
@@ -115,7 +115,7 @@ print("Dot product:", np.dot(v, w))`
         `} />
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \lVert \boldsymbol{v} \rVert = \sqrt{3^2 + 0^2} = 3
           \quad\quad
           \lVert \boldsymbol{w} \rVert = \sqrt{2^2 + 2^2} = 2\sqrt{2}
@@ -127,7 +127,7 @@ print("Dot product:", np.dot(v, w))`
         Calculating the dot product both ways gives the same answer.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \boldsymbol{v} \cdot \boldsymbol{w}
           \enspace = \enspace
           (3)(2) + (0)(2)
@@ -136,7 +136,7 @@ print("Dot product:", np.dot(v, w))`
         `} />
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \lVert \boldsymbol{v} \rVert \, \lVert \boldsymbol{w} \rVert \cos\theta
           \enspace = \enspace
           3 \cdot 2\sqrt{2} \cdot \frac{\sqrt{2}}{2}
@@ -206,7 +206,7 @@ print("Dot product calculated by projecting v onto w:", w_mag * proj_v_mag)`
         and adds the results, which is exactly the dot product with [3, -2].
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \boldsymbol{A} = \begin{bmatrix} 3 & -2 \end{bmatrix}
           \quad\quad
           \boldsymbol{w} = \begin{bmatrix} 3 \\ -2 \end{bmatrix}
@@ -215,7 +215,7 @@ print("Dot product calculated by projecting v onto w:", w_mag * proj_v_mag)`
         `} />
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \boldsymbol{i} \rightarrow 3
           \quad\quad
           \boldsymbol{j} \rightarrow -2
@@ -226,8 +226,8 @@ print("Dot product calculated by projecting v onto w:", w_mag * proj_v_mag)`
         `} />
       </div>
       <div>
-        <BlockMath math={String.raw`
-          \textbf{Matrix multiplication:\enspace}
+        <Equation math={String.raw`
+          \textbf{Matrix multiplication:\enspace} \allowbreak
           \begin{bmatrix} 3 & -2 \end{bmatrix}
           \begin{bmatrix} 1 \\ 4 \end{bmatrix}
           \enspace = \enspace
@@ -237,8 +237,8 @@ print("Dot product calculated by projecting v onto w:", w_mag * proj_v_mag)`
         `} />
       </div>
       <div>
-        <BlockMath math={String.raw`
-          \textbf{Dot product:\enspace}
+        <Equation math={String.raw`
+          \textbf{Dot product:\enspace} \allowbreak
           \begin{bmatrix} 3 \\ -2 \end{bmatrix}
           \cdot
           \begin{bmatrix} 1 \\ 4 \end{bmatrix}

@@ -1,4 +1,4 @@
-import { BlockMath } from 'react-katex';
+import Equation from '../../components/Equation/Equation';
 import CodeBlock from '../../components/CodeBlock/CodeBlock'
 import Note from '../../components/Note/Note';
 import 'katex/dist/katex.min.css';
@@ -17,7 +17,7 @@ export default function QuickEigenCompute() {
         the middle coefficient is the sum of the two solutions and the last term is their product.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \boldsymbol{A} = \begin{bmatrix} a & b \\ c & d \end{bmatrix}
           \quad\quad
           \lambda^2 - (a + d)\lambda + (ad - bc) = 0
@@ -30,7 +30,7 @@ export default function QuickEigenCompute() {
         together lets us solve for <strong>k</strong>.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           (m + k)(m - k) = m^2 - k^2 = p
           \quad\quad\Longrightarrow\quad\quad
           k = \sqrt{m^2 - p}
@@ -40,12 +40,12 @@ export default function QuickEigenCompute() {
         This gives the general formula for both eigenvalues.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \lambda = m \pm \sqrt{m^2 - p}
         `}/>
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \boldsymbol{A} = \begin{bmatrix} 2 & 7 \\ 1 & 8 \end{bmatrix}
           \quad\quad
           m = \frac{2 + 8}{2} = 5
@@ -54,7 +54,7 @@ export default function QuickEigenCompute() {
         `}/>
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \lambda_1 = 5 + \sqrt{5^2 - 9} = 5 + \sqrt{16} = 9
           \quad\quad
           \lambda_2 = 5 - \sqrt{5^2 - 9} = 5 - \sqrt{16} = 1
@@ -87,7 +87,7 @@ print(np.linalg.eigvals(A))`
         much faster than solving <strong>det(A - λI) = 0</strong> by hand.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \boldsymbol{A} = \begin{bmatrix} 3 & 1 \\ 0 & 2 \end{bmatrix}
           \quad\quad
           m = \frac{3 + 2}{2} = 2.5
@@ -96,7 +96,7 @@ print(np.linalg.eigvals(A))`
         `}/>
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \lambda = 2.5 \pm \sqrt{2.5^2 - 6} = 2.5 \pm \sqrt{0.25} = 2.5 \pm 0.5
           \quad\quad\Longrightarrow\quad\quad
           \lambda_1 = 3

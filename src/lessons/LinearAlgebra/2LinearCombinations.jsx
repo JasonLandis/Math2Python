@@ -1,4 +1,4 @@
-import { BlockMath } from 'react-katex';
+import Equation from '../../components/Equation/Equation';
 import CodeBlock from '../../components/CodeBlock/CodeBlock'
 import 'katex/dist/katex.min.css';
 
@@ -9,7 +9,7 @@ export default function LinearCombinations() {
         Let's say we have the two basis vectors below.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \boldsymbol{i} = \begin{bmatrix} 1 \\ 0 \end{bmatrix}
           \quad\quad
           \boldsymbol{j} = \begin{bmatrix} 0 \\ 1 \end{bmatrix}
@@ -21,7 +21,7 @@ export default function LinearCombinations() {
         of the two basis vectors above.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           3 \begin{bmatrix} 1 \\ 0 \end{bmatrix}
           \enspace + \enspace
           4 \begin{bmatrix} 0 \\ 1 \end{bmatrix}
@@ -62,7 +62,7 @@ print(linear_combination)`
         As a result, the span of these two 2D vectors is just a single 1D line.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \boldsymbol{v} = \begin{bmatrix} 1 \\ 2 \end{bmatrix}
           \quad\quad
           \boldsymbol{w} = \begin{bmatrix} 2 \\ 4 \end{bmatrix}
@@ -103,7 +103,7 @@ print(linear_combination)`
         can be represented as a linear combination of the others.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \boldsymbol{i} = \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}
           \quad\quad
           \boldsymbol{j} = \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}
@@ -115,7 +115,7 @@ print(linear_combination)`
         Now let's say we have the following vectors.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \boldsymbol{u} = \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}
           \quad\quad
           \boldsymbol{v} = \begin{bmatrix} 2 \\ -1 \\ 4 \end{bmatrix}
@@ -128,7 +128,7 @@ print(linear_combination)`
         as a linear combination of vectors <strong>u</strong> and <strong>v</strong>.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           2 \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}
           \enspace + \enspace
           \begin{bmatrix} 2 \\ -1 \\ 4 \end{bmatrix}

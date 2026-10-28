@@ -1,25 +1,27 @@
-import Vectors from "./LinearAlgebra/1Vectors"
-import LinearCombinations from "./LinearAlgebra/2LinearCombinations"
-import LinearTransformations from "./LinearAlgebra/3LinearTransformations"
-import MatrixMultiplication from "./LinearAlgebra/4MatrixMultiplication"
-import ThreeDimTransformations from "./LinearAlgebra/5ThreeDimTransformations"
-import TheDeterminant from "./LinearAlgebra/6TheDeterminant"
-import InverseMatrices from "./LinearAlgebra/7InverseMatrices"
-import NonsquareMatrices from "./LinearAlgebra/8NonsquareMatrices"
-import DotProducts from "./LinearAlgebra/9DotProducts"
-import CrossProducts from "./LinearAlgebra/10CrossProducts"
-import CrossProductsExtended from "./LinearAlgebra/11CrossProductsExtended"
-import CramersRule from "./LinearAlgebra/12CramersRule"
-import ChangeOfBasis from "./LinearAlgebra/13ChangeOfBasis"
-import Eigenvectors from "./LinearAlgebra/14Eigenvectors"
-import QuickEigenCompute from "./LinearAlgebra/15QuickEigenCompute"
-import AbstractVectorSpaces from "./LinearAlgebra/16AbstractVectorSpaces"
+import { lazy } from "react"
 
-import EssenceOfCalculus from "./Calculus/1EssenceOfCalculus"
-import ParadoxOfDerivative from "./Calculus/2ParadoxOfDerivative"
-import PowerRule from "./Calculus/3PowerRule"
-import ChainRule from "./Calculus/4ChainRule"
-import EulersNumber from "./Calculus/5EulersNumber"
+const Vectors = lazy(() => import("./LinearAlgebra/1Vectors"))
+const LinearCombinations = lazy(() => import("./LinearAlgebra/2LinearCombinations"))
+const LinearTransformations = lazy(() => import("./LinearAlgebra/3LinearTransformations"))
+const MatrixMultiplication = lazy(() => import("./LinearAlgebra/4MatrixMultiplication"))
+const ThreeDimTransformations = lazy(() => import("./LinearAlgebra/5ThreeDimTransformations"))
+const TheDeterminant = lazy(() => import("./LinearAlgebra/6TheDeterminant"))
+const InverseMatrices = lazy(() => import("./LinearAlgebra/7InverseMatrices"))
+const NonsquareMatrices = lazy(() => import("./LinearAlgebra/8NonsquareMatrices"))
+const DotProducts = lazy(() => import("./LinearAlgebra/9DotProducts"))
+const CrossProducts = lazy(() => import("./LinearAlgebra/10CrossProducts"))
+const CrossProductsExtended = lazy(() => import("./LinearAlgebra/11CrossProductsExtended"))
+const CramersRule = lazy(() => import("./LinearAlgebra/12CramersRule"))
+const ChangeOfBasis = lazy(() => import("./LinearAlgebra/13ChangeOfBasis"))
+const Eigenvectors = lazy(() => import("./LinearAlgebra/14Eigenvectors"))
+const QuickEigenCompute = lazy(() => import("./LinearAlgebra/15QuickEigenCompute"))
+const AbstractVectorSpaces = lazy(() => import("./LinearAlgebra/16AbstractVectorSpaces"))
+
+const EssenceOfCalculus = lazy(() => import("./Calculus/1EssenceOfCalculus"))
+const ParadoxOfDerivative = lazy(() => import("./Calculus/2ParadoxOfDerivative"))
+const PowerRule = lazy(() => import("./Calculus/3PowerRule"))
+const ChainRule = lazy(() => import("./Calculus/4ChainRule"))
+const EulersNumber = lazy(() => import("./Calculus/5EulersNumber"))
 
 export const lessons = {
   LinearAlgebra: {

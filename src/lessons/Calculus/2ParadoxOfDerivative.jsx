@@ -1,4 +1,4 @@
-import { BlockMath } from 'react-katex';
+import Equation from '../../components/Equation/Equation';
 import CodeBlock from '../../components/CodeBlock/CodeBlock'
 import Note from '../../components/Note/Note';
 import 'katex/dist/katex.min.css';
@@ -10,7 +10,7 @@ export default function ParadoxOfDerivative() {
         Below is the formula for the derivative of some function <strong>f(x)</strong>.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \boldsymbol{f'(x) = \lim_{dx \to 0} \frac{f(x + dx) - f(x)}{dx}}
         `} />
       </div>
@@ -18,7 +18,7 @@ export default function ParadoxOfDerivative() {
         Let's say we plug in <strong>x = 3</strong> and <strong>dx = 0.001</strong> into this function.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \boldsymbol{f'(3) \approx \frac{f(3 + 0.001) - f(3)}{0.001}}
         `} />
       </div>
@@ -27,7 +27,7 @@ export default function ParadoxOfDerivative() {
         graph between points <strong>x = 3</strong> and <strong>x = 3.001</strong>.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \boldsymbol{f'(3) 
           \approx 
           \frac{3.001^2 - 3^2}{0.001}}
@@ -38,12 +38,12 @@ export default function ParadoxOfDerivative() {
         We can verify if our approximation is correct by inputing our value of <strong>x</strong> into <strong>f'(x)</strong>.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \boldsymbol{f'(x) = 2x}
         `} />
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \boldsymbol{2(3) = 6}
         `} />
       </div>
@@ -66,32 +66,32 @@ print("Expected (2x):", 2 * x)`
         Below is how we can compute this algebraically.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \boldsymbol{\frac{df}{dx}(x) = \frac{f(x + dx) - f(x)}{dx}}
         `} />
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \boldsymbol{\frac{\big(2(x + dx)^3 + 5\big) - \big(2x^3 + 5\big)}{dx}}
         `} />
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \boldsymbol{\frac{\big(2(x^3 + 3x^2\,dx + 3x\,dx^2 + dx^3) + 5\big) - \big(2x^3 + 5\big)}{dx}}
         `} />
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \boldsymbol{\frac{\big(2x^3 + 6x^2\,dx + 6x\,dx^2 + 2dx^3 + 5\big) - \big(2x^3 + 5\big)}{dx}}
         `} />
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \boldsymbol{\frac{6x^2\,dx + 6x\,dx^2 + 2dx^3}{dx}}
         `} />
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \boldsymbol{6x^2 + 6x\,dx + 2dx^2}
         `} />
       </div>
@@ -101,7 +101,7 @@ print("Expected (2x):", 2 * x)`
         of <strong>2x³ + 5</strong> is <strong>6x²</strong>.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \boldsymbol{\frac{df}{dx}(x) = 6x^2}
         `} />
       </div>

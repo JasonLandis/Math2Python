@@ -1,7 +1,18 @@
+@use '../../styles/responsive' as *;
+
 .home-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 30px;
+
+    @include tablet {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    @include mobile {
+        grid-template-columns: minmax(0, 1fr);
+    }
 
     a {
         all: unset;
@@ -20,7 +31,7 @@
         font-size: 20px;
         box-shadow: var(--global-box-shadow);
 
-        &:hover {
+        @include hover {
             background-color: var(--global-button-hover-color);
         }
 

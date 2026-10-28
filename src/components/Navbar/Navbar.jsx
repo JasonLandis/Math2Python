@@ -12,7 +12,7 @@ export default function Navbar() {
     <nav>
       <Link to="/" className='logo'>
         <img src="logo.png" alt="" />
-        <span style={{ fontSize: 22 }}><InlineMath math="\textit{Math 2 Python}" /></span>
+        <span className='logo-title'><InlineMath math="\textit{Math 2 Python}" /></span>
       </Link>
       <Search />
       <Link to="/About">

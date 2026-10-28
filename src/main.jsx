@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom'
 import { ThemeProvider } from './contexts/ThemeContext.jsx'
 import ScrollToTop from './components/ScrollToTop/ScrollToTop.jsx';
 import App from './App.jsx'
-import './index.scss'
+import './styles/index.scss'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

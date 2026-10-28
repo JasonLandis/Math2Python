@@ -1,4 +1,4 @@
-import { BlockMath } from 'react-katex';
+import Equation from '../../components/Equation/Equation';
 import CodeBlock from '../../components/CodeBlock/CodeBlock'
 import Note from '../../components/Note/Note';
 import 'katex/dist/katex.min.css';
@@ -13,10 +13,10 @@ export default function InverseMatrices() {
         the original vector.
       </div>
       <div>
-        <BlockMath math="\boldsymbol{Ax = v}" />
+        <Equation math="\boldsymbol{Ax = v}" />
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \boldsymbol{A} = \begin{bmatrix}
             1 & 0 & 0 \\
             1 & 1 & 0 \\
@@ -37,16 +37,16 @@ export default function InverseMatrices() {
         we are left with <strong>x</strong> on its own.
       </div>
       <div>
-        <BlockMath math="\boldsymbol{A^{-1}Ax = A^{-1}v}" />
+        <Equation math="\boldsymbol{A^{-1}Ax = A^{-1}v}" />
       </div>
       <div>
-        <BlockMath math="\boldsymbol{Ix = A^{-1}v}" />
+        <Equation math="\boldsymbol{Ix = A^{-1}v}" />
       </div>
       <div>
-        <BlockMath math="\boldsymbol{x = A^{-1}v}" />
+        <Equation math="\boldsymbol{x = A^{-1}v}" />
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \boldsymbol{A^{-1}} = \begin{bmatrix}
             1 & 0 & 0 \\
             -1 & 1 & 0 \\
@@ -55,7 +55,7 @@ export default function InverseMatrices() {
         `} />
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \boldsymbol{x}
           \enspace = \enspace
           \begin{bmatrix}
@@ -101,7 +101,7 @@ print(A @ x)`
         The order does not matter here: both <strong>A<sup>-1</sup>A</strong> and <strong>AA<sup>-1</sup></strong> equal <strong>I</strong>.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \boldsymbol{I_n} = \begin{bmatrix}
             1 & 0 & \cdots & 0 \\
             0 & 1 & \cdots & 0 \\
@@ -156,7 +156,7 @@ print(np.linalg.inv(A))`
         produced by the columns of the matrix as vectors is all of 2D space.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \begin{bmatrix}
             1 & 3 \\
             -2 & 1
@@ -170,7 +170,7 @@ print(np.linalg.inv(A))`
         vector that, when moved through the linear transformation <strong>A</strong>, lands on vector <strong>v</strong>.
       </div>
       <div>
-        <BlockMath math={String.raw`
+        <Equation math={String.raw`
           \boldsymbol{A} = \begin{bmatrix}
             1 & 2 \\
             2 & 4
