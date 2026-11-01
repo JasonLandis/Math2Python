@@ -38,15 +38,21 @@ export default function LinearTransformations() {
       </div>
       <div>
         We can deduce where the linear transformation brings vector v because
-        we know where both of the basis vectors landed. Since v is 2 times i plus
-        3 times j, the transformed vector v' is 2 times i' plus
-        3 times j'.
+        we know where both of the basis vectors landed.
       </div>
       <div>
         <Equation math={String.raw`
           v = 2i + 3j
-          \qquad
-          v' =
+          \quad\rightarrow\quad
+          2 \begin{bmatrix} 1 \\ 0 \end{bmatrix} +
+          3 \begin{bmatrix} 0 \\ 1 \end{bmatrix} =
+          \begin{bmatrix} 2 \\ 3 \end{bmatrix}
+        `} />
+      </div>
+      <div>
+        <Equation math={String.raw`
+          v' = 2i' + 3j'
+          \quad\rightarrow\quad
           2 \begin{bmatrix} 1 \\ 3 \end{bmatrix} +
           3 \begin{bmatrix} -2 \\ 2 \end{bmatrix} =
           \begin{bmatrix} -4 \\ 12 \end{bmatrix}
@@ -75,7 +81,7 @@ print(i_calc, '\\n')
 print("Transformed basis vector j scaled by the y-coordinate of vector v:")
 print(j_calc, '\\n')
 
-print("Transformed original vector (sum of vectors above):")
+print("Transformed vector v' (sum of vectors above):")
 print(transformed_vector)`
         } editable={true} />
       </div>
@@ -134,7 +140,7 @@ v = np.array([[2],
 M = np.array([[1, -2],
               [3, 2]])
 
-print("Landing spot of original vector v:")
+print("Transformed vector v':")
 print(M @ v)`
         } editable={true} />
       </div>

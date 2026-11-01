@@ -1,5 +1,6 @@
 import Equation from '../../components/Equation/Equation';
-import CodeBlock from '../../components/CodeBlock/CodeBlock'
+import CodeBlock from '../../components/CodeBlock/CodeBlock';
+import Note from '../../components/Note/Note';
 import 'katex/dist/katex.min.css';
 
 export default function LinearCombinations() {
@@ -14,6 +15,12 @@ export default function LinearCombinations() {
           \qquad
           j = \begin{bmatrix} 0 \\ 1 \end{bmatrix}
         `} />
+      </div>
+      <div>
+        <Note>
+          The technical definition for the <strong>basis</strong> of a space is a set of linearly independent vectors that span that space.
+          Span will be defined later in this lesson.
+        </Note>
       </div>
       <div>
         If you scale some vectors by scalars and then add the resulting vectors together, you get a new

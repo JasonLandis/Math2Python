@@ -7,7 +7,7 @@ export default function ThreeDimTransformations() {
   return (
     <>
       <div>
-        Any time you see a matrix, you can imagine it as describing some linear transformation.
+        Any time you see a matrix of any configuration, you can imagine it as describing some linear transformation.
         All of the rules described in the previous lessons apply in any number of dimensions.
       </div>
       <div>
@@ -82,27 +82,79 @@ print(M @ v)`
         </Note>
       </div>
       <div>
-        Composition works the same way in 3D, and the order in which transformations are
-        applied still matters.
+        Matrix composition works the same way in 3D.
+      </div>
+      <div>
+        <Equation math={String.raw`
+          M_1 =
+          \begin{bmatrix}
+            0 & -2 & 2 \\
+            5 & 1 & 5 \\
+            1 & 4 & -1
+          \end{bmatrix}
+          \qquad
+          M_2 =
+          \begin{bmatrix}
+            3 & 1 & 0 \\
+            -1 & 2 & 1 \\
+            0 & 1 & 4
+          \end{bmatrix}
+        `} />
+      </div>
+      <div>
+        <Equation math={String.raw`
+          \begin{bmatrix}
+            0 & -2 & 2 \\
+            5 & 1 & 5 \\
+            1 & 4 & -1
+          \end{bmatrix}
+          \begin{bmatrix}
+            3 & 1 & 0 \\
+            -1 & 2 & 1 \\
+            0 & 1 & 4
+          \end{bmatrix} =
+          \begin{bmatrix}
+            2 & -2 & 6 \\
+            14 & 12 & 21 \\
+            -1 & 8 & 0
+          \end{bmatrix}
+        `} />
       </div>
       <div>
         <CodeBlock code={
 `import numpy as np
 
-P = np.array([[0, -2, 2],
+M1 = np.array([[0, -2, 2],
               [5, 1, 5],
               [1, 4, -1]])
 
-Q = np.array([[3, 1, 0],
+M2 = np.array([[3, 1, 0],
               [-1, 2, 1],
               [0, 1, 4]])
 
-print("P @ Q:")
-print(P @ Q, '\\n')
-
-print("Q @ P:")
-print(Q @ P)`
+print("M1 @ M2:")
+print(M1 @ M2)`
         } editable={true} />
+      </div>
+      <div>
+        Below is a transformation matrix that represents a 90° counterclockwise rotation
+        around the z-axis.
+      </div>
+      <div>
+        <Equation math={String.raw`
+          \begin{bmatrix}
+            0 & -1 & 0 \\
+            1 & 0 & 0 \\
+            0 & 0 & 1
+          \end{bmatrix}
+        `} />
+      </div>
+      <div>
+        To visualize this, imagine a clock lying flat on the xy-plane, its face pointing up in the 
+        positive z-direction. Picture the basis vectors i and j as two hands on the clock: i points 
+        to 3 o'clock (right), and j points to 12 o'clock (up). Now rotate the clock face 90° 
+        counterclockwise and watch where the hands land: i moves to [0, 1, 0], j moves to [-1, 0, 0], and k, 
+        the axis the clock spins around, stays fixed at [0, 0, 1].
       </div>
     </>
   )

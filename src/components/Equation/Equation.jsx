@@ -4,9 +4,7 @@ import './Equation.scss'
 
 // Rules for writing math passed to <Equation>:
 // 1. Separate distinct ideas on the same line with \qquad so they can wrap on small screens.
-// 2. Avoid adding manual spacing like \quad or \enspace; KaTeX spaces things well on its own.
-// 3. Prefer basic arrows like \rightarrow over long ones like \Longrightarrow.
-// 4. Write the math in the source so it's easy to read.
+// 2. Write the math in the source so it's easy to read.
 
 // Splits on top-level \qquad so each expression can wrap onto its own line
 function splitOnQquads(math) {

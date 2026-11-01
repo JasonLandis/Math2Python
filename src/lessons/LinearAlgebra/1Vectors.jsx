@@ -94,20 +94,18 @@ print(scalar * v)`
         <CodeBlock code={
 `import numpy as np
 
+c = 3
 v = np.array([[1],
               [2],
               [3]])
 
-scalar1 = 3
-
+d = -2
 w = np.array([[3],
               [-3],
               [4]])
 
-scalar2 = -2
-
 print("Result:")
-print(scalar1 * v + scalar2 * w)`
+print(c * v + d * w)`
         } editable={true} />
       </div>
     </>

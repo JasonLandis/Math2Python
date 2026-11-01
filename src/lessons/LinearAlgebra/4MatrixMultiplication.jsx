@@ -45,7 +45,8 @@ export default function MatrixMultiplication() {
             4 & 1
           \end{bmatrix}
           \begin{bmatrix} 1 \\ 3 \end{bmatrix} =
-          \begin{bmatrix} -3 \\ 7 \end{bmatrix} \rightarrow
+          \begin{bmatrix} -3 \\ 7 \end{bmatrix} 
+          \quad\rightarrow\quad
           \begin{bmatrix}
             4 & -1 \\
             -3 & 2
@@ -82,6 +83,21 @@ print(m2_vector)`
       </div>
       <div>
         <Equation math={String.raw`
+          M_1 =
+          \begin{bmatrix}
+            3 & -2 \\
+            4 & 1
+          \end{bmatrix}
+          \qquad
+          M_2 =
+          \begin{bmatrix}
+            4 & -1 \\
+            -3 & 2
+          \end{bmatrix}
+        `} />
+      </div>
+      <div>
+        <Equation math={String.raw`
           \begin{bmatrix}
             4 & -1 \\
             -3 & 2
@@ -110,6 +126,21 @@ print(m2_vector)`
         Applying M<sub>2</sub> to each of those columns tells us where i and j land
         after both transformations, which we'll call i'' and j''. Those results
         become the columns of the composition matrix.
+      </div>
+      <div>
+        <Equation math={String.raw`
+          M_1 =
+          \begin{bmatrix}
+            3 & -2 \\
+            4 & 1
+          \end{bmatrix}
+          \qquad
+          M_2 =
+          \begin{bmatrix}
+            4 & -1 \\
+            -3 & 2
+          \end{bmatrix}
+        `} />
       </div>
       <div>
         <Equation math={String.raw`
@@ -173,7 +204,28 @@ print(final_vector)`
         </Note>
       </div>
       <div>
-        The order in which transformations are applied matters. As you can see below,
+        Below is the general formula for matric multiplication.
+      </div>
+      <div>
+        <Equation math={String.raw`
+          \begin{bmatrix}
+            a & b \\
+            c & d
+          \end{bmatrix}
+          \begin{bmatrix}
+            e & f \\
+            g & h
+          \end{bmatrix} =
+          \begin{bmatrix}
+            ae + bg & af + bh \\
+            ce + dg & cf + dh
+          \end{bmatrix}
+        `} />
+      </div>
+      <div>
+        The <strong>commutative</strong> property of multiplication states that changing the order 
+        of the factors does not change the product. Matrix multiplication is not commutative. In other
+        words, the order in which transformations are applied matters. As you can see below,
         we get two different composition matrices depending on the order in which the
         transformations are applied. Remember that P @ Q applies Q first,
         while Q @ P applies P first.
@@ -196,10 +248,53 @@ print(Q @ P)`
         } editable={true} />
       </div>
       <div>
-        However, the grouping of the matrices does not matter. As long as the matrices stay in the
+        However, there are some matrices that do commute. For example, matrix P below represents a transformation that rotates 
+        space 90° counterclockwise, and matrix Q below represents a transformation that scales space by a factor
+        of -2. Can you intuitively reason why the order does not matter in this case?
+      </div>
+      <div>
+        <Equation math={String.raw`
+          P =
+          \begin{bmatrix}
+            0 & -1 \\
+            1 & 0
+          \end{bmatrix}
+          \qquad
+          Q =
+          \begin{bmatrix}
+            -2 & 0 \\
+            0 & -2
+          \end{bmatrix}
+        `} />
+      </div>
+      <div>
+        <CodeBlock code={
+`import numpy as np
+
+P = np.array([[0, -1],
+              [1, 0]])
+
+Q = np.array([[-2, 0],
+              [0, -2]])
+
+print("P @ Q:")
+print(P @ Q, '\\n')
+
+print("Q @ P:")
+print(Q @ P)`
+        } editable={true} />
+      </div>
+      <div>
+        <Note>
+          Any matrix which scales both axes by the same amount commutes with every other matrix. This is because scalar-matrix 
+          multiplication is commutative. 
+        </Note>
+      </div>
+      <div>
+        The grouping of the matrices does not matter. As long as the matrices stay in the
         same order, you can multiply any neighboring pair first and get the same result. This is called
         the <strong>associative</strong> property. You can think of this as the order in which the linear
-        transformations are applied never changing. You're just computing composition matrices at
+        transformations are applied is never changing. You're just computing composition matrices at
         different points.
       </div>
       <div>
