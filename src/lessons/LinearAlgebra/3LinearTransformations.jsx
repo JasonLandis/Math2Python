@@ -7,16 +7,16 @@ export default function LinearTransformations() {
   return (
     <>
       <div>
-        Let's say we have the following basis vectors <strong>i</strong> and <strong>j</strong>, and some
-        other vector <strong>v</strong> in this coordinate system.
+        Let's say we have the following basis vectors i and j, and some
+        other vector v in this coordinate system.
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{i} = \begin{bmatrix} 1 \\ 0 \end{bmatrix}
-          \quad\quad
-          \boldsymbol{j} = \begin{bmatrix} 0 \\ 1 \end{bmatrix}
-          \quad\quad\quad
-          \boldsymbol{v} = \begin{bmatrix} 2 \\ 3 \end{bmatrix}
+          i = \begin{bmatrix} 1 \\ 0 \end{bmatrix}
+          \qquad
+          j = \begin{bmatrix} 0 \\ 1 \end{bmatrix}
+          \qquad
+          v = \begin{bmatrix} 2 \\ 3 \end{bmatrix}
         `} />
       </div>
       <div>
@@ -27,31 +27,34 @@ export default function LinearTransformations() {
       </div>
       <div>
         Now let's say this system goes through a linear transformation that brings the basis
-        vectors <strong>i</strong> and <strong>j</strong> to the new vectors <strong>i'</strong> and <strong>j'</strong> below.
+        vectors i and j to the new vectors i' and j' below.
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{i'} = \begin{bmatrix} 1 \\ 3 \end{bmatrix}
-          \quad\quad
-          \boldsymbol{j'} = \begin{bmatrix} -2 \\ 2 \end{bmatrix}
+          i' = \begin{bmatrix} 1 \\ 3 \end{bmatrix}
+          \qquad
+          j' = \begin{bmatrix} -2 \\ 2 \end{bmatrix}
         `} />
       </div>
       <div>
-        We can deduce where the linear transformation brings vector <strong>v</strong> because
-        we know where both of the basis vectors landed. Since <strong>v</strong> is 2 times <strong>i</strong> plus
-        3 times <strong>j</strong>, the transformed vector <strong>v'</strong> is 2 times <strong>i'</strong> plus
-        3 times <strong>j'</strong>.
+        We can deduce where the linear transformation brings vector v because
+        we know where both of the basis vectors landed.
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{v} = 2\boldsymbol{i} + 3\boldsymbol{j}
-          \quad\quad\quad
-          \boldsymbol{v'}
-          \enspace = \enspace
-          2 \begin{bmatrix} 1 \\ 3 \end{bmatrix}
-          \enspace + \enspace
-          3 \begin{bmatrix} -2 \\ 2 \end{bmatrix}
-          \enspace = \enspace
+          v = 2i + 3j
+          \quad\rightarrow\quad
+          2 \begin{bmatrix} 1 \\ 0 \end{bmatrix} +
+          3 \begin{bmatrix} 0 \\ 1 \end{bmatrix} =
+          \begin{bmatrix} 2 \\ 3 \end{bmatrix}
+        `} />
+      </div>
+      <div>
+        <Equation math={String.raw`
+          v' = 2i' + 3j'
+          \quad\rightarrow\quad
+          2 \begin{bmatrix} 1 \\ 3 \end{bmatrix} +
+          3 \begin{bmatrix} -2 \\ 2 \end{bmatrix} =
           \begin{bmatrix} -4 \\ 12 \end{bmatrix}
         `} />
       </div>
@@ -78,19 +81,19 @@ print(i_calc, '\\n')
 print("Transformed basis vector j scaled by the y-coordinate of vector v:")
 print(j_calc, '\\n')
 
-print("Transformed original vector (sum of vectors above):")
+print("Transformed vector v' (sum of vectors above):")
 print(transformed_vector)`
         } editable={true} />
       </div>
       <div>
-        The transformed basis vectors can also be represented as a matrix <strong>M</strong>. The first column of this
-        matrix contains <strong>i'</strong> and the second column of this matrix contains <strong>j'</strong>.
+        The transformed basis vectors can also be represented as a matrix M. The first column of this
+        matrix contains i' and the second column of this matrix contains j'.
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{v} = \begin{bmatrix} 2 \\ 3 \end{bmatrix}
-          \quad\quad
-          \boldsymbol{M} =
+          v = \begin{bmatrix} 2 \\ 3 \end{bmatrix}
+          \qquad
+          M =
           \begin{bmatrix}
             1 & -2 \\
             3 & 2
@@ -108,16 +111,14 @@ print(transformed_vector)`
             a & b \\
             c & d
           \end{bmatrix}
-          \begin{bmatrix} x \\ y \end{bmatrix}
-          \enspace = \enspace
-          x \begin{bmatrix} a \\ c \end{bmatrix}
-          \enspace + \enspace
+          \begin{bmatrix} x \\ y \end{bmatrix} =
+          x \begin{bmatrix} a \\ c \end{bmatrix} +
           y \begin{bmatrix} b \\ d \end{bmatrix}
         `} />
       </div>
       <div>
-        Now, you can multiply the transformation matrix by the original vector <strong>v</strong> to
-        determine where <strong>v</strong> lands following the linear transformation.
+        Now, you can multiply the transformation matrix by the original vector v to
+        determine where v lands following the linear transformation.
       </div>
       <div>
         <Equation math={String.raw`
@@ -125,8 +126,7 @@ print(transformed_vector)`
             1 & -2 \\
             3 & 2
           \end{bmatrix}
-          \begin{bmatrix} 2 \\ 3 \end{bmatrix}
-          \enspace = \enspace
+          \begin{bmatrix} 2 \\ 3 \end{bmatrix} =
           \begin{bmatrix} -4 \\ 12 \end{bmatrix}
         `} />
       </div>
@@ -140,16 +140,16 @@ v = np.array([[2],
 M = np.array([[1, -2],
               [3, 2]])
 
-print("Landing spot of original vector v:")
+print("Transformed vector v':")
 print(M @ v)`
         } editable={true} />
       </div>
       <div>
         <Note>
-          In NumPy, the <strong>@</strong> operator performs matrix multiplication, while
-          the <strong>*</strong> operator multiplies matching entries element by element.
-          Using <strong>*</strong> here would not raise an error, but it would give the wrong result.
-          Also, notice how both code snippets give the same transformed vector <strong>v'</strong>.
+          In NumPy, the @ operator performs matrix multiplication, while
+          the * operator multiplies matching entries element by element.
+          Using * here would not raise an error, but it would give the wrong result.
+          Also, notice how both code snippets give the same transformed vector v'.
         </Note>
       </div>
     </>

@@ -13,10 +13,9 @@ export default function DotProducts() {
       </div>
       <div>
         <Equation math={String.raw`
-          \begin{bmatrix} 2 \\ -2 \\ 3 \end{bmatrix}
-          \cdot
-          \begin{bmatrix} 1 \\ 3 \\ 4 \end{bmatrix}
-          = 2 \cdot 1 + (-2) \cdot 3 + 3 \cdot 4 = 8
+          \begin{bmatrix} 2 \\ -2 \\ 3 \end{bmatrix} \cdot
+          \begin{bmatrix} 1 \\ 3 \\ 4 \end{bmatrix} =
+          2 \cdot 1 + (-2) \cdot 3 + 3 \cdot 4 = 8
         `} />
       </div>
       <div>
@@ -34,9 +33,9 @@ print("Calculating the dot product using NumPy:", np.dot(v, w))`
       <div>
         <Note>
           Previous lessons used column vectors with shape 3x1. Here the vectors are flat 1D arrays,
-          since <strong>np.dot</strong> works directly on those. With column vectors, <strong>v @ w</strong> would
+          since np.dot works directly on those. With column vectors, v @ w would
           fail because a 3x1 matrix can't multiply another 3x1 matrix. Instead, you'd
-          write <strong>v.T @ w</strong>, turning <strong>v</strong> on its side into a 1x3 matrix. That idea
+          write v.T @ w, turning v on its side into a 1x3 matrix. That idea
           comes back at the end of this lesson.
         </Note>
       </div>
@@ -74,7 +73,7 @@ print("Dot product:", np.dot(v, w))`
       </div>
       <div>
         <Note>
-          Try switching around <strong>v</strong> and <strong>w</strong> in the code above.
+          Try switching around v and w in the code above.
           Notice how the result is the same. The order does not matter, which means the dot
           product is <strong>commutative</strong>.
         </Note>
@@ -86,20 +85,16 @@ print("Dot product:", np.dot(v, w))`
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{v} \cdot \boldsymbol{w}
-          \enspace = \enspace
-          \lVert \boldsymbol{v} \rVert \, \lVert \boldsymbol{w} \rVert \cos\theta
+          v \cdot w = \lVert v \rVert \, \lVert w \rVert \cos\theta
         `} />
       </div>
       <div>
-        The double bars <strong>‖v‖</strong> mean the <strong>magnitude</strong> (length) of a vector. It is
+        The double bars ‖v‖ mean the <strong>magnitude</strong> (length) of a vector. It is
         calculated with the Pythagorean theorem: square each coordinate, add them up, and take the square root.
       </div>
       <div>
         <Equation math={String.raw`
-          \lVert \boldsymbol{v} \rVert
-          \enspace = \enspace
-          \sqrt{(v_1)^2 + (v_2)^2}
+          \lVert v \rVert = \sqrt{(v_1)^2 + (v_2)^2}
         `} />
       </div>
       <div>
@@ -107,19 +102,19 @@ print("Dot product:", np.dot(v, w))`
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{v} = \begin{bmatrix} 3 \\ 0 \end{bmatrix}
-          \quad\quad
-          \boldsymbol{w} = \begin{bmatrix} 2 \\ 2 \end{bmatrix}
-          \quad\quad
+          v = \begin{bmatrix} 3 \\ 0 \end{bmatrix}
+          \qquad
+          w = \begin{bmatrix} 2 \\ 2 \end{bmatrix}
+          \qquad
           \theta = 45^\circ
         `} />
       </div>
       <div>
         <Equation math={String.raw`
-          \lVert \boldsymbol{v} \rVert = \sqrt{3^2 + 0^2} = 3
-          \quad\quad
-          \lVert \boldsymbol{w} \rVert = \sqrt{2^2 + 2^2} = 2\sqrt{2}
-          \quad\quad
+          \lVert v \rVert = \sqrt{3^2 + 0^2} = 3
+          \qquad
+          \lVert w \rVert = \sqrt{2^2 + 2^2} = 2\sqrt{2}
+          \qquad
           \cos(45^\circ) = \frac{\sqrt{2}}{2}
         `} />
       </div>
@@ -128,20 +123,13 @@ print("Dot product:", np.dot(v, w))`
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{v} \cdot \boldsymbol{w}
-          \enspace = \enspace
-          (3)(2) + (0)(2)
-          \enspace = \enspace
-          6
+          v \cdot w = (3)(2) + (0)(2) = 6
         `} />
       </div>
       <div>
         <Equation math={String.raw`
-          \lVert \boldsymbol{v} \rVert \, \lVert \boldsymbol{w} \rVert \cos\theta
-          \enspace = \enspace
-          3 \cdot 2\sqrt{2} \cdot \frac{\sqrt{2}}{2}
-          \enspace = \enspace
-          6
+          \lVert v \rVert \, \lVert w \rVert \cos\theta =
+          3 \cdot 2\sqrt{2} \cdot \frac{\sqrt{2}}{2} = 6
         `} />
       </div>
       <div>
@@ -194,58 +182,47 @@ print("Dot product calculated by projecting v onto w:", w_mag * proj_v_mag)`
         } editable={true} />
       </div>
       <div>
-        Any linear transformation <strong>A</strong> that maps vectors down to a single number (1D) is
-        equivalent to taking the dot product with some fixed vector <strong>w</strong>. That
-        vector <strong>w</strong> is the single row of the 1x2 matrix, turned on its side into a vector.
+        Any linear transformation A that maps vectors down to a single number (1D) is
+        equivalent to taking the dot product with some fixed vector w. That
+        vector w is the single row of the 1x2 matrix, turned on its side into a vector.
         This relationship is known as <strong>duality</strong>.
       </div>
       <div>
         To see why, remember that the columns of a transformation matrix show where the basis vectors
-        land. The 1x2 matrix [3, -2] sends <strong>i</strong> to 3 and <strong>j</strong> to -2 on the
+        land. The 1x2 matrix [3, -2] sends i to 3 and j to -2 on the
         number line. Applying it to a vector multiplies each coordinate by where its basis vector lands
         and adds the results, which is exactly the dot product with [3, -2].
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{A} = \begin{bmatrix} 3 & -2 \end{bmatrix}
-          \quad\quad
-          \boldsymbol{w} = \begin{bmatrix} 3 \\ -2 \end{bmatrix}
-          \quad\quad
-          \boldsymbol{v} = \begin{bmatrix} 1 \\ 4 \end{bmatrix}
+          A = \begin{bmatrix} 3 & -2 \end{bmatrix}
+          \qquad
+          w = \begin{bmatrix} 3 \\ -2 \end{bmatrix}
+          \qquad
+          v = \begin{bmatrix} 1 \\ 4 \end{bmatrix}
         `} />
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{i} \rightarrow 3
-          \quad\quad
-          \boldsymbol{j} \rightarrow -2
-          \quad\quad\quad
-          \boldsymbol{v} = 1\boldsymbol{i} + 4\boldsymbol{j}
-          \enspace \rightarrow \enspace
-          1(3) + 4(-2)
+          i \rightarrow 3
+          \qquad
+          j \rightarrow -2
+          \qquad
+          v = 1i + 4j \rightarrow 1(3) + 4(-2)
         `} />
       </div>
       <div>
         <Equation math={String.raw`
-          \textbf{Matrix multiplication:\enspace} \allowbreak
-          \begin{bmatrix} 3 & -2 \end{bmatrix}
-          \begin{bmatrix} 1 \\ 4 \end{bmatrix}
-          \enspace = \enspace
-          (3)(1) + (-2)(4)
-          \enspace = \enspace
-          -5
+          \textbf{Matrix multiplication: } \allowbreak
+          \begin{bmatrix} 3 & -2 \end{bmatrix} \begin{bmatrix} 1 \\ 4 \end{bmatrix} =
+          (3)(1) + (-2)(4) = -5
         `} />
       </div>
       <div>
         <Equation math={String.raw`
-          \textbf{Dot product:\enspace} \allowbreak
-          \begin{bmatrix} 3 \\ -2 \end{bmatrix}
-          \cdot
-          \begin{bmatrix} 1 \\ 4 \end{bmatrix}
-          \enspace = \enspace
-          (3)(1) + (-2)(4)
-          \enspace = \enspace
-          -5
+          \textbf{Dot product: } \allowbreak \begin{bmatrix} 3 \\ -2 \end{bmatrix} \cdot
+          \begin{bmatrix} 1 \\ 4 \end{bmatrix} =
+          (3)(1) + (-2)(4) = -5
         `} />
       </div>
       <div>

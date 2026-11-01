@@ -13,27 +13,29 @@ export default function QuickEigenCompute() {
       </div>
       <div>
         To see why, look at the formula from the eigenvectors lesson. For a general 2x2
-        matrix, <strong>det(A - λI) = 0</strong> expands to the equation below. In an equation like this,
+        matrix, det(A - λI) = 0 expands to the equation below. In an equation like this,
         the middle coefficient is the sum of the two solutions and the last term is their product.
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{A} = \begin{bmatrix} a & b \\ c & d \end{bmatrix}
-          \quad\quad
+          A =
+          \begin{bmatrix}
+            a & b \\
+            c & d
+          \end{bmatrix}
+          \qquad
           \lambda^2 - (a + d)\lambda + (ad - bc) = 0
         `}/>
       </div>
       <div>
-        Let <strong>m</strong> be the mean of the two eigenvalues (half the trace) and <strong>p</strong> be
-        their product (the determinant). The two eigenvalues sit the same distance <strong>k</strong> above
-        and below the mean, so they are <strong>m + k</strong> and <strong>m - k</strong>. Multiplying them
-        together lets us solve for <strong>k</strong>.
+        Let m be the mean of the two eigenvalues (half the trace) and p be
+        their product (the determinant). The two eigenvalues sit the same distance k above
+        and below the mean, so they are m + k and m - k. Multiplying them
+        together lets us solve for k.
       </div>
       <div>
         <Equation math={String.raw`
-          (m + k)(m - k) = m^2 - k^2 = p
-          \quad\quad\Longrightarrow\quad\quad
-          k = \sqrt{m^2 - p}
+          (m + k)(m - k) = m^2 - k^2 = p \Rightarrow k = \sqrt{m^2 - p}
         `}/>
       </div>
       <div>
@@ -46,17 +48,21 @@ export default function QuickEigenCompute() {
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{A} = \begin{bmatrix} 2 & 7 \\ 1 & 8 \end{bmatrix}
-          \quad\quad
+          A =
+          \begin{bmatrix}
+            2 & 7 \\
+            1 & 8
+          \end{bmatrix}
+          \qquad
           m = \frac{2 + 8}{2} = 5
-          \quad\quad
-          p = \text{det}(\boldsymbol{A}) = (2)(8) - (7)(1) = 9
+          \qquad
+          p = \text{det}(A) = (2)(8) - (7)(1) = 9
         `}/>
       </div>
       <div>
         <Equation math={String.raw`
           \lambda_1 = 5 + \sqrt{5^2 - 9} = 5 + \sqrt{16} = 9
-          \quad\quad
+          \qquad
           \lambda_2 = 5 - \sqrt{5^2 - 9} = 5 - \sqrt{16} = 1
         `}/>
       </div>
@@ -84,29 +90,32 @@ print(np.linalg.eigvals(A))`
       </div>
       <div>
         Below is the matrix from the eigenvectors lesson. The trick gives the same eigenvalues, 3 and 2,
-        much faster than solving <strong>det(A - λI) = 0</strong> by hand.
+        much faster than solving det(A - λI) = 0 by hand.
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{A} = \begin{bmatrix} 3 & 1 \\ 0 & 2 \end{bmatrix}
-          \quad\quad
+          A =
+          \begin{bmatrix}
+            3 & 1 \\
+            0 & 2
+          \end{bmatrix}
+          \qquad
           m = \frac{3 + 2}{2} = 2.5
-          \quad\quad
+          \qquad
           p = (3)(2) - (1)(0) = 6
         `}/>
       </div>
       <div>
         <Equation math={String.raw`
-          \lambda = 2.5 \pm \sqrt{2.5^2 - 6} = 2.5 \pm \sqrt{0.25} = 2.5 \pm 0.5
-          \quad\quad\Longrightarrow\quad\quad
+          \lambda = 2.5 \pm \sqrt{2.5^2 - 6} = 2.5 \pm \sqrt{0.25} = 2.5 \pm 0.5 \Rightarrow
           \lambda_1 = 3
-          \quad
+          \qquad
           \lambda_2 = 2
         `}/>
       </div>
       <div>
-        If <strong>m² - p</strong> is negative, the eigenvalues are complex. For example, the 90° rotation
-        below has <strong>m</strong> = 0 and <strong>p</strong> = 1, so the trick gives the square root of -1.
+        If m² - p is negative, the eigenvalues are complex. For example, the 90° rotation
+        below has m = 0 and p = 1, so the trick gives the square root of -1.
         This matches the eigenvectors lesson, where rotations had no real eigenvectors.
       </div>
       <div>
@@ -130,9 +139,9 @@ print("Eigenvalue 2:", eig2)`
       </div>
       <div>
         <Note>
-          <strong>np.emath.sqrt</strong> returns a complex number when given a negative input, while the
-          regular <strong>math.sqrt</strong> would raise an error. Python writes the imaginary unit
-          as <strong>j</strong>, so the output above is <strong>±i</strong>.
+          np.emath.sqrt returns a complex number when given a negative input, while the
+          regular math.sqrt would raise an error. Python writes the imaginary unit
+          as j, so the output above is ±i.
         </Note>
       </div>
       <div>

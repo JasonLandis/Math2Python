@@ -16,14 +16,12 @@ export default function TheDeterminant() {
       </div>
       <div>
         <Equation math={String.raw`
-          \text{det}
-          \left(
-          \begin{bmatrix}
-            a & b \\
-            c & d
-          \end{bmatrix}
-          \right)
-          \enspace = \enspace
+          \text{det}\left(
+            \begin{bmatrix}
+              a & b \\
+              c & d
+            \end{bmatrix}
+          \right) =
           ad - bc
         `} />
       </div>
@@ -47,45 +45,41 @@ print("Determinant calculated using NumPy:", np.linalg.det(M))`
         </Note>
       </div>
       <div>
-        For any given 2x2 matrix, if either <strong>b</strong> or <strong>c</strong> is 0, one of the transformed
-        basis vectors lies exactly on an axis. If <strong>c</strong> is 0, <strong>i'</strong> lies on the x-axis
-        with length <strong>a</strong>, and the height of the parallelogram is the y-coordinate of <strong>j'</strong>,
-        which is <strong>d</strong>. If <strong>b</strong> is 0, <strong>j'</strong> lies on the y-axis with
-        length <strong>d</strong>, and the width of the parallelogram is the x-coordinate of <strong>i'</strong>,
-        which is <strong>a</strong>. Either way, the area (the determinant) is <strong>a</strong> · <strong>d</strong>.
+        For any given 2x2 matrix, if either b or c is 0, one of the transformed
+        basis vectors lies exactly on an axis. If c is 0, i' lies on the x-axis
+        with length a, and the height of the parallelogram is the y-coordinate of j',
+        which is d. If b is 0, j' lies on the y-axis with
+        length d, and the width of the parallelogram is the x-coordinate of i',
+        which is a. Either way, the area (the determinant) is a · d.
       </div>
       <div>
         <Equation math={String.raw`
-          c = 0:
-          \quad
+          c = 0: 
           \begin{bmatrix}
             a & b \\
             0 & d
           \end{bmatrix}
-          \quad\quad
-          \boldsymbol{i'} = \begin{bmatrix} a \\ 0 \end{bmatrix}
-          \quad
-          \boldsymbol{j'} = \begin{bmatrix} b \\ d \end{bmatrix}
-          \quad\quad
-          \text{area} = \underbrace{a}_{\text{base}} \cdot \underbrace{d}_{\text{height}}
-          = ad - b \cdot 0
+          \qquad
+          i' = \begin{bmatrix} a \\ 0 \end{bmatrix}
+          \qquad
+          j' = \begin{bmatrix} b \\ d \end{bmatrix}
+          \qquad
+          \text{area} = \underbrace{a}_{\text{base}} \cdot \underbrace{d}_{\text{height}} = ad - b \cdot 0
         `} />
       </div>
       <div>
         <Equation math={String.raw`
-          b = 0:
-          \quad
+          b = 0: 
           \begin{bmatrix}
             a & 0 \\
             c & d
           \end{bmatrix}
-          \quad\quad
-          \boldsymbol{i'} = \begin{bmatrix} a \\ c \end{bmatrix}
-          \quad
-          \boldsymbol{j'} = \begin{bmatrix} 0 \\ d \end{bmatrix}
-          \quad\quad
-          \text{area} = \underbrace{d}_{\text{base}} \cdot \underbrace{a}_{\text{width}}
-          = ad - 0 \cdot c
+          \qquad
+          i' = \begin{bmatrix} a \\ c \end{bmatrix}
+          \qquad
+          j' = \begin{bmatrix} 0 \\ d \end{bmatrix}
+          \qquad
+          \text{area} = \underbrace{d}_{\text{base}} \cdot \underbrace{a}_{\text{width}} = ad - 0 \cdot c
         `} />
       </div>
       <div>
@@ -101,17 +95,37 @@ print("Example where b is 0 (it's just a * d):", determinant)`
         } editable={true} />
       </div>
       <div>
-        Below is an algebraic description of how the formula <strong>ad</strong> - <strong>bc</strong> can
-        be derived for calculating the determinant of a 2x2 matrix. Here, (<strong>a</strong> + <strong>b</strong>)(<strong>c</strong> + <strong>d</strong>) is
+        Below is an algebraic description of how the formula ad - bc can
+        be derived for calculating the determinant of a 2x2 matrix. Here, (a + b)(c + d) is
         the area of the rectangle surrounding the parallelogram. Subtracting the two pairs of corner
-        triangles (<strong>ac</strong> and <strong>bd</strong>) and the two corner rectangles (2<strong>bc</strong>) leaves
+        triangles (ac and bd) and the two corner rectangles (2bc) leaves
         the area of the parallelogram.
       </div>
-      <div><Equation math="(a + b) \cdot (c + d) - (ac + bd + 2bc)" /></div>
-      <div><Equation math="(ac + ad + bc + bd) - (ac + bd + 2bc)" /></div>
-      <div><Equation math="ac + ad + bc + bd - ac - bd - 2bc" /></div>
-      <div><Equation math="ad + bc - 2bc" /></div>
-      <div><Equation math="ad - bc" /></div>
+      <div>
+        <Equation math={String.raw`
+          (a + b) \cdot (c + d) - (ac + bd + 2bc)
+        `} />
+      </div>
+      <div>
+        <Equation math={String.raw`
+          (ac + ad + bc + bd) - (ac + bd + 2bc)
+        `} />
+      </div>
+      <div>
+        <Equation math={String.raw`
+          ac + ad + bc + bd - ac - bd - 2bc
+        `} />
+      </div>
+      <div>
+        <Equation math={String.raw`
+          ad + bc - 2bc
+        `} />
+      </div>
+      <div>
+        <Equation math={String.raw`
+          ad - bc
+        `} />
+      </div>
       <div>
         <CodeBlock code={
 `import numpy as np
@@ -159,38 +173,34 @@ print("Determinant calculated using NumPy:", np.linalg.det(M))`
       </div>
       <div>
         <Equation math={String.raw`
-          \text{det}
-            \left(
-              \begin{bmatrix}
-                a & b & c \\
-                d & e & f \\
-                g & h & i
-              \end{bmatrix}
-            \right)
-          \enspace = \enspace
-          a \cdot \text{det}
-            \left(
-              \begin{bmatrix}
-                e & f \\
-                h & i
-              \end{bmatrix}
-            \right)
-          \enspace - \enspace
-          b \cdot \text{det}
-            \left(
-              \begin{bmatrix}
-                d & f \\
-                g & i
-              \end{bmatrix}
-            \right)
-          \enspace + \enspace
-          c \cdot \text{det}
-            \left(
-              \begin{bmatrix}
-                d & e \\
-                g & h
-              \end{bmatrix}
-            \right)
+          \text{det}\left(
+            \begin{bmatrix}
+              a & b & c \\
+              d & e & f \\
+              g & h & i
+            \end{bmatrix}
+          \right) =
+          a \cdot
+          \text{det}\left(
+            \begin{bmatrix}
+              e & f \\
+              h & i
+            \end{bmatrix}
+          \right) -
+          b \cdot
+          \text{det}\left(
+            \begin{bmatrix}
+              d & f \\
+              g & i
+            \end{bmatrix}
+          \right) +
+          c \cdot
+          \text{det}\left(
+            \begin{bmatrix}
+              d & e \\
+              g & h
+            \end{bmatrix}
+          \right)
         `} />
       </div>
       <div>
@@ -237,39 +247,34 @@ print("Determinant calculated using NumPy:", np.linalg.det(M))`
       </div>
       <div>
         The determinant of the composition matrix of two matrices is the same as the product
-        of the determinants of those two matrices. This is because applying <strong>M<sub>1</sub></strong> scales
-        areas by det(<strong>M<sub>1</sub></strong>), then applying <strong>M<sub>2</sub></strong> scales them again
-        by det(<strong>M<sub>2</sub></strong>), so the total scaling is the product of the two.
+        of the determinants of those two matrices. This is because applying M<sub>1</sub> scales
+        areas by det(M<sub>1</sub>), then applying M<sub>2</sub> scales them again
+        by det(M<sub>2</sub>), so the total scaling is the product of the two.
       </div>
       <div>
         <Equation math={String.raw`
-          \text{det}
-            \left(
-              \begin{bmatrix}
-                a & b \\
-                c & d
-              \end{bmatrix}
-              \begin{bmatrix}
-                e & f \\
-                g & h
-              \end{bmatrix}
-            \right)
-          \enspace = \enspace
-          \text{det}
-            \left(
-              \begin{bmatrix}
-                a & b \\
-                c & d
-              \end{bmatrix}
-            \right)
-          \enspace \cdot \enspace
-          \text{det}
-            \left(
-              \begin{bmatrix}
-                e & f \\
-                g & h
-              \end{bmatrix}
-            \right)
+          \text{det}\left(
+            \begin{bmatrix}
+              a & b \\
+              c & d
+            \end{bmatrix}
+            \begin{bmatrix}
+              e & f \\
+              g & h
+            \end{bmatrix}
+          \right) =
+          \text{det}\left(
+            \begin{bmatrix}
+              a & b \\
+              c & d
+            \end{bmatrix}
+          \right) \cdot
+          \text{det}\left(
+            \begin{bmatrix}
+              e & f \\
+              g & h
+            \end{bmatrix}
+          \right)
         `} />
       </div>
       <div>

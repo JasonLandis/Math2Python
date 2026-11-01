@@ -9,146 +9,120 @@ export default function CramersRule() {
       <div>
         If you are given a transformed vector and a linear transformation, you can find
         the original vector (where the transformed vector was before the transformation)
-        by applying <strong>Cramer's rule</strong>. This solves the same equation <strong>Ax = v</strong> from
+        by applying <strong>Cramer's rule</strong>. This solves the same equation Ax = v from
         the inverse matrices lesson, just in a different way. Since Cramer's rule divides by the
-        determinant of <strong>A</strong>, it only works when that determinant is not 0. When the
+        determinant of A, it only works when that determinant is not 0. When the
         determinant is 0, there is no unique original vector.
       </div>
       <div>
         To solve for the x-coordinate of the original vector, you can substitute the transformed
         vector into the first column of the transformation matrix, then calculate the determinant
-        of that matrix, and divide it by the determinant of the original matrix <strong>A</strong>.
+        of that matrix, and divide it by the determinant of the original matrix A.
         For the y-coordinate, replace the second column instead. This can be done for every coordinate.
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{i'} = \begin{bmatrix} 2 \\ 1 \end{bmatrix}
-          \quad\quad
-          \boldsymbol{j'} = \begin{bmatrix} -1 \\ 3 \end{bmatrix}
-          \quad\quad
-          \boldsymbol{A} =
+          i' = \begin{bmatrix} 2 \\ 1 \end{bmatrix}
+          \qquad
+          j' = \begin{bmatrix} -1 \\ 3 \end{bmatrix}
+          \qquad
+          A =
           \begin{bmatrix}
             2 & -1 \\
             1 & 3
           \end{bmatrix}
-          \quad\quad
-          \boldsymbol{v} = \begin{bmatrix} -6 \\ 4 \end{bmatrix}
+          \qquad
+          v = \begin{bmatrix} -6 \\ 4 \end{bmatrix}
         `} />
       </div>
       <div>
         <Equation math={String.raw`
-          x
-          \enspace = \enspace
+          x =
           \frac{
-            \text{det}
-            \left(
+            \text{det}\left(
               \begin{bmatrix}
                 -6 & -1 \\
                 4 & 3
               \end{bmatrix}
             \right)
-          }{\text{det}
-            \left(
+          }{
+            \text{det}\left(
               \begin{bmatrix}
                 2 & -1 \\
                 1 & 3
               \end{bmatrix}
             \right)
-          }
-          \enspace = \enspace
-          \frac{-14}{7}
-          \enspace = \enspace
-          -2
+          } =
+          \frac{-14}{7} = -2
         `} />
       </div>
       <div>
         <Equation math={String.raw`
-          y
-          \enspace = \enspace
+          y =
           \frac{
-            \text{det}
-            \left(
+            \text{det}\left(
               \begin{bmatrix}
                 2 & -6 \\
                 1 & 4
               \end{bmatrix}
             \right)
-          }{\text{det}
-            \left(
+          }{
+            \text{det}\left(
               \begin{bmatrix}
                 2 & -1 \\
                 1 & 3
               \end{bmatrix}
             \right)
-          }
-          \enspace = \enspace
-          \frac{14}{7}
-          \enspace = \enspace
-          2
+          } =
+          \frac{14}{7} = 2
         `} />
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{x}
-          \enspace = \enspace
-          \begin{bmatrix} x \\ y \end{bmatrix}
-          \enspace = \enspace
+          x =
+          \begin{bmatrix} x \\ y \end{bmatrix} =
           \begin{bmatrix} -2 \\ 2 \end{bmatrix}
         `} />
       </div>
       <div>
-        To see why this works, take the original vector <strong>x</strong> = [x, y]. The parallelogram
-        formed by <strong>i</strong> and <strong>x</strong> has a base of 1 and a height of y, so its
+        To see why this works, take the original vector x = [x, y]. The parallelogram
+        formed by i and x has a base of 1 and a height of y, so its
         signed area is exactly y.
       </div>
       <div>
         <Equation math={String.raw`
-          \text{det}
-          \left(
+          \text{det}\left(
             \begin{bmatrix}
               1 & x \\
               0 & y
             \end{bmatrix}
-          \right)
-          \enspace = \enspace
+          \right) =
           y
         `} />
       </div>
       <div>
-        The transformation scales every area by det(<strong>A</strong>), so after the transformation
-        that parallelogram has an area of det(<strong>A</strong>) times y. After the transformation,
-        the parallelogram is formed by <strong>i'</strong> (the first column of <strong>A</strong>)
-        and <strong>v</strong> (the known output), so its area is also the determinant of the matrix
-        with columns <strong>i'</strong> and <strong>v</strong>. Setting these equal and dividing by
-        det(<strong>A</strong>) gives Cramer's rule.
+        The transformation scales every area by det(A), so after the transformation
+        that parallelogram has an area of det(A) times y. After the transformation,
+        the parallelogram is formed by i' (the first column of A)
+        and v (the known output), so its area is also the determinant of the matrix
+        with columns i' and v. Setting these equal and dividing by
+        det(A) gives Cramer's rule.
       </div>
       <div>
         <Equation math={String.raw`
-          \text{det}(\boldsymbol{A}) \cdot y
-          \enspace = \enspace
-          \text{det}
-          \left(
-            \begin{bmatrix}
-              \boldsymbol{i'} & \boldsymbol{v}
-            \end{bmatrix}
-          \right)
-          \quad\quad\Longrightarrow\quad\quad
-          y
-          \enspace = \enspace
-          \frac{
-            \text{det}
-            \left(
-              \begin{bmatrix}
-                \boldsymbol{i'} & \boldsymbol{v}
-              \end{bmatrix}
-            \right)
-          }{\text{det}(\boldsymbol{A})}
+          \text{det}(A) \cdot y =
+          \text{det}\left(\begin{bmatrix} i' & v \end{bmatrix}\right) \Rightarrow
+          y = \frac{
+            \text{det}\left(\begin{bmatrix} i' & v \end{bmatrix}\right)
+          }{
+            \text{det}(A)
+          }
         `} />
       </div>
       <div>
-        The x-coordinate works the same way. The parallelogram formed by <strong>x</strong> and <strong>j</strong> has
-        a signed area of x, and after the transformation it is formed by <strong>v</strong> and <strong>j'</strong>.
-        That is why <strong>v</strong> replaces the first column for x and the second column for y.
+        The x-coordinate works the same way. The parallelogram formed by x and j has
+        a signed area of x, and after the transformation it is formed by v and j'.
+        That is why v replaces the first column for x and the second column for y.
       </div>
       <div>
         <CodeBlock code={
@@ -182,27 +156,27 @@ print("Verifying the original vector is correct:", np.allclose(A @ original_vect
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{A} =
+          A =
           \begin{bmatrix}
             1 & 0 & 0 \\
             0 & 1 & 5 \\
             3 & 0 & 6
           \end{bmatrix}
-          \quad\quad
-          \boldsymbol{v} = \begin{bmatrix} -1 \\ 7 \\ 3 \end{bmatrix}
-          \quad\quad
-          \text{det}(\boldsymbol{A}) = 6
+          \qquad
+          v = \begin{bmatrix} -1 \\ 7 \\ 3 \end{bmatrix}
+          \qquad
+          \text{det}(A) = 6
         `} />
       </div>
       <div>
         <Equation math={String.raw`
           x = \frac{-6}{6} = -1
-          \quad\quad
+          \qquad
           y = \frac{12}{6} = 2
-          \quad\quad
+          \qquad
           z = \frac{6}{6} = 1
-          \quad\quad\quad
-          \boldsymbol{x} = \begin{bmatrix} -1 \\ 2 \\ 1 \end{bmatrix}
+          \qquad
+          x = \begin{bmatrix} -1 \\ 2 \\ 1 \end{bmatrix}
         `} />
       </div>
       <div>
@@ -242,7 +216,7 @@ print("Using np.linalg.solve:", np.linalg.solve(A, v))`
       <div>
         <Note>
           Cramer's rule is mostly useful for understanding how linear systems work. In practice, you
-          would use <strong>np.linalg.solve(A, v)</strong>, which is faster and handles floating-point
+          would use np.linalg.solve(A, v), which is faster and handles floating-point
           rounding better.
         </Note>
       </div>

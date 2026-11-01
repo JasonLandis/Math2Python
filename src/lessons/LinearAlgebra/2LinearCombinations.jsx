@@ -1,5 +1,6 @@
 import Equation from '../../components/Equation/Equation';
-import CodeBlock from '../../components/CodeBlock/CodeBlock'
+import CodeBlock from '../../components/CodeBlock/CodeBlock';
+import Note from '../../components/Note/Note';
 import 'katex/dist/katex.min.css';
 
 export default function LinearCombinations() {
@@ -10,10 +11,16 @@ export default function LinearCombinations() {
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{i} = \begin{bmatrix} 1 \\ 0 \end{bmatrix}
-          \quad\quad
-          \boldsymbol{j} = \begin{bmatrix} 0 \\ 1 \end{bmatrix}
+          i = \begin{bmatrix} 1 \\ 0 \end{bmatrix}
+          \qquad
+          j = \begin{bmatrix} 0 \\ 1 \end{bmatrix}
         `} />
+      </div>
+      <div>
+        <Note>
+          The technical definition for the <strong>basis</strong> of a space is a set of linearly independent vectors that span that space.
+          Span will be defined later in this lesson.
+        </Note>
       </div>
       <div>
         If you scale some vectors by scalars and then add the resulting vectors together, you get a new
@@ -22,10 +29,8 @@ export default function LinearCombinations() {
       </div>
       <div>
         <Equation math={String.raw`
-          3 \begin{bmatrix} 1 \\ 0 \end{bmatrix}
-          \enspace + \enspace
-          4 \begin{bmatrix} 0 \\ 1 \end{bmatrix}
-          \enspace = \enspace
+          3 \begin{bmatrix} 1 \\ 0 \end{bmatrix} +
+          4 \begin{bmatrix} 0 \\ 1 \end{bmatrix} =
           \begin{bmatrix} 3 \\ 4 \end{bmatrix}
         `} />
       </div>
@@ -58,17 +63,16 @@ print(linear_combination)`
       </div>
       <div>
         The two vectors below can be described as <strong>linearly dependent</strong> because
-        vector <strong>w</strong> can be written as a linear combination of vector <strong>v</strong>.
+        vector w can be written as a linear combination of vector v.
         As a result, the span of these two 2D vectors is just a single 1D line.
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{v} = \begin{bmatrix} 1 \\ 2 \end{bmatrix}
-          \quad\quad
-          \boldsymbol{w} = \begin{bmatrix} 2 \\ 4 \end{bmatrix}
-          \quad\quad\quad\quad
-          2 \begin{bmatrix} 1 \\ 2 \end{bmatrix}
-          \enspace = \enspace
+          v = \begin{bmatrix} 1 \\ 2 \end{bmatrix}
+          \qquad
+          w = \begin{bmatrix} 2 \\ 4 \end{bmatrix}
+          \qquad
+          2 \begin{bmatrix} 1 \\ 2 \end{bmatrix} =
           \begin{bmatrix} 2 \\ 4 \end{bmatrix}
         `} />
       </div>
@@ -104,11 +108,11 @@ print(linear_combination)`
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{i} = \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}
-          \quad\quad
-          \boldsymbol{j} = \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}
-          \quad\quad
-          \boldsymbol{k} = \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}
+          i = \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}
+          \qquad
+          j = \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}
+          \qquad
+          k = \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}
         `} />
       </div>
       <div>
@@ -116,23 +120,21 @@ print(linear_combination)`
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{u} = \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}
-          \quad\quad
-          \boldsymbol{v} = \begin{bmatrix} 2 \\ -1 \\ 4 \end{bmatrix}
-          \quad\quad
-          \boldsymbol{w} = \begin{bmatrix} 4 \\ 3 \\ 10 \end{bmatrix}
+          u = \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}
+          \qquad
+          v = \begin{bmatrix} 2 \\ -1 \\ 4 \end{bmatrix}
+          \qquad
+          w = \begin{bmatrix} 4 \\ 3 \\ 10 \end{bmatrix}
         `} />
       </div>
       <div>
-        These vectors are linearly dependent because vector <strong>w</strong> can be written
-        as a linear combination of vectors <strong>u</strong> and <strong>v</strong>.
+        These vectors are linearly dependent because vector w can be written
+        as a linear combination of vectors u and v.
       </div>
       <div>
         <Equation math={String.raw`
-          2 \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}
-          \enspace + \enspace
-          \begin{bmatrix} 2 \\ -1 \\ 4 \end{bmatrix}
-          \enspace = \enspace
+          2 \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix} +
+          \begin{bmatrix} 2 \\ -1 \\ 4 \end{bmatrix} =
           \begin{bmatrix} 4 \\ 3 \\ 10 \end{bmatrix}
         `} />
       </div>

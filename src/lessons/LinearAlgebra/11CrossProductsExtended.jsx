@@ -12,11 +12,12 @@ export default function CrossProductsExtended() {
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{v} = \begin{bmatrix} 4 \\ -1 \\ 3 \end{bmatrix}
-          \quad\quad
-          \boldsymbol{w} = \begin{bmatrix} -2 \\ 2 \\ 1 \end{bmatrix}
-          \quad\quad
-          \boldsymbol{A} = \begin{bmatrix}
+          v = \begin{bmatrix} 4 \\ -1 \\ 3 \end{bmatrix}
+          \qquad
+          w = \begin{bmatrix} -2 \\ 2 \\ 1 \end{bmatrix}
+          \qquad
+          A =
+          \begin{bmatrix}
             4 & -2 \\
             -1 & 2 \\
             3 & 1
@@ -25,8 +26,7 @@ export default function CrossProductsExtended() {
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{p}
-          \enspace = \enspace
+          p =
           \begin{bmatrix}
             \text{det}\left(
               \begin{bmatrix}
@@ -46,14 +46,8 @@ export default function CrossProductsExtended() {
                 -1 & 2
               \end{bmatrix}
             \right)
-          \end{bmatrix}
-          \enspace = \enspace
-          \begin{bmatrix}
-            (-1)(1) - (2)(3) \\
-            (3)(-2) - (1)(4) \\
-            (4)(2) - (-2)(-1)
-          \end{bmatrix}
-          \enspace = \enspace
+          \end{bmatrix} =
+          \begin{bmatrix} (-1)(1) - (2)(3) \\ (3)(-2) - (1)(4) \\ (4)(2) - (-2)(-1) \end{bmatrix} =
           \begin{bmatrix} -7 \\ -10 \\ 6 \end{bmatrix}
         `} />
       </div>
@@ -65,8 +59,7 @@ export default function CrossProductsExtended() {
       </div>
       <div>
         <Equation math={String.raw`
-          v_2 w_3 - v_3 w_2
-          \enspace = \enspace
+          v_2 w_3 - v_3 w_2 =
           \text{det}\left(
             \begin{bmatrix}
               v_2 & w_2 \\
@@ -77,11 +70,7 @@ export default function CrossProductsExtended() {
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{v} \times \boldsymbol{w}
-          \enspace = \enspace
-          \boldsymbol{p}
-          \enspace = \enspace
-          \begin{bmatrix} -7 \\ -10 \\ 6 \end{bmatrix}
+          v \times w = p = \begin{bmatrix} -7 \\ -10 \\ 6 \end{bmatrix}
         `} />
       </div>
       <div>
@@ -114,84 +103,71 @@ print(np.cross(v, w))`
       </div>
       <div>
         In textbooks, you will often see the cross product written as the determinant of a 3x3 matrix
-        with the basis vectors <strong>i</strong>, <strong>j</strong>, and <strong>k</strong> in the first
+        with the basis vectors i, j, and k in the first
         column. This isn't a real determinant since the first column contains vectors instead of numbers,
         but expanding it the usual way gives exactly the same calculation as above.
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{v} \times \boldsymbol{w}
-          \enspace = \enspace
+          v \times w =
           \text{det}\left(
             \begin{bmatrix}
-              \boldsymbol{i} & v_1 & w_1 \\
-              \boldsymbol{j} & v_2 & w_2 \\
-              \boldsymbol{k} & v_3 & w_3
+              i & v_1 & w_1 \\
+              j & v_2 & w_2 \\
+              k & v_3 & w_3
             \end{bmatrix}
-          \right)
-          \enspace = \enspace
-          \boldsymbol{i}(v_2 w_3 - v_3 w_2)
-          - \boldsymbol{j}(v_1 w_3 - v_3 w_1)
-          + \boldsymbol{k}(v_1 w_2 - v_2 w_1)
+          \right) =
+          i(v_2 w_3 - v_3 w_2) - j(v_1 w_3 - v_3 w_1) +
+          k(v_1 w_2 - v_2 w_1)
         `} />
       </div>
       <div>
-        For any 3D vectors <strong>u</strong>, <strong>v</strong>, and <strong>w</strong>, the
-        determinant of the matrix with columns <strong>u</strong>, <strong>v</strong>, <strong>w</strong> equals
-        the dot product of <strong>u</strong> with the cross product of <strong>v</strong> and <strong>w</strong>.
+        For any 3D vectors u, v, and w, the
+        determinant of the matrix with columns u, v, w equals
+        the dot product of u with the cross product of v and w.
         This is another example of duality.
       </div>
       <div>
-        To see why, fix <strong>v</strong> and <strong>w</strong> and let <strong>u</strong> vary. The
-        function below takes a 3D vector <strong>u</strong> and returns a single number, and it is linear.
+        To see why, fix v and w and let u vary. The
+        function below takes a 3D vector u and returns a single number, and it is linear.
         From the dot products lesson, any linear transformation from 3D space down to a single number is
-        the same as taking the dot product with some fixed vector <strong>p</strong>.
+        the same as taking the dot product with some fixed vector p.
       </div>
       <div>
         <Equation math={String.raw`
-          f(\boldsymbol{u})
-          \enspace = \enspace
-          \text{det}\left(
-            \begin{bmatrix}
-              \boldsymbol{u} & \boldsymbol{v} & \boldsymbol{w}
-            \end{bmatrix}
-          \right)
-          \enspace = \enspace
-          \boldsymbol{p} \cdot \boldsymbol{u}
+          f(u) =
+          \text{det}\left(\begin{bmatrix} u & v & w \end{bmatrix}\right) =
+          p \cdot u
         `} />
       </div>
       <div>
         Geometrically, this determinant is the volume of the slanted box (called a parallelepiped)
-        formed by the three vectors. That volume is the area of the base formed by <strong>v</strong> and <strong>w</strong>,
-        times the height of <strong>u</strong> above that base. The only vector whose dot product
-        with <strong>u</strong> gives "base area times height" is the one that is perpendicular
-        to <strong>v</strong> and <strong>w</strong> and has a length equal to the base area. That is
-        exactly <strong>v</strong> × <strong>w</strong>.
+        formed by the three vectors. That volume is the area of the base formed by v and w,
+        times the height of u above that base. The only vector whose dot product
+        with u gives "base area times height" is the one that is perpendicular
+        to v and w and has a length equal to the base area. That is
+        exactly v × w.
       </div>
       <div>
         Now let's take a new set of vectors. In the example below, we are labeling the cross product
-        of <strong>v</strong> and <strong>w</strong> as vector <strong>p</strong>.
+        of v and w as vector p.
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{u} = \begin{bmatrix} 1 \\ -2 \\ 3 \end{bmatrix}
-          \quad\quad
-          \boldsymbol{v} = \begin{bmatrix} -2 \\ 3 \\ 4 \end{bmatrix}
-          \quad\quad
-          \boldsymbol{w} = \begin{bmatrix} -1 \\ 2 \\ 1 \end{bmatrix}
+          u = \begin{bmatrix} 1 \\ -2 \\ 3 \end{bmatrix}
+          \qquad
+          v = \begin{bmatrix} -2 \\ 3 \\ 4 \end{bmatrix}
+          \qquad
+          w = \begin{bmatrix} -1 \\ 2 \\ 1 \end{bmatrix}
         `} />
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{v}\times\boldsymbol{w}
-          \enspace = \enspace
-          \begin{bmatrix} -2 \\ 3 \\ 4 \end{bmatrix}
-          \times
-          \begin{bmatrix} -1 \\ 2 \\ 1 \end{bmatrix}
-          \enspace = \enspace
-          \begin{bmatrix} -5 \\ -2 \\ -1 \end{bmatrix}
-          \enspace = \enspace
-          \boldsymbol{p}
+          v \times w =
+          \begin{bmatrix} -2 \\ 3 \\ 4 \end{bmatrix} \times
+          \begin{bmatrix} -1 \\ 2 \\ 1 \end{bmatrix} =
+          \begin{bmatrix} -5 \\ -2 \\ -1 \end{bmatrix} =
+          p
         `} />
       </div>
       <div>
@@ -202,14 +178,11 @@ print(np.cross(v, w))`
               -2 & 3 & 2 \\
               3 & 4 & 1
             \end{bmatrix}
-          \right)
-          \enspace = \enspace
-          \boldsymbol{u} \cdot \boldsymbol{p}
-          \enspace = \enspace
-          \begin{bmatrix} 1 \\ -2 \\ 3 \end{bmatrix}
-          \cdot
-          \begin{bmatrix} -5 \\ -2 \\ -1 \end{bmatrix}
-          \enspace = \enspace -4
+          \right) =
+          u \cdot p =
+          \begin{bmatrix} 1 \\ -2 \\ 3 \end{bmatrix} \cdot
+          \begin{bmatrix} -5 \\ -2 \\ -1 \end{bmatrix} =
+          -4
         `} />
       </div>
       <div>

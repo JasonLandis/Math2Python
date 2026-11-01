@@ -10,24 +10,25 @@ export default function ChangeOfBasis() {
         Let's say we have two coordinate systems. System 1 uses the standard basis vectors,
         while System 2 uses a different set of basis vectors, described in System 1's coordinates.
         Stacking System 2's basis vectors as columns of a matrix gives
-        the <strong>change of basis</strong> matrix. <strong>B</strong> represents this matrix
+        the <strong>change of basis</strong> matrix. B represents this matrix
         below. Its purpose is to translate a vector's coordinates
         in System 2 into the same vector's coordinates in System 1.
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{i_1} = \begin{bmatrix} 1 \\ 0 \end{bmatrix}
-          \quad
-          \boldsymbol{j_1} = \begin{bmatrix} 0 \\ 1 \end{bmatrix}
-          \quad\quad\quad
-          \boldsymbol{i_2} = \begin{bmatrix} 2 \\ 1 \end{bmatrix}
-          \quad
-          \boldsymbol{j_2} = \begin{bmatrix} -1 \\ 3 \end{bmatrix}
+          i_1 = \begin{bmatrix} 1 \\ 0 \end{bmatrix}
+          \qquad
+          j_1 = \begin{bmatrix} 0 \\ 1 \end{bmatrix}
+          \qquad
+          i_2 = \begin{bmatrix} 2 \\ 1 \end{bmatrix}
+          \qquad
+          j_2 = \begin{bmatrix} -1 \\ 3 \end{bmatrix}
         `} />
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{B} = \begin{bmatrix}
+          B =
+          \begin{bmatrix}
             2 & -1 \\
             1 & 3
           \end{bmatrix}
@@ -35,34 +36,31 @@ export default function ChangeOfBasis() {
       </div>
       <div>
         <Note>
-          In System 2's own language, <strong>i<sub>2</sub></strong> = [1, 0] and <strong>j<sub>2</sub></strong> = [0, 1].
+          In System 2's own language, i<sub>2</sub> = [1, 0] and j<sub>2</sub> = [0, 1].
           They only appear skewed above because they are written in System 1's language.
         </Note>
       </div>
       <div>
         Now let's say we have some vector written in System 2's language. The subscript tells you which
-        language a vector's coordinates are written in. Below, <strong>v<sub>1</sub></strong> and <strong>v<sub>2</sub></strong> are
+        language a vector's coordinates are written in. Below, v<sub>1</sub> and v<sub>2</sub> are
         the same arrow, just described in two different ways.
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{v_2} = \begin{bmatrix} -2 \\ 4 \end{bmatrix}
+          v_2 = \begin{bmatrix} -2 \\ 4 \end{bmatrix}
         `} />
       </div>
       <div>
-        This vector means "-2 of <strong>i<sub>2</sub></strong> plus 4 of <strong>j<sub>2</sub></strong>". Since we
-        know <strong>i<sub>2</sub></strong> and <strong>j<sub>2</sub></strong> in System 1's coordinates, we can
+        This vector means "-2 of i<sub>2</sub> plus 4 of j<sub>2</sub>". Since we
+        know i<sub>2</sub> and j<sub>2</sub> in System 1's coordinates, we can
         find the vector in System 1's language by scaling and adding them, just like in the linear
         transformations lesson.
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{v_1}
-          \enspace = \enspace
-          -2 \begin{bmatrix} 2 \\ 1 \end{bmatrix}
-          \enspace + \enspace
-          4 \begin{bmatrix} -1 \\ 3 \end{bmatrix}
-          \enspace = \enspace
+          v_1 =
+          -2 \begin{bmatrix} 2 \\ 1 \end{bmatrix} +
+          4 \begin{bmatrix} -1 \\ 3 \end{bmatrix} =
           \begin{bmatrix} -8 \\ 10 \end{bmatrix}
         `} />
       </div>
@@ -76,8 +74,7 @@ export default function ChangeOfBasis() {
             2 & -1 \\
             1 & 3
           \end{bmatrix}
-          \begin{bmatrix} -2 \\ 4 \end{bmatrix}
-          \enspace = \enspace
+          \begin{bmatrix} -2 \\ 4 \end{bmatrix} =
           \begin{bmatrix} -8 \\ 10 \end{bmatrix}
         `} />
       </div>
@@ -104,10 +101,8 @@ print(B @ v2)`
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{B^{-1}}
-          \enspace = \enspace
-          \frac{1}{7}
-          \begin{bmatrix}
+          B^{-1} =
+          \frac{1}{7} \begin{bmatrix}
             3 & 1 \\
             -1 & 2
           \end{bmatrix}
@@ -118,9 +113,8 @@ print(B @ v2)`
           \begin{bmatrix}
             2 & -1 \\
             1 & 3
-          \end{bmatrix}^{-1}
-          \begin{bmatrix} -8 \\ 10 \end{bmatrix}
-          \enspace = \enspace
+          \end{bmatrix}
+          ^{-1} \begin{bmatrix} -8 \\ 10 \end{bmatrix} =
           \begin{bmatrix} -2 \\ 4 \end{bmatrix}
         `} />
       </div>
@@ -154,15 +148,15 @@ print(np.linalg.inv(B) @ v1)`
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{v_2} = \begin{bmatrix} 1 \\ 2 \end{bmatrix}
-          \quad\quad
-          \boldsymbol{B} =
+          v_2 = \begin{bmatrix} 1 \\ 2 \end{bmatrix}
+          \qquad
+          B =
           \begin{bmatrix}
             2 & -1 \\
             1 & 3
           \end{bmatrix}
-          \quad\quad
-          \boldsymbol{T_1} =
+          \qquad
+          T_1 =
           \begin{bmatrix}
             0 & -1 \\
             1 & 0
@@ -171,16 +165,16 @@ print(np.linalg.inv(B) @ v1)`
       </div>
       <div>
         Remember that matrices are applied from right to left. Reading the formula below from right to
-        left, <strong>B</strong> translates the vector to System 1's language, <strong>T<sub>1</sub></strong> rotates
-        it, and <strong>B<sup>-1</sup></strong> translates the result back to System 2's language.
+        left, B translates the vector to System 1's language, T<sub>1</sub> rotates
+        it, and B<sup>-1</sup> translates the result back to System 2's language.
       </div>
       <div>
         <Equation math={String.raw`
           \begin{bmatrix}
             2 & -1 \\
             1 & 3
-          \end{bmatrix}^{-1}
-          \begin{bmatrix}
+          \end{bmatrix}
+          ^{-1} \begin{bmatrix}
             0 & -1 \\
             1 & 0
           \end{bmatrix}
@@ -188,24 +182,19 @@ print(np.linalg.inv(B) @ v1)`
             2 & -1 \\
             1 & 3
           \end{bmatrix}
-          \begin{bmatrix} 1 \\ 2 \end{bmatrix}
-          \enspace = \enspace
+          \begin{bmatrix} 1 \\ 2 \end{bmatrix} =
           \begin{bmatrix} -3 \\ 1 \end{bmatrix}
         `} />
       </div>
       <div>
         The three matrices on the left can be combined into a single composition matrix. This new
-        matrix <strong>T<sub>2</sub></strong> is the same rotation, but written in System 2's language.
+        matrix T<sub>2</sub> is the same rotation, but written in System 2's language.
         Once it's calculated, it can be applied directly to any vector written in System 2's language.
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{T_2}
-          \enspace = \enspace
-          \boldsymbol{B^{-1}T_1B}
-          \enspace = \enspace
-          \frac{1}{7}
-          \begin{bmatrix}
+          T_2 = B^{-1}T_1B =
+          \frac{1}{7} \begin{bmatrix}
             -1 & -10 \\
             5 & 1
           \end{bmatrix}
@@ -238,8 +227,8 @@ print(T2 @ v2)`
       </div>
       <div>
         <Note>
-          You can think of the composition matrix <strong>B⁻¹T₁B</strong> as linear
-          transformation <strong>T₁</strong>, but expressed in System 2's language.
+          You can think of the composition matrix B⁻¹T₁B as linear
+          transformation T₁, but expressed in System 2's language.
         </Note>
       </div>
     </>

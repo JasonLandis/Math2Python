@@ -13,17 +13,15 @@ export default function AbstractVectorSpaces() {
         eigenvectors) applies to them too.
       </div>
       <div>
-        For example, a polynomial like <strong>1 + 2x</strong> can be stored as the list of its coefficients.
+        For example, a polynomial like 1 + 2x can be stored as the list of its coefficients.
         Adding or scaling polynomials gives the same result as adding or scaling their coefficient vectors.
       </div>
       <div>
         <Equation math={String.raw`
           (1 + 2x) + (3 - x + x^2) = 4 + x + x^2
-          \quad\quad
-          \begin{bmatrix} 1 \\ 2 \\ 0 \end{bmatrix}
-          +
-          \begin{bmatrix} 3 \\ -1 \\ 1 \end{bmatrix}
-          =
+          \qquad
+          \begin{bmatrix} 1 \\ 2 \\ 0 \end{bmatrix} +
+          \begin{bmatrix} 3 \\ -1 \\ 1 \end{bmatrix} =
           \begin{bmatrix} 4 \\ 1 \\ 1 \end{bmatrix}
         `}/>
       </div>
@@ -59,34 +57,31 @@ print("Scaling the coefficient vector by 3:", 3 * f_coefficients)`
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{v} = \begin{bmatrix} 2 \\ 3 \\ -1 \end{bmatrix}
-          \quad\quad
-          \boldsymbol{w} = \begin{bmatrix} -1 \\ 2 \\ 3 \end{bmatrix}
-          \quad\quad
-          \boldsymbol{A} = \begin{bmatrix}
+          v = \begin{bmatrix} 2 \\ 3 \\ -1 \end{bmatrix}
+          \qquad
+          w = \begin{bmatrix} -1 \\ 2 \\ 3 \end{bmatrix}
+          \qquad
+          A =
+          \begin{bmatrix}
             2 & 3 & 1 \\
             4 & -2 & -2 \\
             1 & -1 & 3
           \end{bmatrix}
-          \quad\quad
+          \qquad
           c = 3
         `}/>
       </div>
       <div>
         <Equation math={String.raw`
-          \textbf{Additivity:\enspace} \allowbreak \boldsymbol{A}(\boldsymbol{v} + \boldsymbol{w})
-          \enspace = \enspace
-          \boldsymbol{Av} + \boldsymbol{Aw}
-          \enspace = \enspace
+          \textbf{Additivity: } \allowbreak
+          A(v + w) = Av + Aw =
           \begin{bmatrix} 19 \\ -10 \\ 2 \end{bmatrix}
         `}/>
       </div>
       <div>
         <Equation math={String.raw`
-          \textbf{Homogeneity:\enspace} \allowbreak \boldsymbol{A}(c\boldsymbol{v})
-          \enspace = \enspace
-          c(\boldsymbol{Av})
-          \enspace = \enspace
+          \textbf{Homogeneity: } \allowbreak
+          A(cv) = c(Av) =
           \begin{bmatrix} 36 \\ 12 \\ -12 \end{bmatrix}
         `}/>
       </div>
@@ -129,24 +124,22 @@ print(c * (A @ v))`
       <div>
         <Equation math={String.raw`
           (f + g)' = f' + g'
-          \quad\quad\quad
+          \qquad
           (cf)' = c f'
         `}/>
       </div>
       <div>
         Since differentiation is linear, it can be written as a matrix. Here, a polynomial is stored as
-        a coefficient vector in the basis <strong>{`{1, x, x², x³}`}</strong>, so <strong>p</strong> represents <strong>-1 + 4x - 3x² + 2x³</strong>.
-        Each column of <strong>A</strong> encodes what the derivative does to one basis
-        element <strong>(1 → 0, x → 1, x² → 2x, x³ → 3x²)</strong>, which is just the power
+        a coefficient vector in the basis {`{1, x, x², x³}`}, so p represents -1 + 4x - 3x² + 2x³.
+        Each column of A encodes what the derivative does to one basis
+        element (1 → 0, x → 1, x² → 2x, x³ → 3x²), which is just the power
         rule: multiply each coefficient by its power and shift it down one slot.
-        Moving <strong>p</strong> through the linear transformation <strong>A</strong> gives a new coefficient vector
+        Moving p through the linear transformation A gives a new coefficient vector
         representing a polynomial that is the derivative of the original polynomial.
       </div>
       <div>
         <Equation math={String.raw`
-          -1 + 4x - 3x^2 + 2x^3
-          \quad \rightarrow \quad
-          \begin{bmatrix} -1 \\ 4 \\ -3 \\ 2 \end{bmatrix}
+          -1 + 4x - 3x^2 + 2x^3 \rightarrow \begin{bmatrix} -1 \\ 4 \\ -3 \\ 2 \end{bmatrix}
         `} />
       </div>
       <div>
@@ -157,16 +150,13 @@ print(c * (A @ v))`
             0 & 0 & 0 & 3 \\
             0 & 0 & 0 & 0
           \end{bmatrix}
-          \begin{bmatrix} -1 \\ 4 \\ -3 \\ 2 \end{bmatrix}
-          \enspace = \enspace
+          \begin{bmatrix} -1 \\ 4 \\ -3 \\ 2 \end{bmatrix} =
           \begin{bmatrix} 4 \\ -6 \\ 6 \\ 0 \end{bmatrix}
         `} />
       </div>
       <div>
         <Equation math={String.raw`
-          \begin{bmatrix} 4 \\ -6 \\ 6 \\ 0 \end{bmatrix}
-          \quad \rightarrow \quad
-          4 - 6x + 6x^2
+          \begin{bmatrix} 4 \\ -6 \\ 6 \\ 0 \end{bmatrix} \rightarrow 4 - 6x + 6x^2
         `} />
       </div>
       <div>
@@ -198,7 +188,7 @@ print(np.polynomial.Polynomial([-1, 4, -3, 2]).deriv().coef)`
       <div>
         Its only eigenvalue is 0, and its eigenvectors are the constant polynomials, since the
         derivative of a constant is 0 times that constant. Outside of polynomials, the
-        function <strong>eˣ</strong> is an <strong>eigenfunction</strong> of the derivative with an eigenvalue
+        function eˣ is an <strong>eigenfunction</strong> of the derivative with an eigenvalue
         of 1, because its derivative is itself.
       </div>
     </>

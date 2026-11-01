@@ -7,24 +7,24 @@ export default function ThreeDimTransformations() {
   return (
     <>
       <div>
-        Any time you see a matrix, you can imagine it as describing some linear transformation.
+        Any time you see a matrix of any configuration, you can imagine it as describing some linear transformation.
         All of the rules described in the previous lessons apply in any number of dimensions.
       </div>
       <div>
-        In 3D, there is a third basis vector <strong>k</strong> alongside <strong>i</strong> and <strong>j</strong>.
+        In 3D, there is a third basis vector k alongside i and j.
       </div>
       <div>
         <Equation math={String.raw`
-          \boldsymbol{i} = \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}
-          \quad\quad
-          \boldsymbol{j} = \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}
-          \quad\quad
-          \boldsymbol{k} = \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}
+          i = \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}
+          \qquad
+          j = \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}
+          \qquad
+          k = \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}
         `} />
       </div>
       <div>
         A 3D linear transformation is described by a 3x3 matrix. The first, second, and third
-        columns of the matrix are <strong>i'</strong>, <strong>j'</strong>, and <strong>k'</strong>, where <strong>i</strong>, <strong>j</strong>, and <strong>k</strong> land
+        columns of the matrix are i', j', and k', where i, j, and k land
         after the transformation. The following is an example of a 3x3 matrix transforming a vector.
       </div>
       <div>
@@ -34,8 +34,7 @@ export default function ThreeDimTransformations() {
             -1 & 0 & 3 \\
             -2 & 3 & 3
           \end{bmatrix}
-          \begin{bmatrix} 2 \\ 1 \\ -3 \end{bmatrix}
-          \enspace = \enspace
+          \begin{bmatrix} 2 \\ 1 \\ -3 \end{bmatrix} =
           \begin{bmatrix} -7 \\ -11 \\ -10 \end{bmatrix}
         `} />
       </div>
@@ -45,12 +44,9 @@ export default function ThreeDimTransformations() {
       </div>
       <div>
         <Equation math={String.raw`
-          2 \begin{bmatrix} 2 \\ -1 \\ -2 \end{bmatrix}
-          \enspace + \enspace
-          1 \begin{bmatrix} 4 \\ 0 \\ 3 \end{bmatrix}
-          \enspace + \enspace
-          (-3) \begin{bmatrix} 5 \\ 3 \\ 3 \end{bmatrix}
-          \enspace = \enspace
+          2 \begin{bmatrix} 2 \\ -1 \\ -2 \end{bmatrix} +
+          1 \begin{bmatrix} 4 \\ 0 \\ 3 \end{bmatrix} +
+          (-3) \begin{bmatrix} 5 \\ 3 \\ 3 \end{bmatrix} =
           \begin{bmatrix} -7 \\ -11 \\ -10 \end{bmatrix}
         `} />
       </div>
@@ -79,34 +75,86 @@ print(M @ v)`
       </div>
       <div>
         <Note>
-          <strong>M[:, [0]]</strong> selects a column of the matrix. The <strong>:</strong> selects
-          every row, and <strong>[0]</strong> selects the first column. Putting the column index inside a
-          list keeps the result as a 3x1 column vector. Writing <strong>M[:, 0]</strong> instead would
+          M[:, [0]] selects a column of the matrix. The : selects
+          every row, and [0] selects the first column. Putting the column index inside a
+          list keeps the result as a 3x1 column vector. Writing M[:, 0] instead would
           return a flat 1D array, which prints as a row.
         </Note>
       </div>
       <div>
-        Composition works the same way in 3D, and the order in which transformations are
-        applied still matters.
+        Matrix composition works the same way in 3D.
+      </div>
+      <div>
+        <Equation math={String.raw`
+          M_1 =
+          \begin{bmatrix}
+            0 & -2 & 2 \\
+            5 & 1 & 5 \\
+            1 & 4 & -1
+          \end{bmatrix}
+          \qquad
+          M_2 =
+          \begin{bmatrix}
+            3 & 1 & 0 \\
+            -1 & 2 & 1 \\
+            0 & 1 & 4
+          \end{bmatrix}
+        `} />
+      </div>
+      <div>
+        <Equation math={String.raw`
+          \begin{bmatrix}
+            0 & -2 & 2 \\
+            5 & 1 & 5 \\
+            1 & 4 & -1
+          \end{bmatrix}
+          \begin{bmatrix}
+            3 & 1 & 0 \\
+            -1 & 2 & 1 \\
+            0 & 1 & 4
+          \end{bmatrix} =
+          \begin{bmatrix}
+            2 & -2 & 6 \\
+            14 & 12 & 21 \\
+            -1 & 8 & 0
+          \end{bmatrix}
+        `} />
       </div>
       <div>
         <CodeBlock code={
 `import numpy as np
 
-P = np.array([[0, -2, 2],
+M1 = np.array([[0, -2, 2],
               [5, 1, 5],
               [1, 4, -1]])
 
-Q = np.array([[3, 1, 0],
+M2 = np.array([[3, 1, 0],
               [-1, 2, 1],
               [0, 1, 4]])
 
-print("P @ Q:")
-print(P @ Q, '\\n')
-
-print("Q @ P:")
-print(Q @ P)`
+print("M1 @ M2:")
+print(M1 @ M2)`
         } editable={true} />
+      </div>
+      <div>
+        Below is a transformation matrix that represents a 90° counterclockwise rotation
+        around the z-axis.
+      </div>
+      <div>
+        <Equation math={String.raw`
+          \begin{bmatrix}
+            0 & -1 & 0 \\
+            1 & 0 & 0 \\
+            0 & 0 & 1
+          \end{bmatrix}
+        `} />
+      </div>
+      <div>
+        To visualize this, imagine a clock lying flat on the xy-plane, its face pointing up in the 
+        positive z-direction. Picture the basis vectors i and j as two hands on the clock: i points 
+        to 3 o'clock (right), and j points to 12 o'clock (up). Now rotate the clock face 90° 
+        counterclockwise and watch where the hands land: i moves to [0, 1, 0], j moves to [-1, 0, 0], and k, 
+        the axis the clock spins around, stays fixed at [0, 0, 1].
       </div>
     </>
   )
