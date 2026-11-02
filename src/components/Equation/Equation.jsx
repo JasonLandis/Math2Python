@@ -2,10 +2,6 @@ import { InlineMath } from 'react-katex';
 import 'katex/dist/katex.min.css';
 import './Equation.scss'
 
-// Rules for writing math passed to <Equation>:
-// 1. Separate distinct ideas on the same line with \qquad so they can wrap on small screens.
-// 2. Write the math in the source so it's easy to read.
-
 // Splits on top-level \qquad so each expression can wrap onto its own line
 function splitOnQquads(math) {
   const parts = [];

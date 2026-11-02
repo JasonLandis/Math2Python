@@ -103,26 +103,10 @@ print("Example where b is 0 (it's just a * d):", determinant)`
       </div>
       <div>
         <Equation math={String.raw`
-          (a + b) \cdot (c + d) - (ac + bd + 2bc)
-        `} />
-      </div>
-      <div>
-        <Equation math={String.raw`
-          (ac + ad + bc + bd) - (ac + bd + 2bc)
-        `} />
-      </div>
-      <div>
-        <Equation math={String.raw`
-          ac + ad + bc + bd - ac - bd - 2bc
-        `} />
-      </div>
-      <div>
-        <Equation math={String.raw`
-          ad + bc - 2bc
-        `} />
-      </div>
-      <div>
-        <Equation math={String.raw`
+          (a + b) \cdot (c + d) - (ac + bd + 2bc) \newline
+          (ac + ad + bc + bd) - (ac + bd + 2bc) \newline
+          ac + ad + bc + bd - ac - bd - 2bc \newline
+          ad + bc - 2bc \newline
           ad - bc
         `} />
       </div>

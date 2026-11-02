@@ -7,10 +7,35 @@ export default function InverseMatrices() {
   return (
     <>
       <div>
-        Let's say we know the placement of some vector after a linear transformation took place and
-        we want to find out where that vector was before the linear transformation. Below, A represents
-        the transformation matrix, v represents the transformed vector, and x represents
-        the original vector.
+        A system of linear equations can be written as a single matrix equation. Take this system
+        of three equations with three unknowns.
+      </div>
+      <div>
+        <Equation math={String.raw`
+          x + 2y = -1 \newline
+          y + 3z = 5 \newline
+          2x + 4y + z = 0
+        `} />
+      </div>
+      <div>
+        Each row of the matrix below holds the coefficients of one equation. A variable that is
+        missing from an equation has a coefficient of 0. For example, the second equation has no
+        x term, so the second row starts with 0.
+      </div>
+      <div>
+        <Equation math={String.raw`
+          \begin{bmatrix}
+            1 & 2 & 0 \\
+            0 & 1 & 3 \\
+            2 & 4 & 1
+          \end{bmatrix}
+          \begin{bmatrix} x \\ y \\ z \end{bmatrix} =
+          \begin{bmatrix} -1 \\ 5 \\ 0 \end{bmatrix}
+        `} />
+      </div>
+      <div>
+        We can write this more compactly as Ax = v, where A is the matrix of coefficients, x is the
+        vector of unknowns, and v is the vector of values on the right side of the equations.
       </div>
       <div>
         <Equation math={String.raw`
@@ -21,72 +46,74 @@ export default function InverseMatrices() {
         <Equation math={String.raw`
           A =
           \begin{bmatrix}
-            1 & 0 & 0 \\
-            1 & 1 & 0 \\
-            1 & 1 & 1
+            1 & 2 & 0 \\
+            0 & 1 & 3 \\
+            2 & 4 & 1
           \end{bmatrix}
           \qquad
-          v = \begin{bmatrix} 4 \\ 2 \\ -1 \end{bmatrix}
+          x = \begin{bmatrix} x \\ y \\ z \end{bmatrix}
           \qquad
-          x = ?
+          v = \begin{bmatrix} -1 \\ 5 \\ 0 \end{bmatrix}
         `} />
       </div>
       <div>
-        We can solve for x by applying the linear
-        transformation A to v in reverse. To do this, we
-        multiply both sides of the equation by the inverse of A,
-        written as A<sup>-1</sup>. Since A<sup>-1</sup>A equals the
-        identity matrix I (explained below), which leaves any vector unchanged,
-        we are left with x on its own.
+        This equation also has a geometric meaning. A is a linear transformation that moves x
+        to v, so we know where the vector landed and want to find where it started.
+      </div>
+      <div>
+        To find x, we need to undo the transformation. The matrix that does this is
+        the inverse of A, written as A<sup>-1</sup>. We multiply both sides of the equation by
+        A<sup>-1</sup>. Since A<sup>-1</sup>A equals the identity matrix I (explained below), which
+        leaves any vector unchanged, we are left with x on its own.
       </div>
       <div>
         <Equation math={String.raw`
           A^{-1} A x = A^{-1} v
-        `} />
-      </div>
-      <div>
-        <Equation math={String.raw`
+          \quad \rightarrow \quad
           I x = A^{-1} v
-        `} />
-      </div>
-      <div>
-        <Equation math={String.raw`
+          \quad \rightarrow \quad
           x = A^{-1} v
         `} />
+      </div>
+      <div>
+        Here is the inverse of A for this system.
       </div>
       <div>
         <Equation math={String.raw`
           A^{-1} =
           \begin{bmatrix}
-            1 & 0 & 0 \\
-            -1 & 1 & 0 \\
-            0 & -1 & 1
+            -11 & -2 & 6 \\
+            6 & 1 & -3 \\
+            -2 & 0 & 1
           \end{bmatrix}
         `} />
+      </div>
+      <div>
+        Multiplying it by v gives us x.
       </div>
       <div>
         <Equation math={String.raw`
           x =
           \begin{bmatrix}
-            1 & 0 & 0 \\
-            -1 & 1 & 0 \\
-            0 & -1 & 1
+            -11 & -2 & 6 \\
+            6 & 1 & -3 \\
+            -2 & 0 & 1
           \end{bmatrix}
-          \begin{bmatrix} 4 \\ 2 \\ -1 \end{bmatrix} =
-          \begin{bmatrix} 4 \\ -2 \\ -3 \end{bmatrix}
+          \begin{bmatrix} -1 \\ 5 \\ 0 \end{bmatrix} =
+          \begin{bmatrix} 1 \\ -1 \\ 2 \end{bmatrix}
         `} />
       </div>
       <div>
         <CodeBlock code={
 `import numpy as np
 
-A = np.array([[1, 0, 0],
-              [1, 1, 0],
-              [1, 1, 1]])
+A = np.array([[1, 2, 0],
+              [0, 1, 3],
+              [2, 4, 1]])
 
-v = np.array([[4],
-              [2],
-              [-1]])
+v = np.array([[-1],
+              [5],
+              [0]])
 
 A_inv = np.linalg.inv(A)
 
@@ -123,14 +150,14 @@ print(A @ x)`
         <CodeBlock code={
 `import numpy as np
 
-A = np.array([[1, 0, 0],
+M = np.array([[1, 0, 0],
               [1, 1, 0],
               [1, 1, 1]])
 
-A_inv = np.linalg.inv(A)
+M_inv = np.linalg.inv(M)
 
 print("3D identity matrix:")
-print(A @ A_inv)`
+print(M @ M_inv)`
         } editable={true} />
       </div>
       <div>
@@ -142,14 +169,14 @@ print(A @ A_inv)`
         <CodeBlock code={
 `import numpy as np
 
-A = np.array([[1, 0, 0],
+M = np.array([[1, 0, 0],
               [0, 1, 0],
               [0, 0, 0]])
 
-print("The determinant of A:", np.linalg.det(A), '\\n')
+print("The determinant of M:", np.linalg.det(M), '\\n')
 
-print("Inverse of A is not possible:")
-print(np.linalg.inv(A))`
+print("Inverse of M is not possible:")
+print(np.linalg.inv(M))`
         } editable={true} />
       </div>
       <div>

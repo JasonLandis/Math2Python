@@ -46,11 +46,7 @@ export default function LinearTransformations() {
           \quad\rightarrow\quad
           2 \begin{bmatrix} 1 \\ 0 \end{bmatrix} +
           3 \begin{bmatrix} 0 \\ 1 \end{bmatrix} =
-          \begin{bmatrix} 2 \\ 3 \end{bmatrix}
-        `} />
-      </div>
-      <div>
-        <Equation math={String.raw`
+          \begin{bmatrix} 2 \\ 3 \end{bmatrix} \newline
           v' = 2i' + 3j'
           \quad\rightarrow\quad
           2 \begin{bmatrix} 1 \\ 3 \end{bmatrix} +
