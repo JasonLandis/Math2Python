@@ -130,8 +130,11 @@ print("Determinant calculated using NumPy:", np.linalg.det(M))`
       </div>
       <div>
         <Note>
-          A negative determinant means the orientation of space was flipped, as if it had been
-          turned over. The determinant in the example above is negative, so that is what happens here.
+          A negative determinant means the orientation of space has been flipped, as if the plane
+          were turned over. The determinant in the example above is negative, so that's what happens here.
+          You can also spot a negative determinant by checking the orientation of the transformed basis
+          vectors: normally, j sits to the left of i. If j ends up to the right of i after the
+          transformation, space has been flipped and the determinant is negative.
         </Note>
       </div>
       <div>
@@ -153,7 +156,9 @@ print("Determinant calculated using NumPy:", np.linalg.det(M))`
       </div>
       <div>
         In 3D, the determinant tells you the factor by which a linear transformation
-        scales volumes. Below is how you would calculate the determinant of a 3x3 matrix.
+        scales volume. The unit cube formed by the basis vectors is transformed into a
+        <strong>parallelepiped</strong>, and the determinant is that parallelepiped's volume. 
+        Below is how to calculate the determinant of a 3x3 matrix.
       </div>
       <div>
         <Equation math={String.raw`
@@ -228,6 +233,15 @@ third_calc = M[0, 2] * det_2x2(third_sub_M)
 print("Determinant calculated manually:", first_calc - second_calc + third_calc)
 print("Determinant calculated using NumPy:", np.linalg.det(M))`
         } editable={true} />
+      </div>
+      <div>
+        <Note>
+          You can tell whether the determinant of a 3x3 matrix is negative by using the right-hand rule.
+          Point your index finger in the direction of the transformed i and your middle finger in the
+          direction of the transformed j. If your thumb points in the same general direction as the
+          transformed k, the determinant is positive. If it points the opposite way, the orientation
+          has been flipped and the determinant is negative.
+        </Note>
       </div>
       <div>
         The determinant of the composition matrix of two matrices is the same as the product
