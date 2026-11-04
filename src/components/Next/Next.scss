@@ -1,0 +1,15 @@
+@use '../../styles/responsive' as *;
+
+.next {
+    all: unset;
+    cursor: pointer;
+    display: inline-block;
+    margin: -12px -12px 12px 0;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 15px;
+
+    @include hover {
+        background-color: var(--global-secondary-color);
+    }
+}

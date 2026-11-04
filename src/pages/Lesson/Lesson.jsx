@@ -1,6 +1,7 @@
 import { Suspense } from 'react';
 import { Link } from 'react-router-dom';
 import Back from '../../components/Back/Back';
+import Next from '../../components/Next/Next';
 import ToTop from '../../components/ToTop/ToTop';
 import { lessons } from '../../lessons/lessons';
 import 'katex/dist/katex.min.css';
@@ -8,11 +9,16 @@ import './Lesson.scss';
 
 export default function Lesson({ subject, lesson }) {
   const { Component } = lessons[subject].lessons[lesson];
+  const lessonKeys = Object.keys(lessons[subject].lessons);
+  const nextLesson = lessonKeys[lessonKeys.indexOf(lesson) + 1];
 
   return (
     <div className='global-container'>
       <title>{lessons[subject].lessons[lesson].title + ' | Math 2 Python'}</title>
-      <Back destination={`/${subject}`} text={lessons[subject].title} />
+      <div className='lesson-nav'>
+        <Back destination={`/${subject}`} text={lessons[subject].title} />
+        {nextLesson && <Next destination={`/${subject}/${nextLesson}`} />}
+      </div>
       <div className='global-title'>
         {lessons[subject].lessons[lesson].title}
       </div>
