@@ -139,63 +139,6 @@ print("w x v:", w[0] * v[1] - w[1] * v[0])
 print("Determinant of the matrix with columns v and w:", np.linalg.det(np.column_stack((v, w))))`
         } editable={true} />
       </div>
-      <div>
-        We can also calculate the area of the parallelogram using only dot products. To do that, we
-        need one more fact: the dot product of a vector with itself always equals its magnitude squared.
-        Intuitively, projecting a vector onto itself just gives back the same vector, so the dot product
-        is its length times its own length.
-      </div>
-      <div>
-        <Equation math={String.raw`
-          v \cdot v = \lVert v \rVert^2
-        `} />
-      </div>
-      <div>
-        <CodeBlock code={
-`import numpy as np
-
-v = np.array([-3, 2, -4])
-
-print("Dot product:", np.dot(v, v))
-print("Magnitude of vector v squared:", np.linalg.norm(v)**2)`
-        } editable={true} />
-      </div>
-      <div>
-        The area of the parallelogram is the length of one side times the height, which
-        is ‖v‖‖w‖ sin θ. Using the identity sin²θ = 1 - cos²θ and the formula from the
-        dot products lesson, we can rewrite the area using only dot products.
-      </div>
-      <div>
-        <Equation math={String.raw`
-          \text{area}^2 = \lVert v \rVert^2 \lVert w \rVert^2 \sin^2\theta =
-          \lVert v \rVert^2 \lVert w \rVert^2 (1 - \cos^2\theta)
-        `} />
-      </div>
-      <div>
-        <Equation math={String.raw`
-          \text{area}^2 = \lVert v \rVert^2 \lVert w \rVert^2 -
-          (\lVert v \rVert \lVert w \rVert \cos\theta)^2 =
-          (v \cdot v)(w \cdot w) -
-          (v \cdot w)^2
-        `} />
-      </div>
-      <div>
-        The code below calculates the area this way and checks that it matches the magnitude of the
-        cross product.
-      </div>
-      <div>
-        <CodeBlock code={
-`import numpy as np
-
-v = np.array([-1, -2, -3])
-
-w = np.array([1, 4, 2])
-
-area = np.sqrt(np.dot(v, v) * np.dot(w, w) - np.dot(v, w)**2)
-print("Area of the parallelogram:", area)
-print("Magnitude of the cross product:", np.linalg.norm(np.cross(v, w)))`
-        } editable={true} />
-      </div>
     </>
   )
 }

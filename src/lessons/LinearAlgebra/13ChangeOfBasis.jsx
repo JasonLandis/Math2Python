@@ -101,15 +101,6 @@ print(B @ v2)`
       </div>
       <div>
         <Equation math={String.raw`
-          B^{-1} =
-          \frac{1}{7} \begin{bmatrix}
-            3 & 1 \\
-            -1 & 2
-          \end{bmatrix}
-        `} />
-      </div>
-      <div>
-        <Equation math={String.raw`
           \begin{bmatrix}
             2 & -1 \\
             1 & 3
@@ -192,15 +183,6 @@ print(np.linalg.inv(B) @ v1)`
         Once it's calculated, it can be applied directly to any vector written in System 2's language.
       </div>
       <div>
-        <Equation math={String.raw`
-          T_2 = B^{-1}T_1B =
-          \frac{1}{7} \begin{bmatrix}
-            -1 & -10 \\
-            5 & 1
-          \end{bmatrix}
-        `} />
-      </div>
-      <div>
         <CodeBlock code={
 `import numpy as np
 
@@ -224,12 +206,6 @@ print(T2, '\\n')
 print("Applying T2 directly to v2:")
 print(T2 @ v2)`
         } editable={true} />
-      </div>
-      <div>
-        <Note>
-          You can think of the composition matrix B⁻¹T₁B as linear
-          transformation T₁, but expressed in System 2's language.
-        </Note>
       </div>
     </>
   )

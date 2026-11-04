@@ -185,6 +185,66 @@ print("Determinant:", np.linalg.det(AB))`
           is the same floating-point rounding described in the determinant lesson.
         </Note>
       </div>
+      <div>
+        A matrix can also squish space all the way down to a single dimension. Below is a 1x2 matrix.
+        It has 1 row and 2 columns, so it takes 2D vectors and outputs 1D vectors, which are just
+        numbers on the number line. Its columns still show where the basis vectors land, so i lands
+        on 2 and j lands on 1.
+      </div>
+      <div>
+        <Equation math={String.raw`
+          C = \begin{bmatrix} 2 & 1 \end{bmatrix}
+          \qquad
+          i \rightarrow 2
+          \qquad
+          j \rightarrow 1
+        `} />
+      </div>
+      <div>
+        Where any other vector lands can be deduced from where the basis vectors landed. Below, the
+        vector [3, 4] lands on 10 on the number line.
+      </div>
+      <div>
+        <Equation math={String.raw`
+          v = 3i + 4j \rightarrow 3(2) + 4(1) = 10
+        `} />
+      </div>
+      <div>
+        <Equation math={String.raw`
+          \begin{bmatrix} 2 & 1 \end{bmatrix}
+          \begin{bmatrix} 3 \\ 4 \end{bmatrix} =
+          (2)(3) + (1)(4) = 10
+        `} />
+      </div>
+      <div>
+        The rank of the matrix is at most 1, since numbers on the number line can't span more than 1D
+        space. It's exactly 1 here because the columns aren't all zero. Since a whole dimension is
+        lost, there is an entire line of 2D vectors that lands on 0, so this matrix has a 1D null
+        space. For example, the vector [1, -2] lands on 0.
+      </div>
+      <div>
+        <CodeBlock code={
+`import numpy as np
+
+C = np.array([[2, 1]])
+
+v = np.array([[3],
+              [4]])
+
+w = np.array([[1],
+              [-2]])
+
+print("Rank:", np.linalg.matrix_rank(C))
+print("v lands on:", C @ v)
+print("w lands on:", C @ w)`
+        } editable={true} />
+      </div>
+      <div>
+        <Note>
+          Multiplying by a 1x2 matrix looks a lot like pairing up coordinates, multiplying each pair,
+          and adding the results. The next lesson on dot products explains why.
+        </Note>
+      </div>
     </>
   )
 }
