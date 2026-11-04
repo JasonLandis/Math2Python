@@ -23,7 +23,8 @@ export default function Eigenvectors() {
       </div>
       <div>
         <Equation math={String.raw`
-          Av - \lambda Iv = 0 \Rightarrow
+          Av - \lambda Iv = 0 
+          \quad \rightarrow \quad
           (A - \lambda I)v = 0
         `} />
       </div>
@@ -64,11 +65,7 @@ export default function Eigenvectors() {
               0 & 1
             \end{bmatrix}
           \right) =
-          0
-        `} />
-      </div>
-      <div>
-        <Equation math={String.raw`
+          0 \newline
           \text{det}\left(
             \begin{bmatrix}
               3 - \lambda & 1 \\
@@ -80,43 +77,13 @@ export default function Eigenvectors() {
       </div>
       <div>
         <Equation math={String.raw`
-          (3 - \lambda)(2 - \lambda) - (1)(0) = 0
-        `} />
-      </div>
-      <div>
-        <Equation math={String.raw`
+          (3 - \lambda)(2 - \lambda) - (1)(0) = 0 \newline
           (3 - \lambda)(2 - \lambda) = 0
         `} />
       </div>
       <div>
         <Equation math={String.raw`
           \lambda = 3 \text{ or } \lambda = 2
-        `} />
-      </div>
-      <div>
-        To find the eigenvector for each eigenvalue, plug the eigenvalue back
-        into (A - λI)v = 0 and solve for v.
-      </div>
-      <div>
-        <Equation math={String.raw`
-          \lambda = 3: \begin{bmatrix}
-            0 & 1 \\
-            0 & -1
-          \end{bmatrix}
-          \begin{bmatrix} x \\ y \end{bmatrix} = 0 \Rightarrow
-          y = 0 \Rightarrow
-          v = \begin{bmatrix} 1 \\ 0 \end{bmatrix}
-        `} />
-      </div>
-      <div>
-        <Equation math={String.raw`
-          \lambda = 2: \begin{bmatrix}
-            1 & 1 \\
-            0 & 0
-          \end{bmatrix}
-          \begin{bmatrix} x \\ y \end{bmatrix} = 0 \Rightarrow
-          x = -y \Rightarrow
-          v = \begin{bmatrix} -1 \\ 1 \end{bmatrix}
         `} />
       </div>
       <div>

@@ -180,17 +180,6 @@ print("The derivative using NumPy's polynomial tools:")
 print(np.polynomial.Polynomial([-1, 4, -3, 2]).deriv().coef)`
         } editable={true} />
       </div>
-      <div>
-        The derivative matrix also connects back to earlier lessons. Its last row is all zeros, so its
-        determinant is 0 and it cannot be inverted. Differentiating loses the constant term, which is
-        why integration needs a "+ C" to account for it.
-      </div>
-      <div>
-        Its only eigenvalue is 0, and its eigenvectors are the constant polynomials, since the
-        derivative of a constant is 0 times that constant. Outside of polynomials, the
-        function eˣ is an <strong>eigenfunction</strong> of the derivative with an eigenvalue
-        of 1, because its derivative is itself.
-      </div>
     </>
   )
 }

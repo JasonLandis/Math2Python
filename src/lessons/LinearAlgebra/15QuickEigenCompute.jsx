@@ -35,7 +35,9 @@ export default function QuickEigenCompute() {
       </div>
       <div>
         <Equation math={String.raw`
-          (m + k)(m - k) = m^2 - k^2 = p \Rightarrow k = \sqrt{m^2 - p}
+          (m + k)(m - k) = m^2 - k^2 = p 
+          \quad \rightarrow \quad
+          k = \sqrt{m^2 - p}
         `}/>
       </div>
       <div>
@@ -89,31 +91,6 @@ print(np.linalg.eigvals(A))`
         } editable={true} />
       </div>
       <div>
-        Below is the matrix from the eigenvectors lesson. The trick gives the same eigenvalues, 3 and 2,
-        much faster than solving det(A - λI) = 0 by hand.
-      </div>
-      <div>
-        <Equation math={String.raw`
-          A =
-          \begin{bmatrix}
-            3 & 1 \\
-            0 & 2
-          \end{bmatrix}
-          \qquad
-          m = \frac{3 + 2}{2} = 2.5
-          \qquad
-          p = (3)(2) - (1)(0) = 6
-        `}/>
-      </div>
-      <div>
-        <Equation math={String.raw`
-          \lambda = 2.5 \pm \sqrt{2.5^2 - 6} = 2.5 \pm \sqrt{0.25} = 2.5 \pm 0.5 \Rightarrow
-          \lambda_1 = 3
-          \qquad
-          \lambda_2 = 2
-        `}/>
-      </div>
-      <div>
         If m² - p is negative, the eigenvalues are complex. For example, the 90° rotation
         below has m = 0 and p = 1, so the trick gives the square root of -1.
         This matches the eigenvectors lesson, where rotations had no real eigenvectors.
@@ -142,13 +119,6 @@ print("Eigenvalue 2:", eig2)`
           np.emath.sqrt returns a complex number when given a negative input, while the
           regular math.sqrt would raise an error. Python writes the imaginary unit
           as j, so the output above is ±i.
-        </Note>
-      </div>
-      <div>
-        <Note>
-          For larger matrices, the eigenvalues still add up to the trace and multiply to the determinant.
-          The trick only works for 2x2 matrices because two facts are only enough to find two unknown
-          eigenvalues. A 3x3 matrix has three.
         </Note>
       </div>
     </>

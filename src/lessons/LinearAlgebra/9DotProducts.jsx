@@ -57,8 +57,7 @@ print("Dot product:", np.dot(v, w))`
         } editable={true} />
       </div>
       <div>
-        If the dot product of two vectors is negative, it means that the vectors point in
-        generally opposite directions.
+        If the dot product of two vectors is negative, it means that the vectors point in generally opposite directions.
       </div>
       <div>
         <CodeBlock code={
@@ -77,78 +76,6 @@ print("Dot product:", np.dot(v, w))`
           Notice how the result is the same. The order does not matter, which means the dot
           product is <strong>commutative</strong>.
         </Note>
-      </div>
-      <div>
-        All three cases come from the formula below, where θ is the angle between the two vectors.
-        The cosine is positive when the angle is less than 90°, zero at exactly 90°, and negative when
-        the angle is greater than 90°.
-      </div>
-      <div>
-        <Equation math={String.raw`
-          v \cdot w = \lVert v \rVert \, \lVert w \rVert \cos\theta
-        `} />
-      </div>
-      <div>
-        The double bars ‖v‖ mean the <strong>magnitude</strong> (length) of a vector. It is
-        calculated with the Pythagorean theorem: square each coordinate, add them up, and take the square root.
-      </div>
-      <div>
-        <Equation math={String.raw`
-          \lVert v \rVert = \sqrt{(v_1)^2 + (v_2)^2}
-        `} />
-      </div>
-      <div>
-        For example, take the two vectors below. The angle between them is 45°.
-      </div>
-      <div>
-        <Equation math={String.raw`
-          v = \begin{bmatrix} 3 \\ 0 \end{bmatrix}
-          \qquad
-          w = \begin{bmatrix} 2 \\ 2 \end{bmatrix}
-          \qquad
-          \theta = 45^\circ
-        `} />
-      </div>
-      <div>
-        <Equation math={String.raw`
-          \lVert v \rVert = \sqrt{3^2 + 0^2} = 3
-          \qquad
-          \lVert w \rVert = \sqrt{2^2 + 2^2} = 2\sqrt{2}
-          \qquad
-          \cos(45^\circ) = \frac{\sqrt{2}}{2}
-        `} />
-      </div>
-      <div>
-        Calculating the dot product both ways gives the same answer.
-      </div>
-      <div>
-        <Equation math={String.raw`
-          v \cdot w = (3)(2) + (0)(2) = 6
-        `} />
-      </div>
-      <div>
-        <Equation math={String.raw`
-          \lVert v \rVert \, \lVert w \rVert \cos\theta =
-          3 \cdot 2\sqrt{2} \cdot \frac{\sqrt{2}}{2} = 6
-        `} />
-      </div>
-      <div>
-        <CodeBlock code={
-`import numpy as np
-
-v = np.array([3, 0])
-w = np.array([2, 2])
-
-# np.linalg.norm calculates the magnitude of a vector
-v_mag = np.linalg.norm(v)
-w_mag = np.linalg.norm(w)
-
-print("Magnitude of v:", v_mag)
-print("Magnitude of w:", w_mag, '\\n')
-
-print("Dot product using coordinates:", np.dot(v, w))
-print("Dot product using the angle formula:", v_mag * w_mag * np.cos(np.radians(45)))`
-        } editable={true} />
       </div>
       <div>
         To visualize the dot product, imagine projecting one vector onto the other, then
@@ -180,6 +107,12 @@ print("Dot product calculated using NumPy:", dot)
 print("Dot product calculated by projecting w onto v:", v_mag * proj_w_mag)
 print("Dot product calculated by projecting v onto w:", w_mag * proj_v_mag)`
         } editable={true} />
+      </div>
+      <div>
+        <Note>
+          Notice that the code above gives the same result whether we compute v · w or w · v.
+          This is because the dot product is commutative.
+        </Note>
       </div>
       <div>
         Any linear transformation A that maps vectors down to a single number (1D) is

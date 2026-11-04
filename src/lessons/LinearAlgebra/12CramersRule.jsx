@@ -111,7 +111,8 @@ export default function CramersRule() {
       <div>
         <Equation math={String.raw`
           \text{det}(A) \cdot y =
-          \text{det}\left(\begin{bmatrix} i' & v \end{bmatrix}\right) \Rightarrow
+          \text{det}\left(\begin{bmatrix} i' & v \end{bmatrix}\right) 
+          \quad \rightarrow \quad
           y = \frac{
             \text{det}\left(\begin{bmatrix} i' & v \end{bmatrix}\right)
           }{
@@ -146,9 +147,7 @@ print("y-coordinate of original vector:", y, '\\n')
 
 original_vector = np.array([x, y])
 print("Original vector:")
-print(original_vector, '\\n')
-
-print("Verifying the original vector is correct:", np.allclose(A @ original_vector, v))`
+print(original_vector)`
         } editable={true} />
       </div>
       <div>
@@ -206,19 +205,8 @@ print("z-coordinate of original vector:", z, '\\n')
 
 original_vector = np.array([x, y, z])
 print("Original vector:")
-print(original_vector, '\\n')
-
-print("Verifying the original vector is correct:", np.allclose(A @ original_vector, v), '\\n')
-
-print("Using np.linalg.solve:", np.linalg.solve(A, v))`
+print(original_vector)`
         } editable={true} />
-      </div>
-      <div>
-        <Note>
-          Cramer's rule is mostly useful for understanding how linear systems work. In practice, you
-          would use np.linalg.solve(A, v), which is faster and handles floating-point
-          rounding better.
-        </Note>
       </div>
     </>
   )
