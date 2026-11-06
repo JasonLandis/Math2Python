@@ -47,8 +47,8 @@ print("Area computed using πr²:", math.pi * r ** 2)`
         Now let's find the area under the graph of f(x) = x², a parabola. Fix the 
         starting point at x = 0 and let the ending point x vary freely. 
         We can then define a function A(x) that returns the area under the curve 
-        from 0 to x. This function A(x) is called the 
-        integral of x².
+        from 0 to x. This function A(x) is the
+        integral of x² from 0 to x.
       </div>
       <div>
         <Equation math={String.raw`
@@ -74,7 +74,7 @@ print("Area computed using πr²:", math.pi * r ** 2)`
         `} />
       </div>
       <div>
-        We can pick some value of x under the curve, then pick a slightly larger value. 
+        We can pick some value of x on the x-axis, then pick a slightly larger value. 
         The difference between them can be described as dx, and the corresponding change 
         in area is dA = A(x + dx) - A(x). This sliver of area is well approximated by a 
         rectangle with width dx and height f(x) = x² (the height at the 
@@ -113,7 +113,8 @@ print("Area computed using πr²:", math.pi * r ** 2)`
       <div>
         This illustrates the fundamental theorem of calculus, which is the derivative of the area 
         function A(x) gives back the original function, A'(x) = x². From 
-        this, A(x) itself can be recovered by finding a function whose derivative is x².
+        this, A(x) itself can be recovered by finding a function whose derivative is x²
+        and that equals 0 at x = 0 (since the area from 0 to 0 is zero).
       </div>
       <div>
         <CodeBlock code={

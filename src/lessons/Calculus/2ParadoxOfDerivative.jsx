@@ -41,7 +41,7 @@ export default function ParadoxOfDerivative() {
                 &= \lim_{dx \to 0} \frac{x^2 + 2x\,dx + (dx)^2 - x^2}{dx} \\[2em]
                 &= \lim_{dx \to 0} \frac{2x\,dx + (dx)^2}{dx} \\[2em]
                 &= \lim_{dx \to 0} \frac{dx(2x + dx)}{dx} \\[2em]
-                &= \lim_{dx \to 0} 2x + dx \\[2em]
+                &= \lim_{dx \to 0} (2x + dx) \\[2em]
                 &= 2x
           \end{aligned}
         `} />
@@ -57,7 +57,7 @@ export default function ParadoxOfDerivative() {
       <div>
         <Equation math={String.raw`
           f'(x) = 2x \newline
-          2(3) = 6
+          f'(3) = 2(3) = 6
         `} />
       </div>
       <div>
