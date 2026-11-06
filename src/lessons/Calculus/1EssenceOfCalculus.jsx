@@ -21,11 +21,11 @@ r = 3 # Radius of our circle
 
 numRings = 10 # Number of rings that we are splitting the circle into
 
-dr = r / numRings # The thickness of each of the rings
+dr = r / numRings # The thickness of each ring
 
 area = 0
 
-# Approximating the area by summing the area of all of the rings
+# Approximating the area by summing the area of the rings
 for x in range(numRings):
     area += dr * (2 * math.pi * ((x + 1) * dr))
 
@@ -47,8 +47,8 @@ print("Area computed using πr²:", math.pi * r ** 2)`
         Now let's find the area under the graph of f(x) = x², a parabola. Fix the 
         starting point at x = 0 and let the ending point x vary freely. 
         We can then define a function A(x) that returns the area under the curve 
-        from 0 to x. This function A(x) is called the 
-        integral of x².
+        from 0 to x. This function A(x) is the
+        integral of x² from 0 to x.
       </div>
       <div>
         <Equation math={String.raw`
@@ -57,11 +57,24 @@ print("Area computed using πr²:", math.pi * r ** 2)`
       </div>
       <div>
         <Equation math={String.raw`
+          A(x) = \int_0^x f(t) \, dt
+        `} />
+      </div>
+      <div>
+        <Note>
+          Inside the integral, x is replaced by the dummy variable t, since x is already used as the upper limit.
+        </Note>
+      </div>
+      <div>
+        Since f(t) = t², we can substitute it into the integral:
+      </div>
+      <div>
+        <Equation math={String.raw`
           A(x) = \int_0^x t^2 \, dt
         `} />
       </div>
       <div>
-        We can pick some value of x under the curve, then pick a slightly larger value. 
+        We can pick some value of x on the x-axis, then pick a slightly larger value. 
         The difference between them can be described as dx, and the corresponding change 
         in area is dA = A(x + dx) - A(x). This sliver of area is well approximated by a 
         rectangle with width dx and height f(x) = x² (the height at the 
@@ -74,7 +87,9 @@ print("Area computed using πr²:", math.pi * r ** 2)`
       </div>
       <div>
         <Equation math={String.raw`
-          dA \approx x^2 \, dx \rightarrow \frac{dA}{dx} \approx x^2
+          dA \approx x^2 \, dx 
+          \quad \rightarrow \quad
+          \frac{dA}{dx} \approx x^2
         `} />
       </div>
       <div>
@@ -98,7 +113,8 @@ print("Area computed using πr²:", math.pi * r ** 2)`
       <div>
         This illustrates the fundamental theorem of calculus, which is the derivative of the area 
         function A(x) gives back the original function, A'(x) = x². From 
-        this, A(x) itself can be recovered by finding a function whose derivative is x².
+        this, A(x) itself can be recovered by finding a function whose derivative is x²
+        and that equals 0 at x = 0 (since the area from 0 to 0 is zero).
       </div>
       <div>
         <CodeBlock code={

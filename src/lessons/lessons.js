@@ -335,27 +335,42 @@ export const lessons = {
       },
       PowerRule: {
         title: "Power Rule through geometry",
+        representation: String.raw`
+          \frac{d}{dx} x^n = n x^{n-1}
+        `,
         sources: [
           "https://www.3blue1brown.com/lessons/derivatives-power-rule",
           "https://www.3blue1brown.com/lessons/derivatives-trig-functions"
         ],
-        prerequisites: [],
+        prerequisites: [
+          "ParadoxOfDerivative"
+        ],
         Component: PowerRule
       },
       ChainRule: {
         title: "Visualizing the chain rule and product rule",
+        representation: String.raw`
+          \frac{d}{dx} g\big(f(x)\big) = g'\big(f(x)\big) \cdot f'(x)
+        `,
         sources: [
           "https://www.3blue1brown.com/lessons/chain-rule-and-product-rule"
         ],
-        prerequisites: [],
+        prerequisites: [
+          "PowerRule"
+        ],
         Component: ChainRule
       },
       EulersNumber: {
         title: "What's so special about Euler's number e?",
+        representation: String.raw`
+          \frac{d}{dx} e^x = e^x
+        `,
         sources: [
           "https://www.3blue1brown.com/lessons/eulers-number"
         ],
-        prerequisites: [],
+        prerequisites: [
+          "ChainRule"
+        ],
         Component: EulersNumber
       },
     }

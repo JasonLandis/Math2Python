@@ -32,16 +32,32 @@ export default function ParadoxOfDerivative() {
         `} />
       </div>
       <div>
+        Below is how we can algebraically compute the derivative of f(x) = x².
+      </div>
+      <div>
+        <Equation math={String.raw`
+          \begin{aligned}
+          f'(x) &= \lim_{dx \to 0} \frac{(x + dx)^2 - x^2}{dx} \\[2em]
+                &= \lim_{dx \to 0} \frac{x^2 + 2x\,dx + (dx)^2 - x^2}{dx} \\[2em]
+                &= \lim_{dx \to 0} \frac{2x\,dx + (dx)^2}{dx} \\[2em]
+                &= \lim_{dx \to 0} \frac{dx(2x + dx)}{dx} \\[2em]
+                &= \lim_{dx \to 0} (2x + dx) \\[2em]
+                &= 2x
+          \end{aligned}
+        `} />
+      </div>
+      <div>
+        <Note>
+          In the last step above, dx drops out because we take the limit as dx → 0, leaving just 2x.
+        </Note>
+      </div>
+      <div>
         We can verify if our approximation is correct by inputing our value of x into f'(x).
       </div>
       <div>
         <Equation math={String.raw`
-          f'(x) = 2x
-        `} />
-      </div>
-      <div>
-        <Equation math={String.raw`
-          2(3) = 6
+          f'(x) = 2x \newline
+          f'(3) = 2(3) = 6
         `} />
       </div>
       <div>
@@ -64,42 +80,16 @@ print("Expected (2x):", 2 * x)`
       </div>
       <div>
         <Equation math={String.raw`
-          \frac{df}{dx}(x) = \frac{f(x + dx) - f(x)}{dx}
-        `} />
-      </div>
-      <div>
-        <Equation math={String.raw`
-          \frac{\big(2(x + dx)^3 + 5\big) - \big(2x^3 + 5\big)}{dx}
-        `} />
-      </div>
-      <div>
-        <Equation math={String.raw`
-          \frac{\big(2(x^3 + 3x^2\,dx + 3x\,dx^2 + dx^3) + 5\big) - \big(2x^3 + 5\big)}{dx}
-        `} />
-      </div>
-      <div>
-        <Equation math={String.raw`
-          \frac{\big(2x^3 + 6x^2\,dx + 6x\,dx^2 + 2dx^3 + 5\big) - \big(2x^3 + 5\big)}{dx}
-        `} />
-      </div>
-      <div>
-        <Equation math={String.raw`
-          \frac{6x^2\,dx + 6x\,dx^2 + 2dx^3}{dx}
-        `} />
-      </div>
-      <div>
-        <Equation math={String.raw`
-          6x^2 + 6x\,dx + 2dx^2
-        `} />
-      </div>
-      <div>
-        At this point, we can ignore the terms 6xdx and 2dx² because these 
-        terms will approach zero as dx approaches zero. Therefore, the derivative 
-        of 2x³ + 5 is 6x².
-      </div>
-      <div>
-        <Equation math={String.raw`
-          \frac{df}{dx}(x) = 6x^2
+          \begin{aligned}
+          f'(x) &= \lim_{dx \to 0} \frac{\big(2(x + dx)^3 + 5\big) - \big(2x^3 + 5\big)}{dx} \\[2em]
+                &= \lim_{dx \to 0} \frac{\big(2(x^3 + 3x^2\,dx + 3x\,(dx)^2 + (dx)^3) + 5\big) - \big(2x^3 + 5\big)}{dx} \\[2em]
+                &= \lim_{dx \to 0} \frac{\big(2x^3 + 6x^2\,dx + 6x\,(dx)^2 + 2(dx)^3 + 5\big) - \big(2x^3 + 5\big)}{dx} \\[2em]
+                &= \lim_{dx \to 0} \frac{2x^3 + 6x^2\,dx + 6x\,(dx)^2 + 2(dx)^3 + 5 - 2x^3 - 5}{dx} \\[2em]
+                &= \lim_{dx \to 0} \frac{6x^2\,dx + 6x\,(dx)^2 + 2(dx)^3}{dx} \\[2em]
+                &= \lim_{dx \to 0} \frac{dx\big(6x^2 + 6x\,dx + 2(dx)^2\big)}{dx} \\[2em]
+                &= \lim_{dx \to 0} \big(6x^2 + 6x\,dx + 2(dx)^2\big) \\[2em]
+                &= 6x^2
+          \end{aligned}
         `} />
       </div>
       <div>
@@ -116,9 +106,7 @@ print(f"Derivative calculated at x = {x}: {derivative}")
 print("Expected (6x²):", 6 * x ** 2)`
         } editable={true} />
       </div>
-      <Note>
-        We can use SymPy to calculate the derivative of a polynomial.
-      </Note>
+        We can use SymPy to calculate the derivative of a polynomial as seen below.
       <div>
         <CodeBlock code={
 `import sympy as sp
