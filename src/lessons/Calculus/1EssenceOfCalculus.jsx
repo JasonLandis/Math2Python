@@ -21,11 +21,11 @@ r = 3 # Radius of our circle
 
 numRings = 10 # Number of rings that we are splitting the circle into
 
-dr = r / numRings # The thickness of each of the rings
+dr = r / numRings # The thickness of each ring
 
 area = 0
 
-# Approximating the area by summing the area of all of the rings
+# Approximating the area by summing the area of the rings
 for x in range(numRings):
     area += dr * (2 * math.pi * ((x + 1) * dr))
 
@@ -57,6 +57,19 @@ print("Area computed using πr²:", math.pi * r ** 2)`
       </div>
       <div>
         <Equation math={String.raw`
+          A(x) = \int_0^x f(t) \, dt
+        `} />
+      </div>
+      <div>
+        <Note>
+          Inside the integral, x is replaced by the dummy variable t, since x is already used as the upper limit.
+        </Note>
+      </div>
+      <div>
+        Since f(t) = t², we can substitute it into the integral:
+      </div>
+      <div>
+        <Equation math={String.raw`
           A(x) = \int_0^x t^2 \, dt
         `} />
       </div>
@@ -74,7 +87,9 @@ print("Area computed using πr²:", math.pi * r ** 2)`
       </div>
       <div>
         <Equation math={String.raw`
-          dA \approx x^2 \, dx \rightarrow \frac{dA}{dx} \approx x^2
+          dA \approx x^2 \, dx 
+          \quad \rightarrow \quad
+          \frac{dA}{dx} \approx x^2
         `} />
       </div>
       <div>
