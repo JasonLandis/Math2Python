@@ -16,21 +16,19 @@ export default function PowerRule() {
         `} />
       </div>
       <div>
+        <Note>
+          In previous lessons, the derivative was written using prime notation, like f'(x).
+          Another common notation is d/dx, which means "the derivative with respect to x".
+          So d/dx f(x) and f'(x) mean the same thing.
+        </Note>
+      </div>
+      <div>
         Before seeing why this works in general, let's build some intuition with geometry.
         We can picture the function f(x) = x² as the area of a square with side length x.
         If we grow each side by a tiny amount dx, the square gains two thin rectangles of
-        area x · dx along its sides, plus a tiny square of area (dx)² in the corner.
-      </div>
-      <div>
-        <Equation math={String.raw`
-          \begin{aligned}
-          f'(x) &= \lim_{dx \to 0} \frac{(x + dx)^2 - x^2}{dx} \\[2em]
-                &= \lim_{dx \to 0} \frac{x^2 + 2x\,dx + (dx)^2 - x^2}{dx} \\[2em]
-                &= \lim_{dx \to 0} \frac{2x\,dx + (dx)^2}{dx} \\[2em]
-                &= \lim_{dx \to 0} (2x + dx) \\[2em]
-                &= 2x
-          \end{aligned}
-        `} />
+        area x · dx along its sides, plus a tiny square of area (dx)² in the corner. Dividing
+        this new area by dx gives 2x + dx, which approaches 2x as dx shrinks. This matches what
+        we found algebraically in the previous lesson: the derivative of x² is 2x.
       </div>
       <Note>
         The two rectangles, 2x · dx, make up almost all of the new area. The corner piece (dx)²
@@ -57,6 +55,7 @@ print("Symbolic derivative of x² computed using SymPy:", derivative)`
         <Equation math={String.raw`
           \begin{aligned}
           f'(x) &= \lim_{dx \to 0} \frac{(x + dx)^3 - x^3}{dx} \\[2em]
+                &= \lim_{dx \to 0} \frac{(x + dx)(x + dx)(x + dx) - x^3}{dx} \\[2em]
                 &= \lim_{dx \to 0} \frac{(x^2 + 2x\,dx + (dx)^2)(x + dx) - x^3}{dx} \\[2em]
                 &= \lim_{dx \to 0} \frac{x^3 + 3x^2\,dx + 3x\,(dx)^2 + (dx)^3 - x^3}{dx} \\[2em]
                 &= \lim_{dx \to 0} \frac{3x^2\,dx + 3x\,(dx)^2 + (dx)^3}{dx} \\[2em]
@@ -117,7 +116,7 @@ dx = 0.0001 # A tiny step to the right
 for n in range(1, 6):
     approximation = ((x + dx) ** n - x ** n) / dx
     powerRule = n * x ** (n - 1)
-    print(f"n = {n}: approximation = {approximation:.4f}, power rule (nx^(n-1)) = {powerRule}")`
+    print(f"n = {n}: approximation = {approximation:.4f}, power rule = {powerRule}")`
         } editable={true} />
       </div>
       <div>
@@ -140,7 +139,7 @@ for n in range(1, 6):
 
 x = sp.symbols('x')
 
-f = 1/x # 1/x
+f = 1/x
 
 derivative = sp.diff(f, x)
 print("Symbolic derivative of 1/x computed using SymPy:", derivative)`
