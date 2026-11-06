@@ -82,9 +82,7 @@ h = f + g # f(x) + g(x) = 3x² + 2x³
 
 print("Derivative of 3x²:", sp.diff(f, x))
 print("Derivative of 2x³:", sp.diff(g, x))
-print("Derivative of 3x² + 2x³:", sp.diff(h, x))
-
-print("\\n----------------------------------------------\\n")
+print("Derivative of 3x² + 2x³:", sp.diff(h, x), '\\n')
 
 f = 2*x**2 # f(x) = 2x²
 g = 4*x**2 # g(x) = 4x²
