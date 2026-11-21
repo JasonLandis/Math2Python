@@ -23,6 +23,9 @@ const PowerRule = lazy(() => import("./Calculus/3PowerRule"))
 const ChainRule = lazy(() => import("./Calculus/4ChainRule"))
 const EulersNumber = lazy(() => import("./Calculus/5EulersNumber"))
 
+const Caesar = lazy(() => import("./Cryptography/1Caesar"))
+const Atbash = lazy(() => import("./Cryptography/2Atbash"))
+
 export const lessons = {
   LinearAlgebra: {
     title: "Linear Algebra",
@@ -373,6 +376,30 @@ export const lessons = {
         ],
         Component: EulersNumber
       },
+    }
+  },
+  Cryptography: {
+    title: "Cryptography",
+    representation: String.raw`Q3J5cHRvZ3JhcGh5`,
+    lessons: {
+      Caesar: {
+        title: "Caesar Ciphers",
+        representation: String.raw`
+          \text{Key = 5} \Longrightarrow A \rightarrow F
+        `,
+        sources: [],
+        prerequisites: [],
+        Component: Caesar
+      },
+      Atbash: {
+        title: "Atbash Ciphers",
+        representation: String.raw`
+          A \leftrightarrow Z
+        `,
+        sources: [],
+        prerequisites: [],
+        Component: Atbash
+      }
     }
   }
 }
