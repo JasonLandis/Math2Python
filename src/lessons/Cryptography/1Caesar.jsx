@@ -65,18 +65,15 @@ for x in range(len(cipher)):
         output += cipher[x]
         continue
 
-    # Get the alphabet index of the letter and shift it by the key
+    # Key index conversion part
     index = ALPHABET.index(cipher[x].upper())
-    index += key
+    new_index = (index + key) % 26
 
-    # Wraps the alphabet index such that it remains in bounds
-    index %= 26
-
-    # Append the shifted letter to the output while maintaining casing
+    # Append the new letter to the output while maintaining casing
     if cipher[x].isupper():
-        output += ALPHABET[index]
+        output += ALPHABET[new_index]
     else:
-        output += ALPHABET[index].lower()
+        output += ALPHABET[new_index].lower()
 
 print(output)`
         } editable={true} />

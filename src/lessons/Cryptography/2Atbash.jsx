@@ -68,14 +68,15 @@ for x in range(len(cipher)):
         output += cipher[x]
         continue
 
-    # Get the alphabet index of the letter
+    # Key index conversion part
     index = ALPHABET.index(cipher[x].upper())
+    new_index = 25 - index
 
-    # Reverse the index and append that letter to the output while maintaining casing
+    # Append the new letter to the output while maintaining casing
     if cipher[x].isupper():
-        output += ALPHABET[25 - index]
+        output += ALPHABET[new_index]
     else:
-        output += ALPHABET[25 - index].lower()
+        output += ALPHABET[new_index].lower()
 
 print(output)`
         } editable={true} />
