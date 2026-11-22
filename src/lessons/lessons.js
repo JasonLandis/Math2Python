@@ -25,6 +25,8 @@ const EulersNumber = lazy(() => import("./Calculus/5EulersNumber"))
 
 const Caesar = lazy(() => import("./Cryptography/1Caesar"))
 const Atbash = lazy(() => import("./Cryptography/2Atbash"))
+const Affine = lazy(() => import("./Cryptography/3Affine"))
+const Vigenere = lazy(() => import("./Cryptography/4Vigenere"))
 
 export const lessons = {
   LinearAlgebra: {
@@ -385,7 +387,7 @@ export const lessons = {
       Caesar: {
         title: "Caesar Ciphers",
         representation: String.raw`
-          \text{Key = 5} \Longrightarrow A \rightarrow F
+          E(x) = (x + k) \bmod 26
         `,
         sources: [],
         prerequisites: [],
@@ -394,11 +396,36 @@ export const lessons = {
       Atbash: {
         title: "Atbash Ciphers",
         representation: String.raw`
-          A \leftrightarrow Z
+          E(x) = 25 - x
         `,
         sources: [],
-        prerequisites: [],
+        prerequisites: [
+          "Caesar"
+        ],
         Component: Atbash
+      },
+      Affine: {
+        title: "Affine Ciphers",
+        representation: String.raw`
+          E(x) = (ax + b) \bmod 26
+        `,
+        sources: [],
+        prerequisites: [
+          "Caesar",
+          "Atbash"
+        ],
+        Component: Affine
+      },
+      Vigenere: {
+        title: "Vigenère Ciphers",
+        representation: String.raw`
+          E(x_i) = (x_i + k_{i \bmod m}) \bmod 26
+        `,
+        sources: [],
+        prerequisites: [
+          "Caesar"
+        ],
+        Component: Vigenere
       }
     }
   }
