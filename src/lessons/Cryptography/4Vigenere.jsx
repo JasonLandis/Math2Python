@@ -94,10 +94,10 @@ Poumes eg zbi w dxnra; bqitn kmf. Idwe pdqzp ot Wgsngz. Oetpnr uf ldsdr dqf brdl
 """
 
 key = "LEMON"
+key_index = 0
 
 output = ""
 
-key_index = 0
 for x in range(len(cipher)):
     # If the character is not a letter, simply append it to the output
     if cipher[x].upper() not in ALPHABET:
